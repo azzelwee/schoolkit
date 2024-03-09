@@ -14,12 +14,12 @@ if(isset($_SESSION['UserLogin'])){
 include_once("connections/connection.php");
 
 $con = connection();
-
-$sql = "SELECT * FROM employee_list ORDER BY id DESC";
+$search = $_GET['search'];
+$sql = "SELECT * FROM employee_list WHERE first_name LIKE '%$search%' || last_name LIKE '%$search%' ORDER BY id DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
