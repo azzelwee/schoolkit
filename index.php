@@ -2,28 +2,12 @@
 
 include_once("connections/connection.php");
 
-connection();
-
-$host ="localhost";
-$username = "root";
-$password = "12345";
-$database = "employee_system";
-
-$con = new mysqli($host, $username, $password, $database);
-
-if($con->connect_error){
-    echo $con->connect_error;
-}
+$con = connection();
 
 $sql = "SELECT * FROM employee_list";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
-// do{
-
-//     echo $row['first_name']." ". $row['last_name']." ". "<br/>";
-   
-// }while($row = $employee->fetch_assoc());
 ?>
 
 <!DOCTYPE html>
@@ -32,41 +16,14 @@ $row = $employee->fetch_assoc();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management System</title>
-
-    <style>
-
-        body{
-            font-family: "Calibri"
-        }
-
-        h1{
-            text-align: center;
-        }
-
-        table{
-            border: 1px solid black;
-            border-collapse: collapse;
-            width: 100%
-        }
-
-        th, td{
-            text-align: left;
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
     <h1>Employee Management System</h1>
+    < br>
     <br>
-    <br>
+    <a href=""></a>
 
     <table>
         <thead>
