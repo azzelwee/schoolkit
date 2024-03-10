@@ -34,6 +34,8 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 
+    <div class="form-container">
+
     <form action="" method="post">
 
         <label>First Name</label>
@@ -51,6 +53,7 @@ if(isset($_POST['submit'])){
         <input type="submit" name="submit" value="Update">
 
     </form>
+    </div>
 
 </body>
 </html>

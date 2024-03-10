@@ -1,7 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-container {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 8vh;
+}
+
+.form-element {
+    width: 100%;
+
+}
+
+.form-element label {
+    display: block;
+    font-size: 22px;
+    margin-top: 1rem;
+}
+
+.form-element input[type=username],
+.form-element input[type=password] {
+
+    font-size: 22px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #888888;
+
+}
+
+/* .login-container h2 {
+    text-align: center;
+    font-size: 40px;
+} */
+
+.login-container button {
+    width: 100%;
+    letter-spacing: 6px;
+    border-radius: 4px;
+    margin-top: 2rem;
+    font-size: 32px;
+    padding: 1rem;
+    background-color: rgb(215, 0, 0);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.login-container {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    height: auto;
+    padding: 2rem;
+    box-shadow: 5px 6px 18px #888888;
+}
+
+.form-logo {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+/* sets background for login page */
+/* #formlogin {
+
+} */
+
+/* message */
+.message {
+    width: 100%;
+    padding: 1rem;
+}
+
+.message.warning {
+    background: #e9e77f;
+    border-left: 6px solid #ceca09;
+    color: #817f05;
+}
+
+.message.success {
+    background-color: #4bb838;
+    border-left: 6px solid #069b1e;
+    color: white
+}
+
+.message.info {
+    background-color: #248baa;
+    border-left: 6px solid #06589b;
+    color: white
+}
+
+/* end of message */
 body {
     font-family: "Calibri"
 }
 
+.wrapper {
+    padding: 0 2rem 0 2rem;
+}
 h1 {
     text-align: center;
 }
@@ -16,9 +121,129 @@ th,
 td {
     text-align: left;
     padding: 8px;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+.search-container {
+    width: 30%;
+    padding-bottom: 1rem;
+
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.search-button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: rgb(2, 110, 165);
+    color: white;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    border-left: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.button-container {
+    margin: 0;
+    float: right;
+    padding: 1rem 0 2rem 0;
+
+}
+
+.button-container a {
+    float: left;
+    border: 1px solid rgb(2, 94, 139);
+    background: rgb(2, 110, 165);
+    padding: 8px 10px 8px 10px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.button-container a:hover {
+    background: rgb(6, 77, 112);
+}
+
+.button-small {
+    border: none;
+    background: rgb(2, 110, 165);
+    color: white;
+    text-decoration: none;
+    padding: 3px 5px 3px 5px;
+    font-size: 12px;
+}
+
+.button-danger {
+    float: left;
+    background: rgb(201, 0, 0);
+    padding: 11px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border: none;
+}
+
+.button-danger:hover {
+    background: rgb(236, 0, 0);
+}
+
+.button-small:hover {
+    background: rgb(2, 55, 82);
+}
+
+/* add form */
+.form-container {
+    margin: 0 10px;
+    padding-top: 2rem;
+}
+
+.form-container input,
+.form-container select {
+    display: block;
+    font-size: 22px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #888888;
+    margin: 12px 0;
+}
+
+.form-container label {
+    font-size: 22px;
+}
+
+.form-container input[type="submit"] {
+    width: 100%;
+    letter-spacing: 6px;
+    border-radius: 4px;
+    margin-top: 2rem;
+    font-size: 32px;
+    padding: 1rem;
+    background-color: rgb(215, 0, 0);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+ul.items {
+    padding: 2rem;
+    font-size: 16px;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
 }

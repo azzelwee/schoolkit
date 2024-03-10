@@ -30,23 +30,27 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 
-    <form action="" method="post">
+    <div class="form-container">
 
-        <label>First Name</label>
-        <input type="text" name="firstname" id="firstname">
+        <form action="" method="post">
 
-        <label>Last Name</label>
-        <input type="text" name="lastname" id="lastname">
+            <label>First Name</label>
+            <input type="text" name="firstname" id="firstname" required placeholder="Enter First Name">
 
-        <label>Gender</label>
-        <select name="gender" id="gender">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
+            <label>Last Name</label>
+            <input type="text" name="lastname" id="lastname" required placeholder="Enter First Name">
 
-        <input type="submit" name="submit" value="Submit Form">
+            <label>Gender</label>
+            <select name="gender" id="gender" required>
+                <option value="">--select gender--</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
 
-    </form>
+            <input type="submit" name="submit" value="Submit Form">
+
+        </form>
+    </div>
 
 </body>
 </html>

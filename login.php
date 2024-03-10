@@ -21,9 +21,9 @@ if(isset($_POST['login'])){
     if($total > 0){
         $_SESSION['UserLogin'] = $row['username'];
         $_SESSION['Access'] = $row['access'];
-        echo header("Location: index.php");
+        echo header("Location: dashboard.php");
     } else {
-        echo "No user found.";
+        echo "<div class='message warning'> No user found. </div>";
     }
 
 }
@@ -40,17 +40,41 @@ if(isset($_POST['login'])){
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
-    <h1>Login Page</h1>
+<body id="formlogin">
+    <div class="login-container">
+    <!-- <h2>Welcome!</h2> -->
+
     <br/>
-    
-    <form action="" method="post">
-    <label>Username</label>
-    <input type="text" name="username" id="username">
-    <label>Password</label>
-    <input type="password" name="password" id="password">
-    <button type="submit" name="login">Login</button>
+    <div class="form-logo">
+        <img src="img/nbsclogo.png" alt="">
+    </div>
+    <div id="msg"></div>
+    <form action="" method="post" id="myForm">
+
+        <div class="form-element">
+            <label>Username</label>
+            <input type="username" name="username" id="username" autocomplete="off" 
+            placeholder="Enter Username" required>
+        </div>
+
+        <div class="form-element">
+            <label>Password</label>
+            <input type="password" name="password" id="password"
+            placeholder="Enter Password" required>
+        </div>
+
+        <button type="submit" name="login" id="btn">Login</button>
     </form>
+
+    <!-- <ul class="items">
+        <li class="item">Value 1</li>
+        <li class="item">Value 2</li>
+        <li class="item">Value 3</li>
+    </ul> -->
+
+    </div>
+
+    <!-- <script src="js/main.js"></script> -->
 
 </body>
 </html>

@@ -5,9 +5,9 @@ if(!isset($_SESSION)){
 }
 
 if(isset($_SESSION['UserLogin'])){
-    echo "Welcome " .$_SESSION['UserLogin'];
+    echo "<div class='message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
 } else {
-    echo "Welcome Guest";
+    echo "<div class='message info'>Welcome Guest</div>";
 }
 
 
@@ -31,15 +31,22 @@ $row = $employee->fetch_assoc();
 
 </head>
 <body>
+
+<div class="wrapper">
+
     <h1>Employee Management System</h1>
     <br>
     <br>
 
-    <form action="result.php" method="get">
-    <input type="text" name="search" id="search">
-        <button type="submit">search</button>
-    </form>
+    <div class="search-container">
+        <form action="result.php" method="get">
+            <input type="text" name="search" id="search" class="search-input">
+            <button type="submit" class="search-button">search</button>
+        </form>
 
+    </div>
+
+    <div class="button-container">
     <?php if(isset($_SESSION['UserLogin'])){?>
     <a href="logout.php">Logout</a>
     <?php } else {?>
@@ -48,6 +55,8 @@ $row = $employee->fetch_assoc();
     <?php } ?>
     
     <a href="add.php">Add New</a>
+    </div>
+
     <table>
         <thead>
         <tr>
@@ -59,12 +68,18 @@ $row = $employee->fetch_assoc();
         <tbody>
         <?php do{ ?>
         <tr>
-            <td><a href="details.php?ID=<?php echo $row['id'];?>">view</a></td>
+            <td width="30"><a href="details.php?ID=<?php echo $row['id'];?>"
+            class="button-small">view</a></td>
             <td><?php echo $row['first_name']; ?></td>
             <td><?php echo $row['last_name']; ?></td>
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
         </tbody>
     </table>
+
+    </div>
+
+    <!-- <script src="js/main.js"></script> -->
+
 </body>
 </html>
