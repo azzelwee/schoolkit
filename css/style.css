@@ -112,9 +112,10 @@ h1 {
 }
 
 table {
+    margin-top: 50px;
     border: 1px solid black;
     border-collapse: collapse;
-    width: 80%
+    width: 50%
 }
 
 th,
@@ -163,7 +164,7 @@ tr:nth-child(even) {
 }
 
 .button-container a {
-    float: left;
+    float: right;
     border: 1px solid rgb(2, 94, 139);
     background: rgb(2, 110, 165);
     padding: 8px 10px 8px 10px;
@@ -323,3 +324,23 @@ ul.items {
 }
 
 /* end bottom navigation */
+.container-list {
+    display: flex;
+}
+
+.container {
+    margin-left: 30px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    width: 300px;
+    height: 200px;
+    padding-left: 20px;
+    box-shadow: 1px 2px 6px #888888;
+    cursor: pointer;
+}
+
+.container:hover {
+    background-color: #f0f0f0;
+    /* Change background color on hover */
+}
