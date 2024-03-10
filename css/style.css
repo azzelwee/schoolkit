@@ -114,7 +114,7 @@ h1 {
 table {
     border: 1px solid black;
     border-collapse: collapse;
-    width: 100%
+    width: 80%
 }
 
 th,
@@ -247,3 +247,79 @@ ul.items {
     font-weight: bold;
     color: red;
 }
+/* Dashboard Section Left Side Container */
+.left-container {
+    float: left;
+    height: 100%;
+    width: 200px;
+    /* Set the width of the sidebar */
+    background-color: #f4f4f4;
+    /* Set the background color */
+    padding: 20px;
+    /* Add padding to the sidebar */
+}
+
+.category-list {
+    list-style-type: none;
+    /* Remove default bullet points */
+    padding: 0;
+    /* Remove default padding */
+}
+
+.category-list li {
+    margin-bottom: 20px;
+    /* Add margin between each category */
+}
+
+.category-list li img {
+    width: 20px;
+    /* Set the width of the image */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-right: 5px;
+    /* Add spacing between image and text */
+    vertical-align: middle;
+    /* Align image vertically */
+}
+
+.category-list li a {
+    text-decoration: none;
+    /* Remove default underline */
+    color: #333;
+    /* Set text color */
+    display: inline-block;
+    /* Make the links block elements */
+    padding: 5px;
+    /* Add padding to the links */
+}
+
+.category-list li a:hover {
+    background-color: #ddd;
+    /* Change background color on hover */
+}
+
+/* Main dashboard */
+
+.right-container {
+    width: 100%;
+    margin-top: 2vh;
+    margin-left: 20vh;
+}
+
+.right-container h2 {
+    text-align: left;
+    padding-left: 30px;
+}
+
+/* bottom navigation */
+.bottom-navigation {
+    margin-top: 10px;
+    /* Adjust as needed */
+}
+
+.bottom-navigation button {
+    margin-right: 5px;
+    /* Adjust as needed */
+}
+
+/* end bottom navigation */
