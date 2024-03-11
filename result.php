@@ -15,6 +15,7 @@ include_once("connections/connection.php");
 
 $con = connection();
 $search = $_GET['search'];
+
 $sql = "SELECT * FROM employee_list WHERE first_name LIKE '%$search%' || last_name LIKE '%$search%' ORDER BY id DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();

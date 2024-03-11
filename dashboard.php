@@ -31,7 +31,7 @@ $con = connection();
                 <img src="img/nbshorizontal.png" class="logo-img">
             </a>
             <ul class="nav-links">
-                <li><a href="#"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
+                <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
                 <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
                 <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>

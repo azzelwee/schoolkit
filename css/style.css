@@ -128,32 +128,36 @@ td {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-.search-container {
-    width: 30%;
-    padding-bottom: 1rem;
-
+.search {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-radius: 28px;
+    background: #f6f6f6;
 }
 
 .search-input {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid #ddd;
-    float: left;
-    width: 80%;
-    background: white;
+    font-size: 16px;
+    color: #333333;
+    margin-left: 14px;
+    outline: none;
+    border: none;
+    background: transparent;
+
 }
 
-.search-button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: rgb(2, 110, 165);
-    color: white;
-    font-size: 17px;
-    border: 1px solid #ddd;
-    border-left: none;
-    cursor: pointer;
-    letter-spacing: 2px;
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+    
+.search-container {
+    width: 30%;
 }
 
 .button-container {
@@ -201,7 +205,7 @@ tr:nth-child(even) {
 }
 
 .button-small:hover {
-    background: rgb(2, 55, 82);
+    background: #d52033;
 }
 
 /* add form */
