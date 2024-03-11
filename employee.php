@@ -22,7 +22,6 @@ $con = connection();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard 2</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script> -->
 </head>
 <body>
 
@@ -39,16 +38,22 @@ $con = connection();
                 <li><a href="login.php"><img src="img/out.png"><p>Logout</p></a></li>
 
                 <div class="active">
-
-
                 </div>
             </ul>
+        </div>
+    </div>
+
+    <div class="right-container">
+        <div class="search-container">
+            <form action="result.php" method="get">
+                <input type="text" name="search" id="search" class="search-input">
+                <button type="submit" class="search-button">search</button>
+            </form>
 
         </div>
-    
-
-
     </div>
+
     
 </body>
+<script src= js/main.js></script>
 </html>

@@ -10,9 +10,7 @@ if(isset($_SESSION['UserLogin'])){
     echo "<div class='message info'>Welcome Guest</div>";
 }
 
-
 include_once("connections/connection.php");
-
 $con = connection();
 
 ?>
@@ -22,30 +20,31 @@ $con = connection();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard 2</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- left container -->
-<div class="left-container">
-    <h4>Main Navigation</h4></br>
-        <ul class="category-list">
-            <li><img src="img/dashboard.png" alt=""><a href="dashboard.php">Dashboard</a></li>
 
+    <div class="header">
+        <div class="side-nav">
+            <a href="#"class="logo">
+                <img src="img/nbshorizontal.png" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
+                <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
+                <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
+                <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>
+                <li><a href="login.php"><img src="img/out.png"><p>Logout</p></a></li>
 
-            <li><img src="img/structure.png" alt=""><a href="#">Maintenance</a></li>
+                <div class="active">
+                </div>
+            </ul>
 
-
-            <li><img src="img/exit.png" alt=""><a href="logout.php">Logout</a></li>  
-
-
-        </ul> 
-    </div>
-<!-- end of left container -->
+        </div>
 
     <div class="right-container">
         <h2>Dashboard</h2></br>
-
         <div class="container-list">
         <a href="teachers.php" class="container container1">
 
@@ -66,8 +65,10 @@ $con = connection();
     </div>
     
     </div>
-    
-    <script src="js/main.js"></script>
 
+
+    </div>
+    
 </body>
+<script src= js/main.js></script>
 </html>
