@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 .login-container {
     margin: 0 auto;
-    width: 50%;
+    width: 25%;
     margin-top: 8vh;
 }
 
@@ -40,10 +41,10 @@
 
 .login-container button {
     width: 100%;
-    letter-spacing: 6px;
+        letter-spacing: 6px;
     border-radius: 4px;
     margin-top: 2rem;
-    font-size: 32px;
+    font-size: 24px;
     padding: 1rem;
     background-color: rgb(215, 0, 0);
     border: none;
@@ -88,9 +89,11 @@
 }
 
 .message.success {
+    margin-left: 26.5vh;
     background-color: #4bb838;
     border-left: 6px solid #069b1e;
-    color: white
+    font-size: 18px;
+        color: white;
 }
 
 .message.info {
@@ -100,9 +103,6 @@
 }
 
 /* end of message */
-body {
-    font-family: "Calibri"
-}
 
 .wrapper {
     padding: 0 2rem 0 2rem;
@@ -254,13 +254,19 @@ ul.items {
     height: 100%;
     width: 200px;
     /* Set the width of the sidebar */
-    background-color: #f4f4f4;
+    background-color: #d52033;
     /* Set the background color */
     padding: 20px;
     /* Add padding to the sidebar */
 }
 
+.left-container h4 {
+    margin-top: 8px;
+    font-size: 20px;
+    color: white;
+}
 .category-list {
+    font-size: 18px;
     list-style-type: none;
     /* Remove default bullet points */
     padding: 0;
@@ -286,7 +292,7 @@ ul.items {
 .category-list li a {
     text-decoration: none;
     /* Remove default underline */
-    color: #333;
+    color: #ffffff;
     /* Set text color */
     display: inline-block;
     /* Make the links block elements */
@@ -294,53 +300,124 @@ ul.items {
     /* Add padding to the links */
 }
 
-.category-list li a:hover {
-    background-color: #ddd;
-    /* Change background color on hover */
-}
 
 /* Main dashboard */
 
 .right-container {
+    background-color: #ededed;
+        height: 100%;
     width: 100%;
-    margin-top: 2vh;
-    margin-left: 20vh;
+    margin-top: none;
+        margin-left: 20vh;
 }
 
 .right-container h2 {
     text-align: left;
+    padding-top: 25px;
     padding-left: 30px;
-}
-
-/* bottom navigation */
-.bottom-navigation {
-    margin-top: 10px;
-    /* Adjust as needed */
-}
-
-.bottom-navigation button {
-    margin-right: 5px;
-    /* Adjust as needed */
-}
-
-/* end bottom navigation */
-.container-list {
-    display: flex;
 }
 
 .container {
     margin-left: 30px;
     background-color: white;
     border: 1px solid grey;
-    border-radius: 4px;
-    width: 300px;
-    height: 200px;
-    padding-left: 20px;
-    box-shadow: 1px 2px 6px #888888;
+    border-radius: 18px;
+        width: 350px;
+        height: 220px;
+        padding-left: 38px;
     cursor: pointer;
 }
 
 .container:hover {
     background-color: #f0f0f0;
     /* Change background color on hover */
+}
+.header {
+    width: 100%;
+    height: 100vh;
+    background: #e2e9f7;
+}
+
+.side-nav {
+    width: 250px;
+    height: 100%;
+    background: #666768;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+}
+
+.logo {
+    display: block;
+    margin-bottom: 50px;
+}
+
+.logo-img {
+    width: 180px;
+}
+
+.nav-links {
+    list-style: none;
+    position: relative;
+}
+
+.nav-links li {
+    padding: 10px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li img {
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+.nav-links li:hover a {
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-links li:hover~.active {
+    display: block;
+}
+
+.nav-links li:nth-child(1):hover~.active {
+    top: 2.6%;
+}
+
+.nav-links li:nth-child(2):hover~.active {
+    top: 21.6%;
+}
+
+.nav-links li:nth-child(3):hover~.active {
+    top: 41.6%;
+}
+
+.nav-links li:nth-child(4):hover~.active {
+    top: 61.6%;
+}
+
+.nav-links li:nth-child(5):hover~.active {
+    top: 81.6%;
+}
+
+.active {
+    background-color: #c71224;
+    width: 100%;
+    height: 47px;
+    position: absolute;
+    left: 0;
+    top: 2.6%;
+    z-index: -1;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(38, 38, 38, 0.4);
+    display: none;
+    transition: top 0.3s;
 }

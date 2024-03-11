@@ -21,7 +21,7 @@ if(isset($_POST['login'])){
     if($total > 0){
         $_SESSION['UserLogin'] = $row['username'];
         $_SESSION['Access'] = $row['access'];
-        echo header("Location: dashboard.php");
+        echo header("Location: dashboard2.php");
     } else {
         echo "<div class='message warning'> No user found. </div>";
     }

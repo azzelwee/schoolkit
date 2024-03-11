@@ -12,7 +12,6 @@ if(isset($_SESSION['UserLogin'])){
 
 
 include_once("connections/connection.php");
-
 $con = connection();
 
 ?>
@@ -26,6 +25,7 @@ $con = connection();
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <!-- left container -->
 <div class="left-container">
     <h4>Main Navigation</h4></br>
@@ -43,31 +43,7 @@ $con = connection();
     </div>
 <!-- end of left container -->
 
-    <div class="right-container">
-        <h2>Dashboard</h2></br>
-
-        <div class="container-list">
-        <a href="teachers.php" class="container container1">
-
-        </a>
-
-        <a href="#" class="container container2">
-
-        </a>
-            
-        <a href="#" class="container container3">
-
-        </a>
-
-        <a href="#" class="container container4">
-
-        </a>
-
-    </div>
     
-    </div>
-    
-    <script src="js/main.js"></script>
-
 </body>
+<script src="js/main.js"></script>
 </html>

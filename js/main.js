@@ -60,3 +60,5 @@ function updatePageIndicator() {
 
 navigateTable(currentPage);
 updatePageIndicator();
+
+
