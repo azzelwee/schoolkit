@@ -19,6 +19,16 @@
 //         }
 // });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.querySelector('.popup-message');
+    if (popup) {
+        popup.style.display = 'block';
+        setTimeout(function() {
+            popup.style.display = 'none';
+        }, 1000); // Hide after 5 seconds
+    }
+});
+
     let links = document.querySelectorAll('.page-numbers > a');
     let bodyId = parseInt(document.body.id) - 1;
     links[bodyId].classList.add("actives");

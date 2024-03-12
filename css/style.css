@@ -73,16 +73,18 @@
     text-align: center;
 }
 
+.form-dashboard {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-style: none;
+}
 /* sets background for login page */
 /* #formlogin {
 
 } */
 
-/* message */
-.message {
-    width: 100%;
-    padding: 1rem;
-}
+/* message when no user found */
 
 .message.warning {
     background: #e9e77f;
@@ -90,22 +92,36 @@
     color: #817f05;
 }
 
-.message.success {
-    margin-left: 250px;
-        width: auto;
-    background-color: #4bb838;
-    border-left: 6px solid #069b1e;
-    font-size: 18px;
-        color: white;
-}
-
-.message.info {
-    background-color: #248baa;
-    border-left: 6px solid #06589b;
-    color: white
-}
-
 /* end of message */
+
+/* CSS for styling the popup message */
+.popup-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    /* Initially hidden */
+}
+
+.success {
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+}
+
+.info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
+/* CSS for styling the popup message */
 
 .wrapper {
     padding: 0 2rem 0 2rem;
@@ -351,7 +367,10 @@ ul.items {
 }
 
 .logo-img {
-    width: 180px;
+    margin-top: 3vh;
+        margin-left: 18px;
+        height: auto;
+        width: 150px;
 }
 
 .nav-links {

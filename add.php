@@ -10,10 +10,9 @@ if(isset($_POST['submit'])){
     $gender = $_POST['gender'];
 
     $sql = "INSERT INTO `employee_list`(`first_name`, `last_name`,
-    `gender`)VALUES ('$fname','$lname','$gender')";
+    `contact_information`)VALUES ('$fname','$lname','$gender')";
 
     $con->query($sql) or die ($con->error);
-
     echo header("Location: index.php");
 
 }

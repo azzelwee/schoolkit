@@ -8,12 +8,14 @@ if(isset($_POST['submit'])){
     $fname = $_POST['firstname'];
     $lname = $_POST['lastname'];
     $email = $_POST['email'];
-    // $addrs = $_POST['address'];
-    $dprtment = $_POST['department'];
+    $department = $_POST['department'];
    
 
-    $sql = "INSERT INTO `employee_list`(`first_name`, `last_name`, `contact_information`, `department`)VALUES ('$fname','$lname', $email,'$dprtment')";
+    $sql = "INSERT INTO `employee_list`(`first_name`, `last_name`, 
+    `contact_information`, `department`)VALUES ('$fname','$lname', $email,'$department')";
+
     $con->query($sql) or die ($con->error);
+    
     echo header("Location: employee.php");
 
 }

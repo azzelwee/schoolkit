@@ -4,11 +4,16 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-if(isset($_SESSION['UserLogin'])){
-    echo "<div class='message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
+// Check if the user is logged in
+if(isset($_SESSION['UserLogin'])) {
+    $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
 } else {
-    echo "<div class='message info'>Welcome Guest</div>";
+    $message = "<div class='popup-message info'>Welcome Guest</div>";
 }
+
+echo $message;
+
+// End of checking
 
 include_once("connections/connection.php");
 $con = connection();
@@ -53,20 +58,26 @@ $row = $employee->fetch_assoc();
     <div class="header">
         <div class="side-nav">
             <a href="#"class="logo">
-                <img src="img/nbshorizontal.png" class="logo-img">
+                <img src="img/nbswhite.png" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
                 <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
                 <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>
-                <li><a href="login.php"><img src="img/out.png"><p>Logout</p></a></li>
+                <?php if(isset($_SESSION['UserLogin'])){?>
+                    <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
+                    <?php } else {?>
+
+                    <li><a href="login.php"><img src="img/out.png"><p>Login</p></a></li>
+                <?php } ?>
 
                 <div class="active">
                 </div>
             </ul>
 
-        </div>
+    </div>
+
 
     <div class="right-container">
         
@@ -78,7 +89,7 @@ $row = $employee->fetch_assoc();
         </div>
         </form>
 
-        <a href="add2.php">Add New</a>
+        <!-- <a href="add2.php">Add New</a> -->
         
         
         <table>
@@ -100,7 +111,7 @@ $row = $employee->fetch_assoc();
             <td><?php echo $row['first_name']; ?></td>
             <td><?php echo $row['last_name']; ?></td>
             <td><?php echo $row['contact_information']; ?></td>
-            <td><?php echo $row['added_at']; ?></td>
+            <td><?php echo $row['department']; ?></td>
             <!-- <td><?php echo $row['department']; ?></td> -->
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
