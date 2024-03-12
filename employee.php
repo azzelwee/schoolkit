@@ -101,7 +101,7 @@ $row = $employee->fetch_assoc();
             <td><?php echo $row['last_name']; ?></td>
             <td><?php echo $row['contact_information']; ?></td>
             <td><?php echo $row['added_at']; ?></td>
-            <!-- <td><?php echo $row['gender']; ?></td> -->
+            <!-- <td><?php echo $row['department']; ?></td> -->
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
 

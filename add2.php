@@ -7,14 +7,14 @@ if(isset($_POST['submit'])){
 
     $fname = $_POST['firstname'];
     $lname = $_POST['lastname'];
-    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    // $addrs = $_POST['address'];
+    $dprtment = $_POST['department'];
+   
 
-    $sql = "INSERT INTO `employee_list`(`first_name`, `last_name`,
-    `gender`)VALUES ('$fname','$lname','$gender')";
-
+    $sql = "INSERT INTO `employee_list`(`first_name`, `last_name`, `contact_information`, `department`)VALUES ('$fname','$lname', $email,'$dprtment')";
     $con->query($sql) or die ($con->error);
-
-    echo header("Location: index.php");
+    echo header("Location: employee.php");
 
 }
 
@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
         </div>
 
     <div class="right-container">
-        <h2>Dashboard</h2></br>
+        <h2>Add New Employee</h2></br>
 
         <div class="form-container">
 
@@ -61,11 +61,17 @@ if(isset($_POST['submit'])){
             <label>Last Name</label>
             <input type="text" name="lastname" id="lastname" required placeholder="Enter First Name">
 
-            <label>Gender</label>
-            <select name="gender" id="gender" required>
-                <option value="">--select gender--</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+            <label>Email</label>
+            <input type="text" name="email" id="email" required placeholder="Enter Email">
+
+            <label>Department</label>
+            <select name="department" id="department" required>
+                <option value="">--select department--</option>
+                <option value="BS Accountancy">BS Accountancy</option>
+                <option value="BS Accounting Information System">BS Accounting Information System</option>
+                <option value="BS Computer Science">BS Computer Science</option>
+                <option value="BS Tourism Management">BS Tourism Management</option>
+                <option value="BS Entrepreneurship">BS Entrepreneurship</option>
             </select>
 
             <input type="submit" name="submit" value="Submit Form">
