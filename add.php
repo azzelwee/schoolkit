@@ -5,15 +5,14 @@ $con = connection();
 
 if(isset($_POST['submit'])){
 
-    $fname = $_POST['firstname'];
-    $lname = $_POST['lastname'];
-    $gender = $_POST['gender'];
+    $fname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $dprtment = $_POST['departments'];
 
-    $sql = "INSERT INTO `employee_list`(`first_name`, `last_name`,
-    `contact_information`)VALUES ('$fname','$lname','$gender')";
+    $sql = "INSERT INTO `employee_list`(`full_name`, `contact_information`, `department`)VALUES ('$fname','$email','$dprtment')";
 
     $con->query($sql) or die ($con->error);
-    echo header("Location: index.php");
+    echo header("Location: employee.php");
 
 }
 
@@ -23,7 +22,7 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Management System</title>
+    <title>Employee Add</title>
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -34,17 +33,21 @@ if(isset($_POST['submit'])){
         <form action="" method="post">
 
             <label>First Name</label>
-            <input type="text" name="firstname" id="firstname" required placeholder="Enter First Name">
+            <input type="text" name="fullname" id="fullname" required placeholder="Enter Full Name">
 
-            <label>Last Name</label>
-            <input type="text" name="lastname" id="lastname" required placeholder="Enter First Name">
+            <label>Email</label>
+            <input type="text" name="email" id="email" required placeholder="Enter Email">
 
-            <label>Gender</label>
-            <select name="gender" id="gender" required>
-                <option value="">--select gender--</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
+            <label>Department</label>
+            <input type="text" name="departments" id="departments" required placeholder="Enter Department">
+
+
+            <!-- <label>Department</label>
+            <select name="department" id="department" required>
+                <option value="">--select department--</option>
+                <option value="test1">test1</option>
+                <option value="test2">test2</option>
+            </select> -->
 
             <input type="submit" name="submit" value="Submit Form">
 

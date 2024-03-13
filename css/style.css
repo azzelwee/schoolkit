@@ -214,16 +214,14 @@ tr:nth-child(even) {
 }
 
 .button-container {
-    margin: 0;
-    float: right;
-    padding: 1rem 0 2rem 0;
+    float: left;
+        margin-top: 15px;
 
 }
 
 .button-container a {
-    float: right;
-    border: 1px solid rgb(2, 94, 139);
-    background: rgb(2, 110, 165);
+    background: #d52033;
+        border-radius: 6px;
     padding: 8px 10px 8px 10px;
     color: white;
     text-decoration: none;
@@ -231,7 +229,7 @@ tr:nth-child(even) {
 }
 
 .button-container a:hover {
-    background: rgb(6, 77, 112);
+    background: #8e1522;
 }
 
 .button-small {
@@ -247,17 +245,17 @@ tr:nth-child(even) {
     background: #8e1622;
 }
 .button-danger {
-    float: left;
-    background: rgb(201, 0, 0);
-    padding: 11px;
+    background: #d52033;
+        padding: 8px;
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
     border: none;
+    border-radius: 6px;
 }
 
 .button-danger:hover {
-    background: rgb(236, 0, 0);
+    background: #8e1622;
 }
 
 /* add form */
@@ -269,8 +267,8 @@ tr:nth-child(even) {
 .form-container input,
 .form-container select {
     display: block;
-    font-size: 22px;
-    width: 100%;
+    font-size: 18px;
+        width: 50%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -279,15 +277,15 @@ tr:nth-child(even) {
 }
 
 .form-container label {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .form-container input[type="submit"] {
-    width: 100%;
-    letter-spacing: 6px;
+    width: 50%;
+        letter-spacing: 2px;
     border-radius: 4px;
     margin-top: 2rem;
-    font-size: 32px;
+    font-size: 22px;
     padding: 1rem;
     background-color: rgb(215, 0, 0);
     border: none;

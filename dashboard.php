@@ -6,14 +6,19 @@ if(!isset($_SESSION)){
 
 // Check if the user is logged in
 if(isset($_SESSION['UserLogin'])) {
-    $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
+    // Check if the popup has already been displayed (via cookie)
+    if(!isset($_COOKIE['popup_displayed'])) {
+        // Set a cookie to indicate that the popup has been displayed
+        setcookie('popup_displayed', '1', time() + (86400 * 30), "/"); // Cookie valid for 30 days
+        // Display the popup message
+        $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
+    } else {
+        // Popup already displayed, don't show it again
+        $message = "";
+    }
 } else {
     $message = "<div class='popup-message info'>Welcome Guest</div>";
 }
-
-echo $message;
-
-// End of checking
 
 include_once("connections/connection.php");
 $con = connection();
@@ -25,7 +30,7 @@ $con = connection();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard 2</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

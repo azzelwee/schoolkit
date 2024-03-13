@@ -4,16 +4,17 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-// Check if the user is logged in
+// Checking if the user is logged in
 if(isset($_SESSION['UserLogin'])) {
-    $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
+    if(!isset($_COOKIE['popup_displayed'])) {
+        setcookie('popup_displayed', '1', time() + (86400 * 30), "/");
+        $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
+    } else {
+        $message = "";
+    }
 } else {
     $message = "<div class='popup-message info'>Welcome Guest</div>";
 }
-
-echo $message;
-
-// End of checking
 
 include_once("connections/connection.php");
 $con = connection();
@@ -42,7 +43,7 @@ $row = $employee->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard 2</title>
+    <title>Employee List</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
     <?php
@@ -89,18 +90,18 @@ $row = $employee->fetch_assoc();
         </div>
         </form>
 
-        <!-- <a href="add2.php">Add New</a> -->
+        <div class="button-container">
+            <a href="add2.php">Add New</a>
         
+        </div>
         
         <table>
         <thead>
         <tr>
             <th></th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Full Name</th>
             <th>Email</th>
             <th>Department</th>
-            <!-- <th>Gender</th> -->
         </tr>
         </thead>
         <tbody>
@@ -108,11 +109,9 @@ $row = $employee->fetch_assoc();
         <tr>
             <td width="30"><a href="details.php?ID=<?php echo $row['id'];?>"
             class="button-small">view</a></td>
-            <td><?php echo $row['first_name']; ?></td>
-            <td><?php echo $row['last_name']; ?></td>
+            <td><?php echo $row['full_name']; ?></td>
             <td><?php echo $row['contact_information']; ?></td>
             <td><?php echo $row['department']; ?></td>
-            <!-- <td><?php echo $row['department']; ?></td> -->
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
 
@@ -120,8 +119,8 @@ $row = $employee->fetch_assoc();
         </tbody>
     </table>
 
+<!-- pagination -->
     <div class="page-info">
-
         <?php
             if(!isset($_GET['page-nr'])){
                 $page = 1;
@@ -178,11 +177,9 @@ $row = $employee->fetch_assoc();
         ?>
         <a class="aa" href="?page-nr=<?php echo $pages ?>">Last</a>
 
+        </div>
     </div>
-        
-    
-    </div>
-    
+    <!-- end of pagination -->
 </body>
 <script src= js/main.js></script>
 </html>

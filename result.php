@@ -1,14 +1,14 @@
 <?php
 
-if(!isset($_SESSION)){
-    session_start();
-}
+// if(!isset($_SESSION)){
+//     session_start();
+// }
 
-if(isset($_SESSION['UserLogin'])){
-    echo "Welcome " .$_SESSION['UserLogin'];
-} else {
-    echo "Welcome Guest";
-}
+// if(isset($_SESSION['UserLogin'])){
+//     echo "Welcome " .$_SESSION['UserLogin'];
+// } else {
+//     echo "Welcome Guest";
+// }
 
 
 include_once("connections/connection.php");
@@ -16,7 +16,7 @@ include_once("connections/connection.php");
 $con = connection();
 $search = $_GET['search'];
 
-$sql = "SELECT * FROM employee_list WHERE first_name LIKE '%$search%' || last_name LIKE '%$search%' ORDER BY id DESC";
+$sql = "SELECT * FROM employee_list WHERE full_name LIKE '%$search%' ORDER BY id DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
@@ -27,45 +27,72 @@ $row = $employee->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Management System</title>
+    <title>Results</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-    <h1>Employee Management System</h1>
-    <br>
-    <br>
+    <div class="header">
+        <div class="side-nav">
+            <a href="#"class="logo">
+                <img src="img/nbswhite.png" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
+                <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
+                <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
+                <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>
+                <?php if(isset($_SESSION['UserLogin'])){?>
+                    <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
+                    <?php } else {?>
 
-    <form action="result.php" method="get">
-    <input type="text" name="search" id="search">
-        <button type="submit">search</button>
-    </form>
+                    <li><a href="login.php"><img src="img/out.png"><p>Login</p></a></li>
+                <?php } ?>
 
-    <?php if(isset($_SESSION['UserLogin'])){?>
-    <a href="logout.php">Logout</a>
-    <?php } else {?>
+                <div class="active">
+                </div>
+            </ul>
 
-    <a href="login.php">Login</a>
-    <?php } ?>
-    
-    <a href="add.php">Add New</a>
+    </div>
+
+
+    <div class="right-container">
+        
+        <h2>Search Results</h2></br>
+        <form action="result.php" method="get">
+        <div class="search">
+            <img src="img/search.png" class="search-icon">
+            <input class="search-input" name="search" placeholder="Search">
+        </div>
+        </form>
+
+        <div class="button-container">
+            <a href="add2.php">Add New</a>
+        </div>
+
     <table>
         <thead>
         <tr>
             <th></th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Department</th>
         </tr>
         </thead>
         <tbody>
         <?php do{ ?>
         <tr>
-            <td><a href="details.php?ID=<?php echo $row['id'];?>">view</a></td>
-            <td><?php echo $row['first_name']; ?></td>
-            <td><?php echo $row['last_name']; ?></td>
+            <td><a href="details.php?ID=<?php echo $row['id'];?>"
+            class="button-small">view</a></td>
+            <td><?php echo $row['full_name']; ?></td>
+            <td><?php echo $row['contact_information']; ?></td>
+            <td><?php echo $row['department']; ?></td>
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
         </tbody>
     </table>
+
+    
+
+    
 </body>
 </html>
