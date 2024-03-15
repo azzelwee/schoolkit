@@ -67,9 +67,9 @@ $row = $employee->fetch_assoc();
         
     <form action="delete.php" method="post">
         <div class="button-container">
-            <a href="edit.php?ID=<?php echo $row['id'];?>">Edit</a>
+            
             <?php if($_SESSION['Access'] == "administrator"){?>
-                
+            <a href="edit.php?ID=<?php echo $row['id'];?>">Edit</a>
             <button type="submit" name="delete" class="button-danger">Delete</button>
             <?php } ?>
 

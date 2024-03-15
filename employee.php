@@ -5,16 +5,18 @@ if(!isset($_SESSION)){
 }
 
 // Checking if the user is logged in
-if(isset($_SESSION['UserLogin'])) {
-    if(!isset($_COOKIE['popup_displayed'])) {
-        setcookie('popup_displayed', '1', time() + (86400 * 30), "/");
-        $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
-    } else {
-        $message = "";
-    }
-} else {
-    $message = "<div class='popup-message info'>Welcome Guest</div>";
-}
+// if(isset($_SESSION['UserLogin'])) {
+//     if(!isset($_COOKIE['popup_displayed'])) {
+//         setcookie('popup_displayed', '1', time() + (86400 * 30), "/");
+//         $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
+//     } else {
+//         $message = "";
+//     }
+// } else {
+//     $message = "<div class='popup-message info'>Welcome Guest</div>";
+// }
+
+$is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
 
 include_once("connections/connection.php");
 $con = connection();
@@ -64,7 +66,11 @@ $row = $employee->fetch_assoc();
             <ul class="nav-links">
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
                 <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
+
+                <?php if ($is_admin): ?>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
+                <?php endif; ?>
+                
                 <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>
                 <?php if(isset($_SESSION['UserLogin'])){?>
                     <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
@@ -79,6 +85,7 @@ $row = $employee->fetch_assoc();
 
     </div>
 
+    <?php if ($is_admin): ?>
 
     <div class="right-container">
         
@@ -184,7 +191,7 @@ $row = $employee->fetch_assoc();
 
     </div>
     <!-- end of pagination -->
-
+    <?php endif; ?>
 </body>
 <script src= js/main.js></script>
 </html>

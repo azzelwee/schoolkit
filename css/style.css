@@ -456,8 +456,6 @@ ul.items {
 
 .container-container1 {
     text-decoration: none;
-    background-color: white;
-    border: 1px solid grey;
     border-radius: 8px;
     height: 220px;
     width: 350px;
@@ -472,23 +470,59 @@ ul.items {
 }
 
 .employed {
-    color: #c71224;
-    font-size: 44px;
+    top: 120px;
+        left: 330px;
+        position: absolute;
+        color: white;
+        font-size: 90px;
+        z-index: 1;
+        /* Ensure text is on top of the image */
 
 }
+
 
 .container-container1 img {
     display: block;
-    width: 100%;
-    /* Ensure image fills container */
-    height: auto;
+    border-radius: 8px;
+        height: 220px;
+        width: 350px;
+}
+
+.employed-text {
+    margin-left: 3px;
+    font-size: 20px;
+    letter-spacing: 2px;
 }
 
 
-
-.container-container1:hover {
-    background-color: #f0f0f0;
+.container-container1:hover img {
+    opacity: 0.9;
 }
 .container:hover {
     background-color: #f0f0f0;
+}
+.container-container2 {
+    text-decoration: none;
+    border-radius: 8px;
+    height: 220px;
+    width: 350px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    /* Add flex display */
+    justify-content: center;
+    /* Align content horizontally to center */
+    align-items: center;
+    /* Align content vertically to center */
+}
+
+.container-container2 img {
+    display: block;
+    border-radius: 8px;
+    height: 220px;
+    width: 350px;
+}
+
+.container-container2:hover img {
+    opacity: 0.9;
 }
