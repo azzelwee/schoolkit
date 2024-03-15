@@ -2,8 +2,10 @@
 
 if(!isset($_SESSION)){
     session_start();
+    
 }
-
+$nr_of_rows = $_SESSION['nr_of_rows']; 
+$dynamicText = $nr_of_rows;
 // Check if the user is logged in
 if(isset($_SESSION['UserLogin'])) {
     // Check if the popup has already been displayed (via cookie)
@@ -22,6 +24,8 @@ if(isset($_SESSION['UserLogin'])) {
 
 include_once("connections/connection.php");
 $con = connection();
+
+$dynamicText = $nr_of_rows;
 
 ?>
 
@@ -61,8 +65,11 @@ $con = connection();
     <div class="right-container">
         <h2>Dashboard</h2></br>
         <div class="container-list">
-        <a href="teachers.php" class="container container1">
-
+        <a href="employee.php" class="container-container1">
+            <img src="img/NBSDashboard.png">
+        <?php
+            echo "<span class='employed'>$dynamicText</span>";
+        ?>
         </a>
 
         <a href="#" class="container container2">
@@ -78,10 +85,7 @@ $con = connection();
         </a>
 
     </div>
-    
     </div>
-
-
     </div>
     
 </body>

@@ -454,6 +454,41 @@ ul.items {
     cursor: pointer;
 }
 
+.container-container1 {
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 8px;
+    height: 220px;
+    width: 350px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    /* Add flex display */
+    justify-content: center;
+    /* Align content horizontally to center */
+    align-items: center;
+    /* Align content vertically to center */
+}
+
+.employed {
+    color: #c71224;
+    font-size: 44px;
+
+}
+
+.container-container1 img {
+    display: block;
+    width: 100%;
+    /* Ensure image fills container */
+    height: auto;
+}
+
+
+
+.container-container1:hover {
+    background-color: #f0f0f0;
+}
 .container:hover {
     background-color: #f0f0f0;
 }

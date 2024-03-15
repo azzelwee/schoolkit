@@ -174,12 +174,17 @@ $row = $employee->fetch_assoc();
             <?php
         }
             }
+
+        $_SESSION['nr_of_rows'] = $nr_of_rows;
         ?>
         <a class="aa" href="?page-nr=<?php echo $pages ?>">Last</a>
 
         </div>
+    
+
     </div>
     <!-- end of pagination -->
+
 </body>
 <script src= js/main.js></script>
 </html>
