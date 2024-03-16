@@ -16,7 +16,15 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO `employee_list`(`full_name`, `contact_information`, `department`)VALUES ('$fname','$email','$dprtment')";
 
     $con->query($sql) or die ($con->error);
-    echo header("Location: employee.php");
+    // $query_run = mysqli_query($con, $query)
+    // echo header("Location: employee.php");
+
+    if($con){
+        $_SESSION['status'] = "Data Added Successfully";
+        header('Location: employee.php');
+    } else{
+        echo "Something went wrong";
+    }
 
 }
 

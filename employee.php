@@ -87,8 +87,25 @@ $row = $employee->fetch_assoc();
 
     <?php if ($is_admin): ?>
 
-    <div class="right-container">
         
+
+    <div class="right-container">
+
+    <?php
+        if(isset($_SESSION['status'])){
+    ?>
+        <div class="status">
+            <?php echo $_SESSION['status']; ?>
+            <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+    <?php
+        unset($_SESSION['status']);
+    }
+    ?>
+    <div class="status">
+asdasd
+
+    </div>
         <h2>Employee List</h2></br>
         <form action="result.php" method="get">
         <div class="search">
@@ -99,8 +116,9 @@ $row = $employee->fetch_assoc();
 
         <div class="button-container">
             <a href="add2.php">Add New</a>
-        
         </div>
+
+        
         
         <table>
         <thead>
@@ -139,7 +157,7 @@ $row = $employee->fetch_assoc();
     </div>
 
     <div class="pagination">
-        <a class="aa" href="?page-nr=1">First</a>
+        <!-- <a class="aa" href="?page-nr=1">First</a> -->
 
         <?php
             if(isset($_GET['page-nr']) && $_GET['page-nr'] > 1){
@@ -184,7 +202,7 @@ $row = $employee->fetch_assoc();
 
         $_SESSION['nr_of_rows'] = $nr_of_rows;
         ?>
-        <a class="aa" href="?page-nr=<?php echo $pages ?>">Last</a>
+        <!-- <a class="aa" href="?page-nr=<?php echo $pages ?>">Last</a> -->
 
         </div>
     
