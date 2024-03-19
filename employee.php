@@ -4,17 +4,6 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-// Checking if the user is logged in
-// if(isset($_SESSION['UserLogin'])) {
-//     if(!isset($_COOKIE['popup_displayed'])) {
-//         setcookie('popup_displayed', '1', time() + (86400 * 30), "/");
-//         $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
-//     } else {
-//         $message = "";
-//     }
-// } else {
-//     $message = "<div class='popup-message info'>Welcome Guest</div>";
-// }
 
 $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
 
@@ -97,16 +86,40 @@ $row = $employee->fetch_assoc();
             <img src="img/search.png" class="search-icon">
             <input class="search-input" name="search" placeholder="Search">
         </div>
+
         <?php
-        if(isset($_SESSION['status'])){
-        ?>
-        <div class="status">
-            <?php echo $_SESSION['status']; ?>
-            <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-        </div>
-        <?php
-            unset($_SESSION['status']);
+            if(isset($_SESSION['status-add'])){
+            ?>
+            <div class="status-add" id="statusPopup">
+                <?php echo $_SESSION['status-add']; ?>
+                <span class="close-btn" onclick="closePopup();">&times;</span>
+            </div>
+            <?php
+            unset($_SESSION['status-add']);
         }?>
+
+        <?php
+            if(isset($_SESSION['status-delete'])){
+            ?>
+            <div class="status-delete" id="statusPopup">
+                <?php echo $_SESSION['status-delete']; ?>
+                <span class="close-btn" onclick="closePopup();">&times;</span>
+            </div>
+            <?php
+            unset($_SESSION['status-delete']);
+        }?>     
+
+        <?php
+            if(isset($_SESSION['status-edit'])){
+            ?>
+            <div class="status-edit" id="statusPopup">
+                <?php echo $_SESSION['status-edit']; ?>
+                <span class="close-btn" onclick="closePopup();">&times;</span>
+            </div>
+            <?php
+            unset($_SESSION['status-edit']);
+        }?>
+        
         </form>
 
         <div class="button-container">

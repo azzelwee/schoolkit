@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION)){
+    session_start();
+}
+
 include_once("connections/connection.php");
 $con = connection();
 

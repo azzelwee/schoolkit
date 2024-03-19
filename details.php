@@ -88,7 +88,7 @@ $row = $employee->fetch_assoc();
 
     <?php echo $row['contact_information'];?> </h2>
             </br>
-    <p>Department:<?php echo $row['department'];?> </p>
+    <p>Department: <?php echo $row['department'];?> </p>
     </div>
 
 </body>

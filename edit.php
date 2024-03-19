@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION)){
+    session_start();
+}
+
 include_once("connections/connection.php");
 
 $con = connection();
@@ -19,6 +23,13 @@ if(isset($_POST['submit'])){
 
     $con->query($sql) or die ($con->error);
     echo header("Location: employee.php");
+
+    if($con){
+        $_SESSION['status-edit'] = "Data Edited Successfully";
+        header('Location: employee.php');
+    } else{
+        echo "Something went wrong";
+    }
 
 }
 

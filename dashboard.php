@@ -2,8 +2,8 @@
 
 if(!isset($_SESSION)){
     session_start();
-    
 }
+
 $nr_of_rows = $_SESSION['nr_of_rows']; 
 $nr_of_employee = $nr_of_rows;
 
