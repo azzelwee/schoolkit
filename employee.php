@@ -91,37 +91,32 @@ $row = $employee->fetch_assoc();
 
     <div class="right-container">
 
-    <?php
-        if(isset($_SESSION['status'])){
-    ?>
-        <div class="status">
-            <?php echo $_SESSION['status']; ?>
-            <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-        </div>
-    <?php
-        unset($_SESSION['status']);
-    }
-    ?>
-    <div class="status">
-asdasd
-
-    </div>
         <h2>Employee List</h2></br>
         <form action="result.php" method="get">
         <div class="search">
             <img src="img/search.png" class="search-icon">
             <input class="search-input" name="search" placeholder="Search">
         </div>
+        <?php
+        if(isset($_SESSION['status'])){
+        ?>
+        <div class="status">
+            <?php echo $_SESSION['status']; ?>
+            <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+        <?php
+            unset($_SESSION['status']);
+        }?>
         </form>
 
         <div class="button-container">
             <a href="add2.php">Add New</a>
+            
         </div>
-
-        
         
         <table>
         <thead>
+     
         <tr>
             <th></th>
             <th>Full Name</th>

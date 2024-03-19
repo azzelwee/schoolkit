@@ -186,24 +186,21 @@ tr:nth-child(even) {
     display: inline-block;
 }
 .status {
-    float: left;
-    padding: 20px;
+    margin-top: 8px;
+        padding: 12px;
     background-color: #4CAF50;
     color: white;
     width: 50%;
-    /* Set the width as per your preference */
-    /* Center the alert box horizontally */
     text-align: center;
     border-radius: 5px;
     position: relative;
-    /* Add position relative for positioning close button */
 }
 
 .close-btn {
     text-align: left;
     font-size: 30px;
     position: absolute;
-    top: 5px;
+    top: 4px;
     right: 10px;
     color: white;
     cursor: pointer;
@@ -391,7 +388,7 @@ ul.items {
     margin-top: 3vh;
         margin-left: 18px;
         height: auto;
-        width: 150px;
+        width: auto;
 }
 
 .nav-links {
