@@ -16,6 +16,8 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO `employee_list`(`full_name`, `contact_information`, `department`)VALUES ('$fname','$email','$dprtment')";
 
     $con->query($sql) or die ($con->error);
+    // $query_run = mysqli_query($con, $query)
+    // echo header("Location: employee.php");
 
     if($con){
         $_SESSION['status-add'] = "Data Added Successfully";
@@ -84,9 +86,6 @@ if(isset($_POST['submit'])){
                 <label>Department</label>
                 <input type="text" name="departments" id="departments" required placeholder="Enter Department">
 
-                <label>Picture 1x1</label>
-                <input type="file" id="fileInput" name="fileInput">
-
                 <!-- <label>Department</label>
                 <select name="department" id="department" required>
                     <option value="">--select department--</option>
@@ -94,7 +93,7 @@ if(isset($_POST['submit'])){
                     <option value="test2">test2</option>
                 </select> -->
 
-                <input type="button" id="uploadButton" value="Upload" onclick="uploadFile()">
+                
                 <input type="submit" name="submit" value="Submit Form">
 
             </form>
