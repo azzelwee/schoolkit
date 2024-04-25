@@ -48,13 +48,13 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
             </a>
             <ul class="nav-links">
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
-                <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
+                <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
                
                 <?php if ($is_admin): ?>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
                 <?php endif; ?>
                 
-                <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>
+                <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
                 <?php if(isset($_SESSION['UserLogin'])){?>
                     <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
                     <?php } else {?>
@@ -70,7 +70,7 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
     <div class="right-container">
         <h2>Dashboard</h2></br>
-        <img src="img/nbsbg.png">
+        <img src="img/nbsbg.png" class="school">
         <!-- <div class="container-list">
         <a href="employee.php" class="container-container1"> -->
             

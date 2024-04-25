@@ -28,7 +28,6 @@ $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,20 +46,20 @@ $row = $employee->fetch_assoc();
     ?>
 <body id="<?php echo $id ?>">
 
-    <div class="header">
+<div class="header">
         <div class="side-nav">
             <a href="#"class="logo">
                 <img src="img/nbswhite.png" class="logo-img">
             </a>
             <ul class="nav-links">
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
-                <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
-
+                <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
+               
                 <?php if ($is_admin): ?>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
                 <?php endif; ?>
                 
-                <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>
+                <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
                 <?php if(isset($_SESSION['UserLogin'])){?>
                     <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
                     <?php } else {?>
@@ -74,150 +73,177 @@ $row = $employee->fetch_assoc();
 
     </div>
 
-    <?php if ($is_admin): ?>
-
-        
-
-    <div class="right-container">
-
-        <h2>Employee List</h2></br>
-        <form action="result.php" method="get">
-        <div class="search">
-            <img src="img/search.png" class="search-icon">
-            <input class="search-input" name="search" placeholder="Search">
-        </div>
-
-        <?php
-            if(isset($_SESSION['status-add'])){
-            ?>
-            <div class="status-add" id="statusPopup">
-                <?php echo $_SESSION['status-add']; ?>
-                <span class="close-btn" onclick="closePopup();">&times;</span>
+    <div class="right-container-add">
+    <h2>Add Employee</h2></br>
+        <!-- <form action="result.php" method="get">
+            <div class="search">
+                <img src="img/search.png" class="search-icon">
+                <input class="search-input" name="search" placeholder="Search">
             </div>
-            <?php
-            unset($_SESSION['status-add']);
-        }?>
+        </form> -->
 
-        <?php
-            if(isset($_SESSION['status-delete'])){
-            ?>
-            <div class="status-delete" id="statusPopup">
-                <?php echo $_SESSION['status-delete']; ?>
-                <span class="close-btn" onclick="closePopup();">&times;</span>
-            </div>
-            <?php
-            unset($_SESSION['status-delete']);
-        }?>     
 
-        <?php
-            if(isset($_SESSION['status-edit'])){
-            ?>
-            <div class="status-edit" id="statusPopup">
-                <?php echo $_SESSION['status-edit']; ?>
-                <span class="close-btn" onclick="closePopup();">&times;</span>
-            </div>
-            <?php
-            unset($_SESSION['status-edit']);
-        }?>
-        
-        </form>
+        <div class="form-employee">
+        <form action="" method="post">
 
-        <div class="button-container">
-            <a href="add2.php">Add New</a>
+
+        <div id="section1">
+        <h2>Basic Information</h2>
+        </br>
+            <label>Last Name</label>
+            <input type="text" required placeholder="Enter Last Name">
+
+            <label>First Name</label>
+            <input type="text" required placeholder="Enter First Name">
+
+            <label>Middle Name</label>
+            <input type="text" required placeholder="Enter Middle Name">
+
+            <label>Nickname</label>
+            <input type="text"  required placeholder="Enter Nickname">
+            </br>
+            <label>Gender</label>
+            <select required>
+                <option value="">-- select gender --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label>Birthdate</label>
+            <input type="text" required placeholder="MM-DD-YY">
+
+            <label>Place of Birth</label>
+            <input type="text" required placeholder="Enter Place of Birth">
+
+
+            <label>Age</label>
+            <input type="text" id="small" required placeholder="Enter Age">
+            </br>
+
+            <label>Religion</label>
+            <input type="text" required placeholder="Enter Religion">
+
+            <label>Civil Status</label>
+            <select required>
+                <option value="">-- select civil status --</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Separated">Separated</option>
+            </select>
+
+            <label>Citizenship</label>
+            <input type="text" required placeholder="Enter Citizenship">
+
+
+                    </br>
+            <label>Height(cm)</label>
+            <input type="text" id="small">
+
+            <label>Weight(lbs.)</label>
+            <input type="text" id="small">
+            </br>
+            </br>
+
+            <h2>Contact Information</h2>
+                    </br>
+            <label>No/St/Town</label>
+            <input type="text" id="small">
+
+            <label>City</label>
+            <input type="text">
+
+            <label>Country</label>
+            <input type="text">
+
+            <label>Zip Code</label>
+            <input type="text">
             
-        </div>
-        
-        <table>
-        <thead>
-     
-        <tr>
-            <th></th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Department</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php do{ ?>
-        <tr>
-            <td width="30"><a href="details.php?ID=<?php echo $row['id'];?>"
-            class="button-small">view</a></td>
-            <td><?php echo $row['full_name']; ?></td>
-            <td><?php echo $row['contact_information']; ?></td>
-            <td><?php echo $row['department']; ?></td>
-        </tr>
-        <?php }while($row = $employee->fetch_assoc()); ?>
+            <label>Country</label>
+            <input type="text">
 
-        
-        </tbody>
-    </table>
+            </br>
 
-<!-- pagination -->
-    <div class="page-info">
-        <?php
-            if(!isset($_GET['page-nr'])){
-                $page = 1;
-            }else{
-                $page = $_GET['page-nr'];
-            }
-        ?>
-        Showing <?php echo $page ?> of <?php echo $pages ?> pages
-    </div>
+            <label>Mobile Number</label>
+            <input type="text" required placeholder="Enter Mobile Number">
 
-    <div class="pagination">
-        <!-- <a class="aa" href="?page-nr=1">First</a> -->
+            <label>Telephone Number</label>
+            <input type="text" required placeholder="Enter Telephone Number">
 
-        <?php
-            if(isset($_GET['page-nr']) && $_GET['page-nr'] > 1){
-                ?>
-                <a class="aa" href="?page-nr=<?php echo $_GET['page-nr']-1?> ">Previous</a>
-                <?php
-            }else {
-                ?>
-                    <a class="aa">Previous</a>
-                <?php
-            }
-        ?>
-
-
-        <div class="page-numbers">
-            <?php
-                for($counter = 1; $counter <= $pages; $counter ++){
-            ?>
-                <a class="aa" href="?page-nr=<?php echo $counter ?>"><?php echo $counter ?></a>
-                <?php
-                }
-
-            ?>
+            <label>Email</label>
+            <input type="text" required placeholder="Enter Email">
+                    </br>
+            <button type="button" onclick="nextSection('section1', 'section2')">Next</button>
         </div>
 
-    <?php
-        if(!isset($_GET['page-nr'])){
-            ?>
-            <a class="aa" href="?page-nr=2">Next</a>
-            <?php
-        } else {
-            if($_GET['page-nr'] >= $pages){
-                ?>
-                <a class="aa">Next</a>
-                <?php
-            }else {
-            ?>
-                <a class="aa" href="?page-nr=<?php echo $_GET['page-nr'] +1 ?>">Next</a>
-            <?php
-        }
-            }
+        <div id="section2" style="display: none;">
+            <h2>Employee Information</h2>
+            </br>
+            <label for="photos">Picture 2x2:</label>
+            <input type="file" id="photos" multiple>
+            </br>
+            <label>SSS ID</label>
+            <input type="text" >
+            
+            <label>Tin ID</label>
+            <input type="text">
+            
+            <label>PAGIBIG ID</label>
+            <input type="text">
 
-        $_SESSION['nr_of_rows'] = $nr_of_rows;
-        ?>
-        <!-- <a class="aa" href="?page-nr=<?php echo $pages ?>">Last</a> -->
+            <label>PhilHealth ID</label>
+            <input type="text">
 
-        </div>
-    
+            </br>
+            <label>Employee Status</label>
+            <select>
+                <option value="">-- status --</option>
+                <option value="Pending">Pending</option>
+                <option value="Hired">Hired</option>
+            </select>
 
-    </div>
-    <!-- end of pagination -->
-    <?php endif; ?>
-</body>
+            <label>Date Hired</label>
+            <input type="text" placeholder="MM-DD-YY">
+            </br>
+            </br>
+            <h2>Employment History</h2>
+            </br>
+
+            <label>Company Name</label>
+            <input type="text">
+
+            <label>Nature of Business</label>
+            <input type="text">
+
+            <label>Company Address</label>
+            <input type="text">
+            </br>
+            <label>Branch Department</label>
+            <input type="text">
+
+            <label>Position</label>
+            <input type="text">
+
+            <label>Salary Rate</label>
+            <input type="text">
+            </br>
+            <label>Date Hired</label>
+            <input type="text">
+
+            <label>Date Separated</label>
+            <input type="text">
+            </br>
+            <label>Reason for Leaving</label>
+            <input type="text" id="wide">
+<br>
+
+            <input type="submit"></button>
+
+
+
+            </div>
+    </form>
+</div>
 <script src= js/main.js></script>
+
+</body>
 </html>

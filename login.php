@@ -65,10 +65,10 @@ if(isset($_POST['login'])){
 
         <button type="submit" name="login" id="btn">Login</button>
 
-        <div class="form-dashboard">
+        <!-- <div class="form-dashboard">
             <a href="dashboard.php">Go to Dashboard</a>
 
-        </div>
+        </div> -->
     </form>
 
     </div>
