@@ -357,11 +357,11 @@ tr:nth-child(even) {
 }
 
 .form-employee input[type="submit"] {
-    width: 30%;
+    width: 120px;
     letter-spacing: 2px;
     border-radius: 4px;
     margin-top: 2rem;
-    font-size: 22px;
+    font-size: 18px;
     padding: 1rem;
     background-color: rgb(215, 0, 0);
     border: none;
