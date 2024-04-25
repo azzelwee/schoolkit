@@ -70,22 +70,23 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
     <div class="right-container">
         <h2>Dashboard</h2></br>
-        <div class="container-list">
-        <a href="employee.php" class="container-container1">
-            <img src="img/NBSDashboard.png">
+        <img src="img/nbsbg.png">
+        <!-- <div class="container-list">
+        <a href="employee.php" class="container-container1"> -->
+            
 
-        <div class="employed">
+        <!-- <div class="employed">
             <?php
-                echo $nr_of_employee;
+                // echo $nr_of_employee;
             ?>
 
             <div class="employed-text">
             Employees
             </div>
 
-        </div>
+        </div> -->
         
-        </a>
+        <!-- </a>
 
         <a href="#" class="container-container2">
             <img src="img/NBSblue.png">
@@ -98,7 +99,7 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
         <a href="#" class="container container4">
 
-        </a>
+        </a> -->
 
     </div>
     </div>

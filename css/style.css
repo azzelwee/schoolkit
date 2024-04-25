@@ -481,6 +481,12 @@ ul.items {
     padding: 40px;
 }
 
+.right-container img {
+    height: 800px;
+    width: auto;
+}
+
+
 .container-list {
     display: flex;
 }
