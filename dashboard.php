@@ -4,8 +4,8 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$nr_of_rows = $_SESSION['nr_of_rows']; 
-$nr_of_employee = $nr_of_rows;
+// $nr_of_rows = $_SESSION['nr_of_rows']; 
+// $nr_of_employee = $nr_of_rows;
 
 // // Check if the user is logged in
 // if(isset($_SESSION['UserLogin'])) {
@@ -50,16 +50,16 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
                 <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
                
-                <?php if ($is_admin): ?>
+                <!-- <?php if ($is_admin): ?>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
-                <?php endif; ?>
+                <?php endif; ?> -->
                 
                 <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
                 <?php if(isset($_SESSION['UserLogin'])){?>
                     <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
                     <?php } else {?>
 
-                    <li><a href="login.php"><img src="img/out.png"><p>Login</p></a></li>
+                    <li><a href="index.php"><img src="img/out.png"><p>Login</p></a></li>
                 <?php } ?>
 
                 <div class="active">

@@ -49,11 +49,11 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
             <ul class="nav-links">
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
                 <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
-               
+<!--                
                 <?php if ($is_admin): ?>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
                 <?php endif; ?>
-                
+                 -->
                 <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
                 <?php if(isset($_SESSION['UserLogin'])){?>
                     <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
@@ -70,22 +70,30 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
     <div class="right-container">
         <h2>Maintenance</h2></br>
-        <img src="img/NBSDashboard.png">
-        <div class="container-list">
-        <a href="listEmployee.php" class="container-container1">
-            
+        <div class="container-lis2t">  
+            <a href="listEmployee.php">
+            <img src="img/NBSDashboard.png">
+                <div class="employed">
+                    <?php
+                        echo $nr_of_employee;
+                    ?>
+                    <div class="employed-text">
+                        Employees
+                    </div>
+                </div>
+                
+            </a>
 
-        <div class="employed">
-            <?php
-              echo $nr_of_employee;
-            ?>
-
-            <div class="employed-text">
-            Employees
-            </div>
-        </div>
-
-        </a>
+            <a href="">
+            <img src="img/NBSBlue.png">
+                <div class="users">
+                    <div class="user-text">
+                        Users
+                    </div>
+                </div>
+                
+            </a>
+        
 <!-- 
         <a href="#" class="container-container2">
             <img src="img/NBSblue.png">

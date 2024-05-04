@@ -56,9 +56,9 @@ $row = $employee->fetch_assoc();
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
                 <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
                
-                <?php if ($is_admin): ?>
+                <!-- <?php if ($is_admin): ?>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
-                <?php endif; ?>
+                <?php endif; ?> -->
                 
                 <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
                 <?php if(isset($_SESSION['UserLogin'])){?>

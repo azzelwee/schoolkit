@@ -55,10 +55,10 @@ $row = $employee->fetch_assoc();
             <ul class="nav-links">
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
                 <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
-               
+<!--                
                 <?php if ($is_admin): ?>
                 <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
-                <?php endif; ?>
+                <?php endif; ?> -->
                 
                 <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
                 <?php if(isset($_SESSION['UserLogin'])){?>
@@ -83,7 +83,12 @@ $row = $employee->fetch_assoc();
         <form action="result.php" method="get">
         <div class="search">
             <img src="img/search.png" class="search-icon">
-            <input class="search-input" name="search" placeholder="Search">
+            <input class="search-input" name="search" placeholdesr="Search">
+        </div>
+
+        
+        <div class="button-container">
+            <a href="employee.php">Add Employee</a>
         </div>
 
         <?php

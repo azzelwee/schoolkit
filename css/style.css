@@ -509,20 +509,20 @@ ul.items {
 }
 
 .nav-links li:nth-child(2):hover~.active {
-    top: 21.6%;
+    top: 27.6%;
 }
 
 .nav-links li:nth-child(3):hover~.active {
-    top: 41.6%;
+    top: 52.6%;
 }
 
 .nav-links li:nth-child(4):hover~.active {
-    top: 61.6%;
+    top: 77.6%;
 }
-
+/* 
 .nav-links li:nth-child(5):hover~.active {
     top: 81.6%;
-}
+} */
 
 .active {
     background-color: #c71224;
@@ -597,6 +597,17 @@ ul.items {
 
 }
 
+.users{
+        top: 120px;
+            left: 670px;
+            position: absolute;
+            color: white;
+            font-size: 90px;
+            z-index: 1;
+            /* Ensure text is on top of the image */
+    
+    }
+
 
 .container-container1 img {
     display: block;
@@ -607,6 +618,12 @@ ul.items {
 
 .employed-text {
     margin-left: 3px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.user-text {
+    margin-left: 10px;
     font-size: 20px;
     letter-spacing: 2px;
 }
