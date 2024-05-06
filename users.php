@@ -10,20 +10,8 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 include_once("connections/connection.php");
 $con = connection();
 
-$start = 0;
-$rows_per_page = 10;
 
-$employee = $con->query("SELECT * FROM employee_list");
-$nr_of_rows = $employee->num_rows;
-
-$pages = ceil($nr_of_rows / $rows_per_page);
-
-if(isset($_GET['page-nr'])){
-    $page = $_GET['page-nr'] - 1;
-    $start = $page * $rows_per_page;
-}
-
-$sql = "SELECT * FROM employee_list ORDER BY id DESC LIMIT $start, $rows_per_page";
+$sql = "SELECT * FROM employee_users ORDER BY id DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
@@ -37,15 +25,7 @@ $row = $employee->fetch_assoc();
     <title>Employee List</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-    <?php
-        if(isset($_GET['page-nr'])){
-            $id = $_GET['page-nr'];
-        }else {
-            $id = 1;
-        }
-
-    ?>
-<body id="<?php echo $id ?>">
+<body>
 
 <div class="header">
         <div class="side-nav">
@@ -74,21 +54,12 @@ $row = $employee->fetch_assoc();
 
     </div>
 
-    <?php if ($is_admin): ?>
-
         
-
     <div class="right-container">
-        <h2>Employee List</h2></br>
-        <form action="result.php" method="get">
-        <div class="search">
-            <img src="img/search.png" class="search-icon">
-            <input class="search-input" name="search" placeholdesr="Search">
-        </div>
+        <h2>User Management</h2></br>
 
-        
         <div class="button-container">
-            <a href="addEmployee.php">Add Employee</a>
+            <a href="addUser.php">Add Users</a>
         </div>
 
         <?php
@@ -123,8 +94,7 @@ $row = $employee->fetch_assoc();
             <?php
             unset($_SESSION['status-edit']);
         }?>
-        
-        </form>
+    
 <!-- 
         <div class="button-container">
             <a href="add2.php">Add New</a>
@@ -135,20 +105,17 @@ $row = $employee->fetch_assoc();
         <thead>
      
         <tr>
-            <th></th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Department</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Access Type</th>
         </tr>
         </thead>
         <tbody>
         <?php do{ ?>
         <tr>
-            <td width="30"><a href="details.php?ID=<?php echo $row['id'];?>"
-            class="button-small">view</a></td>
-            <td><?php echo $row['full_name']; ?></td>
-            <td><?php echo $row['contact_information']; ?></td>
-            <td><?php echo $row['department']; ?></td>
+            <td><?php echo $row['username']; ?></td>
+            <td><?php echo $row['password']; ?></td>
+            <td><?php echo $row['access']; ?></td>
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
 
@@ -156,72 +123,6 @@ $row = $employee->fetch_assoc();
         </tbody>
     </table>
 
-<!-- pagination -->
-    <div class="page-info">
-        <?php
-            if(!isset($_GET['page-nr'])){
-                $page = 1;
-            }else{
-                $page = $_GET['page-nr'];
-            }
-        ?>
-        Showing <?php echo $page ?> of <?php echo $pages ?> pages
-    </div>
-
-    <div class="pagination">
-        <!-- <a class="aa" href="?page-nr=1">First</a> -->
-
-        <?php
-            if(isset($_GET['page-nr']) && $_GET['page-nr'] > 1){
-                ?>
-                <a class="aa" href="?page-nr=<?php echo $_GET['page-nr']-1?> ">Previous</a>
-                <?php
-            }else {
-                ?>
-                    <a class="aa">Previous</a>
-                <?php
-            }
-        ?>
-
-
-        <div class="page-numbers">
-            <?php
-                for($counter = 1; $counter <= $pages; $counter ++){
-            ?>
-                <a class="aa" href="?page-nr=<?php echo $counter ?>"><?php echo $counter ?></a>
-                <?php
-                }
-
-            ?>
-        </div>
-
-    <?php
-        if(!isset($_GET['page-nr'])){
-            ?>
-            <a class="aa" href="?page-nr=2">Next</a>
-            <?php
-        } else {
-            if($_GET['page-nr'] >= $pages){
-                ?>
-                <a class="aa">Next</a>
-                <?php
-            }else {
-            ?>
-                <a class="aa" href="?page-nr=<?php echo $_GET['page-nr'] +1 ?>">Next</a>
-            <?php
-        }
-            }
-
-        $_SESSION['nr_of_rows'] = $nr_of_rows;
-        ?>
-        <!-- <a class="aa" href="?page-nr=<?php echo $pages ?>">Last</a> -->
-
-        </div>
-    
-
-    </div>
-    <!-- end of pagination -->
-    <?php endif; ?>
 </body>
 <script src= js/main.js></script>
 </html>

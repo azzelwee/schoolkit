@@ -4,8 +4,9 @@ if(!isset($_SESSION)){
     session_start();
 }
 
+
 $nr_of_rows = $_SESSION['nr_of_rows']; 
-$nr_of_employee = $nr_of_rows;
+// $nr_of_employee = $nr_of_rows;
 
 // // Check if the user is logged in
 // if(isset($_SESSION['UserLogin'])) {
@@ -28,7 +29,8 @@ $con = connection();
 
 $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
 
-
+$result = $con->query("SELECT * FROM employee_users");
+$row_count = $result->num_rows;
 ?>
 
 <!DOCTYPE html>
@@ -70,28 +72,29 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
     <div class="right-container">
         <h2>Maintenance</h2></br>
-        <div class="container-lis2t">  
-            <a href="listEmployee.php">
-            <img src="img/NBSDashboard.png">
-                <div class="employed">
-                    <?php
-                        echo $nr_of_employee;
-                    ?>
-                    <div class="employed-text">
-                        Employees
+        <div class="container-list">  
+            <a href="listEmployee.php" class="container-container1">
+                <img src="img/NBSDashboard.png">
+                    <div class="employed">
+                        <?php
+                        echo $nr_of_rows;
+                        ?>
+                        <div class="employed-text">
+                            Employees
+                        </div>
                     </div>
-                </div>
-                
             </a>
 
-            <a href="">
-            <img src="img/NBSBlue.png">
-                <div class="users">
-                    <div class="user-text">
+            <a href="users.php" class="container-container2">
+                <img src="img/NBSBlue.png">
+                    <div class="users">
+                        <?php
+                        echo $row_count;
+                        ?>
+                        <div class="user-text">
                         Users
+                        </div>
                     </div>
-                </div>
-                
             </a>
         
 <!-- 

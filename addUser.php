@@ -47,9 +47,9 @@ if(isset($_POST['submit'])){
             </a>
             <ul class="nav-links">
                 <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
-                <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
-                <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
-                <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>
+                <li><a href="maintanance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
+                <!-- <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li> -->
+                <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
                 <?php if(isset($_SESSION['UserLogin'])){?>
                     <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
                     <?php } else {?>
@@ -64,27 +64,24 @@ if(isset($_POST['submit'])){
     </div>
 
     <div class="right-container">
-    <h2>Employee List</h2></br>
-        <form action="result.php" method="get">
-            <div class="search">
-                <img src="img/search.png" class="search-icon">
-                <input class="search-input" name="search" placeholder="Search">
-            </div>
-        </form>
-
+    <h2>Add Users</h2></br>
 
         <div class="form-container">
 
             <form action="" method="post">
 
-                <label>First Name</label>
-                <input type="text" name="fullname" id="fullname" required placeholder="Enter Full Name">
+                <label>Username</label>
+                <input type="text" name="fullname" id="fullname" required placeholder="Enter Username">
 
-                <label>Email</label>
-                <input type="text" name="email" id="email" required placeholder="Enter Email">
+                <label>Password</label>
+                <input type="text" name="email" id="email" required placeholder="Enter Password">
 
-                <label>Department</label>
-                <input type="text" name="departments" id="departments" required placeholder="Enter Department">
+                <label>Select Access Type</label>
+                <select required>
+                    <option value="">-- select access type --</option>
+                    <option value="administrator">Administrator</option>
+                    <option value="user">User</option>
+                </select>
 
                 <!-- <label>Department</label>
                 <select name="department" id="department" required>
