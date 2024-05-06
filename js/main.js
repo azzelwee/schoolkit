@@ -7,3 +7,9 @@ function prevSection(currentSection, prevSection) {
   document.getElementById(currentSection).style.display = "none";
   document.getElementById(prevSection).style.display = "block";
 }
+
+function closePopup() {
+  document.querySelector('.status-delete').style.display = 'none';
+}
+
+

@@ -4,10 +4,6 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-
-$nr_of_rows = $_SESSION['nr_of_rows']; 
-// $nr_of_employee = $nr_of_rows;
-
 // // Check if the user is logged in
 // if(isset($_SESSION['UserLogin'])) {
 //     // Check if the popup has already been displayed (via cookie)
@@ -31,6 +27,10 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
 $result = $con->query("SELECT * FROM employee_users");
 $row_count = $result->num_rows;
+
+$result = $con->query("SELECT * FROM employee_list");
+$nr_of_rows = $result->num_rows;
+
 ?>
 
 <!DOCTYPE html>

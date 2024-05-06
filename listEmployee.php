@@ -76,7 +76,6 @@ $row = $employee->fetch_assoc();
 
     <?php if ($is_admin): ?>
 
-        
 
     <div class="right-container">
         <h2>Employee List</h2></br>
@@ -90,6 +89,7 @@ $row = $employee->fetch_assoc();
         <div class="button-container">
             <a href="addEmployee.php">Add Employee</a>
         </div>
+
 
         <?php
             if(isset($_SESSION['status-add'])){

@@ -15,7 +15,7 @@ if(isset($_POST['delete'])){
 
     if($con){
         $_SESSION['status-delete'] = "Data Deleted Successfully";
-        header('Location: employee.php');
+        header('Location: listEmployee.php');
     } else{
         echo "Something went wrong";
     }
