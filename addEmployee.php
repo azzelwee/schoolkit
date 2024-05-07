@@ -85,102 +85,98 @@ $row = $employee->fetch_assoc();
 
         <div class="add-form">
         <form action="" method="post">
-            <div id="section1">
                 <div class="add-navigation">
-                    <p>Employee Information</p>
                     <p>Basic Information</p>
+                    <p>Employee Information</p>
                     
                 </div>
-        <div class="lineup1">
-            </br>
-            <label>Last Name</label>
-            <input type="text" required placeholder="Enter Last Name">
+        <div id="section1">
+            <div class="lineup1">
+                <div class="column">
+                    <h2>Basic Information</h2>
 
-            <label>First Name</label>
-            <input type="text" required placeholder="Enter First Name">
+                    <label>Last Name</label>
+                    <input type="text" required placeholder="Enter Last Name">
 
-            <label>Middle Name</label>
-            <input type="text" required placeholder="Enter Middle Name">
+                    <label>First Name</label>
+                    <input type="text" required placeholder="Enter First Name">
 
-            <label>Nickname</label>
-            <input type="text"  required placeholder="Enter Nickname">
-            </br>
+                    <label>Middle Name</label>
+                    <input type="text" required placeholder="Enter Middle Name">
 
-            
-            <label>Age</label>
-            <input type="text" id="small" required placeholder="Enter Age">
-            
-            <label>Gender</label>
-            <select required>
-                <option value="">-- select gender --</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
+                    <label>Nickname</label>
+                    <input type="text" required placeholder="Enter Nickname">
 
-            <label>Birthdate</label>
-            <input type="text" required placeholder="MM-DD-YY">
+                    <label>Age</label>
+                    <input type="text" id="small" required placeholder="Enter Age">
 
-            <label>Place of Birth</label>
-            <input type="text" required placeholder="Enter Place of Birth">
+                    <label>Gender</label>
+                    <select required>
+                        <option value="">-- select gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
 
+                    <label>Birthdate</label>
+                    <input type="text" required placeholder="MM-DD-YY">
 
-            </br>
+                    <label>Place of Birth</label>
+                    <input type="text" required placeholder="Enter Place of Birth">
 
-            <label>Religion</label>
-            <input type="text" required placeholder="Enter Religion">
+                    <label>Religion</label>
+                    <input type="text" required placeholder="Enter Religion">
 
-            <label>Civil Status</label>
-            <select required>
-                <option value="">-- select civil status --</option>
-                <option value="Single">Single</option>
-                <option value="Married">Married</option>
-                <option value="Separated">Separated</option>
-            </select>
+                    <label>Civil Status</label>
+                    <select required>
+                        <option value="">-- select civil status --</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Separated">Separated</option>
+                    </select>
 
-            <label>Citizenship</label>
-            <input type="text" required placeholder="Enter Citizenship">
+                    <label>Citizenship</label>
+                    <input type="text" required placeholder="Enter Citizenship">
 
+                    <label>Height(cm)</label>
+                    <input type="text" id="small">
 
+                    <label>Weight(lbs.)</label>
+                    <input type="text" id="small">
+                </div>
+
+                <div class="column">
+                    <h2>Contact Information</h2>
+
+                    <label>No/St/Town</label>
+                    <input type="text" id="small">
+
+                    <label>City</label>
+                    <input type="text">
+
+                    <label>Country</label>
+                    <input type="text">
+
+                    <label>Zip Code</label>
+                    <input type="text">
+
+                    <label>Country</label>
+                    <input type="text">
+
+                    <label>Mobile Number</label>
+                    <input type="text" required placeholder="Enter Mobile Number">
+
+                    <label>Telephone Number</label>
+                    <input type="text" required placeholder="Enter Telephone Number">
+
+                        <label>Email</label>
+                        <input type="text" required placeholder="Enter Email">
                     </br>
-            <label>Height(cm)</label>
-            <input type="text" id="small">
 
-            <label>Weight(lbs.)</label>
-            <input type="text" id="small">
-            </br>
-            </br>
-            <h2>Contact Information</h2>
-                    </br>
-            <label>No/St/Town</label>
-            <input type="text" id="small">
-
-            <label>City</label>
-            <input type="text">
-
-            <label>Country</label>
-            <input type="text">
-
-            <label>Zip Code</label>
-            <input type="text">
-            
-            <label>Country</label>
-            <input type="text">
-
-            </br>
-
-            <label>Mobile Number</label>
-            <input type="text" required placeholder="Enter Mobile Number">
-
-            <label>Telephone Number</label>
-            <input type="text" required placeholder="Enter Telephone Number">
-
-            <label>Email</label>
-            <input type="text" required placeholder="Enter Email">
-                    </br>
-            <button type="button" onclick="nextSection('section1', 'section2')">Next</button>
+                    <button type="button" onclick="nextSection('section1', 'section2')">Next</button>
+                </div>
+            </div>
         </div>
-    </div>
-
+    
         <div id="section2" style="display: none;">
         <h2>Education</h2>
         <label>Level</label>

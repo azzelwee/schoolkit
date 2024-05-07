@@ -674,18 +674,12 @@ ul.items {
     margin-right: 20px;
 }
 
-.lineup1{
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Example grid layout */
+
+.lineup1 {
+    display: flex;
+    justify-content: space-between;
 }
 
-.lineup1 label {
-    grid-column: 1;
-    margin-top: 8px;
-}
-
-.lineup1 input,
-.lineup1 select{
-    grid-column: 1;
-    
+.column {
+    width: 48%; /* Adjust this value to leave some space between columns */
 }
