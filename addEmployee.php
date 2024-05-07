@@ -83,13 +83,16 @@ $row = $employee->fetch_assoc();
         </form> -->
 
 
-        <div class="form-employee">
+        <div class="add-form">
         <form action="" method="post">
-
-
-        <div id="section1">
-        <h2>Basic Information</h2>
-        </br>
+            <div id="section1">
+                <div class="add-navigation">
+                    <p>Employee Information</p>
+                    <p>Basic Information</p>
+                    
+                </div>
+        <div class="lineup1">
+            </br>
             <label>Last Name</label>
             <input type="text" required placeholder="Enter Last Name">
 
@@ -176,8 +179,8 @@ $row = $employee->fetch_assoc();
             <input type="text" required placeholder="Enter Email">
                     </br>
             <button type="button" onclick="nextSection('section1', 'section2')">Next</button>
-
         </div>
+    </div>
 
         <div id="section2" style="display: none;">
         <h2>Education</h2>
