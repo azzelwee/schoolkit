@@ -149,7 +149,6 @@ $row = $employee->fetch_assoc();
             <input type="text" id="small">
             </br>
             </br>
-
             <h2>Contact Information</h2>
                     </br>
             <label>No/St/Town</label>
