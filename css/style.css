@@ -383,18 +383,7 @@ tr:nth-child(even) {
     cursor: pointer;
 }
 
-#photos {
-    width: 30%;
-}
 
-#small{
-    width: 120px;
-}
-
-#wide{
-    height: 80px;
-    width: 800px;
-}
 
 ul.items {
     padding: 2rem;
@@ -682,4 +671,36 @@ ul.items {
 
 .column {
     width: 48%; /* Adjust this value to leave some space between columns */
+}
+
+.column label{
+    font-size: 18px;
+}
+
+.column input,
+.column select{
+    margin-bottom: 8px;
+    font-size: 18px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+}
+
+#photos {
+    width: 30%;
+}
+
+#small{
+    width: 120px;
+}
+
+#smaller{
+    width: 95px;
+}
+
+#wide{
+    height: 80px;
+    width: 800px;
 }

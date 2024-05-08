@@ -74,7 +74,6 @@ $row = $employee->fetch_assoc();
     </div>
 
     <div class="right-container-add">
-    <h2>Add Employee</h2></br>
         <!-- <form action="result.php" method="get">
             <div class="search">
                 <img src="img/search.png" class="search-icon">
@@ -88,37 +87,42 @@ $row = $employee->fetch_assoc();
                 <div class="add-navigation">
                     <p>Basic Information</p>
                     <p>Employee Information</p>
-                    
                 </div>
         <div id="section1">
             <div class="lineup1">
                 <div class="column">
+                    </br>
                     <h2>Basic Information</h2>
+                    </br>
+
+                    <label>First Name</label>
+                    <input type="text" required placeholder="Enter First Name">
+                    
+                    <label>Middle Name</label>
+                    <input type="text" required placeholder="Enter Middle Name">
 
                     <label>Last Name</label>
                     <input type="text" required placeholder="Enter Last Name">
 
-                    <label>First Name</label>
-                    <input type="text" required placeholder="Enter First Name">
-
-                    <label>Middle Name</label>
-                    <input type="text" required placeholder="Enter Middle Name">
-
-                    <label>Nickname</label>
-                    <input type="text" required placeholder="Enter Nickname">
-
                     <label>Age</label>
-                    <input type="text" id="small" required placeholder="Enter Age">
+                    <input type="text" id="smaller" required>
 
                     <label>Gender</label>
-                    <select required>
-                        <option value="">-- select gender --</option>
+                    <select required id="small">
+                        <option value="">- - - -</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
 
+                    
+                    <label>Height(cm)</label>
+                    <input type="text" id="small">
+
+                    <label>Weight(lbs.)</label>
+                    <input type="text" id="small">
+                    </br>
                     <label>Birthdate</label>
-                    <input type="text" required placeholder="MM-DD-YY">
+                    <input type="text"  required placeholder="MM-DD-YY">
 
                     <label>Place of Birth</label>
                     <input type="text" required placeholder="Enter Place of Birth">
@@ -137,16 +141,12 @@ $row = $employee->fetch_assoc();
                     <label>Citizenship</label>
                     <input type="text" required placeholder="Enter Citizenship">
 
-                    <label>Height(cm)</label>
-                    <input type="text" id="small">
-
-                    <label>Weight(lbs.)</label>
-                    <input type="text" id="small">
                 </div>
 
                 <div class="column">
+                </br>
                     <h2>Contact Information</h2>
-
+                    </br>
                     <label>No/St/Town</label>
                     <input type="text" id="small">
 
@@ -172,9 +172,12 @@ $row = $employee->fetch_assoc();
                         <input type="text" required placeholder="Enter Email">
                     </br>
 
-                    <button type="button" onclick="nextSection('section1', 'section2')">Next</button>
+                    
                 </div>
+                
             </div>
+        <button type="button" onclick="nextSection('section1', 'section2')">Next</button>
+
         </div>
     
         <div id="section2" style="display: none;">
