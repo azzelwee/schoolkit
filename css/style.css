@@ -696,6 +696,10 @@ ul.items {
     width: 120px;
 }
 
+#semi-small{
+    width: 220px;
+}
+
 #smaller{
     width: 95px;
 }
@@ -703,4 +707,19 @@ ul.items {
 #wide{
     height: 80px;
     width: 800px;
+}
+
+.thebutton {
+    padding: 10px 20px;
+    background-color: #d52033;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* CSS for the button hover effect */
+.thebutton:hover {
+    background-color: #8e1522;
 }

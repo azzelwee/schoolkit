@@ -147,21 +147,21 @@ $row = $employee->fetch_assoc();
                 </br>
                     <h2>Contact Information</h2>
                     </br>
-                    <label>No/St/Town</label>
+                    <label>No./St./Subd.</label>
                     <input type="text" id="small">
 
                     <label>City</label>
-                    <input type="text">
+                    <input type="text" id="small">
 
-                    <label>Country</label>
-                    <input type="text">
-
+                    <label>Address</label>
+                    <input type="text" id="semi-small">
+                    </br>
                     <label>Zip Code</label>
-                    <input type="text">
+                    <input type="text" id="small">
 
                     <label>Country</label>
-                    <input type="text">
-
+                    <input type="text" id="semi-small" style="width: 417px;">
+                    </br>
                     <label>Mobile Number</label>
                     <input type="text" required placeholder="Enter Mobile Number">
 
@@ -176,7 +176,7 @@ $row = $employee->fetch_assoc();
                 </div>
                 
             </div>
-        <button type="button" onclick="nextSection('section1', 'section2')">Next</button>
+        <button type="button" class="thebutton" onclick="nextSection('section1', 'section2')">Next</button>
 
         </div>
     
