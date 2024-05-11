@@ -13,7 +13,7 @@ $con = connection();
 $start = 0;
 $rows_per_page = 10;
 
-$employee = $con->query("SELECT * FROM employee_list");
+$employee = $con->query("SELECT * FROM employee_list2");
 $nr_of_rows = $employee->num_rows;
 
 $pages = ceil($nr_of_rows / $rows_per_page);
@@ -23,7 +23,7 @@ if(isset($_GET['page-nr'])){
     $start = $page * $rows_per_page;
 }
 
-$sql = "SELECT * FROM employee_list ORDER BY id DESC LIMIT $start, $rows_per_page";
+$sql = "SELECT * FROM employee_list2 ORDER BY id DESC LIMIT $start, $rows_per_page";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
@@ -83,15 +83,7 @@ $row = $employee->fetch_assoc();
 
 
         <div class="add-form">
-        <form action="" method="post">
-                <div class="add-navigation">
-                    <p>Basic Information</p>
-                    <p>•</p>
-                    <p>Education Background</p>
-                    <p>•</p>
-                    <p>Employee Information</p>
-                    
-                </div>
+        <form action="listEmployee.php" method="post">
         <div id="section1">
             <div class="lineup1">
                 <div class="column">
@@ -100,19 +92,19 @@ $row = $employee->fetch_assoc();
                     </br>
 
                     <label>First Name</label>
-                    <input type="text" required placeholder="Enter First Name">
+                    <input type="text" name="first_name" placeholder="Enter First Name">
                     </br>
                     <label>Middle Name</label>
-                    <input type="text" required placeholder="Enter Middle Name">
+                    <input type="text"  placeholder="Enter Middle Name">
                     </br>
                     <label>Last Name</label>
-                    <input type="text" required placeholder="Enter Last Name">
+                    <input type="text"  placeholder="Enter Last Name">
                     </br>
                     <label>Age</label>
-                    <input type="text" id="smaller" required>
+                    <input type="text" id="smaller" >
                 
                     <label>Gender</label>
-                    <select required id="small">
+                    <select  id="small">
                         <option value=""></option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -126,16 +118,16 @@ $row = $employee->fetch_assoc();
                     <input type="text" id="small">
                     
                     <label>Birthdate</label>
-                    <input type="text"  required placeholder="MM-DD-YY">
+                    <input type="text"   placeholder="MM-DD-YY">
                     </br>
                     <label>Place of Birth</label>
-                    <input type="text" required placeholder="Enter Place of Birth">
+                    <input type="text"  placeholder="Enter Place of Birth">
                     </br>
                     <label>Religion</label>
-                    <input type="text" required placeholder="Enter Religion">
+                    <input type="text"  placeholder="Enter Religion">
                     </br>
                     <label>Civil Status</label>
-                    <select required>
+                    <select >
                         <option value=""></option>
                         <option value="Single">Single</option>
                         <option value="Married">Married</option>
@@ -143,7 +135,7 @@ $row = $employee->fetch_assoc();
                     </select>
                     </br>
                     <label>Citizenship</label>
-                    <input type="text" required placeholder="Enter Citizenship">
+                    <input type="text"  placeholder="Enter Citizenship">
 
                 </div>
 
@@ -167,13 +159,13 @@ $row = $employee->fetch_assoc();
                     <input type="text" id="semi-small" style="width: 417px;">
                     </br>
                     <label>Mobile Number</label>
-                    <input type="text" style="width: 560px" required placeholder="Enter Mobile Number">
+                    <input type="text" style="width: 560px"  placeholder="Enter Mobile Number">
                     </br>
                     <label>Telephone Number</label>
-                    <input type="text" style="width: 530px" required placeholder="Enter Telephone Number">
+                    <input type="text" style="width: 530px"  placeholder="Enter Telephone Number">
                     </br>
                         <label>Email</label>
-                        <input type="text" style="width: 637px" required placeholder="Enter Email">
+                        <input type="text" style="width: 637px"  placeholder="Enter Email">
                     </br>
 
                     
@@ -308,10 +300,9 @@ $row = $employee->fetch_assoc();
             <br>
             </div>
             </div>
-            <button type="button" class="thebutton" onclick="prevSection('section3', 'section2')">Back</button>
-            <input type="submit" class="thebutton"></button>
-            
+            <button type="button" class="thebutton" onclick="prevSection('section3', 'section2')">Back</button>   
     </form>
+    <input type="submit" class="thebutton" value="Submit"></button>
 </div>
 <script src= js/main.js></script>
 
