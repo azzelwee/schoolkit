@@ -13,7 +13,7 @@ $con = connection();
 $start = 0;
 $rows_per_page = 10;
 
-$employee = $con->query("SELECT * FROM employee_list");
+$employee = $con->query("SELECT * FROM employee_list2");
 $nr_of_rows = $employee->num_rows;
 
 $pages = ceil($nr_of_rows / $rows_per_page);
@@ -23,7 +23,7 @@ if(isset($_GET['page-nr'])){
     $start = $page * $rows_per_page;
 }
 
-$sql = "SELECT * FROM employee_list ORDER BY id DESC LIMIT $start, $rows_per_page";
+$sql = "SELECT * FROM employee_list2 ORDER BY id DESC LIMIT $start, $rows_per_page";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
@@ -111,19 +111,18 @@ $row = $employee->fetch_assoc();
      
         <tr>
             <th></th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Department</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
         </tr>
         </thead>
         <tbody>
         <?php do{ ?>
         <tr>
-            <td width="30"><a href="details.php?ID=<?php echo $row['id'];?>"
+            <td width="30"><a href="details.php?ID=<?php echo $row['ID'];?>"
             class="button-small">view</a></td>
-            <td><?php echo $row['full_name']; ?></td>
-            <td><?php echo $row['contact_information']; ?></td>
-            <td><?php echo $row['department']; ?></td>
+            <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
+
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
 

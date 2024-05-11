@@ -4,12 +4,10 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-
 $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
 
 include_once("connections/connection.php");
 $con = connection();
-
 
 $sql = "SELECT * FROM employee_users ORDER BY id DESC";
 $employee = $con->query($sql) or die ($con->error);

@@ -185,6 +185,7 @@ tr:nth-child(even) {
 .page-numbers {
     display: inline-block;
 }
+
 .status-add {
     margin-top: 8px;
     padding: 12px;

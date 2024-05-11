@@ -4,6 +4,8 @@ if(!isset($_SESSION)){
     session_start();
 }
 
+$is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
+
 include_once("connections/connection.php");
 $con = connection();
 
@@ -58,8 +60,8 @@ if(isset($_POST['submit'])){
                 <label>Select Access Type</label>
                 <select name="access" required>
                     <option value="">-- select access type --</option>
-                    <option value="Administrator">Administrator</option>
-                    <option value="User">User</option>
+                    <option value="administrator">Administrator</option>
+                    <option value="user">User</option>
                 </select>
 
                 <!-- <label>Department</label>

@@ -9,7 +9,14 @@ function prevSection(currentSection, prevSection) {
 }
 
 function closePopup() {
-  document.querySelector('.status-delete').style.display = 'none';
+  // Show the popup
+  document.querySelector('.status-delete').style.display = 'block';
+
+  // After 3 seconds, hide the popup
+  setTimeout(function() {
+    document.querySelector('.status-delete').style.display = 'none';
+  }, 3000); // 3000 milliseconds = 3 seconds
 }
+
 
 

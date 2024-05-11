@@ -4,19 +4,12 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-// if(isset($_SESSION['Access']) && $_SESSION ['Access'] == "administrator"){
-//     echo "<div class='message success'>Welcome " .$_SESSION['UserLogin']. "</div> <br/><br/>";
-// } else {
-//     echo header("Location: employee.php");
-// }
+$is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
 
 include_once("connections/connection.php");
-
 $con = connection();
 
-$id = $_GET['ID'];
-
-$sql = "SELECT * FROM employee_list WHERE id = '$id'" ;
+$sql = "SELECT * FROM employee_list2 ORDER BY id DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
@@ -48,26 +41,21 @@ $row = $employee->fetch_assoc();
         <div class="button-container">
             
             <?php if($_SESSION['Access'] == "administrator"){?>
-            <a href="edit.php?ID=<?php echo $row['id'];?>">Edit</a>
+            <a href="edit.php?ID=<?php echo $row['ID'];?>">Edit</a>
             <button type="submit" name="delete" class="button-danger">Delete</button>
             <?php } ?>
 
         </div>
 
-    <input type="hidden" name="ID" value="<?php echo $row['id'];?>">
+    <input type="hidden" name="ID" value="<?php echo $row['ID'];?>">
     </form>
-
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-
-    <h2><?php echo $row['full_name'];?>
-    </br>
-
-    <?php echo $row['contact_information'];?> </h2>
             </br>
-    <p>Department: <?php echo $row['department'];?> </p>
+            </br>
+        <?php echo $row['first_name'];?>
+        </br>
+        <?php echo $row['middle_name'];?>
+        </br>
+        <?php echo $row['last_name'];?>
     </div>
 
 </body>
