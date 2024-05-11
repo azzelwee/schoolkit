@@ -86,7 +86,11 @@ $row = $employee->fetch_assoc();
         <form action="" method="post">
                 <div class="add-navigation">
                     <p>Basic Information</p>
+                    <p>•</p>
+                    <p>Education Background</p>
+                    <p>•</p>
                     <p>Employee Information</p>
+                    
                 </div>
         <div id="section1">
             <div class="lineup1">
@@ -109,7 +113,7 @@ $row = $employee->fetch_assoc();
 
                     <label>Gender</label>
                     <select required id="small">
-                        <option value="">- - - -</option>
+                        <option value=""></option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -132,7 +136,7 @@ $row = $employee->fetch_assoc();
 
                     <label>Civil Status</label>
                     <select required>
-                        <option value="">-- select civil status --</option>
+                        <option value=""></option>
                         <option value="Single">Single</option>
                         <option value="Married">Married</option>
                         <option value="Separated">Separated</option>
@@ -163,13 +167,13 @@ $row = $employee->fetch_assoc();
                     <input type="text" id="semi-small" style="width: 417px;">
                     </br>
                     <label>Mobile Number</label>
-                    <input type="text" required placeholder="Enter Mobile Number">
+                    <input type="text" style="width: 560px" required placeholder="Enter Mobile Number">
 
                     <label>Telephone Number</label>
-                    <input type="text" required placeholder="Enter Telephone Number">
-
+                    <input type="text" style="width: 530px" required placeholder="Enter Telephone Number">
+                    </br>
                         <label>Email</label>
-                        <input type="text" required placeholder="Enter Email">
+                        <input type="text" style="width: 637px" required placeholder="Enter Email">
                     </br>
 
                     
@@ -181,63 +185,74 @@ $row = $employee->fetch_assoc();
         </div>
     
         <div id="section2" style="display: none;">
+
+        <div class="lineup1">
+            <div class="column">
+            </br>
         <h2>Education</h2>
-        <label>Level</label>
-            <select required>
-                <option value="">-- select level --</option>
-                <option value="">High School</option>
-                <option value="">College</option>
-            </select>
+        </br>
+                <!-- <label>Level</label>
+                    <select required>
+                        <option value=""></option>
+                        <option value="">Elementary</option>
+                        <option value="">High School</option>
+                        <option value="">College</option>
+                    </select> -->
 
-            <label>School Name</label>
-            <input type="text">
+                    <label>Elemantary</label>
+                    <input type="text">
 
-            
-            <label>Address</label>
-            <input type="text">
-            
-            <label>Course</label>
-            <input type="text">
+                    <label>High School</label>
+                    <input type="text">
 
-                    </br>
-            <label>Achievements</label>
-            <input type="text" id="wide">
+                    <label>Vocational</label>
+                    <input type="text">
 
-                    </br>
+                    <label>College</label>
+                    <input type="text">
+                    
+                    <label>Course</label>
+                    <input type="text">
+
+                            </br>
+                    <label>Achievements</label>
+                    <input type="text" id="wide">
+
+            </div>
+            <div class="column">
                     <h2>Training</h2>
                     </br>
                     
-            <label>Title</label>
-            <input type="text">
+                <label>Title</label>
+                <input type="text">
 
-            <label>Training Company</label>
-            <input type="text">
+                <label>Training Company</label>
+                <input type="text">
 
-            <label>Inclusive Dates</label>
-            <input type="text">
+                <label>Inclusive Dates</label>
+                <input type="text">
 
-            <label>Venue</label>
-            <input type="text">
-
+                <label>Venue</label>
+                <input type="text">
                     </br>
-            <label>Remarks</label>
-            <input type="text" id="wide">
-
-
+                <label>Remarks</label>
+                <input type="text" id="wide" style="width: 763px">
                     </br>
-            <button type="button" onclick="prevSection('section2', 'section1')">Back</button>
-            <button type="button" onclick="nextSection('section2', 'section3')">Next</button>
-
-
-
 
             </div>
+        </div>
+            <button type="button" class="thebutton" onclick="prevSection('section2', 'section1')">Back</button>
+            <button type="button" class="thebutton" onclick="nextSection('section2', 'section3')">Next</button>
+    </div>
 
             <div id="section3" style="display: none;">
+            <div class="lineup1">
+            <div class="column">
+            </br>
             <h2>Employee Information</h2>
             </br>
             <label for="photos">Picture 2x2:</label>
-            <input type="file" id="photos" multiple>
+            <input type="file" id="photos" multiple style="width: 763px">
             </br>
             <label>SSS ID</label>
             <input type="text" >
@@ -261,8 +276,8 @@ $row = $employee->fetch_assoc();
 
             <label>Date Hired</label>
             <input type="text" placeholder="MM-DD-YY">
-            </br>
-            </br>
+                    </div>
+                    <div class="column">
             <h2>Employment History</h2>
             </br>
 
@@ -294,10 +309,13 @@ $row = $employee->fetch_assoc();
             <input type="text" id="wide">
             <br>
 
-            <button type="button" onclick="prevSection('section3', 'section2')">Back</button>
-
-            <input type="submit"></button>
+            
+            
             </div>
+            </div>
+            <button type="button" class="thebutton" onclick="prevSection('section3', 'section2')">Back</button>
+            <input type="submit" class="thebutton"></button>
+            
     </form>
 </div>
 <script src= js/main.js></script>
