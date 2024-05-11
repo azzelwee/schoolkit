@@ -4,28 +4,10 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-
 $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
-
 include_once("connections/connection.php");
 $con = connection();
 
-$start = 0;
-$rows_per_page = 10;
-
-$employee = $con->query("SELECT * FROM employee_list2");
-$nr_of_rows = $employee->num_rows;
-
-$pages = ceil($nr_of_rows / $rows_per_page);
-
-if(isset($_GET['page-nr'])){
-    $page = $_GET['page-nr'] - 1;
-    $start = $page * $rows_per_page;
-}
-
-$sql = "SELECT * FROM employee_list2 ORDER BY id DESC LIMIT $start, $rows_per_page";
-$employee = $con->query($sql) or die ($con->error);
-$row = $employee->fetch_assoc();
 
 ?>
 <!DOCTYPE html>
@@ -36,42 +18,9 @@ $row = $employee->fetch_assoc();
     <title>Employee List</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-    <?php
-        if(isset($_GET['page-nr'])){
-            $id = $_GET['page-nr'];
-        }else {
-            $id = 1;
-        }
+<body>
 
-    ?>
-<body id="<?php echo $id ?>">
-
-<div class="header">
-        <div class="side-nav">
-            <a href="#"class="logo">
-                <img src="img/nbswhite.png" class="logo-img">
-            </a>
-            <ul class="nav-links">
-                <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
-                <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
-               
-                <!-- <?php if ($is_admin): ?>
-                <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
-                <?php endif; ?> -->
-                
-                <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
-                <?php if(isset($_SESSION['UserLogin'])){?>
-                    <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
-                    <?php } else {?>
-
-                    <li><a href="login.php"><img src="img/out.png"><p>Login</p></a></li>
-                <?php } ?>
-
-                <div class="active">
-                </div>
-            </ul>
-
-    </div>
+<?php include 'header.php'; ?>
 
     <div class="right-container-add">
         <!-- <form action="result.php" method="get">
@@ -92,7 +41,7 @@ $row = $employee->fetch_assoc();
                     </br>
 
                     <label>First Name</label>
-                    <input type="text" name="first_name" placeholder="Enter First Name">
+                    <input type="text" name="first_name" id="first_name" placeholder="Enter First Name">
                     </br>
                     <label>Middle Name</label>
                     <input type="text"  placeholder="Enter Middle Name">
@@ -302,7 +251,7 @@ $row = $employee->fetch_assoc();
             </div>
             <button type="button" class="thebutton" onclick="prevSection('section3', 'section2')">Back</button>   
     </form>
-    <input type="submit" class="thebutton" value="Submit"></button>
+    <input type="submit" value="submit" name="submit" value="Submit Form">
 </div>
 <script src= js/main.js></script>
 

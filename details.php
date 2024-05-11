@@ -33,28 +33,7 @@ $row = $employee->fetch_assoc();
 </head>
 <body id="<?php echo $id ?>">
 
-    <div class="header">
-        <div class="side-nav">
-            <a href="#"class="logo">
-                <img src="img/nbswhite.png" class="logo-img">
-            </a>
-            <ul class="nav-links">
-                <li><a href="dashboard.php"><img src="img/dashboard.png" class="imgs"><p>Dashboard</p></a></li>
-                <li><a href="#"><img src="img/structures.png"><p>Maintenance</p></a></li>
-                <li><a href="employee.php"><img src="img/groups.png"><p>Employee</p></a></li>
-                <li><a href="#"><img src="img/settings.png"><p>Settings</p></a></li>
-                <?php if(isset($_SESSION['UserLogin'])){?>
-                    <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
-                    <?php } else {?>
-
-                    <li><a href="login.php"><img src="img/out.png"><p>Login</p></a></li>
-                <?php } ?>
-
-                <div class="active">
-                </div>
-            </ul>
-
-    </div>
+<?php include 'header.php'; ?>
 
     <div class="right-container">
         <h2>Employee Information</h2></br>
