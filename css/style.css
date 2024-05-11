@@ -538,12 +538,17 @@ ul.items {
     padding: 40px;
 }
 
-.right-container img{
+.right-container-pic {
+    margin-left: 250px;
+    padding: 15px;
+}
+
+.right-container-pic img{
     border-radius: 8px;
 }
 
 .school {
-    width: 85%;
+    width: 98%;
 }
 
 
@@ -723,4 +728,10 @@ ul.items {
 /* CSS for the button hover effect */
 .thebutton:hover {
     background-color: #8e1522;
+}
+
+.fullname{
+    display: flex;
+    margin-top: 50px;
+   
 }

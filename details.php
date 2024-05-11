@@ -13,6 +13,7 @@ $sql = "SELECT * FROM employee_list2 ORDER BY id DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -30,12 +31,6 @@ $row = $employee->fetch_assoc();
 
     <div class="right-container">
         <h2>Employee Information</h2></br>
-        <form action="result.php" method="get">
-        <div class="search">
-            <img src="img/search.png" class="search-icon">
-            <input class="search-input" name="search" placeholder="Search">
-        </form>
-    </div>
         
     <form action="delete.php" method="post">
         <div class="button-container">
@@ -46,17 +41,30 @@ $row = $employee->fetch_assoc();
             <?php } ?>
 
         </div>
-
-    <input type="hidden" name="ID" value="<?php echo $row['ID'];?>">
+        <input type="hidden" name="ID" value="<?php echo $row['ID'];?>">
     </form>
-            </br>
-            </br>
-        <?php echo $row['first_name'];?>
-        </br>
-        <?php echo $row['middle_name'];?>
-        </br>
-        <?php echo $row['last_name'];?>
-    </div>
 
+        <div class="fullname">
+           <p>Name:</p> <?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name'];?>
+        </div>
+        
+    <?php
+        // Assuming $row is the result of your database query
+        $imagePath = $row['file_path']; // Assuming 'file_path' is the column name where you stored the file path
+
+        // Check if it's an image file
+        $allowedFormats = ['jpg', 'jpeg', 'png', 'gif'];
+        $fileExtension = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
+        $isImage = in_array($fileExtension, $allowedFormats);
+
+        if ($isImage) {
+            echo '<img src="' . $imagePath . '" alt="Uploaded Image" style="width: 100px; height: 100px;">'; // Adjust width and height
+        } else {
+            echo 'There is no uploaded image.';
+        }
+    ?>
+
+
+    </div>
 </body>
 </html>

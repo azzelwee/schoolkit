@@ -10,7 +10,7 @@ $con = connection();
 if(isset($_POST['delete'])){
 
     $id = $_POST['ID'];
-    $sql = "DELETE FROM employee_list WHERE id = '$id'";
+    $sql = "DELETE FROM employee_list2 WHERE ID = '$id'";
     $con->query($sql) or die ($con->error);
 
     if($con){

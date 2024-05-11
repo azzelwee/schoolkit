@@ -28,7 +28,7 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 $result = $con->query("SELECT * FROM employee_users");
 $row_count = $result->num_rows;
 
-$result = $con->query("SELECT * FROM employee_list");
+$result = $con->query("SELECT * FROM employee_list2");
 $nr_of_rows = $result->num_rows;
 
 ?>

@@ -107,28 +107,34 @@ $row = $employee->fetch_assoc();
         </div> -->
         
         <table>
-        <thead>
-     
+    <thead>
         <tr>
             <th></th>
-            <th>First Name</th>
-            <th>Middle Name</th>
-            <th>Last Name</th>
+            <th>Full Name</th>
+            <th>Employee Status</th>
         </tr>
-        </thead>
-        <tbody>
-        <?php do{ ?>
-        <tr>
-            <td width="30"><a href="details.php?ID=<?php echo $row['ID'];?>"
-            class="button-small">view</a></td>
-            <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
-
-        </tr>
-        <?php }while($row = $employee->fetch_assoc()); ?>
-
-        
-        </tbody>
-    </table>
+    </thead>
+    <tbody>
+    <?php 
+    if ($employee->num_rows > 0) { // Check if there are rows in $employee
+        do {
+    ?>
+            <tr>
+                <td width="30"><a href="details.php?ID=<?php echo $row['ID'];?>" class="button-small">view</a></td>
+                <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
+                <td><?php echo $row['employee_status'] ?></td>
+            </tr>
+    <?php 
+        } while($row = $employee->fetch_assoc()); // Fetch next row
+    } else {
+        // Handle the case where there are no rows in $employee
+        echo "<tr>
+            <td colspan='4'>No employees found</td>
+            </tr>";
+    }
+    ?>
+    </tbody>
+</table>
 
 <!-- pagination -->
     <div class="page-info">
