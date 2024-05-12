@@ -49,25 +49,26 @@ $row = $employee->fetch_assoc();
                     <input type="hidden" name="ID" value="<?php echo $row['ID'];?>">
                 </form>
 
-                
-        <div class="employee-picture">
-            <?php
-                // Assuming $row is the result of your database query
-                $imagePath = $row['file_path']; // Assuming 'file_path' is the column name where you stored the file path
+        <div class="employee-picture-frame">
+            <div class="employee-picture">
+                <?php
+                    // Assuming $row is the result of your database query
+                    $imagePath = $row['file_path']; // Assuming 'file_path' is the column name where you stored the file path
 
-                // Check if it's an image file
-                $allowedFormats = ['jpg', 'jpeg', 'png', 'gif'];
-                $fileExtension = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
-                $isImage = in_array($fileExtension, $allowedFormats);
+                    // Check if it's an image file
+                    $allowedFormats = ['jpg', 'jpeg', 'png', 'gif'];
+                    $fileExtension = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
+                    $isImage = in_array($fileExtension, $allowedFormats);
 
-                if ($isImage) {
-                    echo '<img src="' . $imagePath . '" alt="Uploaded Image" style="width: 200px; height: 200px;">';
-                } else {
-                    echo 'There is no uploaded image.';
-                }
-            ?>
+                    if ($isImage) {
+                        echo '<img src="' . $imagePath . '" alt="Uploaded Image" style="width: 200px; height: 200px;">';
+                    } else {
+                        echo '<div style="color: white; text-align: center;">There is no uploaded image.</div>';
+
+                    }
+                ?>
+            </div>
         </div>
-
     <div class="information-employee">
         <?php
             if($row) {

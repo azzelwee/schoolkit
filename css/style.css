@@ -750,6 +750,16 @@ ul.items {
 }
 
 .employee-picture{
+    padding: 10px;
     margin-top: 60px;
     position: relative;
+}
+
+.employee-picture-frame{
+    border-radius: 8px;
+    margin-top: 60px;
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background-color: #d52033;
 }
