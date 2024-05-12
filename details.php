@@ -17,6 +17,7 @@ $sql = "SELECT * FROM employee_list2 WHERE ID = $employee_id";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
+}
 ?>
 
 <!DOCTYPE html>
@@ -70,21 +71,15 @@ $row = $employee->fetch_assoc();
             </div>
         </div>
     <div class="information-employee">
+        <div class="employee-name">
         <?php
-            if($row) {
-                // Display the details of the employee
-                echo $row['last_name'] . ',' . $row['first_name'] . ' ' . $row['middle_name'];
-                echo '<p>Status: ' . $row['employee_status'] . '</p>';
-                // Display other relevant details here
-            } else {
-                // Handle the case where the employee ID is not found
-                echo '<p>Employee not found.</p>';
-                }
-            } else {
-                // Handle the case where the ID parameter is not set
-                echo '<p>Employee ID not provided.</p>';
-            }
+            echo $row['last_name'] . ',' . $row['first_name'] . ' ' . $row['middle_name'];
         ?>
+        </div>
+        <?php
+            echo '<p>Status: ' . $row['employee_status'] . '</p>';
+        ?>
+        
     </div>
 
     </div>

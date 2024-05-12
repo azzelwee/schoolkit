@@ -746,7 +746,7 @@ ul.items {
 }
 
 .information-employee{
-    margin-top: 100px;
+
 }
 
 .employee-picture{
@@ -762,4 +762,9 @@ ul.items {
     width: 220px;
     height: 220px;
     background-color: #d52033;
+}
+
+.employee-name{
+    font-weight: bold;
+    font-size: 22px;
 }
