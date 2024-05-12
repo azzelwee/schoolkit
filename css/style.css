@@ -533,6 +533,15 @@ ul.items {
     padding: 40px;
 }
 
+.right-container-details
+{
+    margin: 25px;
+    width: auto;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
 .right-container-add {
     margin-left: 250px;
     padding: 40px;
@@ -734,4 +743,13 @@ ul.items {
     display: flex;
     margin-top: 50px;
    
+}
+
+.information-employee{
+    margin-top: 100px;
+}
+
+.employee-picture{
+    margin-top: 60px;
+    position: relative;
 }

@@ -9,17 +9,13 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 include_once("connections/connection.php");
 $con = connection();
 
-$sql = "SELECT * FROM employee_list2 ORDER BY ID DESC";
+if(isset($_GET['ID'])) {
+
+$employee_id = $_GET['ID'];
+
+$sql = "SELECT * FROM employee_list2 WHERE ID = $employee_id";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
-        // Connect to your database (you might already have this included in your code)
-        // Include your database connection file here if not already included
-
-        // Check if the ID parameter is set in the URL
-        if(isset($_GET['ID'])) {
-            // Get the ID from the URL parameter
-            $employee_id = $_GET['ID'];
-
 
 ?>
 
@@ -36,50 +32,61 @@ $row = $employee->fetch_assoc();
 
 <?php include 'header.php'; ?>
 
+
     <div class="right-container">
-        <h2>Employee Information</h2></br>
+        <div class="right-container-details">
+        <h2>Profile Overview</h2></br>
         
-    <form action="delete.php" method="post">
-        <div class="button-container">
-            
-            <?php if($_SESSION['Access'] == "administrator"){?>
-            <a href="edit.php?ID=<?php echo $row['ID'];?>">Edit</a>
-            <button type="submit" name="delete" class="button-danger">Delete</button>
-            <?php } ?>
+                <form action="delete.php" method="post">
+                    <div class="button-container">
+                        
+                        <?php if($_SESSION['Access'] == "administrator"){?>
+                        <a href="edit.php?ID=<?php echo $row['ID'];?>">Edit</a>
+                        <button type="submit" name="delete" class="button-danger">Delete</button>
+                        <?php } ?>
 
+                    </div>
+                    <input type="hidden" name="ID" value="<?php echo $row['ID'];?>">
+                </form>
+
+                
+        <div class="employee-picture">
+            <?php
+                // Assuming $row is the result of your database query
+                $imagePath = $row['file_path']; // Assuming 'file_path' is the column name where you stored the file path
+
+                // Check if it's an image file
+                $allowedFormats = ['jpg', 'jpeg', 'png', 'gif'];
+                $fileExtension = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
+                $isImage = in_array($fileExtension, $allowedFormats);
+
+                if ($isImage) {
+                    echo '<img src="' . $imagePath . '" alt="Uploaded Image" style="width: 200px; height: 200px;">';
+                } else {
+                    echo 'There is no uploaded image.';
+                }
+            ?>
         </div>
-        <input type="hidden" name="ID" value="<?php echo $row['ID'];?>">
-    </form>
 
-    <?php
-
-
-            // Query the database to fetch the details of the employee with this ID
-            // Example query: SELECT * FROM employees WHERE ID = $employee_id
-            // Execute your query and fetch the result
-
-            // Example code assuming $result contains the fetched details
+    <div class="information-employee">
+        <?php
             if($row) {
                 // Display the details of the employee
-                echo $row['ID'];
-                echo '<p>First Name: ' . $row['first_name'] . '</p>';
-                echo '<p>Middle Name: ' . $row['middle_name'] . '</p>';
-                echo '<p>Last Name: ' . $row['last_name'] . '</p>';
+                echo $row['last_name'] . ',' . $row['first_name'] . ' ' . $row['middle_name'];
                 echo '<p>Status: ' . $row['employee_status'] . '</p>';
                 // Display other relevant details here
             } else {
                 // Handle the case where the employee ID is not found
                 echo '<p>Employee not found.</p>';
+                }
+            } else {
+                // Handle the case where the ID parameter is not set
+                echo '<p>Employee ID not provided.</p>';
             }
-        } else {
-            // Handle the case where the ID parameter is not set
-            echo '<p>Employee ID not provided.</p>';
-        }
         ?>
+    </div>
 
-
-
-
+    </div>
     </div>
 </body>
 </html>
