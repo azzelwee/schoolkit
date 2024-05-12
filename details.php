@@ -9,7 +9,7 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 include_once("connections/connection.php");
 $con = connection();
 
-$sql = "SELECT * FROM employee_list2 ORDER BY id DESC";
+$sql = "SELECT * FROM employee_list2 ORDER BY ID DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
         // Connect to your database (you might already have this included in your code)
@@ -32,7 +32,7 @@ $row = $employee->fetch_assoc();
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body id="<?php echo $id ?>">
+<body>
 
 <?php include 'header.php'; ?>
 
@@ -61,7 +61,7 @@ $row = $employee->fetch_assoc();
             // Example code assuming $result contains the fetched details
             if($row) {
                 // Display the details of the employee
-                echo '<h1>Employee Details</h1>';
+                echo $row['ID'];
                 echo '<p>First Name: ' . $row['first_name'] . '</p>';
                 echo '<p>Middle Name: ' . $row['middle_name'] . '</p>';
                 echo '<p>Last Name: ' . $row['last_name'] . '</p>';
