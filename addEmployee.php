@@ -318,7 +318,7 @@ if(isset($_POST['submit'])) {
         </div>
         <button type="button" class="thebutton" onclick="prevSection('section3', 'section2')">Back</button>   
     </form>
-    <input type="submit" value="submit" name="submit" value="Submit Form">
+    <input type="submit" class="thebutton" value="submit" name="submit" value="Submit Form">
 </div>
 <script src= js/main.js></script>
 

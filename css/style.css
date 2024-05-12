@@ -529,12 +529,14 @@ ul.items {
     transition: top 0.3s;
 }
 .right-container {
+
     margin-left: 250px;
     padding: 40px;
 }
 
 .right-container-details
 {
+    background-color: white;
     margin: 25px;
     width: auto;
     padding: 40px;
@@ -765,6 +767,9 @@ ul.items {
 }
 
 .employee-name{
+    margin-top: 10px;
+    margin-left: 40px;
     font-weight: bold;
     font-size: 22px;
 }
+

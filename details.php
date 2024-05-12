@@ -76,6 +76,7 @@ $row = $employee->fetch_assoc();
             echo $row['last_name'] . ',' . $row['first_name'] . ' ' . $row['middle_name'];
         ?>
         </div>
+        
         <?php
             echo '<p>Status: ' . $row['employee_status'] . '</p>';
         ?>
