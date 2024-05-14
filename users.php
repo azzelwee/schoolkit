@@ -9,6 +9,8 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 include_once("connections/connection.php");
 $con = connection();
 
+
+
 $sql = "SELECT * FROM employee_users ORDER BY id DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
@@ -76,8 +78,10 @@ $row = $employee->fetch_assoc();
         
         <table>
         <thead>
+            
      
         <tr>
+            <th></th>
             <th>Username</th>
             <th>Password</th>
             <th>Access Type</th>
@@ -86,6 +90,17 @@ $row = $employee->fetch_assoc();
         <tbody>
         <?php do{ ?>
         <tr>
+            <td>
+            <form action="deleteUser.php" method="post">
+                <div class="button-container-delete-edit">
+                    <?php if ($_SESSION['Access'] == "administrator") { ?>
+                    <a href="editUser.php?ID=<?php echo $row['ID']; ?>">Edit</a>
+                    <button type="submit" name="delete" class="button-danger-delete-edit">Delete</button>
+                    <?php } ?>
+                </div>
+                <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
+            </form>
+            </td>
             <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['password']; ?></td>
             <td><?php echo $row['access']; ?></td>

@@ -4,96 +4,34 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
-
 include_once("connections/connection.php");
+
 $con = connection();
+$id = $_GET['ID'];
 
-if(isset($_POST['submit'])) {
-    $fname = $_POST['first_name'];
-    $mname = $_POST['middle_name'];
-    $lname = $_POST['last_name'];
-    $estatus = $_POST['employee_status'];
+$sql = "SELECT * FROM employee_list WHERE id = '$id'" ;
+$employee = $con->query($sql) or die ($con->error);
+$row = $employee->fetch_assoc();
 
-    // Check if file was uploaded
-    if(isset($_FILES["fileToUpload"]["tmp_name"]) && !empty($_FILES["fileToUpload"]["tmp_name"])) {
-        // File upload handling
-        $target_dir = "img/uploads/";
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+if(isset($_POST['submit'])){
 
-        // Check if image file is a actual image or fake image
-        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-        if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
-        } else {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
+    $fname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $dprtment = $_POST['departments'];
 
-        // Check if file already exists
-        if (file_exists($target_file)) {
-            echo "Sorry, file already exists.";
-            $uploadOk = 0;
-        }
+    $sql = "UPDATE employee_list SET full_name = '$fname', contact_information = '$email', department = '$dprtment' WHERE id = '$id'";
 
-        // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            $uploadOk = 0;
-        }
+    $con->query($sql) or die ($con->error);
+    echo header("Location: employee.php");
 
-        // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
-        }
-
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
-        } else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-
-                // Now, insert into database
-                $sql = "INSERT INTO `employee_list2`(`first_name`, `middle_name`, `last_name`, `employee_status`, `file_path`) 
-                VALUES ('$fname','$mname','$lname', '$estatus', '$target_file')";
-                
-                $con->query($sql) or die ($con->error);
-
-                if($con){
-                    $_SESSION['status-add'] = "Data Added Successfully";
-                    header('Location: listEmployee.php');
-                } else{
-                    echo "Something went wrong";
-                }
-
-            } else {
-                echo "Sorry, there was an error uploading your file.";
-            }
-        }
-    } else {
-        // No file uploaded, proceed without uploading
-        // Now, insert into database without file path
-        $sql = "INSERT INTO `employee_list2`(`first_name`, `middle_name`, `last_name`, `employee_status`) 
-        VALUES ('$fname','$mname','$lname', '$estatus')";
-        
-        $con->query($sql) or die ($con->error);
-
-        if($con){
-            $_SESSION['status-add'] = "Data Added Successfully";
-            header('Location: listEmployee.php');
-        } else{
-            echo "Something went wrong";
-        }
+    if($con){
+        $_SESSION['status-edit'] = "Data Edited Successfully";
+        header('Location: listEmployee.php');
+    } else{
+        echo "Something went wrong";
     }
-}
 
+}
 
 ?>
 <!DOCTYPE html>
@@ -101,18 +39,20 @@ if(isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
+    <title>Edit</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
+<body id="<?php echo $id ?>">
 
 <?php include 'header.php'; ?>
 
-    <div class="right-container-add">
+<div class="right-container-add">
         <div class="add-form">
         <form action="" method="post" enctype="multipart/form-data">
         <div id="section1">
             <div class="lineup1">
+                
                 <div class="column">
                     </br>
                     <h2>Basic Information</h2>

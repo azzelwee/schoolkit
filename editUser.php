@@ -15,18 +15,18 @@ $row = $employee->fetch_assoc();
 
 if(isset($_POST['submit'])){
 
-    $fname = $_POST['fullname'];
-    $email = $_POST['email'];
-    $dprtment = $_POST['departments'];
+    $uname = $_POST['username'];
+    $pword = $_POST['password'];
+    $access = $_POST['access'];
 
-    $sql = "UPDATE employee_list SET full_name = '$fname', contact_information = '$email', department = '$dprtment' WHERE id = '$id'";
+    $sql = "UPDATE employee_users SET username = '$uname', password = '$pword', access = '$access' WHERE ID = '$id'";
 
     $con->query($sql) or die ($con->error);
-    echo header("Location: employee.php");
+    echo header("Location: users.php");
 
     if($con){
         $_SESSION['status-edit'] = "Data Edited Successfully";
-        header('Location: listEmployee.php');
+        header('Location: users.php');
     } else{
         echo "Something went wrong";
     }
@@ -48,27 +48,26 @@ if(isset($_POST['submit'])){
 <?php include 'header.php'; ?>
 
     <div class="right-container">
-    <h2>Edit Employee</h2></br>
-        <form action="employee.php" method="get">
-            <div class="search">
-                <img src="img/search.png" class="search-icon">
-                <input class="search-input" name="search" placeholder="Search">
-            </div>
-        </form>
+    <h2>Edit User</h2></br>
+
 
 
         <div class="form-container">
 
             <form action="" method="post">
 
-                <label>First Name</label>
-                <input type="text" name="fullname" id="fullname" required placeholder="Enter Full Name">
+            <label>Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter Username">
 
-                <label>Email</label>
-                <input type="text" name="email" id="email" required placeholder="Enter Email">
+                <label>Password</label>
+                <input type="text" name="password" id="password" placeholder="Enter Password">
 
-                <label>Department</label>
-                <input type="text" name="departments" id="departments" required placeholder="Enter Department">
+                <label>Select Access Type</label>
+                <select name="access" required>
+                    <option value="">-- select access type --</option>
+                    <option value="administrator">Administrator</option>
+                    <option value="user">User</option>
+                </select>
 
 
                 <!-- <label>Department</label>
@@ -78,7 +77,7 @@ if(isset($_POST['submit'])){
                     <option value="test2">test2</option>
                 </select> -->
 
-                <input type="submit" name="submit" value="Submit Form">
+                <input type="submit" class="thebutton" name="submit" value="Edit">
 
             </form>
         </div>
