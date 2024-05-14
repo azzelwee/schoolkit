@@ -69,25 +69,61 @@ $row = $employee->fetch_assoc();
             <div class="employee-information">
                 <h2>Employee Information</h2>
                 <p>Status: <span style="color: <?php echo ($row['employee_status'] == 'Hired') ? 'green' : 'red'; ?>;"><?php echo $row['employee_status']; ?></span> &emsp;&emsp;Date Hired:</p>
-                <p>SSS ID:</p>
-                <p>Tin ID:</p>
-                <p>Pagibig ID:</p>
-                <p>PhilHealth ID:</p>
-                    </br>
+                <div class="cards">
+                    <div style="display: flex; align-items: center;">
+                    <p style="margin-right: 20px;">SSS ID:</p>
+                    <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                    <p style="margin-right: 20px;">Tin ID:</p>
+                    <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                    <p style="margin-right: 20px;">PAGIBIG ID:</p>
+                    <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                    <p style="margin-right: 20px;">PhilHealth ID:</p>
+                    <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    </div>
+                </div>
+                </br>
                 <h2>Employment History</h2>
-                <p>Company Name:</p>
-                <p>Nature of Business:</p>
-                <p>Branch Department:</p>
-                <p>Position:</p>
-                <p>Salary Rate:</p>
-                <p>Date Hired:</p>
-                <p>Date Separated:</p>
-                <p>Reason For Leaving:</p>
-            
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Company Name:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Nature of Business:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Branch Department:</p>
-                <div style="width: 200px; height: 20px; border: 1px solid black; background-color: lightgray; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: .5px solid black; background-color: white; border-radius: 4px;"></div>
                 </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Position:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Salary Rate:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 82px;">Date Hired:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 45px;">Date Separated:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Reason for leaving:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+            
+                
                 
             </div>
             
@@ -96,15 +132,42 @@ $row = $employee->fetch_assoc();
     <div class="for-column2">
         <div id="content-0" class="content">
             <h2>Basic Information</h2>
-                <p>Age:</p>
-                <p>Gender:</p>
-                <p>Height(cm):</p>
-                <p>Weight(lbs.):</p>
-                <p>Birthdate:</p>
-                <p>Place of Birth:</p>
-                <p>Religion:</p>
-                <p>Civil Status:</p>
-                <p>Citizenship:</p>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Age:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Gender:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Height(cm):</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Weight(lbs.):</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Birthdate:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Place of Birth:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Religion:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Civil Status:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Citizenship:</p>
+                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                </div>
 
 
         </div>

@@ -182,7 +182,8 @@ tr:nth-child(even) {
 .content p {
     margin-top: 10px;
     font-weight: bold;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+
 }
 
 .page-numbers {
@@ -845,4 +846,14 @@ ul.items {
     font-weight: bold;
     margin-bottom: 10px;
 
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; /* Adjust the gap between columns and rows if needed */
+}
+
+.cards p {
+    margin: 0; /* Optional: Remove default margin if necessary */
 }
