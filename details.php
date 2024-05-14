@@ -84,6 +84,10 @@ $row = $employee->fetch_assoc();
                 <p>Date Separated:</p>
                 <p>Reason For Leaving:</p>
             
+                <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Branch Department:</p>
+                <div style="width: 200px; height: 20px; border: 1px solid black; background-color: lightgray; border-radius: 4px;"></div>
+                </div>
                 
             </div>
             
