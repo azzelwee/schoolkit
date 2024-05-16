@@ -16,7 +16,7 @@ include_once("connections/connection.php");
 $con = connection();
 $search = $_GET['search'];
 
-$sql = "SELECT * FROM employee_list WHERE full_name LIKE '%$search%' ORDER BY id DESC";
+$sql = "SELECT * FROM employee_list2 WHERE first_name LIKE '%$search%' ORDER BY ID DESC";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
@@ -35,6 +35,7 @@ $row = $employee->fetch_assoc();
 
 
     <div class="right-container">
+        <div class="box-container">
         
         <h2>Search Results</h2></br>
         <form action="result.php" method="get">
@@ -45,7 +46,7 @@ $row = $employee->fetch_assoc();
         </form>
 
         <div class="button-container">
-            <a href="add2.php">Add New</a>
+            <a href="addEmployee.php">Add New</a>
         </div>
 
     <table>
@@ -53,25 +54,21 @@ $row = $employee->fetch_assoc();
         <tr>
             <th></th>
             <th>Full Name</th>
-            <th>Email</th>
-            <th>Department</th>
+            <th>Employee Status</th>
         </tr>
         </thead>
         <tbody>
         <?php do{ ?>
         <tr>
-            <td><a href="details.php?ID=<?php echo $row['id'];?>"
+            <td><a href="details.php?ID=<?php echo $row['ID'];?>"
             class="button-small">view</a></td>
-            <td><?php echo $row['full_name']; ?></td>
-            <td><?php echo $row['contact_information']; ?></td>
-            <td><?php echo $row['department']; ?></td>
+            <td><?php echo $row['first_name']; ?></td>
+            <td><?php echo $row['employee_status']; ?></td>
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
         </tbody>
-    </table>
-
-    
-
+    </table>    
+        </div>
     
 </body>
 </html>

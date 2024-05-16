@@ -48,6 +48,7 @@ if(isset($_POST['submit'])){
 <?php include 'header.php'; ?>
 
     <div class="right-container">
+        <div class="box-container">
     <h2>Edit User</h2></br>
 
 
@@ -82,7 +83,7 @@ if(isset($_POST['submit'])){
             </form>
         </div>
     </div>
-
+    </div>
 
 </body>
 </html>
