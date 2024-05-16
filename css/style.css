@@ -883,3 +883,73 @@ ul.items {
 .cards p {
     margin: 0; /* Optional: Remove default margin if necessary */
 }
+
+/* Your existing CSS styles */
+.add-employee-container {
+    width: 100%; /* Fill the entire width */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.add-employee-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.add-employee-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.add-employee-form .form-group {
+    flex: 1 1 calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.add-employee-form .form-group.small {
+    flex: 1 1 calc(25% - 10px);
+}
+
+.add-employee-form label {
+    margin-top: 10px;
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.add-employee-form input[type="text"],
+.add-employee-form input[type="email"],
+.add-employee-form input[type="number"],
+.add-employee-form select,
+.add-employee-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.add-employee-form input[type="text"]:focus,
+.add-employee-form input[type="email"]:focus,
+.add-employee-form input[type="number"]:focus,
+.add-employee-form select:focus,
+.add-employee-form input[type="date"]:focus {
+    border-color: #4CAF50;
+}
+
+.add-employee-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-employee-form button:hover {
+    background-color: #45a049;
+}
