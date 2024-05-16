@@ -233,6 +233,7 @@ tr:nth-child(even) {
     position: relative;
 }
 .search {
+    border: 1px solid #333333;
     width: 40%;
     display: flex;
     align-items: center;
@@ -252,7 +253,7 @@ tr:nth-child(even) {
 }
 
 .search-input::placeholder {
-    color: rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.75);
 }
 
 .search-icon {
@@ -568,13 +569,35 @@ ul.items {
     display: none;
     transition: top 0.3s;
 }
-.right-container {
 
-    margin-left: 250px;
-    padding: 40px;
+.box-container {
+    position: absolute;
+    border: 1px solid #ccc;
+    width: 75%;
+    height: 90%;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box-container1 {
+    display: flex;
+    position: absolute;
+    border: 1px solid #ccc;
+    width: 75%;
+    height: 90%;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
+.right-container {
+    margin-left: 250px;
+    padding: 40px;
+}
 
 
 .right-container-add {
@@ -628,7 +651,7 @@ ul.items {
 
 .employed {
     top: 120px;
-        left: 330px;
+        left: 70px;
         position: absolute;
         color: white;
         font-size: 90px;
@@ -639,7 +662,7 @@ ul.items {
 
 .users{
         top: 120px;
-            left: 680px;
+            left: 430px;
             position: absolute;
             color: white;
             font-size: 90px;
@@ -780,11 +803,14 @@ ul.items {
    
 }
 
+.right-frame{
+
+}
+
 
 .right-container-main {
     margin-left: 250px;
     padding: 30px;
-
     display: flex;
     justify-content: space-between;
 }

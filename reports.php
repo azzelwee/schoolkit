@@ -50,9 +50,10 @@ $row = $employee->fetch_assoc();
 <?php include 'header.php'; ?>
 
     <div class="right-container">
+        <div class="box-container">
         <h2>Reports</h2></br>
     </div>
-        
+    </div>
 
 </body>
 <script src= js/main.js></script>

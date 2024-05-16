@@ -51,8 +51,9 @@ $row = $employee->fetch_assoc();
 
     <?php if ($is_admin): ?>
 
-
+        
     <div class="right-container">
+    <div class="box-container">
         <h2>Employee List</h2></br>
         <form action="result.php" method="get">
         <div class="search">
@@ -200,8 +201,10 @@ $row = $employee->fetch_assoc();
     
 
     </div>
+        </div>
     <!-- end of pagination -->
     <?php endif; ?>
+
 </body>
 <script src= js/main.js></script>
 </html>

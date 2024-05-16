@@ -109,6 +109,7 @@ if(isset($_POST['submit'])) {
 <?php include 'header.php'; ?>
 
     <div class="right-container-add">
+        <div class="box-container">
         <div class="add-form">
         <form action="" method="post" enctype="multipart/form-data">
         <div id="section1">
@@ -128,41 +129,39 @@ if(isset($_POST['submit'])) {
                     <input type="text" name="last_name" id="last_name" placeholder="Enter Last Name">
                     </br>
                     <label>Age</label>
-                    <input type="text" id="smaller" >
+                    <input type="text" id="smaller" style="width: 70px;">
                 
                     <label>Gender</label>
-                    <select  id="small">
+                    <select  id="small" style="width: 120px;">
                         <option value=""></option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
 
-                    
+</br>
                     <label>Height(cm)</label>
-                    <input type="text" id="small">
+                    <input type="text" id="small" style="width: 70px;">
                     
                     <label>Weight(lbs.)</label>
-                    <input type="text" id="small">
-                    
+                    <input type="text" id="small" style="width: 70px;">
+</br>
                     <label>Birthdate</label>
-                    <input type="text"   placeholder="MM-DD-YY">
-                    </br>
-                    <label>Place of Birth</label>
-                    <input type="text"  placeholder="Enter Place of Birth">
+                    <input type="text"   placeholder="MM-DD-YY" style="width: 130px;">
+                    <label>&nbsp&nbspPlace of Birth</label>
+                    <input type="text"  placeholder="Enter Place of Birth" style="width: 190px;">
                     </br>
                     <label>Religion</label>
                     <input type="text"  placeholder="Enter Religion">
                     </br>
                     <label>Civil Status</label>
-                    <select >
+                    <select style="width: 130px;">
                         <option value=""></option>
                         <option value="Single">Single</option>
                         <option value="Married">Married</option>
                         <option value="Separated">Separated</option>
                     </select>
-                    </br>
                     <label>Citizenship</label>
-                    <input type="text"  placeholder="Enter Citizenship">
+                    <input type="text"  placeholder="Enter Citizenship" style="width: 200px;">
 
                 </div>
 
@@ -170,29 +169,20 @@ if(isset($_POST['submit'])) {
                 </br>
                     <h2>Contact Information</h2>
                     </br>
-                    <label>No./St./Subd.</label>
-                    <input type="text" id="small">
-                    
-                    <label>City</label>
-                    <input type="text" id="small">
-                    
                     <label>Address</label>
-                    <input type="text" id="semi-small">
-                    </br>
-                    <label>Zip Code</label>
-                    <input type="text" id="small">
-                    
+                    <input type="text" id="small" style="width: 417px; height: 77px;">
+</br>
                     <label>Country</label>
                     <input type="text" id="semi-small" style="width: 417px;">
                     </br>
                     <label>Mobile Number</label>
-                    <input type="text" style="width: 560px"  placeholder="Enter Mobile Number">
+                    <input type="text" style="width: 360px"  placeholder="Enter Mobile Number">
                     </br>
                     <label>Telephone Number</label>
-                    <input type="text" style="width: 530px"  placeholder="Enter Telephone Number">
+                    <input type="text" style="width: 330px"  placeholder="Enter Telephone Number">
                     </br>
                         <label>Email</label>
-                        <input type="text" style="width: 637px"  placeholder="Enter Email">
+                        <input type="text" style="width: 337px"  placeholder="Enter Email" >
                     </br>
                 </div>
             </div>
@@ -222,7 +212,7 @@ if(isset($_POST['submit'])) {
         <input type="text">
         </br>
         <label>Achievements</label>
-        <input type="text" id="wide">
+        <input type="text" id="wide" style="width: 507px;">
 
             </div>
             <div class="column">
@@ -242,7 +232,7 @@ if(isset($_POST['submit'])) {
         <input type="text">
         </br>
         <label>Remarks</label>
-        <input type="text" id="wide" style="width: 763px">
+        <input type="text" id="wide" style="width: 508px">
         </br>
 
             </div>
@@ -306,19 +296,19 @@ if(isset($_POST['submit'])) {
         <input type="text">
         </br>
         <label>Date Hired</label>
-        <input type="text">
-        </br>
-        <label>Date Separated</label>
-        <input type="text">
+        <input type="text" style="width: 117px;"> 
+        <label>&nbsp&nbsp Date Separated</label>
+        <input type="text" style="width: 117px;">
         </br>
         <label>Reason for Leaving</label>
-        <input type="text" id="wide">
+        <input type="text" id="wide" style="width: 507px; height: 50px;">
         <br>
         </div>
         </div>
         <button type="button" class="thebutton" onclick="prevSection('section3', 'section2')">Back</button>   
     </form>
     <input type="submit" class="thebutton" value="Submit" name="submit">
+</div>
 </div>
 <script src= js/main.js></script>
 

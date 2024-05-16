@@ -31,6 +31,7 @@ $row = $employee->fetch_assoc();
 
         
     <div class="right-container">
+        <div class="box-container">
         <h2>User Management</h2></br>
 
         <div class="button-container">
@@ -110,7 +111,7 @@ $row = $employee->fetch_assoc();
         
         </tbody>
     </table>
-
+</div>
 </body>
 <script src= js/main.js></script>
 </html>

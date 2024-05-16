@@ -46,6 +46,7 @@ $nr_of_rows = $result->num_rows;
 <?php include 'header.php'; ?>
 
     <div class="right-container">
+    <div class="box-container">
         <h2>Maintenance</h2></br>
         <div class="container-list">  
             <a href="listEmployee.php" class="container-container1">
@@ -89,6 +90,7 @@ $nr_of_rows = $result->num_rows;
     </div>
     </div>
     </div>
+</div>
     
 </body>
 <script src= js/main.js></script>

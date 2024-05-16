@@ -72,61 +72,57 @@ $row = $employee->fetch_assoc();
                 <div class="cards">
                     <div style="display: flex; align-items: center;">
                     <p style="margin-right: 20px;">SSS ID:</p>
-                    <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                     </div>
                     <div style="display: flex; align-items: center;">
                     <p style="margin-right: 20px;">Tin ID:</p>
-                    <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                     </div>
                     <div style="display: flex; align-items: center;">
                     <p style="margin-right: 20px;">PAGIBIG ID:</p>
-                    <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                     </div>
                     <div style="display: flex; align-items: center;">
                     <p style="margin-right: 20px;">PhilHealth ID:</p>
-                    <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                     </div>
                 </div>
                 </br>
                 <h2>Employment History</h2>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Company Name:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Nature of Business:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Branch Department:</p>
-                <div style="width: 200px; height: 25px; border: .5px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Position:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Salary Rate:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 82px;">Date Hired:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 45px;">Date Separated:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Reason for leaving:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
-                </div>
-            
-                
-                
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+                </div> 
             </div>
-            
         </div>
     </div>
     <div class="for-column2">
@@ -134,68 +130,111 @@ $row = $employee->fetch_assoc();
             <h2>Basic Information</h2>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Age:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Gender:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Height(cm):</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Weight(lbs.):</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Birthdate:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
-                <p style="margin-right: 20px;">Place of Birth:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                    <p style="margin-right: 20px;">Place of Birth:</p>
+                    <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
+
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Religion:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Civil Status:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
                 <div style="display: flex; align-items: center;">
                 <p style="margin-right: 20px;">Citizenship:</p>
-                <div style="width: 200px; height: 25px; border: 1px solid black; background-color: white; border-radius: 4px;"></div>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
                 </div>
-
-
         </div>
 
-        
         <div id="content-1" class="content" style="display:none;">
             <h2>Contact Information</h2>
-            <p>No.St./Subd.: City: Address:</p>
-            <p>Zip Code: Country:</p>
-            <p>Mobile Number:</p>
-            <p>Telephone Number:</p>
-            <p>Email:</p>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Full Address: </p>
+                <div style="margin-top: 10px; width: 400px; height: 50px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Mobile Number: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Telephone Number: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Email: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
         </div>
+
         <div id="content-2" class="content" style="display:none;">
             <h2>Education Attainment</h2>
-            <p>Elementary:</p>
-            <p>High School:</p>
-            <p>Vocational:</p>
-            <p>College:</p>
-            <p>Course:</p>
-            <p>Achievements:</p>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Elementary: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">High School: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Vocational: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">College: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Course: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Achievements: </p>
+                <div style="width: 300px; height: 50px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
                     </br>
             <h2>Training</h2>
-            <p>Title:</p>
-            <p>Training Company:</p>
-            <p>Inclusive Dates:</p>
-            <p>Venue:</p>
-            <p>Remarks:</p>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Title: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Training Company: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Inclusive Dates: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Venue: </p>
+                <div style="width: 200px; height: 25px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <p style="margin-right: 20px;">Remarks: </p>
+                <div style="width: 300px; height: 50px; border: 1px solid rgba(0, 0, 0, 0.5); background-color: white; border-radius: 4px;"></div>
+            </div>
         </div>
         <div class="navigation-buttons">
             <button id="back-button" onclick="navigate(-1)">Back</button>
