@@ -237,7 +237,7 @@ if(isset($_POST['submit'])) {
 
             </div>
         </div>
-            <button type="button" class="thebutton" onclick="prevSection('section2', 'section1')">Back</button>
+            <button type="button" class="thebutton2" onclick="prevSection('section2', 'section1')">Back</button>
             <button type="button" class="thebutton" onclick="nextSection('section2', 'section3')">Next</button>
     </div>
 

@@ -783,6 +783,10 @@ ul.items {
 }
 
 .thebutton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
     padding: 10px 20px;
     background-color: #d52033;
     color: #fff;
@@ -791,6 +795,21 @@ ul.items {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+.thebutton2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #d52033;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 
 /* CSS for the button hover effect */
 .thebutton:hover {
