@@ -31,6 +31,10 @@ $row_count = $result->num_rows;
 $result = $con->query("SELECT * FROM employee_list2");
 $nr_of_rows = $result->num_rows;
 
+$result = $con->query("SELECT * FROM applicant_list2");
+$applicant_rows = $result->num_rows;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +80,9 @@ $nr_of_rows = $result->num_rows;
             <a href="apply.php" class="container-container2">
                 <img src="img/NBSGray.png">
                     <div class="ssp">
+                        <?php
+                        echo $applicant_rows;
+                        ?>
                         <div class="ssp-text">
                         Self Service Portal</br>
                         for Applicant
