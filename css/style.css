@@ -912,10 +912,8 @@ ul.items {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .add-employee-container h2 {
-    text-align: center;
-    color: #333;
+    text-align: left;
 }
 
 .add-employee-form {
@@ -930,6 +928,11 @@ ul.items {
 
 .add-employee-form .form-group.small {
     flex: 1 1 calc(25% - 10px);
+}
+
+.add-employee-form .form-group-below {
+    flex: 1 1 100%; /* Take the full width */
+    margin-top: 20px; /* Add some space above */
 }
 
 .add-employee-form label {
@@ -971,4 +974,14 @@ ul.items {
 
 .add-employee-form button:hover {
     background-color: #45a049;
+}
+
+.form-group-button {
+    flex: 1 1 100%; /* Take the full width */
+    margin-top: 20px;
+}
+
+
+.form-group-below{
+
 }
