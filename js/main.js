@@ -18,26 +18,26 @@ function closePopup() {
   }, 3000); // 3000 milliseconds = 3 seconds
 }
 
-  let currentContentIndex = 0;
-const contents = document.querySelectorAll('.content');
+function handlePositionChange() {
+  const positionSelect = document.getElementById('position');
+  const teachingInputDiv = document.getElementById('teachingInputDiv');
+  const nonTeachingInputDiv = document.getElementById('nonTeachingInputDiv');
+  const selectedValue = positionSelect.value;
 
-function navigate(direction) {
-    contents[currentContentIndex].style.display = 'none';
-    currentContentIndex += direction;
+  // Hide both divs initially
+  teachingInputDiv.classList.add('hidden');
+  nonTeachingInputDiv.classList.add('hidden');
 
-    if (currentContentIndex < 0) {
-        currentContentIndex = 0;
-    } else if (currentContentIndex >= contents.length) {
-        currentContentIndex = contents.length - 1;
-    }
-
-    contents[currentContentIndex].style.display = 'block';
-
-    document.getElementById('back-button').disabled = currentContentIndex === 0;
-    document.getElementById('next-button').disabled = currentContentIndex === contents.length - 1;
+  if (selectedValue === 'Teaching') {
+      // Show teaching input div
+      teachingInputDiv.classList.remove('hidden');
+  } else if (selectedValue === 'Non-Teaching') {
+      // Show non-teaching input div
+      nonTeachingInputDiv.classList.remove('hidden');
+  }
 }
 
-// Initialize the navigation buttons state
-document.getElementById('back-button').disabled = true;
+
+
 
 

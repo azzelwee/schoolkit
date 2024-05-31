@@ -72,6 +72,16 @@ $nr_of_rows = $result->num_rows;
                         </div>
                     </div>
             </a>
+
+            <a href="apply.php" class="container-container2">
+                <img src="img/NBSGray.png">
+                    <div class="ssp">
+                        <div class="ssp-text">
+                        Self Service Portal</br>
+                        for Applicant
+                        </div>
+                    </div>
+            </a>
         
 <!-- 
         <a href="#" class="container-container2">

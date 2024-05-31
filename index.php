@@ -7,6 +7,7 @@ if(!isset($_SESSION)){
 include_once("connections/connection.php");
 $con = connection();
 
+
 if(isset($_POST['login'])){
 
     $username = $_POST['username'];

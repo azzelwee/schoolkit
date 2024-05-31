@@ -52,6 +52,7 @@ $row = $employee->fetch_assoc();
     <div class="right-container">
         <div class="box-container">
         <h2>Reports</h2></br>
+        
     </div>
     </div>
 
