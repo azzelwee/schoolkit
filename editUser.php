@@ -15,7 +15,9 @@ $row = $employee->fetch_assoc();
 
 if(isset($_POST['submit'])){
 
-    $fullname = $_POST['full_name'];
+    $fname = $_POST['first_name'];
+    $mname = $_POST['middle_name'];
+    $lname = $_POST['last_name'];
     $uname = $_POST['username'];
     $pword = $_POST['password'];
     $access = $_POST['access'];
@@ -65,7 +67,7 @@ if(isset($_POST['submit'])){
             <form action="" method="post">
 
                 <label>Full Name</label>
-                <input type="text" name="full_name" id="full_name" value="<?php echo $row['full_name']; ?>">
+                <input type="text" name="full_name" id="full_name" value="<?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>">
 
                 <label>Username</label>
                 <input type="text" name="username" id="username" value="<?php echo $row['username']; ?>">
@@ -88,11 +90,13 @@ if(isset($_POST['submit'])){
                     <option value="test2">test2</option>
                 </select> -->
 
-                <input type="submit" class="thebutton" name="submit" value="Edit">
+                
 
             </form>
         </div>
+        <input type="submit" class="thebutton" name="submit" value="Edit">
     </div>
+    
     </div>
 
 </body>
