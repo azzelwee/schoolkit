@@ -31,7 +31,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
                     <li><a href="logout.php"><img src="img/out.png"><p>Logout</p></a></li>
                     <?php } else {?>
 
-                    <li><a href="login.php"><img src="img/out.png"><p>Login</p></a></li>
+                    <li><a href="index.php"><img src="img/out.png"><p>Login</p></a></li>
                 <?php } ?>
                 
                 <?php if ($is_admin): ?>

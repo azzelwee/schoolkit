@@ -5,21 +5,22 @@ if(!isset($_SESSION)){
 }
 
 include_once("connections/connection.php");
-
 $con = connection();
+
 $id = $_GET['ID'];
 
-$sql = "SELECT * FROM employee_list WHERE id = '$id'" ;
+$sql = "SELECT * FROM employee_users WHERE id = '$id'" ;
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
 if(isset($_POST['submit'])){
 
+    $fullname = $_POST['full_name'];
     $uname = $_POST['username'];
     $pword = $_POST['password'];
     $access = $_POST['access'];
 
-    $sql = "UPDATE employee_users SET username = '$uname', password = '$pword', access = '$access' WHERE ID = '$id'";
+    $sql = "UPDATE employee_users SET full_name = '$fullname', username = '$uname', password = '$pword', access = '$access' WHERE ID = '$id'";
 
     $con->query($sql) or die ($con->error);
     echo header("Location: users.php");
@@ -51,14 +52,23 @@ if(isset($_POST['submit'])){
         <div class="box-container">
     <h2>Edit User</h2></br>
 
+            <form action="deleteUser.php" method="post">
+                <div class="button-container-delete-edit">
+                    <button type="submit" name="delete" class="button-danger-delete-edit">Delete</button>
+                </div>
+                <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
+            </form>
 
 
         <div class="form-container">
 
             <form action="" method="post">
 
-            <label>Username</label>
-                <input type="text" name="username" id="username" placeholder="Enter Username">
+                <label>Full Name</label>
+                <input type="text" name="full_name" id="full_name" value="<?php echo $row['full_name']; ?>">
+
+                <label>Username</label>
+                <input type="text" name="username" id="username" value="<?php echo $row['username']; ?>">
 
                 <label>Password</label>
                 <input type="text" name="password" id="password" placeholder="Enter Password">

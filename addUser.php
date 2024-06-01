@@ -11,11 +11,15 @@ $con = connection();
 
 if(isset($_POST['submit'])){
 
+    $fname = $_POST['first_name'];
+    $mname = $_POST['middle_name'];
+    $lname = $_POST['last_name'];
     $uname = $_POST['username'];
     $pword = $_POST['password'];
     $access = $_POST['access'];
 
-    $sql = "INSERT INTO `employee_users`(`username`, `password`, `access`)VALUES ('$uname','$pword','$access')";
+    $sql = "INSERT INTO `employee_users`(`first_name`, `middle_name`, `last_name`, `username`, `password`, `access`)
+    VALUES ('$fname', '$mname', '$lname', '$uname','$pword','$access')";
 
     $con->query($sql) or die ($con->error);
     // $query_run = mysqli_query($con, $query)
@@ -46,39 +50,62 @@ if(isset($_POST['submit'])){
 
     <div class="right-container">
         <div class="box-container">
-    <h2>Add Users</h2></br>
+        <form action="" method="post" class="add-employee-form">
+                <div id="section1">
+                <h2>Add Users</h2>
+                    <div class="form-page">
+                        <div class="column">
+                            <div class="form-group small">
+                                <label for="user-first-name">First Name:</label>
+                                <input type="text" id="" name="first_name">
+                            </div>
+                            <div class="form-group small">
+                                <label for="user-middle-name">Middle Name:</label>
+                                <input type="text" id="" name="middle_name">
+                            </div>
+                            
+                            <div class="form-group small">
+                                <label for="user-last-name">Last Name:</label>
+                                <input type="text" id="" name="last_name">
+                            </div>
+                        </div>
 
-        <div class="form-container">
+                        <div class="column">
+                            <div class="form-group">
+                                <label for="user-first-name">User Name:</label>
+                                <input type="text" id="" name="username">
+                            </div>
+                        </div>
 
-            <form action="" method="post">
+                        <div class="column">
+                            <div class="form-group">
+                                <label for="user-middle-name">Password:</label>
+                                <input type="text" id="" name="password">
+                            </div>
+                        </div>
 
-                <label>Username</label>
-                <input type="text" name="username" id="username" placeholder="Enter Username">
+                        <div class="column">
+                            <div class="form-group">
+                            <label>Select Access Level</label>
+                            <select name="access" required>
+                                <option value=""></option>
+                                <option value="administrator">Administrator</option>
+                                <option value="applicant">Applicant</option>
+                                <option value="user">User</option>
 
-                <label>Password</label>
-                <input type="text" name="password" id="password" placeholder="Enter Password">
+                            </select>
+                        
+                            </div>
+                        </div>
+                        <input type="submit" class="thebutton" value="Submit" name="submit">
+                        
+                        </form>
 
-                <label>Select Access Type</label>
-                <select name="access" required>
-                    <option value="">-- select access type --</option>
-                    <option value="administrator">Administrator</option>
-                    <option value="user">User</option>
-                </select>
-
-                <!-- <label>Department</label>
-                <select name="department" id="department" required>
-                    <option value="">--select department--</option>
-                    <option value="test1">test1</option>
-                    <option value="test2">test2</option>
-                </select> -->
-
-                
-                <input type="submit" value="submit" name="submit" value="Submit Form">
-
-            </form>
+                    </div>
+                </div>
         </div>
     </div>
-    </div>
+
 
 </body>
 </html>

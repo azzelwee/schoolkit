@@ -84,27 +84,25 @@ $row = $employee->fetch_assoc();
         <tr>
             <th></th>
             <th>Username</th>
-            <th>Password</th>
-            <th>Access Type</th>
+            <th>Full Name</th>
+            <th>Access Level</th>
+            <th>Section</th>
         </tr>
         </thead>
         <tbody>
         <?php do{ ?>
         <tr>
             <td>
-            <form action="deleteUser.php" method="post">
-                <div class="button-container-delete-edit">
-                    <?php if ($_SESSION['Access'] == "administrator") { ?>
-                    <a href="editUser.php?ID=<?php echo $row['ID']; ?>">Edit</a>
-                    <button type="submit" name="delete" class="button-danger-delete-edit">Delete</button>
-                    <?php } ?>
-                </div>
-                <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
-            </form>
+            <button style="font-size: 12px; padding: 5px 10px; background-color: #d52033; color: white; border: none; border-radius: 4px; cursor: pointer;" onclick="viewDetails()">View</button>
             </td>
             <td><?php echo $row['username']; ?></td>
-            <td><?php echo $row['password']; ?></td>
+            <td></td>
             <td><?php echo $row['access']; ?></td>
+            <td>
+                <a href="editUser.php?ID=<?php echo $row['ID'];?>">
+                    <img src="img/edit.png" alt="">
+                </a>
+            </td>
         </tr>
         <?php }while($row = $employee->fetch_assoc()); ?>
 

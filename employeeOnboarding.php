@@ -50,11 +50,13 @@ $row = $applicantList->fetch_assoc();
         <table>
     <thead>
         <tr>
+
             <th>Applicant ID</th>
             <th>Full Name</th>
             <th>Type</th>
             <th>Status</th>
             <th>Action</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -63,11 +65,31 @@ $row = $applicantList->fetch_assoc();
         do {
     ?>
             <tr>
-                <td width="30"><a href="details.php?ID=<?php echo $row['id'];?>" class="button-small">view</a></td>
+                <td><?php echo $row['id'];?></td>
                 <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php echo $row['position_type'];?></td>
+                <td style="color: <?php
+                    $status = $row['status'];
+                    if ($status == 'Pending') {
+                        echo '';
+                    } elseif ($status == 'Pooling List') {
+                        echo '';
+                    } elseif ($status == 'Qualified') {
+                        echo '';
+                    } elseif ($status == 'Hired') {
+                        echo '';
+                    }
+                    ?>;"><?php echo $status; ?></td>
+                <td>
+                    <a href="editApplicant.php?ID=<?php echo $row['id'];?>">
+                        <img src="img/edit.png" alt="">
+                    </a>
+                    &nbsp
+                    <a href="viewApplicant.php?ID=<?php echo $row['id'];?>">
+                        <img src="img/view.png" alt="">
+                    </a>
+
+                </td>
             </tr>
     <?php 
         } while($row = $applicantList->fetch_assoc()); // Fetch next row

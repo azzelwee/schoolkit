@@ -1,16 +1,20 @@
 <?php
 
-if (!isset($_SESSION)) {
+if(!isset($_SESSION)){
     session_start();
 }
 
-// $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
-// $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
-
 include_once("connections/connection.php");
-$con = connection();
 
-if(isset($_POST['submit'])) {
+$con = connection();
+$id = $_GET['ID'];
+
+$sql = "SELECT * FROM applicant_list2 WHERE id = '$id'" ;
+$employee = $con->query($sql) or die ($con->error);
+$row = $employee->fetch_assoc();
+
+if(isset($_POST['submit'])){
+
     $positiontype = $_POST['position_type'];
     // $position = ($_POST['position'] == 'Teaching') ? $_POST['teachingInput'] : $_POST['nonTeachingInput'];
     $status = $_POST['status'];
@@ -18,32 +22,20 @@ if(isset($_POST['submit'])) {
     $middlename = $_POST['middle_name'];
     $lastname = $_POST['last_name'];
 
-    
-    // Handling file uploads (example for resume, repeat for other files)
-    $target_dir = "uploads/";
-    $target_file_resume = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file_resume);
 
-    $sql = "INSERT INTO `applicant_list2` (`position_type`, `status`, `first_name`, `middle_name`, `last_name`) 
-    VALUES ('$positiontype', '$status', '$firstname', '$middlename', '$lastname')";
+    $sql = "UPDATE applicant_list2 SET position_type = '$positiontype', `status` = '$status', 
+    first_name = '$firstname', middle_name ='$middlename', last_name ='$lastname' WHERE id = '$id'";
+
     $con->query($sql) or die ($con->error);
 
     if($con){
-        // $_SESSION['status-add'] = "Data Added Successfully";
-        header('Location: dashboard.php');
+        // $_SESSION['status-edit'] = "Data Edited Successfully";
+        header('Location: employeeOnboarding.php');
     } else{
         echo "Something went wrong";
     }
-}
-    // $stmt = $con->prepare($sql);
-    // $stmt->bind_param("ssssissssssssissssssssssssssssssssssssssss", $position_type, $position, $first_name, $middle_name, $last_name, $age, $gender, $civil_status, $citizenship, $religion, $birthdate, $birthplace, $height, $weight, $email, $mobile_number, $telephone_number, $address, $city, $state_province, $postal_code, $country, $highest_education, $school_name, $course_program, $year_graduated, $honors_awards, $training_program, $institution, $location, $training_start, $training_end, $certificate_received, $skills_acquired, $previous_job_title, $company_name, $responsibilities, $employment_date, $references, $resume, $work_samples, $certificates, $comments);
-    // $stmt->execute();
 
-    // if ($stmt->affected_rows > 0) {
-    //     echo "Data successfully inserted.";
-    // } else {
-    //     echo "Error: " . $stmt->error;
-    // }
+}
 
 ?>
 <!DOCTYPE html>
@@ -51,31 +43,31 @@ if(isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
+    <title>Edit</title>
     <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
+<body id="<?php echo $id ?>">
 
 <?php include 'header.php'; ?>
-
 <div class="right-container-add">
     <div class="box-container">
         <div class="add-form">
             <form action="" method="post" enctype="multipart/form-data" class="add-employee-form">
                 <div id="section1">
-                <h1>Welcome to NBS College!</h1>
-                <div class="gauge-line"></div>
-    </br>
-                <h2>What are you applying for?</h2>
+                    <h2>Edit Applicant</h2>
+                    <p></br>You are editing applicant: <?php echo $row['first_name'] . ' ' .
+                     $row['middle_name'] . ' ' . $row['last_name']; ?></br>&nbsp</p>
                     <div class="lineup1 form-page">
                         <div class="column">
                         <div class="form-group" style="width: 900px;">
                                 <label for="position">Position Type:</label>
                                 <select id="position" name="position_type" onchange="handlePositionChange()">
                                     <option value=""></option>
-                                    <option value="Teaching">Teaching</option>
-                                    <option value="Non-Teaching">Non-Teaching</option>
+                                    <option value="Teaching"<?php if ($row['position_type'] == 'Teaching') echo ' selected'; ?>>Teaching</option>
+                                    <option value="Non-Teaching"<?php if ($row['position_type'] == 'Non-Teaching') echo ' selected'; ?>>Non-Teaching</option>
                                 </select>
+
                                 
                                 <div id="teachingInputDiv" class="hidden">
                                     <label for="teachingInput">Teaching Positions:</label>
@@ -102,37 +94,20 @@ if(isset($_POST['submit'])) {
                                         <option value="Office and Clerical">Office and Clerical</option>
                                         <option value="Health and Wellness">Health and Wellness</option>
                                     </select>
+                                </div>
 
-                                    <select name="status" style="display: none;">
+                                <label for="">Select Status</label>
+                                <select name="status">
                                         <option value="Pending">Pending</option>
+                                        <option value="Pooling List">Pooling List</option>
+                                        <option value="Qualified">Qualified</option>
+                                        <option value="Hired">Hired</option>
                                     </select>
 
-                                </div>
-                                <div id="statusInputDiv">
-                                    <label for="employementStatus">Employement Status:</label>
-                                    <select id="employementStatus" name="employementStatus">
-                                        <option value=""></option>
-                                        <option value="Full Time">Full Time</option>
-                                        <option value="Part Time">Part Time</option>
-                                    </select>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="info-notice">
-                        <p>By clicking "Next" and filling out the following form, you agree to provide your personal information. <br>
-                        We are committed to protecting your privacy and ensuring the security of your data. <br><br> Your information will be kept confidential and used solely for the purpose stated.
-                        <br>We will not share your data with third parties without your explicit consent.
-                        <br><br>
-                        If you have any questions or concerns about how your information is used, please contact us.
-                        <br><br>
-                        Email: info@nbscollege.edu.ph
-                        <br><br>
-                        Contact Number:
-                        <br>
-                        (02) 8376-5090, 0917-8076850, 0961-3826332
-                        </p> 
-                    </div>        
+                
                 </div>
                 
                 <button type="button" class="thebutton" onclick="nextSection('section1', 'section2')">Next</button>
@@ -143,15 +118,15 @@ if(isset($_POST['submit'])) {
                         <div class="column">
                             <div class="form-group">
                                 <label for="employee-first-name">First Name:</label>
-                                <input type="text" id="employee-first-name" name="first_name">
+                                <input type="text" id="employee-first-name" name="first_name" value="<?php echo $row['first_name']; ?>">
                             </div>
                             <div class="form-group small">
                                 <label for="employee-middle-name">Middle Name:</label>
-                                <input type="text" id="employee-middle-name" name="middle_name">
+                                <input type="text" id="employee-middle-name" name="middle_name" value="<?php echo $row['middle_name']; ?>">
                             </div>
                             <div class="form-group small">
                                 <label for="employee-last-name">Last Name:</label>
-                                <input type="text" id="employee-last-name" name="last_name">
+                                <input type="text" id="employee-last-name" name="last_name" value="<?php echo $row['last_name']; ?>">
                             </div>
                             <div class="form-group small">
                                 <label for="employee-age">Age:</label>
@@ -369,7 +344,8 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 </div>
-<script src="js/main.js"></script>
+
+<script src= js/main.js></script>
 
 </body>
 </html>

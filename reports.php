@@ -13,7 +13,7 @@ $con = connection();
 $start = 0;
 $rows_per_page = 10;
 
-$employee = $con->query("SELECT * FROM employee_list");
+$employee = $con->query("SELECT * FROM employee_list2");
 $nr_of_rows = $employee->num_rows;
 
 $pages = ceil($nr_of_rows / $rows_per_page);
@@ -23,7 +23,7 @@ if(isset($_GET['page-nr'])){
     $start = $page * $rows_per_page;
 }
 
-$sql = "SELECT * FROM employee_list ORDER BY id DESC LIMIT $start, $rows_per_page";
+$sql = "SELECT * FROM employee_list2 ORDER BY id DESC LIMIT $start, $rows_per_page";
 $employee = $con->query($sql) or die ($con->error);
 $row = $employee->fetch_assoc();
 
@@ -52,6 +52,17 @@ $row = $employee->fetch_assoc();
     <div class="right-container">
         <div class="box-container">
         <h2>Reports</h2></br>
+        <div class="container-list">  
+            <a href="listEmployee.php" class="container-container1">
+                <img src="img/NBSDashboard.png">
+                    
+            </a>
+
+            <a href="users.php" class="container-container2">
+                <img src="img/NBSBlue.png">
+                    
+            </a>
+    </div>
         
     </div>
     </div>

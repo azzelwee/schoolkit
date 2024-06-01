@@ -358,7 +358,7 @@ if(isset($_POST['submit'])) {
         <div class="form-group small">
         <label>Employee Status</label>
         <select name="employee_status" id="employee_status">
-            <option value="">-- status --</option>
+            <option value=""></option>
             <option value="Pending">Pending</option>
             <option value="Hired">Hired</option>
         </select>

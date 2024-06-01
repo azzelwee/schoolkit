@@ -1,3 +1,18 @@
+function validateForm() {
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+  const passwordError = document.getElementById('passwordError');
+  
+  if (password !== confirmPassword) {
+      passwordError.style.display = 'block';
+      return false;
+  } else {
+      passwordError.style.display = 'none';
+      return true;
+  }
+}
+
+
 function nextSection(currentSection, nextSection) {
   document.getElementById(currentSection).style.display = "none";
   document.getElementById(nextSection).style.display = "block";
@@ -37,7 +52,31 @@ function handlePositionChange() {
   }
 }
 
-
-
-
+function showSection(sectionId) {
+  var sections = document.querySelectorAll('.custom-form-section');
+  sections.forEach(function(section) {
+      if (section.id === sectionId) {
+          section.classList.add('current');
+      } else {
+          section.classList.remove('current');
+      }
+  });
+  
+  var gaugeLine = document.querySelector('.gauge-line');
+  var navItems = document.querySelectorAll('.custom-top-nav li a');
+  var currentNavItem = document.querySelector('.custom-top-nav li a[href="#' + sectionId + '"]');
+  
+  var index = Array.from(navItems).indexOf(currentNavItem);
+  var width = (index + 1) * (100 / navItems.length);
+  
+  function updateGaugeLine(index) {
+    var gaugeLine = document.querySelector('.gauge-line');
+    var navItems = document.querySelectorAll('.custom-top-nav li');
+    var totalWidth = 0;
+    for (var i = 0; i < index; i++) {
+        totalWidth += navItems[i].offsetWidth;
+    }
+    gaugeLine.style.left = totalWidth + 'px';
+}
+}
 

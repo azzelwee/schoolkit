@@ -64,7 +64,13 @@ if(isset($_POST['login'])){
             placeholder="Enter Password" required>
         </div>
 
+        <div class="registration">
+            <a href="registration.php">Register to Apply</a>
+
+        </div>
+
         <button type="submit" name="login" id="btn">Login</button>
+  
 
         <!-- <div class="form-dashboard">
             <a href="dashboard.php">Go to Dashboard</a>

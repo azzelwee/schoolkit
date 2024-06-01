@@ -21,7 +21,7 @@
 }
 .form-element label {
     display: block;
-    font-size: 22px;
+    font-size: 19px;
     margin-top: 1rem;
 }
 
@@ -86,6 +86,18 @@
 
 /* message when no user found */
 
+.registration{
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.registration a{
+    text-decoration: none;
+    color: rgb(46, 72, 217);
+}
+
+
 .message.warning {
     background: #e9e77f;
     border-left: 6px solid #ceca09;
@@ -143,6 +155,10 @@ td {
     text-align: left;
     padding: 14px;
         border: 1px solid #a9a9a9;
+}
+
+a {
+    text-decoration: none;
 }
 
 tr:nth-child(even) {
@@ -351,16 +367,18 @@ tr:nth-child(even) {
 
 /* add form */
 .form-container {
-    margin: 0 10px;
-    padding-top: 2rem;
+    font-size: 18px;
+    display: block;
+    color: #000000;
 }
 
 .form-container input,
 .form-container select {
     display: block;
     font-size: 18px;
-    width: 30%;
-    padding: 12px;
+    width: 50%;
+    height: 40px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 8px;
     color: #888888;
@@ -372,6 +390,47 @@ tr:nth-child(even) {
 }
 
 .form-container input[type="submit"] {
+
+    width: 0%;
+    padding: 10px 20px;
+    background-color: #d52033;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container2 {
+    text-align: left;
+    margin: 0 10px;
+    padding-top: 2rem;
+
+}
+
+.confirmpasserror {
+    color: red;
+    display: none;
+}
+
+.form-container2 input,
+.form-container2 select {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #888888;
+    margin: 12px 0;
+}
+
+.form-container2 label {
+    font-size: 18px;
+}
+
+.form-container2 input[type="submit"] {
 
     padding: 10px 20px;
     background-color: #d52033;
@@ -618,6 +677,18 @@ ul.items {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.box-container h1{
+    text-align: left;
+}
+
+.gauge-line {
+    width: 90%;
+    height: 2px;
+    background-color: #000; /* You can change the color as needed */
+    margin: 10px 0; /* Adjust margin as needed */
+}
+
+
 .box-container1 {
     display: flex;
     position: absolute;
@@ -797,10 +868,12 @@ ul.items {
 
 
 
+
 .column {
     display: flex;
     flex-wrap: wrap;
 }
+
 
 .column p{
     margin-top: 20px;
@@ -811,7 +884,15 @@ ul.items {
     font-size: 18px;
 }
 
-.column input,
+.column input{
+        margin-bottom: 8px;
+    font-size: 18px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+}
 .column select{
     margin-bottom: 8px;
     font-size: 18px;
@@ -965,6 +1046,8 @@ ul.items {
 }
 
 /* Your existing CSS styles */
+
+
 .add-employee-container {
     width: 100%; /* Fill the entire width */
     padding: 20px;
@@ -977,7 +1060,9 @@ ul.items {
     text-align: left;
 }
 
-.add-employee-form .form-page {
+
+
+.add-employee-form{
     display: flex;
     flex-wrap: wrap;
 }
@@ -1000,6 +1085,7 @@ ul.items {
 
 .add-employee-form label {
     margin-top: 10px;
+    font-size: 18px;
     display: block;
     margin-bottom: 5px;
     color: #000000;
@@ -1011,7 +1097,7 @@ ul.items {
 .add-employee-form select,
 .add-employee-form input[type="date"] {
     width: 100%;
-    padding: 10px;
+    height: 40px;
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border-color 0.3s ease;
@@ -1056,3 +1142,5 @@ ul.items {
 .info-notice p{
     margin-top: 20px;
 }
+
+
