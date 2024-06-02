@@ -43,41 +43,14 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
 <?php include 'header.php'; ?>
 
-    <div class="right-container-pic">
-        <img src="img/nbspic.png" class="school">
-        <!-- <div class="container-list">
-        <a href="employee.php" class="container-container1"> -->
-            
+<div class="right-container">
+    <div class="box-container">
+            <h1>NBSC Employee Management System</h1>
+            <img src="img/nbspic.png" class="school">
 
-        <!-- <div class="employed">
-            <?php
-                // echo $nr_of_employee;
-            ?>
-
-            <div class="employed-text">
-            Employees
-            </div>
-
-        </div> -->
-        
-        <!-- </a>
-
-        <a href="#" class="container-container2">
-            <img src="img/NBSblue.png">
-
-        </a>
-            
-        <a href="#" class="container container3">
-
-        </a>
-
-        <a href="#" class="container container4">
-
-        </a> -->
-
+        </div>
     </div>
-    </div>
-    </div>
+
     
 </body>
 <script src= js/main.js></script>

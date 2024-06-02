@@ -665,7 +665,6 @@ ul.items {
     top: 69.6%;
 }
 
-
 .box-container {
     position: absolute;
     border: 1px solid #ccc;
@@ -714,7 +713,7 @@ ul.items {
 }
 
 .right-container-pic {
-    margin-left: 250px;
+    margin-left: 300px;
     padding: 30px;
 }
 
@@ -723,8 +722,9 @@ ul.items {
 }
 
 .school {
-    margin-left: 50px;
-    width: 90%;
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 95%;
 }
 
 

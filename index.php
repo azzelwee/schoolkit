@@ -65,7 +65,7 @@ if(isset($_POST['login'])){
         </div>
 
         <div class="registration">
-            <a href="registration.php">Register to Apply</a>
+            <a href="registration.php">Signup to Apply</a>
 
         </div>
 
