@@ -12,6 +12,15 @@ function validateForm() {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const submenuParent = document.querySelector('.has-submenu');
+  submenuParent.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.classList.toggle('open');
+  });
+});
+
+
 
 function nextSection(currentSection, nextSection) {
   document.getElementById(currentSection).style.display = "none";
@@ -80,3 +89,15 @@ function showSection(sectionId) {
 }
 }
 
+function updateEmployeeName() {
+  // Get the selected option text
+  var selectElement = document.getElementById("employee_name");
+  var selectedName = selectElement.options[selectElement.selectedIndex].text;
+  
+  // Set the text in the employee name field
+  if (selectElement.value === "") {
+      document.getElementById("employee_full_name").innerText = "";
+  } else {
+      document.getElementById("employee_full_name").innerText = selectedName;
+  }
+}

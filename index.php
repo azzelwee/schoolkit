@@ -37,7 +37,7 @@ if(isset($_POST['login'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Management System</title>
+    <title>NBSC Employee Management System</title>
     <link rel="stylesheet" href="css/style.css">
 
 </head>

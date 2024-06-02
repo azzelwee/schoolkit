@@ -24,7 +24,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
 
                 <?php if ($is_admin): ?>
                 <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
-                <li><a href="employeeOnboarding.php"><img src="img/onboard.png"><p>Employee&nbspOnboarding</p></a></li>
+                <li><a href="employeeOnboarding.php"><img src="img/onboard.png"><p>Applicant&nbspProcessing</p></a></li>
                 <li><a href="reports.php"><img src="img/settings.png"><p>Reports</p></a></li>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['UserLogin'])){?>

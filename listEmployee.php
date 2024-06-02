@@ -66,6 +66,10 @@ $row = $employee->fetch_assoc();
             <a href="addEmployee.php">Add Employee</a>
         </div>
 
+        <div class="button-container2">
+            <a href="employeeRenew.php">Employee Renewal</a>
+        </div>
+
 
         <?php
             if(isset($_SESSION['status-add'])){

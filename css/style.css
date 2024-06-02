@@ -288,6 +288,25 @@ tr:nth-child(even) {
         margin-top: 15px;
 
 }
+.button-container2 {
+    float: left;
+    margin-left: 15px;
+        margin-top: 15px;
+
+}
+
+.button-container2 a {
+    background: #d52033;
+        border-radius: 6px;
+    padding: 8px 10px 8px 10px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.button-container2 a:hover {
+    background: #8e1522;
+}
 
 .button-container a {
     background: #d52033;
@@ -635,6 +654,18 @@ ul.items {
     transition: top 0.3s;
 }
 
+/* Target the submenu ul and remove its bullet points */
+ul.submenu {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0;       /* Remove default padding */
+}
+
+/* Optionally, remove bullet points for the main list as well */
+li.has-submenu {
+    list-style-type: none;
+}
+
+
 .active2 {
     background-color: #c71224;
     width: 245px;
@@ -698,6 +729,15 @@ ul.items {
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.has-submenu.open .submenu {
+    display: block;
 }
 
 
@@ -1144,3 +1184,25 @@ ul.items {
 }
 
 
+.styled-select {
+    width: 200px; /* Width of the select box */
+    padding: 10px; /* Padding for some space inside the box */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    font-size: 16px; /* Font size */
+    appearance: none; /* Remove default styles in some browsers */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    cursor: pointer; /* Cursor change on hover */
+}
+
+/* Style for the options within the select element */
+.styled-select option {
+    padding: 10px; /* Padding inside each option */
+}
+
+#employee_details {
+    font-size: 16px; /* Font size for the employee details */
+    color: #333; /* Text color for the employee details */
+}
