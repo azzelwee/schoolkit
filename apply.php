@@ -70,7 +70,7 @@ if(isset($_POST['submit'])) {
                     <div class="lineup1 form-page">
                         <div class="column">
                         <div class="form-group" style="width: 900px;">
-                                <label for="position">Position Type:</label>
+                                <label for="position">Employee Type:</label>
                                 <select id="position" name="position_type" onchange="handlePositionChange()">
                                     <option value=""></option>
                                     <option value="Teaching">Teaching</option>

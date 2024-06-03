@@ -101,3 +101,19 @@ function updateEmployeeName() {
       document.getElementById("employee_full_name").innerText = selectedName;
   }
 }
+
+// test employeeDetails2
+
+function showSection(sectionId) {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+      section.style.display = 'none';
+  });
+
+  const activeSection = document.getElementById(sectionId);
+  activeSection.style.display = 'block';
+}
+
+// // Initially display the profile section
+// document.getElementById('profile').style.display = 'block';
+

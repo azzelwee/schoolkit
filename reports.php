@@ -51,7 +51,8 @@ $row = $employee->fetch_assoc();
 
     <div class="right-container">
         <div class="box-container">
-        <h2>Reports</h2></br>
+        <h2>Reports</h2>
+        <div class="gauge-line"></div>
         <div class="container-list">  
             <a href="listEmployee.php" class="container-container1">
                 <img src="img/NBSDashboard.png">

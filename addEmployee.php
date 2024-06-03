@@ -14,6 +14,15 @@ if(isset($_POST['submit'])) {
     $mname = $_POST['middle_name'];
     $lname = $_POST['last_name'];
     $estatus = $_POST['employee_status'];
+    $age = $_POST['age'];
+    $gender = $_POST['gender'];
+    $civilstatus = $_POST['civil_status'];
+    $citizen = $_POST['citizenship'];
+    $religion = $_POST['religion'];
+    $birthdate = $_POST['birthdate'];
+    $placebirth = $_POST['place_of_birth'];
+    $height = $_POST['height'];
+    $weight = $_POST['weight'];
 
     // Check if file was uploaded
     if(isset($_FILES["fileToUpload"]["tmp_name"]) && !empty($_FILES["fileToUpload"]["tmp_name"])) {
@@ -61,8 +70,39 @@ if(isset($_POST['submit'])) {
                 echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
 
                 // Now, insert into database
-                $sql = "INSERT INTO `employee_list2`(`first_name`, `middle_name`, `last_name`, `employee_status`, `file_path`) 
-                VALUES ('$fname','$mname','$lname', '$estatus', '$target_file')";
+                $sql = "INSERT INTO `employee_list2`
+                (
+                    `first_name`, 
+                    `middle_name`, 
+                    `last_name`, 
+                    `employee_status`, 
+                    `age`,
+                    `gender`,
+                    `civil_status`,
+                    `citizenship`,
+                    `religion`,
+                    `birthdate`,
+                    `place_of_birth`,
+                    `height`,
+                    `weight`,
+                    `file_path`
+                ) 
+                VALUES (
+                    '$fname',
+                    '$mname',
+                    '$lname',
+                    '$estatus',
+                    '$age', 
+                    '$gender',
+                    '$civilstatus',
+                    '$citizen',
+                    '$religion',
+                    '$birthdate',
+                    '$placebirth',
+                    '$height',
+                    '$weight',
+                    '$target_file'
+                    )";
                 
                 $con->query($sql) or die ($con->error);
 
@@ -80,8 +120,37 @@ if(isset($_POST['submit'])) {
     } else {
         // No file uploaded, proceed without uploading
         // Now, insert into database without file path
-        $sql = "INSERT INTO `employee_list2`(`first_name`, `middle_name`, `last_name`, `employee_status`) 
-        VALUES ('$fname','$mname','$lname', '$estatus')";
+        $sql = "INSERT INTO `employee_list2`
+        (
+        `first_name`, 
+        `middle_name`, 
+        `last_name`, 
+        `employee_status`, 
+        `age`,
+        `gender`,
+        `civil_status`,
+        `citizenship`,
+        `religion`,
+        `birthdate`,
+        `place_of_birth`,
+        `height`,
+        `weight`
+        ) 
+        VALUES (
+            '$fname',
+            '$mname',
+            '$lname',
+            '$estatus',
+            '$age', 
+            '$gender',
+            '$civilstatus',
+            '$citizen',
+            '$religion',
+            '$birthdate',
+            '$placebirth',
+            '$height',
+            '$weight'
+            )";
         
         $con->query($sql) or die ($con->error);
 
@@ -110,8 +179,13 @@ if(isset($_POST['submit'])) {
 
     <div class="right-container-add">
         <div class="box-container">
+            <div class="button-containers">
+                <a href="">Import from Applicant Processing</a>
+            </div>
         <div class="add-form">
+            
         <form action="" method="post" enctype="multipart/form-data" class="add-employee-form">
+            
         <div id="section1">
         <h2>Basic Information</h2>
             <div class="form-page">
@@ -135,59 +209,59 @@ if(isset($_POST['submit'])) {
 
                     <div class="form-group small ">
                         <label for="employee-age">Age:</label>
-                        <input type="number" id="employee-age" name="employee-age">
+                        <input type="number" id="employee-age" name="age">
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-gender">Gender:</label>
-                        <select id="employee-gender" name="employee-gender">
+                        <select id="employee-gender" name="gender">
                             <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
 
 
                     <div class="form-group small">
                         <label for="employee-civil-status">Civil Status:</label>
-                        <select id="employee-civil-status" name="employee-civil-status">
+                        <select id="employee-civil-status" name="civil_status">
                             <option value="">Select Status</option>
-                            <option value="single">Single</option>
-                            <option value="married">Married</option>
-                            <option value="divorced">Separated</option>
-                            <option value="widowed">Widowed</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Separated</option>
+                            <option value="Widowed">Widowed</option>
                         </select>
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-citizenship">Citizenship:</label>
-                        <input type="text" id="employee-citizenship" name="employee-citizenship">
+                        <input type="text" id="employee-citizenship" name="citizenship">
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-religion">Religion:</label>
-                        <input type="text" id="employee-religion" name="employee-religion">
+                        <input type="text" id="employee-religion" name="religion">
                     </div>  
 
                     <div class="form-group small">
                         <label for="employee-birthdate">Birthdate:</label>
-                        <input type="date" id="employee-birthdate" name="employee-birthdate">
+                        <input type="date" id="employee-birthdate" name="birthdate">
                     </div>
 
                     <div class="form-group ">
                         <label for="employee-birthplace">Place of Birth:</label>
-                        <input type="text" id="employee-birthplace" name="employee-birthplace">
+                        <input type="text" id="employee-birthplace" name="place_of_birth">
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-height">Height (cm):</label>
-                        <input type="number" id="employee-height" name="employee-height">
+                        <input type="number" id="employee-height" name="height">
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-weight">Weight (lbs.):</label>
-                        <input type="number" id="employee-weight" name="employee-weight">
+                        <input type="number" id="employee-weight" name="weight">
                     </div>
 
 
@@ -356,11 +430,11 @@ if(isset($_POST['submit'])) {
         </div>
 
         <div class="form-group small">
-        <label>Employee Status</label>
+        <label>Employee Type</label>
         <select name="employee_status" id="employee_status">
             <option value=""></option>
-            <option value="Pending">Pending</option>
-            <option value="Hired">Hired</option>
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>
         </select>
         </div>
 

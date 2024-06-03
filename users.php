@@ -32,7 +32,9 @@ $row = $employee->fetch_assoc();
         
     <div class="right-container">
         <div class="box-container">
-        <h2>User Management</h2></br>
+            <h2>User Management</h2>
+        <div class="gauge-line">
+        </br>
 
         <div class="button-container">
             <a href="addUser.php">Add Users</a>

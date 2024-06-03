@@ -54,16 +54,17 @@ $row = $employee->fetch_assoc();
         
     <div class="right-container">
     <div class="box-container">
-        <h2>Employee List</h2></br>
+        <h2>Employee List</h2>
+        <div class="gauge-line"></div>
         <form action="result.php" method="get">
         <div class="search">
             <img src="img/search.png" class="search-icon">
-            <input class="search-input" name="search" placeholdesr="Search">
+            <input class="search-input" name="search" placeholder="Search an Employee">
         </div>
 
         
         <div class="button-container">
-            <a href="addEmployee.php">Add Employee</a>
+            <a href="addEmployee.php">+ Add Employee</a>
         </div>
 
         <div class="button-container2">
@@ -110,13 +111,13 @@ $row = $employee->fetch_assoc();
             <a href="add2.php">Add New</a>
             
         </div> -->
-        
+    
         <table>
     <thead>
         <tr>
         <th></th>
             <th>Full Name</th>
-            <th>Employee Status</th>
+            <th>Employee Type</th>
         </tr>
     </thead>
     <tbody>
@@ -126,7 +127,7 @@ $row = $employee->fetch_assoc();
     ?>
             <tr>
             <td>
-                <a href="details.php?ID=<?php echo $row['ID'];?>">
+                <a href="employeeDetails.php?ID=<?php echo $row['ID'];?>">
                 <button style="font-size: 12px; padding: 5px 10px; background-color: #d52033; color: white; border: none; border-radius: 4px; cursor: pointer;">View</button>
                 </a>
             </td>

@@ -45,12 +45,12 @@ $row = $applicantList->fetch_assoc();
 
 <div class="right-container">
     <div class="box-container">
-        <h2>Employee Onboarding</h2>
+        <h2>Applicant Processing</h2>
+        <div class="gauge-line"></div>
 
-        <table>
+        <table id="table2">
     <thead>
         <tr>
-
             <th>Applicant ID</th>
             <th>Full Name</th>
             <th>Type</th>
@@ -65,7 +65,7 @@ $row = $applicantList->fetch_assoc();
         do {
     ?>
             <tr>
-                <td><?php echo $row['id'];?></td>
+                <td></td>
                 <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
                 <td><?php echo $row['position_type'];?></td>
                 <td style="color: <?php

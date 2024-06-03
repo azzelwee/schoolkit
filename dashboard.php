@@ -46,6 +46,7 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 <div class="right-container">
     <div class="box-container">
             <h1>NBSC Employee Management System</h1>
+            <div class="gauge-line"></div>
             <img src="img/nbspic.png" class="school">
 
         </div>

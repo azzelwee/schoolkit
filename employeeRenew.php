@@ -27,7 +27,8 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 <div class="right-container">
     <div class="box-container">
     <h2>Employee Renewal</h2>
-    <form action="your_action_page.php" method="post">
+    <div class="gauge-line"></div>
+    <form action="your_action_page.php" method="post" class="employee-Renew">
         <label for="employee_name" class="info-text">Select an employee:</label>
         <?php
         // Assuming $con is your mysqli connection
@@ -35,7 +36,7 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
         $employee = $con->query($sql) or die($con->error);
 
         echo '<select name="employee_name" id="employee_name" class="styled-select" onchange="updateEmployeeName()">';
-        echo '<option value="" selected disabled>Select an employee</option>'; // Placeholder option
+        echo '<option value="" selected disabled >Select an employee</option>'; // Placeholder option
 
         while($row = $employee->fetch_assoc()) {
             $firstName = htmlspecialchars($row['first_name']);
@@ -47,13 +48,33 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
         echo '</select>';
         ?>
-        <!-- <input type="submit" value="Submit"> -->
-    </form>
+        
+    
 
     <div id="employee_details">
-        <p>Employee Name: <span id="employee_full_name"></span></p>
+        <p>Employee Name: </p>
     </div>
     
+    <div class="field">
+        <span id="employee_full_name"></span>
+    </div>
+
+    <div class="contractFrom">
+        <label for="">Contract Date From:</label>
+        <input type="date">
+    </div>
+
+    <div class="contractTo">
+        <label for="">Contract Date To:</label>
+        <input type="date">
+    </div>
+
+    <div class="uploadContract">
+        <label for="photos">Upload Contract:</label>
+            <input type="file" name="" id="">
+    </div>
+    <input type="submit" value="Submit">
+    </form>
         </div>
     </div>
 

@@ -53,6 +53,7 @@ if(isset($_POST['submit'])){
         <form action="" method="post" class="add-employee-form">
                 <div id="section1">
                 <h2>Add Users</h2>
+                <div class="gauge-line"></div>
                     <div class="form-page">
                         <div class="column">
                             <div class="form-group small">

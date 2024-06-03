@@ -25,6 +25,11 @@
     margin-top: 1rem;
 }
 
+.info-text{
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .form-element input[type=username],
 .form-element input[type=password] {
     font-size: 20px;
@@ -147,10 +152,24 @@ table {
     margin-top: 50px;
     border: 1px solid black;
     border-collapse: collapse;
-    width: 50%;
+    width: 75%;
 }
 
-th,
+#table2 {
+    border-radius: 8px;
+    margin-top: 0px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 75%;
+}
+
+th{
+    background-color: #757678;
+    text-align: left;
+    padding: 14px;
+    color: white;
+    border: 1px solid #a9a9a9;
+}
 td {
     text-align: left;
     padding: 14px;
@@ -162,7 +181,7 @@ a {
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
 }
 .aa {
     display: inline-block;
@@ -260,7 +279,7 @@ tr:nth-child(even) {
     display: flex;
     align-items: center;
     padding: 14px;
-    border-radius: 28px;
+    border-radius: 8px;
     background: #f6f6f6;
 }
 
@@ -285,19 +304,18 @@ tr:nth-child(even) {
 
 .button-container {
     float: left;
-        margin-top: 15px;
-
+    margin-top: 15px;
 }
 .button-container2 {
     float: left;
     margin-left: 15px;
-        margin-top: 15px;
+    margin-top: 15px;
 
 }
 
 .button-container2 a {
     background: #d52033;
-        border-radius: 6px;
+    border-radius: 6px;
     padding: 8px 10px 8px 10px;
     color: white;
     text-decoration: none;
@@ -310,7 +328,7 @@ tr:nth-child(even) {
 
 .button-container a {
     background: #d52033;
-        border-radius: 6px;
+    border-radius: 6px;
     padding: 8px 10px 8px 10px;
     color: white;
     text-decoration: none;
@@ -318,6 +336,26 @@ tr:nth-child(even) {
 }
 
 .button-container a:hover {
+    background: #8e1522;
+}
+
+/* asd */
+.button-containers {
+
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.button-containers a {
+    background: #d52033;
+    border-radius: 6px;
+    padding: 8px 10px 8px 10px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.button-containers a:hover {
     background: #8e1522;
 }
 
@@ -350,6 +388,7 @@ tr:nth-child(even) {
 /* Container for the buttons */
 .button-container-delete-edit {
     display: flex;
+    justify-content: center;
     gap: 10px;
     margin-bottom: 10px;
 }
@@ -712,10 +751,11 @@ li.has-submenu {
 }
 
 .gauge-line {
-    width: 90%;
+    width: 95%;
     height: 2px;
     background-color: #000; /* You can change the color as needed */
-    margin: 10px 0; /* Adjust margin as needed */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -763,8 +803,7 @@ li.has-submenu {
 
 .school {
     border-radius: 8px;
-    margin-top: 15px;
-    width: 95%;
+    width: 100%;
 }
 
 
@@ -799,7 +838,7 @@ li.has-submenu {
 }
 
 .employed {
-    top: 120px;
+    top: 135px;
         left: 70px;
         position: absolute;
         color: white;
@@ -810,7 +849,7 @@ li.has-submenu {
 }
 
 .users{
-        top: 120px;
+        top: 135px;
             left: 430px;
             position: absolute;
             color: white;
@@ -821,7 +860,7 @@ li.has-submenu {
     }
 
     .ssp{
-        top: 120px;
+        top: 135px;
             left: 790px;
             position: absolute;
             color: white;
@@ -1035,15 +1074,38 @@ li.has-submenu {
 }
 
 .employee-picture img {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin-right: 80px;
     width: 100%;
     height: auto;
 }
 
-.employee-picture-frame p{
-    margin-top: 5px;
-    font-weight: bold;
-    font-size: 22px;
+.employee-picture-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.employee-picture-frame {
+    order: 2;
+}
+
+.employee-details {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.employee-details-name{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
 
 .navigation-buttons {
     display: flex;
@@ -1185,17 +1247,17 @@ li.has-submenu {
 
 
 .styled-select {
-    width: 200px; /* Width of the select box */
+    margin-top: 15px;
+    width: 400px; /* Width of the select box */
     padding: 10px; /* Padding for some space inside the box */
     border: 1px solid #ccc; /* Border style */
     border-radius: 4px; /* Rounded corners */
     background-color: #fff; /* Background color */
     font-size: 16px; /* Font size */
     appearance: none; /* Remove default styles in some browsers */
-    -webkit-appearance: none; /* For Safari */
-    -moz-appearance: none; /* For Firefox */
     cursor: pointer; /* Cursor change on hover */
 }
+
 
 /* Style for the options within the select element */
 .styled-select option {
@@ -1203,6 +1265,185 @@ li.has-submenu {
 }
 
 #employee_details {
-    font-size: 16px; /* Font size for the employee details */
-    color: #333; /* Text color for the employee details */
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 18px; /* Font size for the employee details */
+}
+
+#employee_full_name{
+}
+
+.field{
+    margin-top: 15px;
+    width: 500px; /* Width of the select box */
+    height: 40px;
+    padding: 10px; /* Padding for some space inside the box */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    font-size: 16px; /* Font size */
+    appearance: none; /* Remove default styles in some browsers */
+    cursor: pointer; /* Cursor change on hover */
+}
+
+.contractFrom input{
+    display: block;
+    margin-top: 15px;
+    width: 400px; /* Width of the select box */
+    height: 40px;
+    padding: 10px; /* Padding for some space inside the box */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    font-size: 16px; /* Font size */
+    appearance: none; /* Remove default styles in some browsers */
+    cursor: pointer; /* Cursor change on hover */
+}
+
+.contractFrom label{
+    display: block;
+
+    margin-top: 30px;
+    font-size: 18px; /* Font size for the employee details */
+}
+
+.contractTo input{
+    margin-top: 15px;
+    width: 400px; /* Width of the select box */
+    height: 40px;
+    padding: 10px; /* Padding for some space inside the box */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    font-size: 16px; /* Font size */
+    appearance: none; /* Remove default styles in some browsers */
+    cursor: pointer; /* Cursor change on hover */
+}
+
+.contractTo label{
+    display: block;
+
+    margin-top: 30px;
+    font-size: 18px; /* Font size for the employee details */
+}
+
+.uploadContract input{
+    margin-top: 15px;
+    width: 500px; /* Width of the select box */
+    height: 45px;
+    padding: 10px; /* Padding for some space inside the box */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* Background color */
+    font-size: 16px; /* Font size */
+    appearance: none; /* Remove default styles in some browsers */
+    cursor: pointer; /* Cursor change on hover */
+}
+
+.uploadContract label{
+    display: block;
+
+    margin-top: 30px;
+    font-size: 18px; /* Font size for the employee details */
+}
+
+.employee-Renew input[type="submit"] {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #d52033;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-disabled:disabled {
+    background-color: white; 
+    color: black;
+    /* cursor: not-allowed;  */
+
+}
+
+/* test employeeDetails2 */
+
+.employee-profile {
+    border: 1px solid #c6c6c6;
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%;
+    /* background: #fff;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; */
+
+}
+
+.profile-left {
+
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.employees-picture img{
+    margin-top: 20px;
+margin-bottom: 20px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.employee-name {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-rightz {
+        margin-left: 40px;
+    flex: 1;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.1s, color 0.1s;
+}
+
+.nav a:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.contente section {
+    display: none;
+}
+
+.contente section:target {
+    display: block;
+}
+
+.contente h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.contente p {
+    color: #666;
 }
