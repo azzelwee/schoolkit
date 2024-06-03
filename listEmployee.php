@@ -127,7 +127,7 @@ $row = $employee->fetch_assoc();
     ?>
             <tr>
             <td>
-                <a href="employeeDetails.php?ID=<?php echo $row['ID'];?>">
+                <a href="employeeDetails2.php?ID=<?php echo $row['ID'];?>#profile">
                 <button style="font-size: 12px; padding: 5px 10px; background-color: #d52033; color: white; border: none; border-radius: 4px; cursor: pointer;">View</button>
                 </a>
             </td>
