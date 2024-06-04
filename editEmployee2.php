@@ -37,6 +37,29 @@ if(isset($_POST['submit'])) {
     $city = $_POST['city'];
     $state = $_POST['state_province'];
     $postal = $_POST['postal_code'];
+    $educ = $_POST['educ_attain'];
+    $school = $_POST['school_name'];
+    $course = $_POST['course'];
+    $yearGrad = $_POST['year_grad'];
+    $honors = $_POST['honors'];
+    $training = $_POST['training_prog'];
+    $institution = $_POST['institution'];
+    $location = $_POST['loc'];
+    $dateStart = $_POST['date_start'];
+    $dateComplete = $_POST['date_complete'];
+    $cert = $_POST['cert'];
+    $skills = $_POST['skills_aquired'];
+    $sss = $_POST['sss_id'];
+    $tin = $_POST['tin_id'];
+    $pagibig = $_POST['pagibig'];
+    $phil = $_POST['phil_id'];
+    $dateHired = $_POST['date_hired'];
+    $prevJob = $_POST['prev_job'];
+    $companyName = $_POST['company_name'];
+    $responsi = $_POST['responsi'];
+    $dateEmploy = $_POST['date_employment'];
+    $refer = $_POST['refer'];
+    $questions = $_POST['questions'];
 
     // Check if file was uploaded
     if(isset($_FILES["fileToUpload"]["tmp_name"]) && !empty($_FILES["fileToUpload"]["tmp_name"])) {
@@ -85,10 +108,10 @@ if(isset($_POST['submit'])) {
 
                 // Now, insert into database
                 $sql = "UPDATE `employee_list2` SET
-                `first_name` = '$fname',
-                `middle_name` = '$mname',
-                `last_name` = '$lname',
-                `employee_status` = '$estatus',
+               `first_name` = '$fname', 
+                `middle_name` = '$mname', 
+                `last_name` = '$lname', 
+                `employee_status` = '$estatus', 
                 `age` = '$age',
                 `gender` = '$gender',
                 `civil_status` = '$civilstatus',
@@ -105,8 +128,31 @@ if(isset($_POST['submit'])) {
                 `city` = '$city',
                 `state_province` = '$state',
                 `postal_code` = '$postal',
-                `file_path` = '$target_file'
-                WHERE `ID` = $id";
+                `educ_attain` = '$educ',
+                `school_name` = '$school',
+                `course` = '$course',
+                `year_grad` = '$yearGrad',
+                `honors` = '$honors',
+                `training_prog` = '$training', 
+                `institution` = '$institution',
+                `loc` = '$location',
+                `date_start` = '$dateStart',
+                `date_complete` = '$dateComplete',
+                `cert` = '$cert',
+                `skills_aquired` = '$skills',
+                `file_path` = '$target_file',
+                `sss_id` = '$sss',
+                `tin_id` = '$tin',
+                `pagibig` = '$pagibig',
+                `phil_id` = '$phil',
+                `date_hired` = '$dateHired',
+                `prev_job` = '$prevJob',
+                `company_name` = '$companyName',
+                `responsi` = '$responsi',
+                `date_employment` = '$dateEmploy',
+                `refer` = '$refer',
+                `questions` = '$questions'
+                WHERE `ID` = '$id'";
                 
                 $con->query($sql) or die ($con->error);
 
@@ -126,27 +172,50 @@ if(isset($_POST['submit'])) {
         // No file uploaded, proceed without uploading
         // Now, insert into database without file path
         $sql = "UPDATE `employee_list2` SET
-        `first_name` = '$fname',
-        `middle_name` = '$mname',
-        `last_name` = '$lname',
-        `employee_status` = '$estatus',
-        `age` = '$age',
-        `gender` = '$gender',
-        `civil_status` = '$civilstatus',
-        `citizenship` = '$citizen',
-        `religion` = '$religion',
-        `birthdate` = '$birthdate',
-        `place_of_birth` = '$placebirth',
-        `height` = '$height',
-        `weight` = '$weight',
-        `email` = '$email',
-        `mobile_number` = '$mobile',
-        `telephone_number` = '$telephone',
-        `address` = '$address',
-        `city` = '$city',
-        `state_province` = '$state',
-        `postal_code` = '$postal'
-        WHERE `ID` = $id";
+                `first_name` = '$fname', 
+                `middle_name` = '$mname', 
+                `last_name` = '$lname', 
+                `employee_status` = '$estatus', 
+                `age` = '$age',
+                `gender` = '$gender',
+                `civil_status` = '$civilstatus',
+                `citizenship` = '$citizen',
+                `religion` = '$religion',
+                `birthdate` = '$birthdate',
+                `place_of_birth` = '$placebirth',
+                `height` = '$height',
+                `weight` = '$weight',
+                `email` = '$email',
+                `mobile_number` = '$mobile',
+                `telephone_number` = '$telephone',
+                `address` = '$address',
+                `city` = '$city',
+                `state_province` = '$state',
+                `postal_code` = '$postal',
+                `educ_attain` = '$educ',
+                `school_name` = '$school',
+                `course` = '$course',
+                `year_grad` = '$yearGrad',
+                `honors` = '$honors',
+                `training_prog` = '$training', 
+                `institution` = '$institution',
+                `loc` = '$location',
+                `date_start` = '$dateStart',
+                `date_complete` = '$dateComplete',
+                `cert` = '$cert',
+                `skills_aquired` = '$skills',
+                `sss_id` = '$sss',
+                `tin_id` = '$tin',
+                `pagibig` = '$pagibig',
+                `phil_id` = '$phil',
+                `date_hired` = '$dateHired',
+                `prev_job` = '$prevJob',
+                `company_name` = '$companyName',
+                `responsi` = '$responsi',
+                `date_employment` = '$dateEmploy',
+                `refer` = '$refer',
+                `questions` = '$questions'
+                 WHERE `ID` = '$id'";
         
         $con->query($sql) or die ($con->error);
 
@@ -243,7 +312,7 @@ if(isset($_POST['submit'])) {
                                     <div class="form-group small">
                                         <label for="employee-gender">Gender:</label>
                                         <select id="employee-gender" name="gender">
-                                            <option value="gender"><?php echo $row['gender']; ?></option>
+                                            <option value="<?php echo $row['gender']; ?>"><?php echo $row['gender']; ?></option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
                                             <option value="Other">Other</option>
@@ -252,7 +321,7 @@ if(isset($_POST['submit'])) {
                                     <div class="form-group small">
                                         <label for="employee-civil-status">Civil Status:</label>
                                         <select id="employee-civil-status" name="civil_status">
-                                            <option value=""><?php echo $row['civil_status'];?></option>
+                                            <option value="<?php echo $row['civil_status']; ?>"><?php echo $row['civil_status'];?></option>
                                             <option value="Single">Single</option>
                                             <option value="Married">Married</option>
                                             <option value="Divorced">Separated</option>
@@ -335,69 +404,78 @@ if(isset($_POST['submit'])) {
                             <div class="add-employee-form">
                                 <h2>Education Attainment</h2>
                                 <div class="column">
-                                    <div class="form-group small">
+                                    <div class="form-group">
                                         <label for="employee-education">Highest Education Attainment:</label>
-                                        <select id="employee-education" name="highest_education">
-                                            <option value="">Select</option>
-                                            <option value="elementary">Elementary</option>
-                                            <option value="high_school">High School</option>
-                                            <option value="vocational">Vocational/Technical</option>
-                                            <option value="college">College/Bachelor's Degree</option>
-                                            <option value="doctorate">Doctorate Degree</option>
+                                        <select id="employee-education" name="educ_attain">
+                                            <option value="<?php echo $row['educ_attain'];?>"><?php echo $row['educ_attain'];?></option>
+                                            <option value="Elementary">Elementary</option>
+                                            <option value="High School">High School</option>
+                                            <option value="Vocational/Technical">Vocational/Technical</option>
+                                            <option value="College/Bachelor's Degree">College/Bachelor's Degree</option>
+                                            <option value="Doctorate Degree">Doctorate Degree</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="school-name">School Name:</label>
-                                        <input type="text" id="school-name" name="school_name">
+                                        <label for="employee-citizenship">School Name:</label>
+                                        <input type="text" id="school_name" name="school_name" value="<?php echo $row['school_name'];?>">
                                     </div>
                                     <div class="form-group small">
-                                        <label for="course-program">Course/Program:</label>
-                                        <input type="text" id="course-program" name="course_program">
+                                        <label for="employee-citizenship">Course/Program:</label>
+                                        <input type="text" id="course" name="course" value="<?php echo $row['course'];?>">
                                     </div>
+
                                     <div class="form-group small">
-                                        <label for="year-graduated">Year Graduated:</label>
-                                        <input type="date" id="year-graduated" name="year_graduated">
+                                        <label for="employee-birthdate">Year Graduated:</label>
+                                        <input type="date" id="year_grad" name="year_grad" value="<?php echo $row['year_grad'];?>">
                                     </div>
+
                                     <div class="form-group small">
-                                        <label for="honors-awards">Honors/Awards Received (if applicable):</label>
-                                        <input type="text" id="honors-awards" name="honors_awards">
+                                        <label for="employee-birthdate">Honors/Awards Received (if applicable):</label>
+                                        <input type="text" id="honors" name="honors" value="<?php echo $row['honors'];?>">
                                     </div>
+
                                     <div class="form-group-below">
                                         <div class="add-employee-form">
                                             <h2>Training</h2>
                                             <div class="column">
-                                                <div class="form-group small">
-                                                    <label for="training-program">Training Program:</label>
-                                                    <input type="text" id="training-program" name="training_program">
-                                                </div>
-                                                <div class="form-group small">
-                                                    <label for="institution-organization">Institution/Organization:</label>
-                                                    <input type="text" id="institution-organization" name="institution_organization">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="training-location">Location:</label>
-                                                    <input type="text" id="training-location" name="training_location">
-                                                </div>
-                                                <div class="form-group small">
-                                                    <label for="date-started">Date Started:</label>
-                                                    <input type="date" id="date-started" name="date_started">
-                                                </div>
-                                                <div class="form-group small">
-                                                    <label for="date-completed">Date Completed:</label>
-                                                    <input type="date" id="date-completed" name="date_completed">
-                                                </div>
-                                                <div class="form-group small">
-                                                    <label for="certificate-received">Certificate Received:</label>
-                                                    <select id="certificate-received" name="certificate_received">
-                                                        <option value=""></option>
-                                                        <option value="yes">Yes</option>
-                                                        <option value="no">No</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group small">
-                                                    <label for="skills-acquired">Skills Acquired:</label>
-                                                    <input type="text" id="skills-acquired" name="skills_acquired">
-                                                </div>
+                                            <div class="column">
+                                    <div class="form-group small">
+                                        <label for="employee-citizenship">Training Program:</label>
+                                        <input type="text" id="training_prog" name="training_prog" value="<?php echo $row['training_prog'];?>">
+                                    </div>
+                                    
+                                    <div class="form-group small">
+                                        <label for="employee-citizenship">Institution/Organization:</label>
+                                        <input type="text" id="institution" name="institution" value="<?php echo $row['institution'];?>">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="employee-citizenship">Location:</label>
+                                        <input type="text" id="loc" name="loc" value="<?php echo $row['loc'];?>">
+                                    </div>
+                                    <div class="form-group small">
+                                        <label for="employee-citizenship">Date Started:</label>
+                                        <input type="date" id="date_start" name="date_start" value="<?php echo $row['date_start'];?>">
+                                    </div>
+
+                                    <div class="form-group small">
+                                        <label for="employee-citizenship">Date Completed:</label>
+                                        <input type="date" id="date_complete" name="date_complete" value="<?php echo $row['date_complete'];?>">
+                                    </div>
+
+                                    <div class="form-group small">
+                                        <label for="employee-civil-status">Certificate Received:</label>
+                                        <select id="cert" name="cert">
+                                            <option value="<?php echo $row['cert']; ?>"><?php echo $row['cert']; ?></option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group small">
+                                        <label for="employee-citizenship">Skills Acquired:</label>
+                                        <input type="text" id="wide" name="skills_aquired" value="<?php echo $row['skills_aquired'];?>">
+                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -410,26 +488,26 @@ if(isset($_POST['submit'])) {
                             <div class="add-employee-form">
                                 <h2>Work Experience</h2>
                                 <div class="column">
-                                    <div class="form-group small">
-                                        <label for="previous-job-title">Previous Job Title:</label>
-                                        <input type="text" id="previous-job-title" name="previous_job_title">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="company-name">Company Name:</label>
-                                        <input type="text" id="company-name" name="company_name">
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="responsibilities">Responsibilities and Achievements:</label>
-                                        <input type="text" id="responsibilities" name="responsibilities">
-                                    </div>
-                                    <div class="form-group small">
-                                        <label for="employment-date">Date of Employment:</label>
-                                        <input type="date" id="employment-date" name="employment_date">
-                                    </div>
-                                    <div class="form-group small">
-                                        <label for="references">References (optional):</label>
-                                        <input type="text" id="references" name="references">
-                                    </div>
+                            <div class="form-group small">
+                                <label for="previous-job-title">Previous Job Title:</label>
+                                <input type="text" id="prev_job" name="prev_job" value="<?php echo $row['prev_job'];?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="company-name">Company Name:</label>
+                                <input type="text" id="company_name" name="company_name" value="<?php echo $row['company_name'];?>">
+                            </div>
+                            <div class="form-group ">
+                                <label for="responsibilities">Responsibilities and Achievements:</label>
+                                <input type="text" id="responsi" name="responsi" value="<?php echo $row['responsi'];?>">
+                            </div>
+                            <div class="form-group small">
+                                <label for="employment-date">Date of Employment:</label>
+                                <input type="date" id="date_employment" name="date_employment" value="<?php echo $row['date_employment'];?>">
+                            </div>
+                            <div class="form-group small">
+                                <label for="references">References (optional):</label>
+                                <input type="text" id="refer" name="refer" value="<?php echo $row['refer'];?>">
+                            </div>
                                 </div>
                             </div>
                             <button type="button" class="thebutton3" onclick="showPreviousSection('education')">Back</button>
@@ -439,44 +517,45 @@ if(isset($_POST['submit'])) {
                 <div class="add-employee-form">
                     <h2>Employee Information</h2>
                         <div class="column">
+
                         <div class="form-group">
-                <label for="photos">Picture 2x2:</label>
-                <input type="file" name="fileToUpload" id="fileToUpload">
-            </div>
+                            <label for="photos">Picture 2x2:</label>
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                        </div>
 
-            <div class="form-group small">
-                <label>Employee Type</label>
-                <select name="employee_status" id="employee_status">
-                    <option value=""></option>
-                    <option value="Full Time">Full Time</option>
-                    <option value="Part Time">Part Time</option>
-                </select>
-            </div>
+                        <div class="form-group small">
+                        <label>Employee Type</label>
+                        <select name="employee_status" id="employee_status">
+                            <option value="<?php echo $row['employee_status']; ?>"><?php echo $row['employee_status']; ?></option>
+                            <option value="Full Time">Full Time</option>
+                            <option value="Part Time">Part Time</option>
+                        </select>
+                        </div>
 
-            <div class="form-group small">
-                <label>Date Hired</label>
-                <input type="date">
-            </div>
+                        <div class="form-group small">
+                        <label>Date Hired</label>
+                        <input type="date" id="" name="date_hired" value="<?php echo $row['date_hired'];?>">
+                        </div>
 
-            <div class="form-group small">
-                <label>SSS ID</label>
-                <input type="text">
-            </div>
+                            <div class="form-group small">
+                                <label>SSS ID</label>
+                                <input type="text" id="" name="sss_id" value="<?php echo $row['sss_id'];?>">
+                            </div>
 
-            <div class="form-group small">
-                <label>Tin ID</label>
-                <input type="text">
-            </div>
+                            <div class="form-group small">
+                        <label>Tin ID</label>
+                        <input type="text" id="" name="tin_id" value="<?php echo $row['tin_id'];?>">
+                        </div>
 
-            <div class="form-group small">
-                <label>PAGIBIG ID</label>
-                <input type="text">
-            </div>
+                        <div class="form-group small">
+                        <label>PAGIBIG ID</label>
+                        <input type="text" id="" name="pagibig" value="<?php echo $row['pagibig'];?>">
+                        </div>
 
-            <div class="form-group small">
-                <label>PhilHealth ID</label>
-                <input type="text">
-            </div>
+                        <div class="form-group small">
+                        <label>PhilHealth ID</label>
+                        <input type="text" id="" name="phil_id" value="<?php echo $row['phil_id'];?>">
+                        </div>
 
 
         </div>
@@ -497,12 +576,12 @@ if(isset($_POST['submit'])) {
                                     </div>
                                     <div class="form-group small">
                                         <label for="certificates">Certificates (optional):</label>
-                                        <input type="file" id="certificates" name="certificates">
+                                        <input type="file" id="certificates" name="cert">
                                     </div>
                                     <div class="form-group">
-                                        <label for="questions-comments">Questions/Comments:</label>
-                                        <input type="text" id="questions-comments" name="questions_comments">
-                                    </div>
+                                    <label for="questions-comments">Questions/Comments:</label>
+                                    <input type="text" id="questions" name="questions" value="<?php echo $row['questions'];?>">
+                                </div>
                                 </div>
                             </div>
                             <button type="button" class="thebutton3" onclick="showPreviousSection('work')">Back</button>

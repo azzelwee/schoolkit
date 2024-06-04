@@ -38,12 +38,13 @@ if(isset($_POST['submit'])) {
     $training = $_POST['training_prog'];
     $institution = $_POST['institution'];
     $location = $_POST['loc'];
-    $dataStart = $_POST['data_start'];
-    $dataComplete = $_POST['data_complete'];
+    $dateStart = $_POST['date_start'];
+    $dateComplete = $_POST['date_complete'];
     $cert = $_POST['cert'];
     $skills = $_POST['skills_aquired'];
     $sss = $_POST['sss_id'];
     $tin = $_POST['tin_id'];
+    $pagibig = $_POST['pagibig'];
     $phil = $_POST['phil_id'];
     $dateHired = $_POST['date_hired'];
     $prevJob = $_POST['prev_job'];
@@ -51,6 +52,7 @@ if(isset($_POST['submit'])) {
     $responsi = $_POST['responsi'];
     $dateEmploy = $_POST['date_employment'];
     $refer = $_POST['refer'];
+    $questions = $_POST['questions'];
     
     // Check if file was uploaded
     if(isset($_FILES["fileToUpload"]["tmp_name"]) && !empty($_FILES["fileToUpload"]["tmp_name"])) {
@@ -128,20 +130,22 @@ if(isset($_POST['submit'])) {
                     `training_prog`, 
                     `institution`,
                     `loc`,
-                    `data_start`,
-                    `data_complete`,
+                    `date_start`,
+                    `date_complete`,
                     `cert`,
-                    `skills_aquired`,`,
+                    `skills_aquired`,
                     `file_path`,
                     `sss_id`,
                     `tin_id`,
+                    `pagibig`,
                     `phil_id`,
                     `date_hired`,
                     `prev_job`,
                     `company_name`,
                     `responsi`,
-                    `date_employment`
-                    `refer`
+                    `date_employment`,
+                    `refer`,
+                    `questions`
                 ) 
                 VALUES (
                     '$fname',
@@ -172,13 +176,14 @@ if(isset($_POST['submit'])) {
                     '$training',
                     '$institution',
                     '$location',
-                    '$dataStart',
-                    '$dataComplete',
+                    '$dateStart',
+                    '$dateComplete',
                     '$cert',
                     '$skills',
                     '$target_file',
                     '$sss',
                     '$tin',
+                    '$pagibig',
                     '$phil',
                     '$dateHired',
                     '$prevJob',
@@ -186,6 +191,7 @@ if(isset($_POST['submit'])) {
                     '$responsi',
                     '$dateEmploy',
                     '$refer',
+                    '$questions'
                     )";
                 
                 $con->query($sql) or die ($con->error);
@@ -234,19 +240,21 @@ if(isset($_POST['submit'])) {
         `training_prog`, 
         `institution`,
         `loc`,
-        `data_start`,
-        `data_complete`,
+        `date_start`,
+        `date_complete`,
         `cert`,
-        `skills_aquired`
+        `skills_aquired`,
         `sss_id`,
         `tin_id`,
+        `pagibig`,
         `phil_id`,
         `date_hired`,
         `prev_job`,
         `company_name`,
         `responsi`,
-        `date_employment`
-        `refer`
+        `date_employment`,
+        `refer`,
+        `questions`
         ) 
         VALUES (
             '$fname',
@@ -277,10 +285,21 @@ if(isset($_POST['submit'])) {
             '$training',
             '$institution',
             '$location',
-            '$dataStart',
-            '$dataComplete',
+            '$dateStart',
+            '$dateComplete',
             '$cert',
-            '$skills'
+            '$skills',
+            '$sss',
+            '$tin',
+            '$pagibig',
+            '$phil',
+            '$dateHired',
+            '$prevJob',
+            '$companyName',
+            '$responsi',
+            '$dateEmploy',
+            '$refer',
+            '$questions'
             )";
         
         $con->query($sql) or die ($con->error);
@@ -500,12 +519,12 @@ if(isset($_POST['submit'])) {
                         </div>
                         <div class="form-group small">
                             <label for="employee-citizenship">Date Started:</label>
-                            <input type="date" id="data_start" name="data_start">
+                            <input type="date" id="date_start" name="date_start">
                         </div>
 
                         <div class="form-group small">
                             <label for="employee-citizenship">Date Completed:</label>
-                            <input type="date" id="data_complete" name="data_complete">
+                            <input type="date" id="date_complete" name="date_complete">
                         </div>
 
                         <div class="form-group small">
@@ -537,32 +556,12 @@ if(isset($_POST['submit'])) {
             <div class="column">
 
 
-            <div class="form-group small">
+            <div class="form-group">
                 <label for="photos">Picture 2x2:</label>
                 <input type="file" name="fileToUpload" id="fileToUpload">
             </div>
 
             <div class="form-group small">
-                <label>SSS ID</label>
-                <input type="text">
-            </div>
-
-            <div class="form-group small">
-        <label>Tin ID</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>PAGIBIG ID</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>PhilHealth ID</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
         <label>Employee Type</label>
         <select name="employee_status" id="employee_status">
             <option value=""></option>
@@ -573,8 +572,30 @@ if(isset($_POST['submit'])) {
 
         <div class="form-group small">
         <label>Date Hired</label>
-        <input type="date">
+        <input type="date" id="" name="date_hired">
         </div>
+
+            <div class="form-group small">
+                <label>SSS ID</label>
+                <input type="text" id="" name="sss_id">
+            </div>
+
+            <div class="form-group small">
+        <label>Tin ID</label>
+        <input type="text" id="" name="tin_id">
+        </div>
+
+        <div class="form-group small">
+        <label>PAGIBIG ID</label>
+        <input type="text" id="" name="pagibig">
+        </div>
+
+        <div class="form-group small">
+        <label>PhilHealth ID</label>
+        <input type="text" id="" name="phil_id">
+        </div>
+
+    
         </div>
 
         
@@ -582,25 +603,25 @@ if(isset($_POST['submit'])) {
         <h2>Work Experience</h2>
         <div class="column">
 
-        <div class="form-group small">
+                            <div class="form-group small">
                                 <label for="previous-job-title">Previous Job Title:</label>
-                                <input type="text" id="previous-job-title" name="previous-job-title">
+                                <input type="text" id="prev_job" name="prev_job">
                             </div>
                             <div class="form-group">
                                 <label for="company-name">Company Name:</label>
-                                <input type="text" id="company-name" name="company-name">
+                                <input type="text" id="company_name" name="company_name">
                             </div>
                             <div class="form-group ">
                                 <label for="responsibilities">Responsibilities and Achievements:</label>
-                                <input type="text" id="responsibilities" name="responsibilities">
+                                <input type="text" id="responsi" name="responsi">
                             </div>
                             <div class="form-group small">
                                 <label for="employment-date">Date of Employment:</label>
-                                <input type="date" id="employment-date" name="employment-date">
+                                <input type="date" id="date_employment" name="date_employment">
                             </div>
                             <div class="form-group small">
                                 <label for="references">References (optional):</label>
-                                <input type="text" id="references" name="references">
+                                <input type="text" id="refer" name="refer">
                             </div>
 </div>
                         <div class="form-group-below">
@@ -618,6 +639,10 @@ if(isset($_POST['submit'])) {
                                         <label for="certificates">Certificates (optional):</label>
                                         <input type="file" id="certificates" name="certificates">
                                     </div>
+                                    <div class="form-group">
+                                    <label for="questions-comments">Questions/Comments:</label>
+                                    <input type="text" id="questions" name="questions">
+                                </div>
         <br>
         </div>
         </div>

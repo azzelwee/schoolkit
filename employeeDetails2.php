@@ -117,7 +117,7 @@ $row = $employee->fetch_assoc();
                     <div class="form-group small">
                         <label for="employee-gender">Gender:</label>
                         <select id="employee-gender" name="gender" class="custom-disabled" disabled>
-                            <option value="gender"><?php echo $row['gender']; ?></option>
+                            <option value="<?php echo $row['gender']; ?>"><?php echo $row['gender']; ?></option>
                         </select>
                     </div>
 
@@ -125,10 +125,10 @@ $row = $employee->fetch_assoc();
                     <div class="form-group small">
                         <label for="employee-civil-status">Civil Status:</label>
                         <select id="employee-civil-status" name="civil_status" disabled>
-                            <option value="civil_status"><?php echo $row['civil_status'];?></option>
+                            <option value="<?php echo $row['civil_status'];?>"><?php echo $row['civil_status'];?></option>
                         </select>
                     </div>
-
+                                    
                     <div class="form-group small">
                         <label for="employee-citizenship">Citizenship:</label>
                         <input type="text" id="employee-citizenship" name="citizenship" value="<?php echo $row['citizenship'];?>" class="custom-disabled" disabled>
@@ -213,12 +213,14 @@ $row = $employee->fetch_assoc();
                 <div class="add-employee-form">
                     <h2>Education Attainment</h2>
                     <div class="column">
-                    <div class="form-group small">
+
+                    <div class="form-group">
                         <label for="employee-civil-status">Highest Education Attainment:</label>
                         <select id="educ_attain" name="educ_attain" class="custom-disabled" disabled>
                             <option value="educ_attain"><?php echo $row['educ_attain']; ?></option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="employee-citizenship">School Name:</label>
                         <input type="text" id="school_name" name="school_name" value="<?php echo $row['school_name'];?>" class="custom-disabled" disabled>
@@ -258,18 +260,18 @@ $row = $employee->fetch_assoc();
                         </div>
                         <div class="form-group small">
                             <label for="employee-citizenship">Date Started:</label>
-                            <input type="date" id="data_start" name="data_start" value="<?php echo $row['data_start'];?>" class="custom-disabled" disabled>
+                            <input type="date" id="data_start" name="data_start" value="<?php echo $row['date_start'];?>" class="custom-disabled" disabled>
                         </div>
 
                         <div class="form-group small">
                             <label for="employee-citizenship">Date Completed:</label>
-                            <input type="date" id="data_complete" name="data_complete" value="<?php echo $row['data_complete'];?>" class="custom-disabled" disabled>
+                            <input type="date" id="data_complete" name="data_complete" value="<?php echo $row['date_complete'];?>" class="custom-disabled" disabled>
                         </div>
 
                         <div class="form-group small">
                             <label for="employee-civil-status">Certificate Received:</label>
                             <select id="cert" name="cert" class="custom-disabled" disabled>
-                            <option value="cert"><?php echo $row['cert']; ?></option>
+                            <option value="<?php echo $row['cert']; ?>"><?php echo $row['cert']; ?></option>
                             </select>
                         </div>
 
@@ -289,23 +291,23 @@ $row = $employee->fetch_assoc();
                         <div class="column">
                             <div class="form-group small">
                                 <label for="previous-job-title">Previous Job Title:</label>
-                                <input type="text" id="previous-job-title" name="previous-job-title">
+                                <input type="text" id="prev_job" name="prev_job" value="<?php echo $row['prev_job'];?>" class="custom-disabled" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="company-name">Company Name:</label>
-                                <input type="text" id="company-name" name="company-name">
+                                <input type="text" id="company_name" name="company_name" value="<?php echo $row['company_name'];?>" class="custom-disabled" disabled>
                             </div>
                             <div class="form-group ">
                                 <label for="responsibilities">Responsibilities and Achievements:</label>
-                                <input type="text" id="responsibilities" name="responsibilities">
+                                <input type="text" id="responsi" name="responsi" value="<?php echo $row['responsi'];?>" class="custom-disabled" disabled>
                             </div>
                             <div class="form-group small">
                                 <label for="employment-date">Date of Employment:</label>
-                                <input type="date" id="employment-date" name="employment-date">
+                                <input type="date" id="date_employment" name="date_employment" value="<?php echo $row['date_employment'];?>" class="custom-disabled" disabled>
                             </div>
                             <div class="form-group small">
                                 <label for="references">References (optional):</label>
-                                <input type="text" id="references" name="references">
+                                <input type="text" id="refer" name="refer" value="<?php echo $row['refer'];?>" class="custom-disabled" disabled>
                             </div>
                             </div>
                 </section>
@@ -320,34 +322,32 @@ $row = $employee->fetch_assoc();
                 <label>Employee Type</label>
                 <select name="employee_status" id="employee_status" class="custom-disabled" disabled>
                     <option value="employee_status"><?php echo $row['employee_status']; ?></option>
-                    <option value="Full Time">Full Time</option>
-                    <option value="Part Time">Part Time</option>
                 </select>
             </div>
 
             <div class="form-group ">
                 <label>Date Hired</label>
-                <input type="date">
+                <input type="date" name="date_hired" value="<?php echo $row['date_hired'];?>" class="custom-disabled" disabled>
             </div>
 
             <div class="form-group small">
                 <label>SSS ID</label>
-                <input type="text">
+                <input type="text" name="sss_id" value="<?php echo $row['sss_id'];?>" class="custom-disabled" disabled>
             </div>
 
             <div class="form-group small">
                 <label>Tin ID</label>
-                <input type="text">
+                <input type="text" name="tin_id" value="<?php echo $row['tin_id'];?>" class="custom-disabled" disabled>
             </div>
 
             <div class="form-group small">
                 <label>PAGIBIG ID</label>
-                <input type="text">
+                <input type="text" name="pagibig" value="<?php echo $row['pagibig'];?>" class="custom-disabled" disabled>
             </div>
 
             <div class="form-group small">
                 <label>PhilHealth ID</label>
-                <input type="text">
+                <input type="text" name="phil_id" value="<?php echo $row['phil_id'];?>" class="custom-disabled" disabled>
             </div>
 
 
@@ -374,7 +374,7 @@ $row = $employee->fetch_assoc();
                             </br>
                                 <div class="form-group small">
                                     <label for="questions-comments">Questions/Comments:</label>
-                                    <input type="text" id="wide" name="questions-comments">
+                                    <input type="text" id="wide" name="questions" value="<?php echo $row['questions'];?>" class="custom-disabled" disabled>
                                 </div>
                             </div>
                             </div>
