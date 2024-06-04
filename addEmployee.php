@@ -10,6 +10,7 @@ include_once("connections/connection.php");
 $con = connection();
 
 if(isset($_POST['submit'])) {
+    $employeeID = $_POST['employee_id'];
     $fname = $_POST['first_name'];
     $mname = $_POST['middle_name'];
     $lname = $_POST['last_name'];
@@ -102,6 +103,7 @@ if(isset($_POST['submit'])) {
                 // Now, insert into database
                 $sql = "INSERT INTO `employee_list2`
                 (
+                    `employee_id`,
                     `first_name`, 
                     `middle_name`, 
                     `last_name`, 
@@ -148,6 +150,7 @@ if(isset($_POST['submit'])) {
                     `questions`
                 ) 
                 VALUES (
+                    '$employeeID',
                     '$fname',
                     '$mname',
                     '$lname',
@@ -212,6 +215,7 @@ if(isset($_POST['submit'])) {
         // Now, insert into database without file path
         $sql = "INSERT INTO `employee_list2`
         (
+        `employee_id`,
         `first_name`, 
         `middle_name`, 
         `last_name`, 
@@ -257,6 +261,7 @@ if(isset($_POST['submit'])) {
         `questions`
         ) 
         VALUES (
+            '$employeeID',
             '$fname',
             '$mname',
             '$lname',
@@ -332,6 +337,8 @@ if(isset($_POST['submit'])) {
             <!-- <div class="button-containers">
                 <a href="">Import from Applicant Processing</a>
             </div> -->
+            <h2>Add New Employee</h2>
+        <div class="gauge-line"></div>
         <div class="add-form">
             
         <form action="" method="post" enctype="multipart/form-data" class="add-employee-form">
@@ -341,29 +348,29 @@ if(isset($_POST['submit'])) {
             <div class="form-page">
                 <div class="column">
                     <div class="form-group ">
-                        <label for="employee-first-name">First Name:</label>
+                        <label for="employee-first-name">First Name:<span class="required">*</span></label>
                         <input type="text" id="employee-first-name" name="first_name">
                     </div>
                     
                     <div class="form-group small">
-                        <label for="employee-middle-name">Middle Name:</label>
+                        <label for="employee-middle-name">Middle Name:<span class="required">*</span></label>
                         <input type="text" id="employee-middle-name" name="middle_name">
                     </div>
 
                     <div class="form-group small">
-                        <label for="employee-last-name">Last Name:</label>
+                        <label for="employee-last-name">Last Name:<span class="required">*</span></label>
                         <input type="text" id="employee-last-name" name="last_name">
                     </div>
 
 
 
                     <div class="form-group small ">
-                        <label for="employee-age">Age:</label>
+                        <label for="employee-age">Age:<span class="required">*</span></label>
                         <input type="number" id="employee-age" name="age">
                     </div>
 
                     <div class="form-group small">
-                        <label for="employee-gender">Gender:</label>
+                        <label for="employee-gender">Gender:<span class="required">*</span></label>
                         <select id="employee-gender" name="gender">
                             <option value="">Select Gender</option>
                             <option value="Male">Male</option>
@@ -374,7 +381,7 @@ if(isset($_POST['submit'])) {
 
 
                     <div class="form-group small">
-                        <label for="employee-civil-status">Civil Status:</label>
+                        <label for="employee-civil-status">Civil Status:<span class="required">*</span></label>
                         <select id="employee-civil-status" name="civil_status">
                             <option value="">Select Status</option>
                             <option value="Single">Single</option>
@@ -385,7 +392,7 @@ if(isset($_POST['submit'])) {
                     </div>
 
                     <div class="form-group small">
-                        <label for="employee-citizenship">Citizenship:</label>
+                        <label for="employee-citizenship">Citizenship:<span class="required">*</span></label>
                         <input type="text" id="employee-citizenship" name="citizenship">
                     </div>
 
@@ -395,12 +402,12 @@ if(isset($_POST['submit'])) {
                     </div>  
 
                     <div class="form-group small">
-                        <label for="employee-birthdate">Birthdate:</label>
+                        <label for="employee-birthdate">Birthdate:<span class="required">*</span></label>
                         <input type="date" id="employee-birthdate" name="birthdate">
                     </div>
 
                     <div class="form-group ">
-                        <label for="employee-birthplace">Place of Birth:</label>
+                        <label for="employee-birthplace">Place of Birth:<span class="required">*</span></label>
                         <input type="text" id="employee-birthplace" name="place_of_birth">
                     </div>
 
@@ -421,12 +428,12 @@ if(isset($_POST['submit'])) {
 
                     <div class="column">
                         <div class="form-group small">
-                            <label for="employee-citizenship">Email:</label>
+                            <label for="employee-citizenship">Email:<span class="required">*</span></label>
                             <input type="text" id="employee-citizenship" name="email">
                         </div>
                         
                         <div class="form-group small">
-                            <label for="employee-citizenship">Mobile Number:</label>
+                            <label for="employee-citizenship">Mobile Number:<span class="required">*</span></label>
                             <input type="text" id="employee-citizenship" name="mobile_number">
                         </div>
 
@@ -435,20 +442,20 @@ if(isset($_POST['submit'])) {
                             <input type="text" id="employee-citizenship" name="telephone_number">
                         </div>
                         <div class="form-group ">
-                            <label for="employee-citizenship">Address:</label>
+                            <label for="employee-citizenship">Address:<span class="required">*</span></label>
                             <input type="text" id="employee-citizenship" name="address">
                         </div>
 
                         <div class="form-group small">
-                            <label for="employee-citizenship">City:</label>
+                            <label for="employee-citizenship">City:<span class="required">*</span></label>
                             <input type="text" id="employee-citizenship" name="city">
                         </div>
                         <div class="form-group small">
-                            <label for="employee-citizenship">State/Province:</label>
+                            <label for="employee-citizenship">State/Province:<span class="required">*</span></label>
                             <input type="text" id="employee-citizenship" name="state_province">
                         </div>
                         <div class="form-group small">
-                            <label for="employee-citizenship">Postal Code:</label>
+                            <label for="employee-citizenship">Postal Code:<span class="required">*</span></label>
                             <input type="text" id="employee-citizenship" name="postal_code">
                         </div>
                         <div class="form-group small">
@@ -470,7 +477,7 @@ if(isset($_POST['submit'])) {
         <h2>Education</h2>
                 <div class="column">
                 <div class="form-group small">
-                        <label for="employee-civil-status">Highest Education Attainment:</label>
+                        <label for="employee-civil-status">Highest Education Attainment:<span class="required">*</span></label>
                         <select id="educ_attain" name="educ_attain">
                             <option value="">Select</option>
                             <option value="Elementary">Elementary</option>
@@ -481,16 +488,16 @@ if(isset($_POST['submit'])) {
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="employee-citizenship">School Name:</label>
+                        <label for="employee-citizenship">School Name:<span class="required">*</span></label>
                         <input type="text" id="school_name" name="school_name">
                     </div>
                     <div class="form-group small">
-                        <label for="employee-citizenship">Course/Program:</label>
+                        <label for="employee-citizenship">Course/Program:<span class="required">*</span></label>
                         <input type="text" id="course" name="course">
                     </div>
 
                     <div class="form-group small">
-                        <label for="employee-birthdate">Year Graduated:</label>
+                        <label for="employee-birthdate">Year Graduated:<span class="required">*</span></label>
                         <input type="date" id="year_grad" name="year_grad">
                     </div>
 
@@ -555,14 +562,18 @@ if(isset($_POST['submit'])) {
         <div class="lineup1">
             <div class="column">
 
+        <div class="form-group small">
+            <label for="">Employee ID:<span class="required">*</span></label>
+            <input type="text" name="employee_id" id="employee_id">
+        </div>
 
-        <div class="form-group">
+        <div class="form-group small">
             <label for="photos">Picture 2x2:</label>
             <input type="file" name="fileToUpload" id="fileToUpload">
         </div>
 
         <div class="form-group small">
-        <label>Employee Type</label>
+        <label>Employee Type:<span class="required">*</span></label>
         <select name="employee_status" id="employee_status">
             <option value=""></option>
             <option value="Full Time">Full Time</option>
@@ -571,27 +582,27 @@ if(isset($_POST['submit'])) {
         </div>
 
         <div class="form-group small">
-        <label>Date Hired</label>
+        <label>Date Hired:<span class="required">*</span></label>
         <input type="date" id="" name="date_hired">
         </div>
 
             <div class="form-group small">
-                <label>SSS ID</label>
+                <label>SSS ID:<span class="required">*</span></label>
                 <input type="text" id="" name="sss_id">
             </div>
 
             <div class="form-group small">
-        <label>Tin ID</label>
+        <label>Tin ID:<span class="required">*</span></label>
         <input type="text" id="" name="tin_id">
         </div>
 
         <div class="form-group small">
-        <label>PAGIBIG ID</label>
+        <label>PAGIBIG ID:<span class="required">*</span></label>
         <input type="text" id="" name="pagibig">
         </div>
 
         <div class="form-group small">
-        <label>PhilHealth ID</label>
+        <label>PhilHealth ID<span class="required">*</span></label>
         <input type="text" id="" name="phil_id">
         </div>
 
@@ -628,7 +639,7 @@ if(isset($_POST['submit'])) {
                         <h2>Credentials</h2>
                         <div class="column">
                             <div class="form-group small">
-                                        <label for="resume">Resume/CV:</label>
+                                        <label for="resume">Resume/CV:<span class="required">*</span></label>
                                         <input type="file" id="resume" name="resume">
                                     </div>
                                     <div class="form-group small">
