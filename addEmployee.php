@@ -329,9 +329,9 @@ if(isset($_POST['submit'])) {
 
     <div class="right-container-add">
         <div class="box-container">
-            <div class="button-containers">
+            <!-- <div class="button-containers">
                 <a href="">Import from Applicant Processing</a>
-            </div>
+            </div> -->
         <div class="add-form">
             
         <form action="" method="post" enctype="multipart/form-data" class="add-employee-form">
@@ -556,12 +556,12 @@ if(isset($_POST['submit'])) {
             <div class="column">
 
 
-            <div class="form-group">
-                <label for="photos">Picture 2x2:</label>
-                <input type="file" name="fileToUpload" id="fileToUpload">
-            </div>
+        <div class="form-group">
+            <label for="photos">Picture 2x2:</label>
+            <input type="file" name="fileToUpload" id="fileToUpload">
+        </div>
 
-            <div class="form-group small">
+        <div class="form-group small">
         <label>Employee Type</label>
         <select name="employee_status" id="employee_status">
             <option value=""></option>
