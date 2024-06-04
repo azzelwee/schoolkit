@@ -219,7 +219,7 @@ $row = $employee->fetch_assoc();
             <div class="column">
             <div class="form-group small">
                         <label for="employee-civil-status">Highest Education Attainment:</label>
-                        <select id="employee-civil-status" name="employee-civil-status">
+                        <select id="educ_attain" name="educ_attain">
                             <option value="">Select</option>
                             <option value="single">Elementary</option>
                             <option value="married">High School</option>
@@ -230,65 +230,64 @@ $row = $employee->fetch_assoc();
                     </div>
                     <div class="form-group">
                         <label for="employee-citizenship">School Name:</label>
-                        <input type="text" id="employee-citizenship" name="employee-citizenship">
+                        <input type="text" id="school_name" name="school_name">
                     </div>
                     <div class="form-group small">
                         <label for="employee-citizenship">Course/Program:</label>
-                        <input type="text" id="employee-citizenship" name="employee-citizenship">
+                        <input type="text" id="course" name="course">
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-birthdate">Year Graduated:</label>
-                        <input type="date" id="employee-birthdate" name="employee-birthdate">
+                        <input type="date" id="year_grad" name="year_grad">
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-birthdate">Honors/Awards Received (if applicable):</label>
-                        <input type="text" id="employee-birthdate" name="employee-birthdate">
-                    </div>
-        
-        </div>
-
-        <div class="form-group-below">
-                <h2>Training (if applicable)</h2>
-                <div class="column">
-                    <div class="form-group small">
-                        <label for="employee-citizenship">Training Program:</label>
-                        <input type="text" id="employee-citizenship" name="employee-citizenship">
-                    </div>
-                    
-                    <div class="form-group small">
-                        <label for="employee-citizenship">Institution/Organization:</label>
-                        <input type="text" id="employee-citizenship" name="employee-citizenship">
+                        <input type="text" id="honors" name="honors">
                     </div>
 
-                    <div class="form-group">
-                        <label for="employee-citizenship">Location:</label>
-                        <input type="text" id="employee-citizenship" name="employee-citizenship">
-                    </div>
-                    <div class="form-group small">
-                        <label for="employee-citizenship">Date Started:</label>
-                        <input type="date" id="employee-citizenship" name="employee-citizenship">
-                    </div>
+                    <div class="form-group-below">
+                        <h2>Training (if applicable)</h2>
 
-                    <div class="form-group small">
-                        <label for="employee-citizenship">Date Completed:</label>
-                        <input type="date" id="employee-citizenship" name="employee-citizenship">
-                    </div>
+                    <div class="column">
+                        <div class="form-group small">
+                            <label for="employee-citizenship">Training Program:</label>
+                            <input type="text" id="training_prog" name="training_prog">
+                        </div>
+                        
+                        <div class="form-group small">
+                            <label for="employee-citizenship">Institution/Organization:</label>
+                            <input type="text" id="institution" name="institution">
+                        </div>
 
-                    <div class="form-group small">
-                        <label for="employee-civil-status">Certificate Received:</label>
-                        <select id="employee-civil-status" name="employee-civil-status">
-                            <option value=""></option>
-                            <option value="single">Yes</option>
-                            <option value="married">No</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="employee-citizenship">Location:</label>
+                            <input type="text" id="loc" name="loc">
+                        </div>
+                        <div class="form-group small">
+                            <label for="employee-citizenship">Date Started:</label>
+                            <input type="date" id="data_start" name="data_start">
+                        </div>
 
-                    <div class="form-group small">
-                        <label for="employee-citizenship">Skills Acquired:</label>
-                        <input type="text" id="wide" name="employee-citizenship" >
-                    </div>
+                        <div class="form-group small">
+                            <label for="employee-citizenship">Date Completed:</label>
+                            <input type="date" id="data_complete" name="data_complete">
+                        </div>
+
+                        <div class="form-group small">
+                            <label for="employee-civil-status">Certificate Received:</label>
+                            <select id="cert" name="cert">
+                                <option value=""></option>
+                                <option value="single">Yes</option>
+                                <option value="married">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group small">
+                            <label for="employee-citizenship">Skills Acquired:</label>
+                            <input type="text" id="wide" name="skills_aquired" >
+                        </div>
                     </div>
                         </div>
                     </div>

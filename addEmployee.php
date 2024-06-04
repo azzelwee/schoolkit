@@ -23,7 +23,35 @@ if(isset($_POST['submit'])) {
     $placebirth = $_POST['place_of_birth'];
     $height = $_POST['height'];
     $weight = $_POST['weight'];
-
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile_number'];
+    $telephone = $_POST['telephone_number'];
+    $address = $_POST['address'];
+    $city = $_POST['city'];
+    $state = $_POST['state_province'];
+    $postal = $_POST['postal_code'];
+    $educ = $_POST['educ_attain'];
+    $school = $_POST['school_name'];
+    $course = $_POST['course'];
+    $yearGrad = $_POST['year_grad'];
+    $honors = $_POST['honors'];
+    $training = $_POST['training_prog'];
+    $institution = $_POST['institution'];
+    $location = $_POST['loc'];
+    $dataStart = $_POST['data_start'];
+    $dataComplete = $_POST['data_complete'];
+    $cert = $_POST['cert'];
+    $skills = $_POST['skills_aquired'];
+    $sss = $_POST['sss_id'];
+    $tin = $_POST['tin_id'];
+    $phil = $_POST['phil_id'];
+    $dateHired = $_POST['date_hired'];
+    $prevJob = $_POST['prev_job'];
+    $companyName = $_POST['company_name'];
+    $responsi = $_POST['responsi'];
+    $dateEmploy = $_POST['date_employment'];
+    $refer = $_POST['refer'];
+    
     // Check if file was uploaded
     if(isset($_FILES["fileToUpload"]["tmp_name"]) && !empty($_FILES["fileToUpload"]["tmp_name"])) {
         // File upload handling
@@ -85,7 +113,35 @@ if(isset($_POST['submit'])) {
                     `place_of_birth`,
                     `height`,
                     `weight`,
-                    `file_path`
+                    `email`,
+                    `mobile_number`,
+                    `telephone_number`,
+                    `address`,
+                    `city`,
+                    `state_province`,
+                    `postal_code`,
+                    `educ_attain`,
+                    `school_name`,
+                    `course`,
+                    `year_grad`,
+                    `honors`,
+                    `training_prog`, 
+                    `institution`,
+                    `loc`,
+                    `data_start`,
+                    `data_complete`,
+                    `cert`,
+                    `skills_aquired`,`,
+                    `file_path`,
+                    `sss_id`,
+                    `tin_id`,
+                    `phil_id`,
+                    `date_hired`,
+                    `prev_job`,
+                    `company_name`,
+                    `responsi`,
+                    `date_employment`
+                    `refer`
                 ) 
                 VALUES (
                     '$fname',
@@ -101,7 +157,35 @@ if(isset($_POST['submit'])) {
                     '$placebirth',
                     '$height',
                     '$weight',
-                    '$target_file'
+                    '$email',
+                    '$mobile',
+                    '$telephone',
+                    '$address',
+                    '$city',
+                    '$state',
+                    '$postal',
+                    '$educ',
+                    '$school',
+                    '$course',
+                    '$yearGrad',
+                    '$honors',
+                    '$training',
+                    '$institution',
+                    '$location',
+                    '$dataStart',
+                    '$dataComplete',
+                    '$cert',
+                    '$skills',
+                    '$target_file',
+                    '$sss',
+                    '$tin',
+                    '$phil',
+                    '$dateHired',
+                    '$prevJob',
+                    '$companyName',
+                    '$responsi',
+                    '$dateEmploy',
+                    '$refer',
                     )";
                 
                 $con->query($sql) or die ($con->error);
@@ -134,7 +218,35 @@ if(isset($_POST['submit'])) {
         `birthdate`,
         `place_of_birth`,
         `height`,
-        `weight`
+        `weight`,
+        `email`,
+        `mobile_number`,
+        `telephone_number`,
+        `address`,
+        `city`,
+        `state_province`,
+        `postal_code`,
+        `educ_attain`,
+        `school_name`,
+        `course`,
+        `year_grad`,
+        `honors`,
+        `training_prog`, 
+        `institution`,
+        `loc`,
+        `data_start`,
+        `data_complete`,
+        `cert`,
+        `skills_aquired`
+        `sss_id`,
+        `tin_id`,
+        `phil_id`,
+        `date_hired`,
+        `prev_job`,
+        `company_name`,
+        `responsi`,
+        `date_employment`
+        `refer`
         ) 
         VALUES (
             '$fname',
@@ -149,7 +261,26 @@ if(isset($_POST['submit'])) {
             '$birthdate',
             '$placebirth',
             '$height',
-            '$weight'
+            '$weight',
+            '$email',
+            '$mobile',
+            '$telephone',
+            '$address',
+            '$city',
+            '$state',
+            '$postal',
+            '$educ',
+            '$school',
+            '$course',
+            '$yearGrad',
+            '$honors',
+            '$training',
+            '$institution',
+            '$location',
+            '$dataStart',
+            '$dataComplete',
+            '$cert',
+            '$skills'
             )";
         
         $con->query($sql) or die ($con->error);
@@ -166,11 +297,11 @@ if(isset($_POST['submit'])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
+    <title>Add New Employee</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -272,38 +403,40 @@ if(isset($_POST['submit'])) {
                     <div class="column">
                         <div class="form-group small">
                             <label for="employee-citizenship">Email:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="employee-citizenship" name="email">
                         </div>
                         
                         <div class="form-group small">
                             <label for="employee-citizenship">Mobile Number:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="employee-citizenship" name="mobile_number">
                         </div>
 
                         <div class="form-group small">
                             <label for="employee-citizenship">Telephone Number:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="employee-citizenship" name="telephone_number">
                         </div>
                         <div class="form-group ">
                             <label for="employee-citizenship">Address:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="employee-citizenship" name="address">
                         </div>
 
                         <div class="form-group small">
                             <label for="employee-citizenship">City:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="employee-citizenship" name="city">
                         </div>
                         <div class="form-group small">
                             <label for="employee-citizenship">State/Province:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="employee-citizenship" name="state_province">
                         </div>
                         <div class="form-group small">
                             <label for="employee-citizenship">Postal Code:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="employee-citizenship" name="postal_code">
                         </div>
                         <div class="form-group small">
-                            <label for="employee-citizenship">Country:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            &nbsp  
+                        </div>
+                        <div class="form-group small">
+                            &nbsp  
                         </div>
                     </div>
 
@@ -319,32 +452,32 @@ if(isset($_POST['submit'])) {
                 <div class="column">
                 <div class="form-group small">
                         <label for="employee-civil-status">Highest Education Attainment:</label>
-                        <select id="employee-civil-status" name="employee-civil-status">
+                        <select id="educ_attain" name="educ_attain">
                             <option value="">Select</option>
-                            <option value="single">Elementary</option>
-                            <option value="married">High School</option>
-                            <option value="divorced">Vocational/Technical</option>
-                            <option value="widowed">College/Bachelor's Degree</option>
-                            <option value="widowed">Doctorate Degree</option>
+                            <option value="Elementary">Elementary</option>
+                            <option value="High School">High School</option>
+                            <option value="Vocational/Technical">Vocational/Technical</option>
+                            <option value="College/Bachelor's Degree">College/Bachelor's Degree</option>
+                            <option value="Doctorate Degree">Doctorate Degree</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="employee-citizenship">School Name:</label>
-                        <input type="text" id="employee-citizenship" name="employee-citizenship">
+                        <input type="text" id="school_name" name="school_name">
                     </div>
                     <div class="form-group small">
                         <label for="employee-citizenship">Course/Program:</label>
-                        <input type="text" id="employee-citizenship" name="employee-citizenship">
+                        <input type="text" id="course" name="course">
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-birthdate">Year Graduated:</label>
-                        <input type="date" id="employee-birthdate" name="employee-birthdate">
+                        <input type="date" id="year_grad" name="year_grad">
                     </div>
 
                     <div class="form-group small">
                         <label for="employee-birthdate">Honors/Awards Received (if applicable):</label>
-                        <input type="text" id="employee-birthdate" name="employee-birthdate">
+                        <input type="text" id="honors" name="honors">
                     </div>
 
                     <div class="form-group-below">
@@ -353,40 +486,40 @@ if(isset($_POST['submit'])) {
                     <div class="column">
                         <div class="form-group small">
                             <label for="employee-citizenship">Training Program:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="training_prog" name="training_prog">
                         </div>
                         
                         <div class="form-group small">
                             <label for="employee-citizenship">Institution/Organization:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="institution" name="institution">
                         </div>
 
                         <div class="form-group">
                             <label for="employee-citizenship">Location:</label>
-                            <input type="text" id="employee-citizenship" name="employee-citizenship">
+                            <input type="text" id="loc" name="loc">
                         </div>
                         <div class="form-group small">
                             <label for="employee-citizenship">Date Started:</label>
-                            <input type="date" id="employee-citizenship" name="employee-citizenship">
+                            <input type="date" id="data_start" name="data_start">
                         </div>
 
                         <div class="form-group small">
                             <label for="employee-citizenship">Date Completed:</label>
-                            <input type="date" id="employee-citizenship" name="employee-citizenship">
+                            <input type="date" id="data_complete" name="data_complete">
                         </div>
 
                         <div class="form-group small">
                             <label for="employee-civil-status">Certificate Received:</label>
-                            <select id="employee-civil-status" name="employee-civil-status">
+                            <select id="cert" name="cert">
                                 <option value=""></option>
-                                <option value="single">Yes</option>
-                                <option value="married">No</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
                             </select>
                         </div>
 
                         <div class="form-group small">
                             <label for="employee-citizenship">Skills Acquired:</label>
-                            <input type="text" id="wide" name="employee-citizenship" >
+                            <input type="text" id="wide" name="skills_aquired" >
                         </div>
                     </div>
 
@@ -395,7 +528,7 @@ if(isset($_POST['submit'])) {
                 </div>
             <button type="button" class="thebutton2" onclick="prevSection('section2', 'section1')">Back</button>
             <button type="button" class="thebutton" onclick="nextSection('section2', 'section3')">Next</button>
-    </div>
+        </div>
 
         <div id="section3" style="display: none;">
         
@@ -446,54 +579,48 @@ if(isset($_POST['submit'])) {
 
         
         <div class="form-group-below">
-        <h2>Employment History</h2>
+        <h2>Work Experience</h2>
         <div class="column">
 
         <div class="form-group small">
-        <label>Company Name</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>Nature of Business</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>Company Address</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>Branch Department</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>Position</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>Salary Rate</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>Date Hired</label>
-        <input type="text"> 
-        </div>
-
-        <div class="form-group small">
-        <label>Date Separated</label>
-        <input type="text">
-        </div>
-
-        <div class="form-group small">
-        <label>Reason for Leaving</label>
-        <input type="text" id="wide">
-        </div>
+                                <label for="previous-job-title">Previous Job Title:</label>
+                                <input type="text" id="previous-job-title" name="previous-job-title">
+                            </div>
+                            <div class="form-group">
+                                <label for="company-name">Company Name:</label>
+                                <input type="text" id="company-name" name="company-name">
+                            </div>
+                            <div class="form-group ">
+                                <label for="responsibilities">Responsibilities and Achievements:</label>
+                                <input type="text" id="responsibilities" name="responsibilities">
+                            </div>
+                            <div class="form-group small">
+                                <label for="employment-date">Date of Employment:</label>
+                                <input type="date" id="employment-date" name="employment-date">
+                            </div>
+                            <div class="form-group small">
+                                <label for="references">References (optional):</label>
+                                <input type="text" id="references" name="references">
+                            </div>
+</div>
+                        <div class="form-group-below">
+                        <h2>Credentials</h2>
+                        <div class="column">
+                            <div class="form-group small">
+                                        <label for="resume">Resume/CV:</label>
+                                        <input type="file" id="resume" name="resume">
+                                    </div>
+                                    <div class="form-group small">
+                                        <label for="work-samples">Work Samples/Portfolio (optional):</label>
+                                        <input type="file" id="work-samples" name="work_samples">
+                                    </div>
+                                    <div class="form-group small">
+                                        <label for="certificates">Certificates (optional):</label>
+                                        <input type="file" id="certificates" name="certificates">
+                                    </div>
         <br>
+        </div>
+        </div>
         </div>
         </div>
         <button type="button" class="thebutton2" onclick="prevSection('section3', 'section2')">Back</button>  

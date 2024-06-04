@@ -117,3 +117,19 @@ function showSection(sectionId) {
 // // Initially display the profile section
 // document.getElementById('profile').style.display = 'block';
 
+// next button for employeeDetails2.php
+function showNextSection(sectionId) {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+      section.style.display = 'none';
+  });
+  document.getElementById(sectionId).style.display = 'block';
+}
+
+function showPreviousSection(sectionId) {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+      section.style.display = 'none';
+  });
+  document.getElementById(sectionId).style.display = 'block';
+}

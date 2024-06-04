@@ -127,6 +127,7 @@ if(isset($_POST['submit'])) {
 <div class="right-container-add">
         <div class="box-container">
         <div class="add-form">
+            
         <form action="" method="post" enctype="multipart/form-data" class="add-employee-form">
         <div id="section1">
         <h2>Basic Information</h2>
