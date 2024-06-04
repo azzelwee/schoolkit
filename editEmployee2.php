@@ -17,6 +17,7 @@ $row = $employee->fetch_assoc();
 
 
 if(isset($_POST['submit'])) {
+    $employeeID = $_POST['employee_id'];
     $fname = $_POST['first_name'];
     $mname = $_POST['middle_name'];
     $lname = $_POST['last_name'];
@@ -108,6 +109,7 @@ if(isset($_POST['submit'])) {
 
                 // Now, insert into database
                 $sql = "UPDATE `employee_list2` SET
+                `employee_id` = '$employeeID',
                `first_name` = '$fname', 
                 `middle_name` = '$mname', 
                 `last_name` = '$lname', 
@@ -172,6 +174,7 @@ if(isset($_POST['submit'])) {
         // No file uploaded, proceed without uploading
         // Now, insert into database without file path
         $sql = "UPDATE `employee_list2` SET
+                `employee_id` = '$employeeID',
                 `first_name` = '$fname', 
                 `middle_name` = '$mname', 
                 `last_name` = '$lname', 
@@ -518,7 +521,12 @@ if(isset($_POST['submit'])) {
                     <h2>Employee Information</h2>
                         <div class="column">
 
-                        <div class="form-group">
+                        <div class="form-group small">
+                            <label for="">Employee ID:<span class="required">*</span></label>
+                            <input type="text" name="employee_id" id="employee_id">
+                        </div>
+
+                        <div class="form-group" small>
                             <label for="photos">Picture 2x2:</label>
                             <input type="file" name="fileToUpload" id="fileToUpload">
                         </div>

@@ -316,39 +316,73 @@ $row = $employee->fetch_assoc();
                 <div class="add-employee-form">
                     <h2>Employee Information</h2>
                         <div class="column">
+
+                        <div class="form-group small">
+                            <label for="">Employee ID:</label>
+                            <input type="text" name="employee_id" id="employee_id" value="<?php echo $row['employee_id'];?>" class="custom-disabled" disabled>
+                        </div>
       
 
-            <div class="form-group ">
+            <div class="form-group small">
                 <label>Employee Type</label>
                 <select name="employee_status" id="employee_status" class="custom-disabled" disabled>
                     <option value="employee_status"><?php echo $row['employee_status']; ?></option>
                 </select>
             </div>
 
-            <div class="form-group ">
+            <div class="form-group small">
                 <label>Date Hired</label>
                 <input type="date" name="date_hired" value="<?php echo $row['date_hired'];?>" class="custom-disabled" disabled>
             </div>
 
-            <div class="form-group small">
-                <label>SSS ID</label>
-                <input type="text" name="sss_id" value="<?php echo $row['sss_id'];?>" class="custom-disabled" disabled>
-            </div>
+                        <div class="form-group" style="width: 900px;">
+                                <label for="position">Employee Type:</label>
+                                <select id="position" name="position_type" onchange="handlePositionChange()">
+                                    <option value=""></option>
+                                    <option value="Teaching">Teaching</option>
+                                    <option value="Non-Teaching">Non-Teaching</option>
+                                </select>
+                                
+                                <div id="teachingInputDiv" class="hidden">
+                                    <label for="teachingInput">Teaching Positions:</label>
+                                    <select id="teachingInput" name="teachingInput">
+                                        <option value="">-- Select Subject-Specific Teaching --</option>
+                                        <option value="Mandarin">Mandarin</option>
+                                        <option value="Communications">Communications</option>
+                                        <option value="Accounting">Accounting</option>
+                                        <option value="Physical Education">Physical Education</option>
+                                        <option value="Accounting Research Methods">Accounting Research Methods</option>
+                                        <option value="Math, Science & Technology">Math, Science & Technology</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                    </select>
+                                </div>
+                                
+                                <div id="nonTeachingInputDiv" class="hidden">
+                                    <label for="nonTeachingInput">Non-teaching Positions:</label>
+                                    <select id="nonTeachingInput" name="nonTeachingInput">
+                                        <option value="">-- Select Non-Teaching Positions --</option>
+                                        <option value="Administration">Administration</option>
+                                        <option value="Counseling and Support">Counseling and Support</option>
+                                        <option value="Library and Media">Library and Media</option>
+                                        <option value="Maintenance and Operations">Maintenance and Operations</option>
+                                        <option value="Office and Clerical">Office and Clerical</option>
+                                        <option value="Health and Wellness">Health and Wellness</option>
+                                    </select>
 
-            <div class="form-group small">
-                <label>Tin ID</label>
-                <input type="text" name="tin_id" value="<?php echo $row['tin_id'];?>" class="custom-disabled" disabled>
-            </div>
+                                    <select name="status" style="display: none;">
+                                        <option value="Pending">Pending</option>
+                                    </select>
+                                </div>
 
-            <div class="form-group small">
-                <label>PAGIBIG ID</label>
-                <input type="text" name="pagibig" value="<?php echo $row['pagibig'];?>" class="custom-disabled" disabled>
-            </div>
-
-            <div class="form-group small">
-                <label>PhilHealth ID</label>
-                <input type="text" name="phil_id" value="<?php echo $row['phil_id'];?>" class="custom-disabled" disabled>
-            </div>
+                                <div id="statusInputDiv">
+                                    <label for="employementStatus">Employement Status:</label>
+                                    <select id="employementStatus" name="employementStatus">
+                                        <option value=""></option>
+                                        <option value="Full Time">Full Time</option>
+                                        <option value="Part Time">Part Time</option>
+                                    </select>
+                                </div>
+                            </div>
 
 
         </div>

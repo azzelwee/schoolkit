@@ -118,8 +118,8 @@ $row = $employee->fetch_assoc();
         <th></th>
             <th>Employee ID</th>
             <th>Full Name</th>
-            <th>Employee Type</th>
             <th>Employee Status</th>
+            <th>Employee Type</th>
             <th>Section</th>
         </tr>
     </thead>
@@ -134,10 +134,11 @@ $row = $employee->fetch_assoc();
                 <button style="font-size: 12px; padding: 5px 10px; background-color: #d52033; color: white; border: none; border-radius: 4px; cursor: pointer;">View</button>
                 </a>
             </td>
-            <td></td>
+                <td><?php echo $row['employee_id'];?></td>
                 <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
-                <td></td>
                 <td><?php echo $row['employee_status'] ?></td>
+                <td></td>
+                
                 <!-- <td>
                     <a href="editEmployee.php?ID=<?php echo $row['ID'];?>">
                         <img src="img/edit.png" alt="">
