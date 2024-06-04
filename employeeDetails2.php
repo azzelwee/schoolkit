@@ -324,7 +324,7 @@ $row = $employee->fetch_assoc();
       
 
             <div class="form-group small">
-                <label>Employee Type</label>
+                <label>Employment Status</label>
                 <select name="employee_status" id="employee_status" class="custom-disabled" disabled>
                     <option value="employee_status"><?php echo $row['employee_status']; ?></option>
                 </select>
@@ -369,18 +369,6 @@ $row = $employee->fetch_assoc();
                                         <option value="Health and Wellness">Health and Wellness</option>
                                     </select>
 
-                                    <select name="status" style="display: none;">
-                                        <option value="Pending">Pending</option>
-                                    </select>
-                                </div>
-
-                                <div id="statusInputDiv">
-                                    <label for="employementStatus">Employement Status:</label>
-                                    <select id="employementStatus" name="employementStatus">
-                                        <option value=""></option>
-                                        <option value="Full Time">Full Time</option>
-                                        <option value="Part Time">Part Time</option>
-                                    </select>
                                 </div>
                             </div>
 
@@ -392,6 +380,11 @@ $row = $employee->fetch_assoc();
                 <div class="add-employee-form">
                     <h2>Credentials</h2>
                     <div class="column">
+                    <div class="form-group">
+                                    <label for="resume">Cover Letter:</label>
+                                    <input type="text" id="wide" name="cover" value="" class="custom-disabled" disabled>
+                                </div>
+                                
                                 <div class="form-group small">
                                     <label for="resume">Resume/CV:</label>
                                     <a href="path/to/your/resume.pdf" download id="resume" name="resume">Download Resume/CV</a>
@@ -404,14 +397,9 @@ $row = $employee->fetch_assoc();
                                     <label for="certificates">Certificates:</label>
                                     <a href="path/to/your/certificates.zip" download id="certificates" name="certificates">Download Certificates</a>
                                 </div>
-                            </br>
-                            </br>
-                                <div class="form-group small">
-                                    <label for="questions-comments">Questions/Comments:</label>
-                                    <input type="text" id="wide" name="questions" value="<?php echo $row['questions'];?>" class="custom-disabled" disabled>
-                                </div>
+
                             </div>
-                            </div>
+                        </div>
                 </section>
             </div>
         </div>

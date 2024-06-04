@@ -528,58 +528,8 @@ if(isset($_POST['submit'])) {
                 </div>
 
                 <div id="section3" style="display: none;">
-                    <h2>Employee Information</h2>
+                    <h2>Work Experience</h2>
                     <div class="lineup1">
-                        <div class="column">
-
-                            <div class="form-group small">
-                                <label for="">Employee ID:<span class="required">*</span></label>
-                                <input type="text" name="employee_id" id="employee_id">
-                            </div>
-
-                            <div class="form-group small">
-                                <label for="photos">Picture 2x2:</label>
-                                <input type="file" name="fileToUpload" id="fileToUpload">
-                            </div>
-
-                            <div class="form-group small">
-                                <label>Employee Type:<span class="required">*</span></label>
-                                <select name="employee_status" id="employee_status">
-                                    <option value=""></option>
-                                    <option value="Full Time">Full Time</option>
-                                    <option value="Part Time">Part Time</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group small">
-                                <label>Date Hired:<span class="required">*</span></label>
-                                <input type="date" id="" name="date_hired">
-                            </div>
-                        </div>
-
-                        <div class="form-group-below">
-                            <h2>Credentials</h2>
-                            <div class="column">
-                                <div class="form-group small">
-                                    <label for="resume">Resume/CV:<span class="required">*</span></label>
-                                    <input type="file" id="resume" name="resume">
-                                </div>
-                                <div class="form-group small">
-                                    <label for="work-samples">Work Samples/Portfolio (optional):</label>
-                                    <input type="file" id="work-samples" name="work_samples">
-                                </div>
-                                <div class="form-group small">
-                                    <label for="certificates">Certificates (optional):</label>
-                                    <input type="file" id="certificates" name="certificates">
-                                </div>
-                                <div class="form-group">
-                                    <label for="questions-comments">Questions/Comments:</label>
-                                    <input type="text" id="questions" name="questions">
-                                </div>
-                            </div>
-
-                            <div class="form-group-below">
-                                <h2>Work Experience</h2>
                                 <div class="column">
                                     <div class="form-group small">
                                         <label for="previous-job-title">Previous Job Title:</label>
@@ -604,40 +554,94 @@ if(isset($_POST['submit'])) {
                                     <br>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                     <button type="button" class="thebutton2" onclick="prevSection('section3', 'section2')">Back</button>
                     <button type="button" class="thebutton" onclick="nextSection('section3', 'section4')">Next</button>
                 </div>
 
                 <div id="section4" style="display: none;">
-                    <h2>Additional Information</h2>
+                    <h2>Employee Information</h2>
                     <div class="column">
-                        <div class="form-group small">
-                            <label for="employee-emergency-contact">Emergency Contact Name:<span class="required">*</span></label>
-                            <input type="text" id="employee-emergency-contact" name="emergency_contact_name">
+
+                            <div class="form-group small">
+                                <label for="photos">Picture 2x2:</label>
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                            </div>
+
+                             <div class="form-group small">
+                                <label for="">Employee ID:<span class="required">*</span></label>
+                                <input type="text" name="employee_id" id="employee_id">
+                            </div>
+
+
+
+                            <div class="form-group small">
+                                <label>Employment Status:<span class="required">*</span></label>
+                                <select name="employee_status" id="employee_status">
+                                    <option value=""></option>
+                                    <option value="Full Time">Full Time</option>
+                                    <option value="Part Time">Part Time</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group small">
+                                <label>Date Hired:<span class="required">*</span></label>
+                                <input type="date" id="" name="date_hired">
+                            </div>
+
+                            <div class="form-group" style="width: 900px;">
+                                <label for="position">Employee Section:</label>
+                                <select id="position" name="position_type" onchange="handlePositionChange()">
+                                    <option value=""></option>
+                                    <option value="Teaching">Teaching</option>
+                                    <option value="Non-Teaching">Non-Teaching</option>
+                                </select>
+                                
+                                <div id="teachingInputDiv" class="hidden">
+                                    <label for="teachingInput">Teaching Positions:</label>
+                                    <select id="teachingInput" name="teachingInput">
+                                        <option value="">-- Select Subject-Specific Teaching --</option>
+                                        <option value="Mandarin">Mandarin</option>
+                                        <option value="Communications">Communications</option>
+                                        <option value="Accounting">Accounting</option>
+                                        <option value="Physical Education">Physical Education</option>
+                                        <option value="Accounting Research Methods">Accounting Research Methods</option>
+                                        <option value="Math, Science & Technology">Math, Science & Technology</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                    </select>
+                                </div>
+                                
+                                <div id="nonTeachingInputDiv" class="hidden">
+                                    <label for="nonTeachingInput">Non-teaching Positions:</label>
+                                    <select id="nonTeachingInput" name="nonTeachingInput">
+                                        <option value="">-- Select Non-Teaching Positions --</option>
+                                        <option value="Administration">Administration</option>
+                                        <option value="Counseling and Support">Counseling and Support</option>
+                                        <option value="Library and Media">Library and Media</option>
+                                        <option value="Maintenance and Operations">Maintenance and Operations</option>
+                                        <option value="Office and Clerical">Office and Clerical</option>
+                                        <option value="Health and Wellness">Health and Wellness</option>
+                                    </select>
+
+                                </div>
                         </div>
-                        <div class="form-group small">
-                            <label for="employee-emergency-contact-number">Emergency Contact Number:<span class="required">*</span></label>
-                            <input type="text" id="employee-emergency-contact-number" name="emergency_contact_number">
                         </div>
-                        <div class="form-group small">
-                            <label for="employee-emergency-contact-relationship">Relationship to Emergency Contact:<span class="required">*</span></label>
-                            <input type="text" id="employee-emergency-contact-relationship" name="emergency_contact_relationship">
-                        </div>
-                        <div class="form-group small">
-                            <label for="employee-hobbies">Hobbies/Interests:</label>
-                            <input type="text" id="employee-hobbies" name="hobbies">
-                        </div>
-                        <div class="form-group small">
-                            <label for="employee-preferred-contact-method">Preferred Contact Method:<span class="required">*</span></label>
-                            <select id="employee-preferred-contact-method" name="preferred_contact_method">
-                                <option value="">Select</option>
-                                <option value="Email">Email</option>
-                                <option value="Phone">Phone</option>
-                                <option value="Mail">Mail</option>
-                            </select>
-                        </div>
+
+                        <div class="form-group-below">
+                            <h2>Credentials</h2>
+                            <div class="column">
+                                <div class="form-group small">
+                                    <label for="resume">Resume/CV:<span class="required">*</span></label>
+                                    <input type="file" id="resume" name="resume">
+                                </div>
+                                <div class="form-group small">
+                                    <label for="work-samples">Work Samples/Portfolio (optional):</label>
+                                    <input type="file" id="work-samples" name="work_samples">
+                                </div>
+                                <div class="form-group small">
+                                    <label for="certificates">Certificates (optional):</label>
+                                    <input type="file" id="certificates" name="certificates">
+                                </div>
+                            </div>
                     </div>
                     <button type="button" class="thebutton2" onclick="prevSection('section4', 'section3')">Back</button>
                     <input type="submit" class="thebutton" value="Submit" name="submit">

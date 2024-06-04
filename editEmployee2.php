@@ -522,14 +522,16 @@ if(isset($_POST['submit'])) {
                         <div class="column">
 
                         <div class="form-group small">
+                            <label for="photos">Picture 2x2:</label>
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                        </div>
+
+                        <div class="form-group small">
                             <label for="">Employee ID:<span class="required">*</span></label>
                             <input type="text" name="employee_id" id="employee_id">
                         </div>
 
-                        <div class="form-group" small>
-                            <label for="photos">Picture 2x2:</label>
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                        </div>
+
 
                         <div class="form-group small">
                         <label>Employee Type</label>
@@ -545,26 +547,41 @@ if(isset($_POST['submit'])) {
                         <input type="date" id="" name="date_hired" value="<?php echo $row['date_hired'];?>">
                         </div>
 
-                            <div class="form-group small">
-                                <label>SSS ID</label>
-                                <input type="text" id="" name="sss_id" value="<?php echo $row['sss_id'];?>">
-                            </div>
+                        <div class="form-group" style="width: 900px;">
+                                <label for="position">Employee Section:</label>
+                                <select id="position" name="position_type" onchange="handlePositionChange()">
+                                    <option value=""></option>
+                                    <option value="Teaching">Teaching</option>
+                                    <option value="Non-Teaching">Non-Teaching</option>
+                                </select>
+                                
+                                <div id="teachingInputDiv" class="hidden">
+                                    <label for="teachingInput">Teaching Positions:</label>
+                                    <select id="teachingInput" name="teachingInput">
+                                        <option value="">-- Select Subject-Specific Teaching --</option>
+                                        <option value="Mandarin">Mandarin</option>
+                                        <option value="Communications">Communications</option>
+                                        <option value="Accounting">Accounting</option>
+                                        <option value="Physical Education">Physical Education</option>
+                                        <option value="Accounting Research Methods">Accounting Research Methods</option>
+                                        <option value="Math, Science & Technology">Math, Science & Technology</option>
+                                        <option value="Computer Science">Computer Science</option>
+                                    </select>
+                                </div>
+                                
+                                <div id="nonTeachingInputDiv" class="hidden">
+                                    <label for="nonTeachingInput">Non-teaching Positions:</label>
+                                    <select id="nonTeachingInput" name="nonTeachingInput">
+                                        <option value="">-- Select Non-Teaching Positions --</option>
+                                        <option value="Administration">Administration</option>
+                                        <option value="Counseling and Support">Counseling and Support</option>
+                                        <option value="Library and Media">Library and Media</option>
+                                        <option value="Maintenance and Operations">Maintenance and Operations</option>
+                                        <option value="Office and Clerical">Office and Clerical</option>
+                                        <option value="Health and Wellness">Health and Wellness</option>
+                                    </select>
 
-                            <div class="form-group small">
-                        <label>Tin ID</label>
-                        <input type="text" id="" name="tin_id" value="<?php echo $row['tin_id'];?>">
-                        </div>
-
-                        <div class="form-group small">
-                        <label>PAGIBIG ID</label>
-                        <input type="text" id="" name="pagibig" value="<?php echo $row['pagibig'];?>">
-                        </div>
-
-                        <div class="form-group small">
-                        <label>PhilHealth ID</label>
-                        <input type="text" id="" name="phil_id" value="<?php echo $row['phil_id'];?>">
-                        </div>
-
+                                </div>
 
         </div>
                     <button type="button" class="thebutton3" onclick="showPreviousSection('employee-information')">Back</button>
@@ -586,10 +603,7 @@ if(isset($_POST['submit'])) {
                                         <label for="certificates">Certificates (optional):</label>
                                         <input type="file" id="certificates" name="cert">
                                     </div>
-                                    <div class="form-group">
-                                    <label for="questions-comments">Questions/Comments:</label>
-                                    <input type="text" id="questions" name="questions" value="<?php echo $row['questions'];?>">
-                                </div>
+
                                 </div>
                             </div>
                             <button type="button" class="thebutton3" onclick="showPreviousSection('work')">Back</button>

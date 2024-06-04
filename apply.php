@@ -232,8 +232,10 @@ if(isset($_POST['submit'])) {
                                         <input type="text" id="employee-postal-code" name="employee-postal-code">
                                     </div>
                                     <div class="form-group small">
-                                        <label for="employee-country">Country:</label>
-                                        <input type="text" id="employee-country" name="employee-country">
+                                        &nbsp
+                                    </div>
+                                    <div class="form-group small">
+                                        &nbsp
                                     </div>
                                 </div>
                             </div>
