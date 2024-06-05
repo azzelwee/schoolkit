@@ -476,6 +476,17 @@ tr:nth-child(even) {
     display: none;
 }
 
+#confirm-password{
+    margin-bottom: 8px;
+    font-size: 18px;
+    width: 98.5%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+
+}
+
 .form-container2 input,
 .form-container2 select {
     display: flex;
@@ -1169,9 +1180,6 @@ li.has-submenu {
     background-color: #cccccc;
 }
 
-.employee-information{
-    
-}
 
 .employee-information p{
     margin-top: 10px;
@@ -1446,7 +1454,8 @@ li.has-submenu {
 
 
 .employee-name {
-    margin-top: 10px;
+    text-align: left;
+    margin-top: 25px;
     font-size: 24px;
     color: #333;
 }
@@ -1553,10 +1562,21 @@ button[type="button"] {
     display: inline-block;
 }
 
+.joined{
+    text-align: left;
+    margin-top: 25px;
+    font-size: 15px;
+    color: #626262;
+}
+
+.joined p{
+    font-weight: bold;
+}
+
 .applicant-profile {
 
-    top: 155px;
-    left: 70px;
+    top: 140px;
+    left: 55px;
     position: absolute;
     color: white;
     font-size: 90px;
@@ -1582,8 +1602,8 @@ button[type="button"] {
 }
 
 .applicant-user{
-    top: 155px;
-    left: 430px;
+    top: 140px;
+    left: 415px;
     position: absolute;
     color: white;
     font-size: 90px;
@@ -1608,8 +1628,8 @@ button[type="button"] {
 }
 
 .applicant-settings{
-    top: 155px;
-    left: 790px;
+    top: 140px;
+    left: 775px;
     position: absolute;
     color: white;
     font-size: 90px;

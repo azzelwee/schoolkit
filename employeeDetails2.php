@@ -76,9 +76,33 @@ $row = $employee->fetch_assoc();
                     </form>
             <h2 class="employee-name"><?php echo $row['last_name'] . ',</br> ' . $row['first_name'] . ' ' . $row['middle_name']; ?></h2>
             
-            <div class="joined">
-                <p>Joined Date: <?php echo date('F d, Y', strtotime($row['date_hired'])); ?></p>
+            <div class="employee-info">
+
+                <div class="joined">
+                    <p>Employee ID:</p>
+                    <?php echo $row['employee_id']; ?>
+                </div>
+
+                <div class="joined">
+                    <p>Joined Date: </p>
+                    <?php
+                    $date_hired = $row['date_hired'];
+                    if (!empty($date_hired) && $date_hired != '0000-00-00' && $date_hired != '0000-00-00 00:00:00' && $date_hired != 'NULL') {
+                        echo date('F d, Y', strtotime($date_hired));
+                    }
+                    ?>
+                </div>
+                <div class="joined">
+                    <p>Employee Type:</p>
+                    <?php echo $row['employee_type']; ?> - <?php echo $row['employee_section']; ?>
+                </div>
+
+                <div class="joined">
+                    <p>Employee Status:</p>
+                    <?php echo $row['employee_status']; ?>
+                </div>
             </div>
+
 
 
         </div>
@@ -342,40 +366,18 @@ $row = $employee->fetch_assoc();
 
                         <div class="form-group" style="width: 900px;">
                                 <label for="position">Employee Type:</label>
-                                <select id="position" name="position_type" onchange="handlePositionChange()">
-                                    <option value=""></option>
-                                    <option value="Teaching">Teaching</option>
-                                    <option value="Non-Teaching">Non-Teaching</option>
+                                <select id="position" name="employee_type" class="custom-disabled" onchange="handlePositionChange()" disabled>
+                                <option value="<?php echo $row['employee_type']; ?>"><?php echo $row['employee_type']; ?></option>
                                 </select>
-                                
-                                <div id="teachingInputDiv" class="hidden">
-                                    <label for="teachingInput">Teaching Positions:</label>
-                                    <select id="teachingInput" name="teachingInput">
-                                        <option value="">-- Select Subject-Specific Teaching --</option>
-                                        <option value="Mandarin">Mandarin</option>
-                                        <option value="Communications">Communications</option>
-                                        <option value="Accounting">Accounting</option>
-                                        <option value="Physical Education">Physical Education</option>
-                                        <option value="Accounting Research Methods">Accounting Research Methods</option>
-                                        <option value="Math, Science & Technology">Math, Science & Technology</option>
-                                        <option value="Computer Science">Computer Science</option>
-                                    </select>
-                                </div>
-                                
-                                <div id="nonTeachingInputDiv" class="hidden">
-                                    <label for="nonTeachingInput">Non-teaching Positions:</label>
-                                    <select id="nonTeachingInput" name="nonTeachingInput">
-                                        <option value="">-- Select Non-Teaching Positions --</option>
-                                        <option value="Administration">Administration</option>
-                                        <option value="Counseling and Support">Counseling and Support</option>
-                                        <option value="Library and Media">Library and Media</option>
-                                        <option value="Maintenance and Operations">Maintenance and Operations</option>
-                                        <option value="Office and Clerical">Office and Clerical</option>
-                                        <option value="Health and Wellness">Health and Wellness</option>
-                                    </select>
+                        </div>
 
-                                </div>
-                            </div>
+                        <div class="form-group" style="width: 900px;">
+                                <label for="teachingInput">Employee Section:</label>
+                                <select id="teachingInput" name="employee_section" class="custom-disabled" disabled>
+                                <option value="<?php echo $row['employee_section']; ?>"><?php echo $row['employee_section']; ?></option>
+                                </select>
+                        </div>
+                </div>
 
 
         </div>

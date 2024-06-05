@@ -44,12 +44,13 @@ if(isset($_POST['submit'])) {
     $cert = $_POST['cert'];
     $skills = $_POST['skills_aquired'];
     $dateHired = $_POST['date_hired'];
+    $employeeType = $_POST['employee_type'];
+    $employeeSection = $_POST['employee_section'];
     $prevJob = $_POST['prev_job'];
     $companyName = $_POST['company_name'];
     $responsi = $_POST['responsi'];
     $dateEmploy = $_POST['date_employment'];
     $refer = $_POST['refer'];
-    $questions = $_POST['questions'];
     
     // Check if file was uploaded
     if(isset($_FILES["fileToUpload"]["tmp_name"]) && !empty($_FILES["fileToUpload"]["tmp_name"])) {
@@ -134,12 +135,13 @@ if(isset($_POST['submit'])) {
                     `skills_aquired`,
                     `file_path`,
                     `date_hired`,
+                    `employee_type`,
+                    `employee_section`,
                     `prev_job`,
                     `company_name`,
                     `responsi`,
                     `date_employment`,
-                    `refer`,
-                    `questions`
+                    `refer`
                 ) 
                 VALUES (
                     '$employeeID',
@@ -177,12 +179,13 @@ if(isset($_POST['submit'])) {
                     '$skills',
                     '$target_file',
                     '$dateHired',
+                    '$employeeType',
+                    '$employeeSection',
                     '$prevJob',
                     '$companyName',
                     '$responsi',
                     '$dateEmploy',
-                    '$refer',
-                    '$questions'
+                    '$refer'
                     )";
                 
                 $con->query($sql) or die ($con->error);
@@ -237,12 +240,13 @@ if(isset($_POST['submit'])) {
         `cert`,
         `skills_aquired`,
         `date_hired`,
+        `employee_type`,
+        `employee_section`,
         `prev_job`,
         `company_name`,
         `responsi`,
         `date_employment`,
-        `refer`,
-        `questions`
+        `refer`
         ) 
         VALUES (
             '$employeeID',
@@ -279,12 +283,13 @@ if(isset($_POST['submit'])) {
             '$cert',
             '$skills',
             '$dateHired',
+            '$employeeType',
+            '$employeeSection',
             '$prevJob',
             '$companyName',
             '$responsi',
             '$dateEmploy',
-            '$refer',
-            '$questions'
+            '$refer'
             )";
         
         $con->query($sql) or die ($con->error);
@@ -589,16 +594,16 @@ if(isset($_POST['submit'])) {
                             </div>
 
                             <div class="form-group" style="width: 900px;">
-                                <label for="position">Employee Section:</label>
-                                <select id="position" name="position_type" onchange="handlePositionChange()">
+                                <label for="position">Employee Type:</label>
+                                <select id="position" name="employee_type" onchange="handlePositionChange()">
                                     <option value=""></option>
                                     <option value="Teaching">Teaching</option>
                                     <option value="Non-Teaching">Non-Teaching</option>
                                 </select>
                                 
                                 <div id="teachingInputDiv" class="hidden">
-                                    <label for="teachingInput">Teaching Positions:</label>
-                                    <select id="teachingInput" name="teachingInput">
+                                    <label for="teachingInput">Teaching Section:</label>
+                                    <select id="teachingInput" name="employee_section">
                                         <option value="">-- Select Subject-Specific Teaching --</option>
                                         <option value="Mandarin">Mandarin</option>
                                         <option value="Communications">Communications</option>
@@ -611,8 +616,8 @@ if(isset($_POST['submit'])) {
                                 </div>
                                 
                                 <div id="nonTeachingInputDiv" class="hidden">
-                                    <label for="nonTeachingInput">Non-teaching Positions:</label>
-                                    <select id="nonTeachingInput" name="nonTeachingInput">
+                                    <label for="nonTeachingInput">Non-teaching Section:</label>
+                                    <select id="nonTeachingInput" name="employee_section">
                                         <option value="">-- Select Non-Teaching Positions --</option>
                                         <option value="Administration">Administration</option>
                                         <option value="Counseling and Support">Counseling and Support</option>
@@ -621,9 +626,9 @@ if(isset($_POST['submit'])) {
                                         <option value="Office and Clerical">Office and Clerical</option>
                                         <option value="Health and Wellness">Health and Wellness</option>
                                     </select>
-
                                 </div>
-                        </div>
+                            </div>
+
                         </div>
 
                         <div class="form-group-below">

@@ -286,12 +286,12 @@ if(isset($_POST['submit'])) {
                     </div>
 
                     <div class="form-group small">
-                        <label for="employee-birthdate">Honors/Awards Received (if applicable):</label>
+                        <label for="employee-birthdate">Honors/Awards Received:</label>
                         <input type="text" id="employee-birthdate" name="employee-birthdate">
                     </div>
 
                     <div class="form-group-below">
-                        <h2>Training (if applicable)</h2>
+                        <h2>Training</h2>
 
                     <div class="column">
                         <div class="form-group small">

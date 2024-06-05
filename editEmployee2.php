@@ -50,17 +50,14 @@ if(isset($_POST['submit'])) {
     $dateComplete = $_POST['date_complete'];
     $cert = $_POST['cert'];
     $skills = $_POST['skills_aquired'];
-    $sss = $_POST['sss_id'];
-    $tin = $_POST['tin_id'];
-    $pagibig = $_POST['pagibig'];
-    $phil = $_POST['phil_id'];
     $dateHired = $_POST['date_hired'];
+    $employeeType = $_POST['employee_type'];
+    $employeeSection = $_POST['employee_section'];
     $prevJob = $_POST['prev_job'];
     $companyName = $_POST['company_name'];
     $responsi = $_POST['responsi'];
     $dateEmploy = $_POST['date_employment'];
     $refer = $_POST['refer'];
-    $questions = $_POST['questions'];
 
     // Check if file was uploaded
     if(isset($_FILES["fileToUpload"]["tmp_name"]) && !empty($_FILES["fileToUpload"]["tmp_name"])) {
@@ -110,7 +107,7 @@ if(isset($_POST['submit'])) {
                 // Now, insert into database
                 $sql = "UPDATE `employee_list2` SET
                 `employee_id` = '$employeeID',
-               `first_name` = '$fname', 
+                `first_name` = '$fname', 
                 `middle_name` = '$mname', 
                 `last_name` = '$lname', 
                 `employee_status` = '$estatus', 
@@ -143,19 +140,15 @@ if(isset($_POST['submit'])) {
                 `cert` = '$cert',
                 `skills_aquired` = '$skills',
                 `file_path` = '$target_file',
-                `sss_id` = '$sss',
-                `tin_id` = '$tin',
-                `pagibig` = '$pagibig',
-                `phil_id` = '$phil',
                 `date_hired` = '$dateHired',
+                `employee_type` = '$employeeType',
+                `employee_section` = '$employeeSection',
                 `prev_job` = '$prevJob',
                 `company_name` = '$companyName',
                 `responsi` = '$responsi',
                 `date_employment` = '$dateEmploy',
-                `refer` = '$refer',
-                `questions` = '$questions'
+                `refer` = '$refer'
                 WHERE `ID` = '$id'";
-                
                 $con->query($sql) or die ($con->error);
 
                 if($con){
@@ -207,19 +200,15 @@ if(isset($_POST['submit'])) {
                 `date_complete` = '$dateComplete',
                 `cert` = '$cert',
                 `skills_aquired` = '$skills',
-                `sss_id` = '$sss',
-                `tin_id` = '$tin',
-                `pagibig` = '$pagibig',
-                `phil_id` = '$phil',
                 `date_hired` = '$dateHired',
+                `employee_type` = '$employeeType',
+                `employee_section` = '$employeeSection',
                 `prev_job` = '$prevJob',
                 `company_name` = '$companyName',
                 `responsi` = '$responsi',
                 `date_employment` = '$dateEmploy',
-                `refer` = '$refer',
-                `questions` = '$questions'
+                `refer` = '$refer'
                  WHERE `ID` = '$id'";
-        
         $con->query($sql) or die ($con->error);
 
         if($con){
@@ -433,7 +422,7 @@ if(isset($_POST['submit'])) {
                                     </div>
 
                                     <div class="form-group small">
-                                        <label for="employee-birthdate">Honors/Awards Received (if applicable):</label>
+                                        <label for="employee-birthdate">Honors/Awards Received:</label>
                                         <input type="text" id="honors" name="honors" value="<?php echo $row['honors'];?>">
                                     </div>
 
@@ -528,7 +517,7 @@ if(isset($_POST['submit'])) {
 
                         <div class="form-group small">
                             <label for="">Employee ID:<span class="required">*</span></label>
-                            <input type="text" name="employee_id" id="employee_id">
+                            <input type="text" name="employee_id" id="employee_id" value="<?php echo $row['employee_id'];?>">
                         </div>
 
 
@@ -547,18 +536,23 @@ if(isset($_POST['submit'])) {
                         <input type="date" id="" name="date_hired" value="<?php echo $row['date_hired'];?>">
                         </div>
 
-                        <div class="form-group" style="width: 900px;">
-                                <label for="position">Employee Section:</label>
-                                <select id="position" name="position_type" onchange="handlePositionChange()">
-                                    <option value=""></option>
+                            <?php
+                            $employee_type = $row['employee_type']; // Assuming this fetches the initial value from your database
+                            $employee_section = $row['employee_section'];
+                            ?>
+
+                            <div class="form-group" style="width: 900px;">
+                                <label for="position">Employee Type:</label>
+                                <select id="position" name="employee_type" onchange="handlePositionChange()">
+                                    <option value="<?php echo $employee_type; ?>"><?php echo $employee_type; ?></option>
                                     <option value="Teaching">Teaching</option>
                                     <option value="Non-Teaching">Non-Teaching</option>
                                 </select>
                                 
                                 <div id="teachingInputDiv" class="hidden">
-                                    <label for="teachingInput">Teaching Positions:</label>
-                                    <select id="teachingInput" name="teachingInput">
-                                        <option value="">-- Select Subject-Specific Teaching --</option>
+                                    <label for="teachingInput">Teaching Section:</label>
+                                    <select id="teachingInput" name="employee_section">
+                                        <option value="<?php echo $employee_section; ?>"><?php echo $employee_section; ?></option>
                                         <option value="Mandarin">Mandarin</option>
                                         <option value="Communications">Communications</option>
                                         <option value="Accounting">Accounting</option>
@@ -570,9 +564,9 @@ if(isset($_POST['submit'])) {
                                 </div>
                                 
                                 <div id="nonTeachingInputDiv" class="hidden">
-                                    <label for="nonTeachingInput">Non-teaching Positions:</label>
-                                    <select id="nonTeachingInput" name="nonTeachingInput">
-                                        <option value="">-- Select Non-Teaching Positions --</option>
+                                    <label for="nonTeachingInput">Non-teaching Section:</label>
+                                    <select id="nonTeachingInput" name="employee_section">
+                                        <option value="<?php echo $employee_section; ?>"><?php echo $employee_section; ?></option>
                                         <option value="Administration">Administration</option>
                                         <option value="Counseling and Support">Counseling and Support</option>
                                         <option value="Library and Media">Library and Media</option>
@@ -580,11 +574,11 @@ if(isset($_POST['submit'])) {
                                         <option value="Office and Clerical">Office and Clerical</option>
                                         <option value="Health and Wellness">Health and Wellness</option>
                                     </select>
-
                                 </div>
+                            </div>
 
         </div>
-                    <button type="button" class="thebutton3" onclick="showPreviousSection('employee-information')">Back</button>
+                    <button type="button" class="thebutton3" onclick="showPreviousSection('work')">Back</button>
                     <button type="button" class="thebutton" onclick="showNextSection('credentials')">Next</button>
      </section>
                         <section id="credentials" style="display: none;">

@@ -47,7 +47,6 @@ $row = $applicantList->fetch_assoc();
     <div class="box-container">
         <h2>Applicant Processing</h2>
         <div class="gauge-line"></div>
-
         <table id="table2">
         <thead>
         <tr>

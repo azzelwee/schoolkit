@@ -48,65 +48,64 @@ if(isset($_POST['submit'])){
 
 <?php include 'header.php'; ?>
 
-    <div class="right-container">
-        <div class="box-container">
-        <form action="" method="post" class="add-employee-form">
-                <div id="section1">
+<div class="right-container">
+    <div class="box-container">
+        <form id="add-employee-form" method="post" class="add-employee-form" onsubmit="return validateForm()">
+            <div id="section1">
                 <h2>Add Users</h2>
                 <div class="gauge-line"></div>
-                    <div class="form-page">
-                        <div class="column">
-                            <div class="form-group small">
-                                <label for="user-first-name">First Name:</label>
-                                <input type="text" id="" name="first_name">
-                            </div>
-                            <div class="form-group small">
-                                <label for="user-middle-name">Middle Name:</label>
-                                <input type="text" id="" name="middle_name">
-                            </div>
-                            
-                            <div class="form-group small">
-                                <label for="user-last-name">Last Name:</label>
-                                <input type="text" id="" name="last_name">
-                            </div>
+                <div class="form-page">
+                    <div class="column">
+                        <div class="form-group small">
+                            <label for="user-first-name">First Name:</label>
+                            <input type="text" id="user-first-name" name="first_name">
                         </div>
-
-                        <div class="column">
-                            <div class="form-group">
-                                <label for="user-first-name">User Name:</label>
-                                <input type="text" id="" name="username">
-                            </div>
+                        <div class="form-group small">
+                            <label for="user-middle-name">Middle Name:</label>
+                            <input type="text" id="user-middle-name" name="middle_name">
                         </div>
-
-                        <div class="column">
-                            <div class="form-group">
-                                <label for="user-middle-name">Password:</label>
-                                <input type="text" id="" name="password">
-                            </div>
+                        <div class="form-group small">
+                            <label for="user-last-name">Last Name:</label>
+                            <input type="text" id="user-last-name" name="last_name">
                         </div>
-
-                        <div class="column">
-                            <div class="form-group">
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="username">User Name:</label>
+                            <input type="text" id="username" name="username">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label for="confirm-password">Confirm Password:</label><br>
+                        <input type="password" id="confirm-password" required><br>
+                        <span id="passwordError" class="confirmpasserror" style="display:none;">Passwords do not match</span>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
                             <label>Select Access Level</label>
                             <select name="access" required>
                                 <option value=""></option>
                                 <option value="administrator">Administrator</option>
                                 <option value="applicant">Applicant</option>
                                 <option value="user">User</option>
-
                             </select>
-                        
-                            </div>
                         </div>
-                        <input type="submit" class="thebutton" value="Submit" name="submit">
-                        
-                        </form>
-
                     </div>
+                    <input type="submit" class="thebutton" name="submit" value="Submit">
                 </div>
-        </div>
+            </div>
+        </form>
     </div>
+</div>
+
 
 
 </body>
+<script src="js/main.js"></script>
 </html>

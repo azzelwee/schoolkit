@@ -41,25 +41,41 @@ function closePopup() {
     document.querySelector('.status-delete').style.display = 'none';
   }, 3000); // 3000 milliseconds = 3 seconds
 }
+document.addEventListener("DOMContentLoaded", function() {
+  handlePositionChange(); // Call the function when the page loads to set the initial state
+});
 
 function handlePositionChange() {
-  const positionSelect = document.getElementById('position');
-  const teachingInputDiv = document.getElementById('teachingInputDiv');
-  const nonTeachingInputDiv = document.getElementById('nonTeachingInputDiv');
-  const selectedValue = positionSelect.value;
-
-  // Hide both divs initially
-  teachingInputDiv.classList.add('hidden');
-  nonTeachingInputDiv.classList.add('hidden');
-
-  if (selectedValue === 'Teaching') {
-      // Show teaching input div
+  var position = document.getElementById('position').value;
+  var teachingInputDiv = document.getElementById('teachingInputDiv');
+  var nonTeachingInputDiv = document.getElementById('nonTeachingInputDiv');
+  var teachingInput = document.getElementById('teachingInput');
+  var nonTeachingInput = document.getElementById('nonTeachingInput');
+  
+  if (position === 'Teaching') {
       teachingInputDiv.classList.remove('hidden');
-  } else if (selectedValue === 'Non-Teaching') {
-      // Show non-teaching input div
+      nonTeachingInputDiv.classList.add('hidden');
+      teachingInput.disabled = false;
+      nonTeachingInput.disabled = true;
+  } else if (position === 'Non-Teaching') {
+      teachingInputDiv.classList.add('hidden');
       nonTeachingInputDiv.classList.remove('hidden');
+      teachingInput.disabled = true;
+      nonTeachingInput.disabled = false;
+  } else {
+      teachingInputDiv.classList.add('hidden');
+      nonTeachingInputDiv.classList.add('hidden');
+      teachingInput.disabled = true;
+      nonTeachingInput.disabled = true;
   }
+  // document.getElementById('position').addEventListener('change', handlePositionChange);
 }
+
+// // Initialize the form inputs to be disabled
+// document.addEventListener('DOMContentLoaded', function() {
+//   document.getElementById('teachingInput').disabled = true;
+//   document.getElementById('nonTeachingInput').disabled = true;
+// });
 
 function showSection(sectionId) {
   var sections = document.querySelectorAll('.custom-form-section');

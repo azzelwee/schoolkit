@@ -137,7 +137,7 @@ $row = $employee->fetch_assoc();
                 <td><?php echo $row['employee_id'];?></td>
                 <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
                 <td><?php echo $row['employee_status'] ?></td>
-                <td></td>
+                <td><?php echo $row['employee_type'] ?></td>
                 
                 <!-- <td>
                     <a href="editEmployee.php?ID=<?php echo $row['ID'];?>">
@@ -150,7 +150,7 @@ $row = $employee->fetch_assoc();
 
                 </td> -->
 
-                <td></td>
+                <td><?php echo $row['employee_section'] ?></td>
 
             </tr>
     <?php 

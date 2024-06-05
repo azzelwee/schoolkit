@@ -22,7 +22,14 @@ if(isset($_POST['submit'])){
     $pword = $_POST['password'];
     $access = $_POST['access'];
 
-    $sql = "UPDATE employee_users SET full_name = '$fullname', username = '$uname', password = '$pword', access = '$access' WHERE ID = '$id'";
+    $sql = "UPDATE employee_users SET
+    `first_name` = '$fname',
+    `middle_name` = '$mname',
+    `last_name` = '$lname',
+    `username` = '$uname',
+    `password` = '$pword',
+    `access` = '$access'
+    WHERE ID = '$id'";
 
     $con->query($sql) or die ($con->error);
     echo header("Location: users.php");
@@ -50,54 +57,64 @@ if(isset($_POST['submit'])){
 
 <?php include 'header.php'; ?>
 
-    <div class="right-container">
-        <div class="box-container">
-    <h2>Edit User</h2></br>
-
-            <form action="deleteUser.php" method="post">
-                <div class="button-container-delete-edit">
-                    <button type="submit" name="delete" class="button-danger-delete-edit">Delete</button>
+<div class="right-container">
+    <div class="box-container">
+        <form id="add-employee-form" method="post" class="add-employee-form" onsubmit="return validateForm()">
+            <div id="section1">
+                <h2>Edit User</h2>
+                <div class="gauge-line"></div>
+                <div class="form-page">
+                    <div class="column">
+                        <div class="form-group small">
+                            <label for="user-first-name">First Name:</label>
+                            <input type="text" id="user-first-name" name="first_name">
+                        </div>
+                        <div class="form-group small">
+                            <label for="user-middle-name">Middle Name:</label>
+                            <input type="text" id="user-middle-name" name="middle_name">
+                        </div>
+                        <div class="form-group small">
+                            <label for="user-last-name">Last Name:</label>
+                            <input type="text" id="user-last-name" name="last_name">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="username">User Name:</label>
+                            <input type="text" id="username" name="username">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label for="confirm-password">Confirm Password:</label><br>
+                        <input type="password" id="confirm-password" required ><br>
+                        <span id="passwordError" class="confirmpasserror" style="display:none;">Passwords do not match</span>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <label>Select Access Level</label>
+                            <select name="access" required>
+                                <option value=""></option>
+                                <option value="administrator">Administrator</option>
+                                <option value="applicant">Applicant</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="submit" class="thebutton" name="submit" value="Submit">
                 </div>
-                <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
-            </form>
-
-
-        <div class="form-container">
-
-            <form action="" method="post">
-
-                <label>Full Name</label>
-                <input type="text" name="full_name" id="full_name" value="<?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?>">
-
-                <label>Username</label>
-                <input type="text" name="username" id="username" value="<?php echo $row['username']; ?>">
-
-                <label>Password</label>
-                <input type="text" name="password" id="password" placeholder="Enter Password">
-
-                <label>Select Access Type</label>
-                <select name="access" required>
-                    <option value="">-- select access type --</option>
-                    <option value="administrator">Administrator</option>
-                    <option value="user">User</option>
-                </select>
-
-
-                <!-- <label>Department</label>
-                <select name="department" id="department" required>
-                    <option value="">--select department--</option>
-                    <option value="test1">test1</option>
-                    <option value="test2">test2</option>
-                </select> -->
-
-                
-
-            </form>
-        </div>
-        <input type="submit" class="thebutton" name="submit" value="Edit">
+            </div>
+        </form>
     </div>
-    
-    </div>
+</div>
+
 
 </body>
+<script src="js/main.js"></script>
+
 </html>
