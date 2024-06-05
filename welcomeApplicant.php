@@ -47,6 +47,17 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
     <div class="box-container">
             <h1>Welcome to NBS College!</h1>
             <div class="gauge-line"></div>
+
+            <?php
+            if(isset($_SESSION['status-add'])){
+            ?>
+            <div class="status-add" id="statusPopup">
+                <?php echo $_SESSION['status-add']; ?>
+                <span class="close-btn" onclick="closePopup();">&times;</span>
+            </div>
+            <?php
+            unset($_SESSION['status-add']);
+        }?>
             
                 <div class="container-list">  
                 <a href="" class="container-container1">

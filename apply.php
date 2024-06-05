@@ -29,7 +29,7 @@ if(isset($_POST['submit'])) {
     $con->query($sql) or die ($con->error);
 
     if($con){
-        // $_SESSION['status-add'] = "Data Added Successfully";
+        $_SESSION['status-add'] = "Records Successfully Submitted.";
         header('Location: welcomeApplicant.php');
     } else{
         echo "Something went wrong";

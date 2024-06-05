@@ -162,7 +162,7 @@ table {
 
 #table2 {
     border-radius: 8px;
-    margin-top: 0px;
+    margin-top: 10px;
     border: 1px solid black;
     border-collapse: collapse;
     width: 75%;
@@ -244,6 +244,17 @@ tr:nth-child(even) {
     padding: 15px;
     border: 1px solid #ccc;
     position: relative;
+}
+
+.status-add2{
+    border-radius: 8px;
+    background-color: #33d155;
+    color: white;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 2;
 }
 
 .status-delete{

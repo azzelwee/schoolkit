@@ -47,6 +47,39 @@ $row = $applicantList->fetch_assoc();
     <div class="box-container">
         <h2>Applicant Processing</h2>
         <div class="gauge-line"></div>
+        <?php
+            if(isset($_SESSION['status-add'])){
+            ?>
+            <div class="status-add" id="statusPopup">
+                <?php echo $_SESSION['status-add']; ?>
+                <span class="close-btn" onclick="closePopup();">&times;</span>
+            </div>
+            <?php
+            unset($_SESSION['status-add']);
+        }?>
+
+        <?php
+            if(isset($_SESSION['status-delete'])){
+            ?>
+            <div class="status-delete" id="statusPopup">
+                <?php echo $_SESSION['status-delete']; ?>
+                <span class="close-btn" onclick="closePopup();">&times;</span>
+            </div>
+            <?php
+            unset($_SESSION['status-delete']);
+        }?>     
+
+        <?php
+            if(isset($_SESSION['status-edit'])){
+            ?>
+            <div class="status-edit" id="statusPopup">
+                <?php echo $_SESSION['status-edit']; ?>
+                <span class="close-btn" onclick="closePopup();">&times;</span>
+            </div>
+            <?php
+            unset($_SESSION['status-edit']);
+        }?>
+
         <table id="table2">
         <thead>
         <tr>
