@@ -740,6 +740,7 @@ li.has-submenu {
     top: 69.6%;
 }
 
+
 .box-container {
     position: absolute;
     border: 1px solid #ccc;
@@ -1550,4 +1551,95 @@ li.has-submenu {
 
 button[type="button"] {
     display: inline-block;
+}
+
+.applicant-profile {
+
+    top: 155px;
+    left: 70px;
+    position: absolute;
+    color: white;
+    font-size: 90px;
+    z-index: 1;
+        /* Ensure text is on top of the image */
+}
+
+.applicant-profile-text {
+    display: flex;
+    flex-direction: row; /* Column direction to keep img above p */
+}
+
+.applicant-profile-text p{
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.applicant-profile-text img{
+    width: 30px;
+    height: 30px;
+}
+
+.applicant-user{
+    top: 155px;
+    left: 430px;
+    position: absolute;
+    color: white;
+    font-size: 90px;
+    z-index: 1; /* Ensure text is on top of the image */
+}
+
+.applicant-user-text {
+    display: flex;
+    flex-direction: row; /* Column direction to keep img above p */
+}
+
+.applicant-user-text p{
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.applicant-user-text img{
+    width: 30px;
+    height: 30px;
+}
+
+.applicant-settings{
+    top: 155px;
+    left: 790px;
+    position: absolute;
+    color: white;
+    font-size: 90px;
+    z-index: 1; /* Ensure text is on top of the image */
+}
+
+.applicant-settings-text {
+    display: flex;
+    flex-direction: row; /* Column direction to keep img above p */
+}
+
+.applicant-settings-text p{
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.applicant-settings-text img{
+    width: 30px;
+    height: 30px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    height: 45px;
+    width: 100%;
 }

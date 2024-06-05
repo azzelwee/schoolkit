@@ -22,7 +22,7 @@ if(isset($_GET['page-nr'])){
     $start = $page * $rows_per_page;
 }
 
-$sql = "SELECT * FROM applicant_list2 ORDER BY id DESC LIMIT $start, $rows_per_page";
+$sql = "SELECT * FROM applicant_list2 ORDER BY ID DESC LIMIT $start, $rows_per_page";
 $applicantList = $con->query($sql) or die ($con->error);
 $row = $applicantList->fetch_assoc();
 
@@ -49,9 +49,9 @@ $row = $applicantList->fetch_assoc();
         <div class="gauge-line"></div>
 
         <table id="table2">
-    <thead>
+        <thead>
         <tr>
-            <th>Applicant ID</th>
+            <th></th>
             <th>Full Name</th>
             <th>Type</th>
             <th>Status</th>
@@ -65,7 +65,10 @@ $row = $applicantList->fetch_assoc();
         do {
     ?>
             <tr>
-                <td></td>
+                <td><a href="viewApplicant.php?ID=<?php echo $row['ID'];?>">
+                <button style="font-size: 12px; padding: 5px 10px; background-color: #d52033; color: white; border: none; border-radius: 4px; cursor: pointer;">View</button>
+                </a></td>
+
                 <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
                 <td><?php echo $row['position_type'];?></td>
                 <td style="color: <?php
@@ -81,13 +84,20 @@ $row = $applicantList->fetch_assoc();
                     }
                     ?>;"><?php echo $status; ?></td>
                 <td>
-                    <a href="editApplicant.php?ID=<?php echo $row['id'];?>">
+                    <a href="editApplicant.php?ID=<?php echo $row['ID'];?>">
                         <img src="img/edit.png" alt="">
                     </a>
                     &nbsp
-                    <a href="viewApplicant.php?ID=<?php echo $row['id'];?>">
-                        <img src="img/view.png" alt="">
-                    </a>
+
+
+                    <form action="deleteApplicant.php" method="post">
+                        <div class="button-container-delete-edit">
+                            <button type="submit" name="delete" class="button-danger-delete-edit">Delete</button>
+                        </div>
+                        <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
+                    </form>
+
+                    
 
                 </td>
             </tr>

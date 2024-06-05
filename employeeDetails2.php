@@ -76,6 +76,11 @@ $row = $employee->fetch_assoc();
                     </form>
             <h2 class="employee-name"><?php echo $row['last_name'] . ',</br> ' . $row['first_name'] . ' ' . $row['middle_name']; ?></h2>
             
+            <div class="joined">
+                <p>Joined Date: <?php echo date('F d, Y', strtotime($row['date_hired'])); ?></p>
+            </div>
+
+
         </div>
         <div class="vertical-line"></div>
         <div class="profile-rightz">

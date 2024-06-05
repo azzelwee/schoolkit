@@ -7,7 +7,6 @@ if(!isset($_SESSION)){
 include_once("connections/connection.php");
 $con = connection();
 
-
 if(isset($_POST['login'])){
 
     $username = $_POST['username'];
@@ -22,15 +21,22 @@ if(isset($_POST['login'])){
     if($total > 0){
         $_SESSION['UserLogin'] = $row['username'];
         $_SESSION['Access'] = $row['access'];
-        echo header("Location: dashboard.php");
+        
+        // Redirect based on access level
+        if ($row['access'] == "administrator") {
+            header("Location: dashboard.php");
+        } else if ($row['access'] == "user") {
+            header("Location: welcomeApplicant.php");
+        }
+        exit; // Ensure no further code is executed after redirection
     } else {
         echo "<div class='message warning'> No user found. </div>";
     }
 
 }
 
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

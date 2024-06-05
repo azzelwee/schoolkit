@@ -30,7 +30,7 @@ if(isset($_POST['submit'])) {
 
     if($con){
         // $_SESSION['status-add'] = "Data Added Successfully";
-        header('Location: dashboard.php');
+        header('Location: welcomeApplicant.php');
     } else{
         echo "Something went wrong";
     }
@@ -371,6 +371,12 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 </div>
+<footer>
+    &copy; 2024 NBS College. If you have any questions or concerns, please contact us.
+    Email: info@nbscollege.edu.ph
+    Contact Number:(02) 8376-5090, 0917-8076850, 0961-3826332
+    </footer>
+
 <script src="js/main.js"></script>
 
 </body>

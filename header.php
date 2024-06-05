@@ -15,12 +15,15 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
             <?php endif ?>
 
                 <?php if ($is_user): ?>
-                <li><a href="dashboard.php"><img src="img/home.png" class="imgs"><p>Welcome</p></a></li>
+                <li><a href="welcomeApplicant.php"><img src="img/home.png" class="imgs"><p>Home</p></a></li>
                 <?php endif; ?>
+
+
 
                 <?php if ($is_user): ?>
                 <li><a href="apply.php"><img src="img/apply.png" class="imgs"><p>Apply for a Job</p></a></li>
                 <?php endif; ?>
+
 
                 <?php if ($is_admin): ?>
                 <li><a href="maintenance.php"><img src="img/structures.png"><p>Maintenance</p></a></li>
