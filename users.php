@@ -48,42 +48,46 @@ $row = $userList->fetch_assoc();
         <div class="gauge-line">
         </br>
 
-        <div class="button-container">
-            <a href="addUser.php">Add Users</a>
-        </div>
 
         <?php
-            if(isset($_SESSION['status-add'])){
+        if(isset($_SESSION['status-add'])){
             ?>
             <div class="status-add" id="statusPopup">
                 <?php echo $_SESSION['status-add']; ?>
                 <span class="close-btn" onclick="closePopup();">&times;</span>
             </div>
             <?php
-            unset($_SESSION['status-add']);
-        }?>
+                unset($_SESSION['status-add']);
+            }
+            ?>
 
-        <?php
-            if(isset($_SESSION['status-delete'])){
+            <?php
+                if(isset($_SESSION['status-delete'])){
             ?>
             <div class="status-delete" id="statusPopup">
                 <?php echo $_SESSION['status-delete']; ?>
                 <span class="close-btn" onclick="closePopup();">&times;</span>
             </div>
             <?php
-            unset($_SESSION['status-delete']);
-        }?>     
+                unset($_SESSION['status-delete']);
+            }
+            ?>
 
-        <?php
-            if(isset($_SESSION['status-edit'])){
+            <?php
+                if(isset($_SESSION['status-edit'])){
             ?>
             <div class="status-edit" id="statusPopup">
                 <?php echo $_SESSION['status-edit']; ?>
                 <span class="close-btn" onclick="closePopup();">&times;</span>
             </div>
             <?php
-            unset($_SESSION['status-edit']);
-        }?>
+                unset($_SESSION['status-edit']);
+            }
+            ?>
+
+        <div class="button-container">
+            <a href="addUser.php">Add Users</a>
+        </div>
 
         
         <table>

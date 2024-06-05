@@ -14,7 +14,7 @@ if(isset($_POST['delete'])){
     $con->query($sql) or die ($con->error);
 
     if($con){
-        $_SESSION['status-delete'] = "Data Deleted Successfully";
+        $_SESSION['status-delete'] = "Records Successfully Deleted.";
         header('Location: employeeOnboarding.php');
     } else{
         echo "Something went wrong";

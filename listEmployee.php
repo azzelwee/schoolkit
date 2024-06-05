@@ -61,17 +61,8 @@ $row = $employee->fetch_assoc();
             <img src="img/search.png" class="search-icon">
             <input class="search-input" name="search" placeholder="Search an Employee">
         </div>
-
-        
-        <div class="button-container">
-            <a href="addEmployee.php">+ Add Employee</a>
-        </div>
-
-        <div class="button-container2">
-            <a href="employeeRenew.php">Employee Renewal</a>
-        </div>
-
-
+    </form>
+    
         <?php
             if(isset($_SESSION['status-add'])){
             ?>
@@ -104,13 +95,17 @@ $row = $employee->fetch_assoc();
             <?php
             unset($_SESSION['status-edit']);
         }?>
-        
-        </form>
-<!-- 
+
         <div class="button-container">
-            <a href="add2.php">Add New</a>
-            
-        </div> -->
+            <a href="addEmployee.php">+ Add Employee</a>
+        </div>
+
+        <div class="button-container2">
+            <a href="employeeRenew.php">Employee Renewal</a>
+        </div>
+
+
+
     
         <table>
     <thead>

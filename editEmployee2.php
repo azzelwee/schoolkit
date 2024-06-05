@@ -152,7 +152,7 @@ if(isset($_POST['submit'])) {
                 $con->query($sql) or die ($con->error);
 
                 if($con){
-                    $_SESSION['status-edit'] = "Data Edited Successfully";
+                    $_SESSION['status-edit'] = "Records Successfully Updated.";
                     header('Location: listEmployee.php');
                 } else{
                     echo "Something went wrong";
@@ -212,7 +212,7 @@ if(isset($_POST['submit'])) {
         $con->query($sql) or die ($con->error);
 
         if($con){
-        $_SESSION['status-edit'] = "Data Edited Successfully";
+        $_SESSION['status-edit'] = "Records Successfully Updated.";
             header('Location: listEmployee.php');
         } else{
             echo "Something went wrong";

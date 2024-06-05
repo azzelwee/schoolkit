@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
     echo header("Location: users.php");
 
     if($con){
-        $_SESSION['status-edit'] = "Data Edited Successfully";
+        $_SESSION['status-edit'] = "Records Successfully Updated.";
         header('Location: users.php');
     } else{
         echo "Something went wrong";

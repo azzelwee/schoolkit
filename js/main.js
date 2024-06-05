@@ -33,14 +33,20 @@ function prevSection(currentSection, prevSection) {
 }
 
 function closePopup() {
-  // Show the popup
-  document.querySelector('.status-delete').style.display = 'block';
-
-  // After 3 seconds, hide the popup
-  setTimeout(function() {
-    document.querySelector('.status-delete').style.display = 'none';
-  }, 3000); // 3000 milliseconds = 3 seconds
+  const popup = document.getElementById('statusPopup');
+  if (popup) {
+      popup.style.display = 'none';
+  }
 }
+
+// Optionally, add a timeout to auto-close the popup after a few seconds
+window.addEventListener('load', () => {
+  setTimeout(() => {
+      closePopup();
+  }, 5000); // Closes the popup after 3 seconds
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
   handlePositionChange(); // Call the function when the page loads to set the initial state
 });

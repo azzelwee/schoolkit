@@ -236,48 +236,42 @@ tr:nth-child(even) {
     display: inline-block;
 }
 
-.status-add {
-    margin-top: 8px;
-    padding: 12px;
-    background-color: #4CAF50;
+.status-add{
+    border-radius: 8px;
+    background-color: #33d155;
     color: white;
-    width: 50%;
-    text-align: center;
-    border-radius: 5px;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
     position: relative;
 }
 
-.close-btn {
-    text-align: left;
-    font-size: 30px;
-    position: absolute;
-    top: 4px;
-    right: 10px;
-    color: white;
-    cursor: pointer;
-}
-.status-delete {
-    margin-top: 5px;
-    padding: 15px;
-    height: 50px;
+.status-delete{
     background-color: #d52033;
+    border-radius: 8px;
     color: white;
-    width: 50%;
-    border-radius: 5px;
-    text-align: center;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
     position: relative;
 }
 
 .status-edit {
-    margin-top: 8px;
-    padding: 12px;
-    background-color: #cfd520;
-    color: white;
-    width: 50%;
-    text-align: center;
-    border-radius: 5px;
+    background-color: rgb(255, 255, 109);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
     position: relative;
 }
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
 .search {
     border: 1px solid #333333;
     width: 40%;

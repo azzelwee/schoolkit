@@ -84,7 +84,7 @@ $row = $applicantList->fetch_assoc();
                     ?>;"><?php echo $status; ?></td>
                 <td>
                 <!-- Edit Icon -->
-                <a href="editUser.php?ID=<?php echo $row['ID']; ?>" class="icon-link">
+                <a href="editApplicant.php?ID=<?php echo $row['ID']; ?>" class="icon-link">
                     <img src="img/edit.png" alt="Edit">
                 </a>
 
