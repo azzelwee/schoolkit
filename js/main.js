@@ -149,3 +149,25 @@ function showPreviousSection(sectionId) {
   });
   document.getElementById(sectionId).style.display = 'block';
 }
+
+function confirmDeletion() {
+  return confirm('Are you sure you want to delete this user?');
+}
+
+document.getElementById('togglePassword').addEventListener('click', function () {
+  const passwordField = document.getElementById('password');
+  const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordField.setAttribute('type', type);
+  
+  // Toggle the eye icon
+  this.textContent = type === 'password' ? '\uD83D\uDC41' : '\uD83D\uDC41\u200D\uD83D\uDDE8'; // Unicode for eye and eye with slash
+});
+
+document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
+  const confirmPasswordField = document.getElementById('confirm-password');
+  const type = confirmPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
+  confirmPasswordField.setAttribute('type', type);
+  
+  // Toggle the eye icon
+  this.textContent = type === 'password' ? '\uD83D\uDC41' : '\uD83D\uDC41\u200D\uD83D\uDDE8'; // Unicode for eye and eye with slash
+});

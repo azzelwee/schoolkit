@@ -78,14 +78,22 @@ if(isset($_POST['submit'])){
                     <div class="column">
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" id="password" name="password">
+                            <div class="password-container">
+                                <input type="password" id="password" name="password">
+                                <span id="togglePassword" class="eye">&#128065;</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password:</label>
+                            <div class="password-container">
+                                <input type="password" id="confirm-password"required>
+                                <span id="toggleConfirmPassword" class="eye">&#128065;</span>
+                            </div>
+                            <span id="passwordError" class="confirmpasserror" style="display:none;">Passwords do not match</span>
                         </div>
                     </div>
-                    <div class="column">
-                        <label for="confirm-password">Confirm Password:</label><br>
-                        <input type="password" id="confirm-password" required><br>
-                        <span id="passwordError" class="confirmpasserror" style="display:none;">Passwords do not match</span>
-                    </div>
+
                     <div class="column">
                         <div class="form-group">
                             <label>Select Access Level</label>

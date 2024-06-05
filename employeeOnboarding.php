@@ -83,21 +83,18 @@ $row = $applicantList->fetch_assoc();
                     }
                     ?>;"><?php echo $status; ?></td>
                 <td>
-                    <a href="editApplicant.php?ID=<?php echo $row['ID'];?>">
-                        <img src="img/edit.png" alt="">
-                    </a>
-                    &nbsp
+                <!-- Edit Icon -->
+                <a href="editUser.php?ID=<?php echo $row['ID']; ?>" class="icon-link">
+                    <img src="img/edit.png" alt="Edit">
+                </a>
 
-
-                    <form action="deleteApplicant.php" method="post">
-                        <div class="button-container-delete-edit">
-                            <button type="submit" name="delete" class="button-danger-delete-edit">Delete</button>
-                        </div>
-                        <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
-                    </form>
-
-                    
-
+                <!-- Delete Button -->
+                <form action="deleteApplicant.php" method="POST" class="icon-link" onsubmit="return confirmDeletion()">
+                    <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
+                    <button type="submit" name="delete" class="icon-button">
+                        <img src="img/delete.png" alt="Delete">
+                    </button>
+                </form>
                 </td>
             </tr>
     <?php 

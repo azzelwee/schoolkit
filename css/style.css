@@ -476,17 +476,6 @@ tr:nth-child(even) {
     display: none;
 }
 
-#confirm-password{
-    margin-bottom: 8px;
-    font-size: 18px;
-    width: 98.5%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    color: rgb(52, 52, 52);
-
-}
-
 .form-container2 input,
 .form-container2 select {
     display: flex;
@@ -1662,4 +1651,47 @@ footer {
     bottom: 0;
     height: 45px;
     width: 100%;
+}
+/* General styling for icon links */
+.icon-link {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+/* Specific styling for buttons within forms to match the link styling */
+.icon-link .icon-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Ensure images are displayed inline */
+.icon-link img {
+    display: inline;
+    vertical-align: middle; /* Aligns the image vertically in the middle */
+}
+
+.password-container {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+input[type="password"] {
+    padding-right: 30px; /* Adjust padding to make space for the eye icon */
+}
+
+.eye {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
 }

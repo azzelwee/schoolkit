@@ -89,8 +89,9 @@ $row = $userList->fetch_assoc();
         <table>
         <thead>
         <tr>
-            <th>Username</th>
+
             <th>Full Name</th>
+            <th>Username</th>
             <th>Access Level</th>
             <th>Section</th>
         </tr>
@@ -102,13 +103,25 @@ $row = $userList->fetch_assoc();
             ?>
         <tr>
             
-            <td><?php echo $row['username']; ?></td>
+
             <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
+            <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['access']; ?></td>
             <td>
-                <a href="editUser.php?ID=<?php echo $row['ID'];?>">
-                    <img src="img/edit.png" alt="">
+                <!-- Edit Icon -->
+                <a href="editUser.php?ID=<?php echo $row['ID']; ?>" class="icon-link">
+                    <img src="img/edit.png" alt="Edit">
                 </a>
+
+                <!-- Delete Button -->
+                <form action="deleteUser.php" method="POST" class="icon-link" onsubmit="return confirmDeletion()">
+                    <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
+                    <button type="submit" name="delete" class="icon-button">
+                        <img src="img/delete.png" alt="Delete">
+                    </button>
+                </form>
+
+
             </td>
         </tr>
         <?php 
@@ -116,7 +129,7 @@ $row = $userList->fetch_assoc();
     } else {
         // Handle the case where there are no rows in $employee
         echo "<tr>
-            <td colspan='4'>No applicants found</td>
+            <td colspan='4'>No user found.</td>
             </tr>";
     }
 ?>
