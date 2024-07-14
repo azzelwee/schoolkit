@@ -138,111 +138,46 @@ if(isset($_POST['submit'])) {
                 <button type="button" class="thebutton" onclick="nextSection('section1', 'section2')">Next</button>
                 
                 <div id="section2" style="display: none;">
-                    <h2>Personal Information</h2>
-                    <div class="form-page">
+                <h2>Basic Information</h2>
+                    <div class="lineup1">
                         <div class="column">
-                            <div class="form-group">
-                                <label for="employee-first-name">First Name:</label>
-                                <input type="text" id="employee-first-name" name="first_name">
+                            <div class="form-group small">
+                                <label for="previous-job-title">First Name:</label>
+                                <input type="text" id="previous-job-title" name="previous-job-title">
                             </div>
                             <div class="form-group small">
-                                <label for="employee-middle-name">Middle Name:</label>
-                                <input type="text" id="employee-middle-name" name="middle_name">
+                                <label for="company-name">Middle Name:</label>
+                                <input type="text" id="company-name" name="company-name">
                             </div>
                             <div class="form-group small">
-                                <label for="employee-last-name">Last Name:</label>
-                                <input type="text" id="employee-last-name" name="last_name">
+                                <label for="responsibilities">Last Name:</label>
+                                <input type="text" id="responsibilities" name="responsibilities">
                             </div>
-                            <div class="form-group small">
-                                <label for="employee-age">Age:</label>
-                                <input type="number" id="employee-age" name="employee-age">
-                            </div>
-                            <div class="form-group small">
-                                <label for="employee-gender">Gender:</label>
-                                <select id="employee-gender" name="employee-gender">
-                                    <option value="">Select Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group small">
-                                <label for="employee-civil-status">Civil Status:</label>
-                                <select id="employee-civil-status" name="employee-civil-status">
-                                    <option value="">Select Status</option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="divorced">Separated</option>
-                                    <option value="widowed">Widowed</option>
-                                </select>
-                            </div>
-                            <div class="form-group small">
-                                <label for="employee-citizenship">Citizenship:</label>
-                                <input type="text" id="employee-citizenship" name="employee-citizenship">
-                            </div>
-                            <div class="form-group small">
-                                <label for="employee-religion">Religion:</label>
-                                <input type="text" id="employee-religion" name="employee-religion">
-                            </div>  
-                            <div class="form-group small">
-                                <label for="employee-birthdate">Birthdate:</label>
-                                <input type="date" id="employee-birthdate" name="employee-birthdate">
-                            </div>
-                            <div class="form-group">
-                                <label for="employee-birthplace">Place of Birth:</label>
-                                <input type="text" id="employee-birthplace" name="employee-birthplace">
-                            </div>
-                            <div class="form-group small">
-                                <label for="employee-height">Height (cm):</label>
-                                <input type="number" id="employee-height" name="employee-height">
-                            </div>
-                            <div class="form-group small">
-                                <label for="employee-weight">Weight (lbs.):</label>
-                                <input type="number" id="employee-weight" name="employee-weight">
-                            </div>
-                            <div class="form-group-below">
-                                <h2>Contact Information</h2>
-                                <div class="column">
-                                    <div class="form-group small">
-                                        <label for="employee-email">Email:</label>
-                                        <input type="email" id="employee-email" name="employee-email">
-                                    </div>
-                                    <div class="form-group small">
-                                        <label for="employee-mobile-number">Mobile Number:</label>
-                                        <input type="text" id="employee-mobile-number" name="employee-mobile-number">
-                                    </div>
-                                    <div class="form-group small">
-                                        <label for="employee-telephone-number">Telephone Number:</label>
-                                        <input type="text" id="employee-telephone-number" name="employee-telephone-number">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="employee-address">Address:</label>
-                                        <input type="text" id="employee-address" name="employee-address">
-                                    </div>
-                                    <div class="form-group small">
-                                        <label for="employee-city">City:</label>
-                                        <input type="text" id="employee-city" name="employee-city">
-                                    </div>
-                                    <div class="form-group small">
-                                        <label for="employee-state">State/Province:</label>
-                                        <input type="text" id="employee-state" name="employee-state">
-                                    </div>
-                                    <div class="form-group small">
-                                        <label for="employee-postal-code">Postal Code:</label>
-                                        <input type="text" id="employee-postal-code" name="employee-postal-code">
-                                    </div>
-                                    <div class="form-group small">
-                                        &nbsp
-                                    </div>
-                                    <div class="form-group small">
-                                        &nbsp
-                                    </div>
+                        </div>
+                        <div class="form-group-below">
+                            <h2>Credentials</h2>
+                            <div class="column">
+                                <div class="form-group small">
+                                    <label for="resume">Resume/CV:</label>
+                                    <input type="file" id="resume" name="resume">
+                                </div>
+                                <div class="form-group small">
+                                    <label for="work-samples">Work Samples/Portfolio (optional):</label>
+                                    <input type="file" id="work-samples" name="work-samples">
+                                </div>
+                                <div class="form-group small">
+                                    <label for="certificates">Certificates (optional):</label>
+                                    <input type="file" id="certificates" name="certificates">
+                                </div>
+                                <div class="form-group small">
+                                    <label for="questions-comments">Questions/Comments:</label>
+                                    <input type="text" id="wide" name="questions-comments">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <button type="button" class="thebutton2" onclick="prevSection('section2', 'section1')">Back</button>
-                    <button type="button" class="thebutton" onclick="nextSection('section2', 'section3')">Next</button>
+                    <input type="submit" class="thebutton" value="Submit" name="submit">
                 </div>
                 
                 <div id="section3" style="display: none;">

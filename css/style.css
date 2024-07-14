@@ -246,16 +246,6 @@ tr:nth-child(even) {
     position: relative;
 }
 
-.status-add2{
-    border-radius: 8px;
-    background-color: #33d155;
-    color: white;
-    margin-top: 10px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    position: absolute;
-    z-index: 2;
-}
 
 .status-delete{
     background-color: #d52033;

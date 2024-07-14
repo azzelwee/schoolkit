@@ -24,7 +24,7 @@ if(isset($_POST['login'])){
         
         // Redirect based on access level
         if ($row['access'] == "administrator") {
-            header("Location: dashboard.php");
+            header("Location: maintenance.php");
         } else if ($row['access'] == "user") {
             header("Location: welcomeApplicant.php");
         }
@@ -70,10 +70,7 @@ if(isset($_POST['login'])){
             placeholder="Enter Password" required>
         </div>
 
-        <div class="registration">
-            <a href="registration.php">Signup to Apply</a>
 
-        </div>
 
         <button type="submit" name="login" id="btn">Login</button>
   

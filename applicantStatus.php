@@ -4,25 +4,6 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-// $nr_of_rows = $_SESSION['nr_of_rows']; 
-// $nr_of_employee = $nr_of_rows;
-
-// // Check if the user is logged in
-// if(isset($_SESSION['UserLogin'])) {
-//     // Check if the popup has already been displayed (via cookie)
-//     if(!isset($_COOKIE['popup_displayed'])) {
-//         // Set a cookie to indicate that the popup has been displayed
-//         setcookie('popup_displayed', '1', time() + (86400 * 30), "/"); // Cookie valid for 30 days
-//         // Display the popup message
-//         $message = "<div class='popup-message success'>Welcome ".$_SESSION['UserLogin'].'</div>';
-//     } else {
-//         // Popup already displayed, don't show it again
-//         $message = "";
-//     }
-// } else {
-//     $message = "<div class='popup-message info'>Welcome Guest</div>";
-// }
-
 include_once("connections/connection.php");
 $con = connection();
 

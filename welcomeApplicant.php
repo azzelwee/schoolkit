@@ -58,38 +58,10 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
             <?php
             unset($_SESSION['status-add']);
         }?>
-            
-                <div class="container-list">  
-                <a href="" class="container-container1">
-                    <img src="img/NBSProfile.png">
+            <img src="img/nbspic.png" class="school">
 
-                    <div class="applicant-profile">
-                        <div class="applicant-profile-text">
-                            <img src="img/profile.png">
-                            <p>Profile</p>
-                        </div>
-                    </div>
-                    
-                </a>
-
-                <a href="applicantStatus.php" class="container-container2">
-                    <img src="img/NBSStatus.png">
-                    <div class="applicant-user">
-                        <div class="applicant-user-text">
-                        <img src="img/status.png">
-                        <p>Status</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="applicantSettings.php" class="container-container2">
-                    <img src="img/NBSSetting.png">
-                    <div class="applicant-settings">
-                        <div class="applicant-settings-text">
-                            <img src="img/accountsettings.png">
-                            <p>Account Settings</p>
-                        </div>
-                    </div>
-                </a>
+        </div>
+    </div>
                 
             </div>
         </div>
