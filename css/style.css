@@ -9,6 +9,7 @@
     margin: 0 auto;
     width: 25%;
     margin-top: 8vh;
+
 }
 
 .form-element {
@@ -85,9 +86,10 @@
     font-style: none;
 }
 /* sets background for login page */
-/* #formlogin {
+#formlogin {
+    background-color: #f9f9f9;
 
-} */
+}
 
 .required {
     font-size: 20px;
@@ -238,6 +240,7 @@ tr:nth-child(even) {
 
 .status-add{
     border-radius: 8px;
+    width: 85%;
     background-color: #33d155;
     color: white;
     margin-top: 10px;
@@ -249,6 +252,7 @@ tr:nth-child(even) {
 
 .status-delete{
     background-color: #d52033;
+    width: 85%;
     border-radius: 8px;
     color: white;
     margin-top: 10px;
@@ -259,6 +263,7 @@ tr:nth-child(even) {
 
 .status-edit {
     background-color: rgb(255, 255, 109);
+    width: 85%;
     border-radius: 8px;
     margin-top: 10px;
     padding: 15px;
@@ -664,20 +669,17 @@ ul.items {
 }
 
 .nav-links li:nth-child(2):hover~.active {
-    top: 22.6%;
+    top: 27.6%;
 }
 
 .nav-links li:nth-child(3):hover~.active {
-    top: 42.6%;
+    top: 52.6%;
 }
 
 .nav-links li:nth-child(4):hover~.active {
-    top: 62.6%;
+    top: 77.6%;
 }
 
-.nav-links li:nth-child(5):hover~.active {
-    top: 82.6%;
-}
 
 .active {
     background-color: #c71224;
@@ -724,15 +726,11 @@ li.has-submenu {
 }
 
 .nav-links li:nth-child(1):hover~.active2 {
-    top: 3.6%;
+    top: 3.9%;
 }
 
 .nav-links li:nth-child(2):hover~.active2 {
-    top: 36.6%;
-}
-
-.nav-links li:nth-child(3):hover~.active2 {
-    top: 69.6%;
+    top: 55.6%;
 }
 
 
@@ -804,7 +802,7 @@ li.has-submenu {
 
 .school {
     border-radius: 8px;
-    width: 100%;
+    width: 80%;
 }
 
 

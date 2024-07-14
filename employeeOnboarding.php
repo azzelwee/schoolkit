@@ -85,7 +85,7 @@ $row = $applicantList->fetch_assoc();
         <tr>
             <th></th>
             <th>Full Name</th>
-            <th>Type</th>
+            <th>Position Type</th>
             <th>Status</th>
             <th>Action</th>
             
@@ -98,7 +98,7 @@ $row = $applicantList->fetch_assoc();
     ?>
             <tr>
                 <td><a href="viewApplicant.php?ID=<?php echo $row['ID'];?>">
-                <button style="font-size: 12px; padding: 5px 10px; background-color: #d52033; color: white; border: none; border-radius: 4px; cursor: pointer;">View</button>
+                <button style="font-size: 12px; padding: 5px 10px; background-color: #d52033; color: white; border: none; border-radius: 4px; cursor: pointer;">Download CV</button>
                 </a></td>
 
                 <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>

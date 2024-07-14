@@ -12,38 +12,38 @@ $con = connection();
 
 if(isset($_POST['submit'])) {
     $positiontype = $_POST['position_type'];
-    // $position = ($_POST['position'] == 'Teaching') ? $_POST['teachingInput'] : $_POST['nonTeachingInput'];
     $status = $_POST['status'];
     $firstname = $_POST['first_name'];
     $middlename = $_POST['middle_name'];
     $lastname = $_POST['last_name'];
 
-    
     // Handling file uploads (example for resume, repeat for other files)
-    $target_dir = "uploads/";
+    $target_dir = "img/uploads/";
     $target_file_resume = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file_resume);
+    $fileType = pathinfo($target_file_resume, PATHINFO_EXTENSION);
 
-    $sql = "INSERT INTO `applicant_list2` (`position_type`, `status`, `first_name`, `middle_name`, `last_name`) 
-    VALUES ('$positiontype', '$status', '$firstname', '$middlename', '$lastname')";
-    $con->query($sql) or die ($con->error);
-
-    if($con){
-        $_SESSION['status-add'] = "Records Successfully Submitted.";
-        header('Location: welcomeApplicant.php');
-    } else{
-        echo "Something went wrong";
+    // Allow certain file formats
+    $allowTypes = array('pdf');
+    if (in_array($fileType, $allowTypes)) {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file_resume)) {
+            // Insert file path and form data into database
+            $sql = "INSERT INTO applicant_list2 (position_type, status, first_name, middle_name, last_name, resume_path) 
+                    VALUES ('$positiontype', '$status', '$firstname', '$middlename', '$lastname', '$target_file_resume')";
+            if ($con->query($sql) === TRUE) {
+                $_SESSION['status-add'] = "Records Successfully Submitted.";
+                header('Location: welcomeApplicant.php');
+                exit;
+            } else {
+                echo "Error: " . $sql . "<br>" . $con->error;
+            }
+        } else {
+            echo "<script>alert('Sorry, there was an error uploading your file.');</script>";
+        }
+    } else {
+        echo "<script>alert('Sorry, only PDF files are allowed to upload on CV/Resume.');</script>";
     }
+    
 }
-    // $stmt = $con->prepare($sql);
-    // $stmt->bind_param("ssssissssssssissssssssssssssssssssssssssss", $position_type, $position, $first_name, $middle_name, $last_name, $age, $gender, $civil_status, $citizenship, $religion, $birthdate, $birthplace, $height, $weight, $email, $mobile_number, $telephone_number, $address, $city, $state_province, $postal_code, $country, $highest_education, $school_name, $course_program, $year_graduated, $honors_awards, $training_program, $institution, $location, $training_start, $training_end, $certificate_received, $skills_acquired, $previous_job_title, $company_name, $responsibilities, $employment_date, $references, $resume, $work_samples, $certificates, $comments);
-    // $stmt->execute();
-
-    // if ($stmt->affected_rows > 0) {
-    //     echo "Data successfully inserted.";
-    // } else {
-    //     echo "Error: " . $stmt->error;
-    // }
 
 ?>
 <!DOCTYPE html>
@@ -56,7 +56,29 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 
-<?php include 'header.php'; ?>
+<?php
+$is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator");
+$is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
+?>
+
+<div class="header">
+        <div class="side-nav">
+            <a href="dashboard.php"class="logo">
+                <img src="img/nbswhite.png" class="logo-img">
+            </a>
+            <ul class="nav-links">
+            
+            <li><a href="welcomeApplicant.php"><img src="img/home.png" class="imgs"><p>Welcome!</p></a></li>
+            <li><a href="apply.php"><img src="img/apply.png" class="imgs"><p>Apply for a Job</p></a></li>
+
+                <div class="active2">
+                </div>
+
+
+                
+            </ul>
+
+</div>
 
 <div class="right-container-add">
     <div class="box-container">
@@ -143,24 +165,26 @@ if(isset($_POST['submit'])) {
                         <div class="column">
                             <div class="form-group small">
                                 <label for="previous-job-title">First Name:</label>
-                                <input type="text" id="previous-job-title" name="previous-job-title">
+                                <input type="text" id="first_name" name="first_name">
                             </div>
                             <div class="form-group small">
                                 <label for="company-name">Middle Name:</label>
-                                <input type="text" id="company-name" name="company-name">
+                                <input type="text" id="middle_name" name="middle_name">
                             </div>
                             <div class="form-group small">
                                 <label for="responsibilities">Last Name:</label>
-                                <input type="text" id="responsibilities" name="responsibilities">
+                                <input type="text" id="last_name" name="last_name">
                             </div>
                         </div>
                         <div class="form-group-below">
                             <h2>Credentials</h2>
                             <div class="column">
-                                <div class="form-group small">
+                            <form action="" method="post" enctype="multipart/form-data">
+                            <div class="form-group small">
                                     <label for="resume">Resume/CV:</label>
-                                    <input type="file" id="resume" name="resume">
+                                    <input type="file" id="resume" name="fileToUpload">
                                 </div>
+                            </form>
                                 <div class="form-group small">
                                     <label for="work-samples">Work Samples/Portfolio (optional):</label>
                                     <input type="file" id="work-samples" name="work-samples">
@@ -169,10 +193,7 @@ if(isset($_POST['submit'])) {
                                     <label for="certificates">Certificates (optional):</label>
                                     <input type="file" id="certificates" name="certificates">
                                 </div>
-                                <div class="form-group small">
-                                    <label for="questions-comments">Questions/Comments:</label>
-                                    <input type="text" id="wide" name="questions-comments">
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -180,6 +201,8 @@ if(isset($_POST['submit'])) {
                     <input type="submit" class="thebutton" value="Submit" name="submit">
                 </div>
                 
+                <!-- End Fill Out -->
+
                 <div id="section3" style="display: none;">
                     <h2>Education</h2>
                     <div class="column">

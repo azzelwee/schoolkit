@@ -22,7 +22,24 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 </head>
 <body>
 
-<?php include 'header.php'; ?>
+<div class="header">
+        <div class="side-nav">
+            <a href="dashboard.php"class="logo">
+                <img src="img/nbswhite.png" class="logo-img">
+            </a>
+            <ul class="nav-links">
+            
+                <li><a href="welcomeApplicant.php"><img src="img/home.png" class="imgs"><p>Welcome!</p></a></li>
+                <li><a href="apply.php"><img src="img/apply.png" class="imgs"><p>Apply for a Job</p></a></li>
+
+                <div class="active2">
+                </div>
+
+
+                
+            </ul>
+
+</div>
 
 <div class="right-container">
     <div class="box-container">
@@ -39,7 +56,7 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
             <?php
             unset($_SESSION['status-add']);
         }?>
-            <img src="img/nbspic.png" class="school">
+            <img src="img/nbspic.png" class="school" style="width: 95%; margin-top: 20px;">
 
         </div>
     </div>
