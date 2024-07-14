@@ -48,9 +48,9 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
 
             <?php
             if (isset($_SESSION['status-add'])) {
-                echo "<p>" . $_SESSION['status-add'] . "</p>";
+                echo "<p>Thank you for applying! We have received your job application and CV/Resume. </br>
+                        Our team will review your submission and get back to you within 1-3 business days.</p>";
                 if (isset($_SESSION['resume_path'])) {
-                    echo '<p><a href="view_pdf.php?file=' . urlencode($_SESSION['resume_path']) . '" target="_blank">Preview Uploaded Resume</a></p>';
                     unset($_SESSION['resume_path']);
                 }
                 unset($_SESSION['status-add']);
