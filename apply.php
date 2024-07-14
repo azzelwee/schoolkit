@@ -10,7 +10,7 @@ if (!isset($_SESSION)) {
 include_once("connections/connection.php");
 $con = connection();
 
-if(isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
     $positiontype = $_POST['position_type'];
     $status = $_POST['status'];
     $firstname = $_POST['first_name'];
@@ -31,6 +31,7 @@ if(isset($_POST['submit'])) {
                     VALUES ('$positiontype', '$status', '$firstname', '$middlename', '$lastname', '$target_file_resume')";
             if ($con->query($sql) === TRUE) {
                 $_SESSION['status-add'] = "Records Successfully Submitted.";
+                $_SESSION['resume_path'] = $target_file_resume;
                 header('Location: welcomeApplicant.php');
                 exit;
             } else {
@@ -42,7 +43,6 @@ if(isset($_POST['submit'])) {
     } else {
         echo "<script>alert('Sorry, only PDF files are allowed to upload on CV/Resume.');</script>";
     }
-    
 }
 
 ?>

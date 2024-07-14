@@ -47,15 +47,15 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
             <div class="gauge-line"></div>
 
             <?php
-            if(isset($_SESSION['status-add'])){
+            if (isset($_SESSION['status-add'])) {
+                echo "<p>" . $_SESSION['status-add'] . "</p>";
+                if (isset($_SESSION['resume_path'])) {
+                    echo '<p><a href="view_pdf.php?file=' . urlencode($_SESSION['resume_path']) . '" target="_blank">Preview Uploaded Resume</a></p>';
+                    unset($_SESSION['resume_path']);
+                }
+                unset($_SESSION['status-add']);
+            }
             ?>
-            <div class="status-add" id="statusPopup">
-                <?php echo $_SESSION['status-add']; ?>
-                <span class="close-btn" onclick="closePopup();">&times;</span>
-            </div>
-            <?php
-            unset($_SESSION['status-add']);
-        }?>
             <img src="img/nbspic.png" class="school" style="width: 95%; margin-top: 20px;">
 
         </div>
