@@ -56,7 +56,7 @@ if (isset($_POST['schedule'])) {
     <div class="box-container">
         <h2>Set a Schedule for Interview</h2>
         <div class="gauge-line"></div>
-        <p>You are setting a schedule for applicant: </p><?php echo htmlspecialchars($applicant['first_name'] . ' ' . $applicant['last_name']); ?>
+        <p>You are scheduling an interview for applicant: <?php echo htmlspecialchars($applicant['first_name'] . ' ' . $applicant['last_name']); ?></p>
         <form method="post" action="scheduleInterview.php">
             <input type="hidden" name="applicant_id" value="<?php echo $applicant['ID']; ?>">
             </br>
