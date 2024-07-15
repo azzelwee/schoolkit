@@ -12,6 +12,7 @@ $con = connection();
 
 if (isset($_POST['submit'])) {
     $positiontype = $_POST['position_type'];
+    $employeetype = $_POST['employee_type'];
     $status = $_POST['status'];
     $firstname = $_POST['first_name'];
     $middlename = $_POST['middle_name'];
@@ -27,8 +28,8 @@ if (isset($_POST['submit'])) {
     if (in_array($fileType, $allowTypes)) {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file_resume)) {
             // Insert file path and form data into database
-            $sql = "INSERT INTO applicant_list2 (position_type, status, first_name, middle_name, last_name, resume_path) 
-                    VALUES ('$positiontype', '$status', '$firstname', '$middlename', '$lastname', '$target_file_resume')";
+            $sql = "INSERT INTO applicant_list2 (position_type, employee_type, status, first_name, middle_name, last_name, resume_path) 
+                    VALUES ('$positiontype', '$employeetype', '$status', '$firstname', '$middlename', '$lastname', '$target_file_resume')";
             if ($con->query($sql) === TRUE) {
                 $_SESSION['status-add'] = "Records Successfully Submitted.";
                 $_SESSION['resume_path'] = $target_file_resume;
@@ -101,7 +102,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
                                 
                                 <div id="teachingInputDiv" class="hidden">
                                     <label for="teachingInput">Teaching Positions:</label>
-                                    <select id="teachingInput" name="teachingInput">
+                                    <select id="teachingInput" name="employee_type">
                                         <option value="">-- Select Subject-Specific Teaching --</option>
                                         <option value="Mandarin">Mandarin</option>
                                         <option value="Communications">Communications</option>
@@ -115,7 +116,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
                                 
                                 <div id="nonTeachingInputDiv" class="hidden">
                                     <label for="nonTeachingInput">Non-teaching Positions:</label>
-                                    <select id="nonTeachingInput" name="nonTeachingInput">
+                                    <select id="nonTeachingInput" name="employee_type">
                                         <option value="">-- Select Non-Teaching Positions --</option>
                                         <option value="Administration">Administration</option>
                                         <option value="Counseling and Support">Counseling and Support</option>

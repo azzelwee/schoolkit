@@ -55,45 +55,49 @@ if(isset($_POST['submit'])){
         <div class="add-form">
             <form action="" method="post" enctype="multipart/form-data" class="add-employee-form">
                 <div id="section1">
-                    <h2>Edit Applicant</h2>
-                    <p></br>You are editing applicant: <?php echo $row['first_name'] . ' ' .
+                    <h2>Update Applicant Status</h2>
+                    <p></br>You are updating applicant: <?php echo $row['first_name'] . ' ' .
                      $row['middle_name'] . ' ' . $row['last_name']; ?></br>&nbsp</p>
-                    <div class="lineup1 form-page">
-                        <div class="column">
-                        <div class="form-group" style="width: 900px;">
-                                <label for="position">Position Type:</label>
-                                <select id="position" name="position_type" onchange="handlePositionChange()">
-                                    <option value=""></option>
-                                    <option value="Teaching"<?php if ($row['position_type'] == 'Teaching') echo ' selected'; ?>>Teaching</option>
-                                    <option value="Non-Teaching"<?php if ($row['position_type'] == 'Non-Teaching') echo ' selected'; ?>>Non-Teaching</option>
-                                </select>
+                                <div class="lineup1 form-page">
+                                    <div class="column">
+                                    <div class="form-group" style="width: 900px;">
+                                    <label for="position">Applying Position Type:</label>
+                                    <select id="position" name="position_type" onchange="handlePositionChange()" style="pointer-events: none; background-color: #f0f0f0;">
+                                        <option value=""></option>
+                                        <option value="Teaching"<?php echo ($row['position_type'] == 'Teaching') ? ' selected' : ''; ?>>Teaching</option>
+                                        <option value="Non-Teaching"<?php echo ($row['position_type'] == 'Non-Teaching') ? ' selected' : ''; ?>>Non-Teaching</option>
+                                    </select>
 
-                                
-                                <div id="teachingInputDiv" class="hidden">
-                                    <label for="teachingInput">Teaching Positions:</label>
-                                    <select id="teachingInput" name="teachingInput">
+
+
+                                    
+                                    <div id="teachingInputDiv" class="<?php echo ($row['position_type'] == 'Teaching') ? '' : 'hidden'; ?>">
+                                    <label for="teachingInput">Applying Teaching Position:</label>
+                                    <select id="teachingInput" name="teachingInput" style="pointer-events: none; background-color: #f0f0f0;">
                                         <option value="">-- Select Subject-Specific Teaching --</option>
-                                        <option value="Mandarin">Mandarin</option>
-                                        <option value="Communications">Communications</option>
-                                        <option value="Accounting">Accounting</option>
-                                        <option value="Physical Education">Physical Education</option>
-                                        <option value="Accounting Research Methods">Accounting Research Methods</option>
-                                        <option value="Math, Science & Technology">Math, Science & Technology</option>
-                                        <option value="Computer Science">Computer Science</option>
+                                        <option value="Mandarin" <?php if ($row['employee_type'] == 'Mandarin') echo 'selected'; ?>>Mandarin</option>
+                                        <option value="Communications" <?php if ($row['employee_type'] == 'Communications') echo 'selected'; ?>>Communications</option>
+                                        <option value="Accounting" <?php if ($row['employee_type'] == 'Accounting') echo 'selected'; ?>>Accounting</option>
+                                        <option value="Physical Education" <?php if ($row['employee_type'] == 'Physical Education') echo 'selected'; ?>>Physical Education</option>
+                                        <option value="Accounting Research Methods" <?php if ($row['employee_type'] == 'Accounting Research Methods') echo 'selected'; ?>>Accounting Research Methods</option>
+                                        <option value="Math, Science & Technology" <?php if ($row['employee_type'] == 'Math, Science & Technology') echo 'selected'; ?>>Math, Science & Technology</option>
+                                        <option value="Computer Science" <?php if ($row['employee_type'] == 'Computer Science') echo 'selected'; ?>>Computer Science</option>
                                     </select>
+
                                 </div>
-                                
-                                <div id="nonTeachingInputDiv" class="hidden">
-                                    <label for="nonTeachingInput">Non-teaching Positions:</label>
-                                    <select id="nonTeachingInput" name="nonTeachingInput">
+
+                                <div id="nonTeachingInputDiv" class="<?php echo ($row['position_type'] == 'Non-Teaching') ? '' : 'hidden'; ?>">
+                                    <label for="nonTeachingInput">Applying Non-teaching Position:</label>
+                                    <select id="nonTeachingInput" name="nonTeachingInput" style="pointer-events: none; background-color: #f0f0f0;">
                                         <option value="">-- Select Non-Teaching Positions --</option>
-                                        <option value="Administration">Administration</option>
-                                        <option value="Counseling and Support">Counseling and Support</option>
-                                        <option value="Library and Media">Library and Media</option>
-                                        <option value="Maintenance and Operations">Maintenance and Operations</option>
-                                        <option value="Office and Clerical">Office and Clerical</option>
-                                        <option value="Health and Wellness">Health and Wellness</option>
+                                        <option value="Administration" <?php if ($row['employee_type'] == 'Administration') echo 'selected'; ?>>Administration</option>
+                                        <option value="Counseling and Support" <?php if ($row['employee_type'] == 'Counseling and Support') echo 'selected'; ?>>Counseling and Support</option>
+                                        <option value="Library and Media" <?php if ($row['employee_type'] == 'Library and Media') echo 'selected'; ?>>Library and Media</option>
+                                        <option value="Maintenance and Operations" <?php if ($row['employee_type'] == 'Maintenance and Operations') echo 'selected'; ?>>Maintenance and Operations</option>
+                                        <option value="Office and Clerical" <?php if ($row['employee_type'] == 'Office and Clerical') echo 'selected'; ?>>Office and Clerical</option>
+                                        <option value="Health and Wellness" <?php if ($row['employee_type'] == 'Health and Wellness') echo 'selected'; ?>>Health and Wellness</option>
                                     </select>
+
                                 </div>
 
                                 <label for="">Select Status</label>
@@ -101,7 +105,6 @@ if(isset($_POST['submit'])){
                                         <option value="Pending">Pending</option>
                                         <option value="Pooling List">Pooling List</option>
                                         <option value="Qualified">Qualified</option>
-                                        <option value="Hired">Hired</option>
                                     </select>
 
                             </div>
@@ -110,7 +113,7 @@ if(isset($_POST['submit'])){
                 
                 </div>
                 
-                <button type="button" class="thebutton" onclick="nextSection('section1', 'section2')">Next</button>
+                <input type="submit" class="thebutton" value="Submit" name="submit">
                 
                 <div id="section2" style="display: none;">
                 <h2>Basic Information</h2>

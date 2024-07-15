@@ -69,7 +69,7 @@ $applicant_rows = $result->num_rows;
                         echo $applicant_rows;
                         ?>
                         <div class="ssp-text">
-                        Self Service Portal</br>
+                        Self-Service Portal</br>
                         for Applicant
                         </div>
                     </div>

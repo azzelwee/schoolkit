@@ -47,6 +47,7 @@ $row = $applicantList->fetch_assoc();
     <div class="box-container">
         <h2>Applicant Processing</h2>
         <div class="gauge-line"></div>
+        <p style="font-weight:bold;">List of New Applicants</p>
         <?php
             if(isset($_SESSION['status-add'])){
             ?>
@@ -84,43 +85,48 @@ $row = $applicantList->fetch_assoc();
         <thead>
         <tr>
             <th></th>
-            <th>Full Name</th>
-            <th>Position Type</th>
-            <th>Status</th>
+            <th>Applicant Name</th>
+            <th>Applying Position</th>
+            <th>Date Applied</th> <!-- New header for Date Added -->
+            <th>Applicant Status</th>
             <th>Action</th>
             
         </tr>
     </thead>
     <tbody>
     <?php 
-    if ($applicantList->num_rows > 0) { // Check if there are rows in $employee
-        do {
-    ?>
-            <tr>
-                <td><a href="viewApplicant.php?ID=<?php echo $row['ID'];?>">
-                <button style="font-size: 12px; padding: 5px 10px; background-color: #d52033; color: white; border: none; border-radius: 4px; cursor: pointer;">Download CV</button>
-                </a></td>
-
-                <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
-                <td><?php echo $row['position_type'];?></td>
-                <td style="color: <?php
-                    $status = $row['status'];
-                    if ($status == 'Pending') {
-                        echo '';
-                    } elseif ($status == 'Pooling List') {
-                        echo '';
-                    } elseif ($status == 'Qualified') {
-                        echo '';
-                    } elseif ($status == 'Hired') {
-                        echo '';
-                    }
-                    ?>;"><?php echo $status; ?></td>
-                <td>
+if ($applicantList->num_rows > 0) { // Check if there are rows in $applicantList
+    do {
+        $currentDate = date('M d, Y'); // Get the current date in the desired format
+?>
+        <tr>
+            <td style="width: 120px;">
+                <a href="view_pdf.php?ID=<?php echo $row['ID']; ?>&action=preview" target="_blank">
+                    <button style="font-size: 12px; padding: 5px 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                        View CV
+                    </button>
+                </a>
+            </td>
+            <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
+            <td><?php echo $row['position_type'] . ' - ' . $row['employee_type']; ?></td>
+            <td><?php echo $currentDate; ?></td>
+            <td style="color: <?php
+                $status = $row['status'];
+                if ($status == 'Pending') {
+                    echo '';
+                } elseif ($status == 'Pooling List') {
+                    echo '';
+                } elseif ($status == 'Qualified') {
+                    echo '';
+                } elseif ($status == 'Hired') {
+                    echo '';
+                }
+                ?>;"><?php echo $status; ?></td>
+            <td>
                 <!-- Edit Icon -->
                 <a href="editApplicant.php?ID=<?php echo $row['ID']; ?>" class="icon-link">
                     <img src="img/edit.png" alt="Edit">
                 </a>
-
                 <!-- Delete Button -->
                 <form action="deleteApplicant.php" method="POST" class="icon-link" onsubmit="return confirmDeletion()">
                     <input type="hidden" name="ID" value="<?php echo $row['ID']; ?>">
@@ -128,17 +134,18 @@ $row = $applicantList->fetch_assoc();
                         <img src="img/delete.png" alt="Delete">
                     </button>
                 </form>
-                </td>
-            </tr>
-    <?php 
-        } while($row = $applicantList->fetch_assoc()); // Fetch next row
-    } else {
-        // Handle the case where there are no rows in $employee
-        echo "<tr>
-            <td colspan='4'>No applicants found</td>
-            </tr>";
-    }
-    ?>
+            </td>
+        </tr>
+<?php 
+    } while($row = $applicantList->fetch_assoc()); // Fetch next row
+} else {
+    // Handle the case where there are no rows in $applicantList
+    echo "<tr>
+        <td colspan='6'>No applicants found</td> <!-- Updated colspan -->
+        </tr>";
+}
+?>
+
     </tbody>
 </table>
 

@@ -170,6 +170,14 @@ table {
     width: 75%;
 }
 
+#table3 {
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 95%;
+}
+
 th{
     background-color: #757678;
     text-align: left;
@@ -319,7 +327,7 @@ tr:nth-child(even) {
 }
 
 .button-container2 a {
-    background: #d52033;
+    background: #007bff;
     border-radius: 6px;
     padding: 8px 10px 8px 10px;
     color: white;
@@ -328,20 +336,20 @@ tr:nth-child(even) {
 }
 
 .button-container2 a:hover {
-    background: #8e1522;
+    background: #0064ce;
 }
 
 .button-container a {
-    background: #d52033;
+    background: #007bff;
     border-radius: 6px;
     padding: 8px 10px 8px 10px;
     color: white;
     text-decoration: none;
-    letter-spacing: 2px;
+    letter-spacing: 2px;    
 }
 
 .button-container a:hover {
-    background: #8e1522;
+    background: #0064ce;
 }
 
 /* asd */
@@ -860,10 +868,11 @@ li.has-submenu {
 
     .report1 {
         top: 175px;
-            left: 70px;
+            left: 60px;
+            letter-spacing: 2px;
             position: absolute;
             color: white;
-            font-size: 30px;
+            font-size: 20px;
             z-index: 1;
             /* Ensure text is on top of the image */
     
@@ -871,10 +880,11 @@ li.has-submenu {
     
     .report2{
             top: 175px;
-                left: 430px;
+            letter-spacing: 2px;
+                left: 420px;
                 position: absolute;
                 color: white;
-                font-size: 30px;
+                font-size: 20px;
                 z-index: 1;
                 /* Ensure text is on top of the image */
         
@@ -1688,3 +1698,86 @@ input[type="password"] {
     cursor: pointer;
     user-select: none;
 }
+
+.applicant-buttons {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.status-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Remove left margin for the first button */
+.status-button:first-child {
+    margin-left: 0; /* No margin for the first button */
+}
+
+.status-button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+}
+
+#attendanceReportsBtn{
+    margin-top: 10px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+#attendanceReportsBtn:hover{
+    background-color: #0063cd; /* Bootstrap primary color */
+}
+
+#leaveReportsBtn{
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+#leaveReportsBtn:hover{
+    background-color: #0063cd; /* Bootstrap primary color */
+}
+
+#attendanceHeader,
+#leaveHeader{
+    margin-top: 10px;
+}
+
+.schedule-interview-button{
+    font-size: 12px; 
+    padding: 5px 10px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+
+.preview-button{
+    font-size: 12px; 
+    padding: 5px 10px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+

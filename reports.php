@@ -54,17 +54,17 @@ $row = $employee->fetch_assoc();
         <h2>Reports</h2>
         <div class="gauge-line"></div>
         <div class="container-list">  
-            <a href="listEmployee.php" class="container-container1">
+            <a href="listEmployee2.php" class="container-container1">
                 <img src="img/NBSreport1.png">
                     <div class="report1">
-                        Employee List
+                        Employee Reports
                     </div>
             </a>
 
-            <a href="employeeOnboarding.php" class="container-container2">
+            <a href="employeeOnboarding2.php" class="container-container2">
                 <img src="img/NBSreport2.png">
                 <div class="report2">
-                    Applicant List
+                    Applicant Reports
                 </div>
                     
             </a>
