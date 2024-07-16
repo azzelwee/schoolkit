@@ -51,9 +51,10 @@ if(isset($_POST['submit'])){
 <div class="right-container">
     <div class="box-container">
         <form id="add-employee-form" method="post" class="add-employee-form" onsubmit="return validateForm()">
-            <div id="section1">
-                <h2>Add Users</h2>
-                <div class="gauge-line"></div>
+            
+        <h2>Add Users</h2>
+        <div class="gauge-line"></div>
+        <div id="section1">
                 <div class="form-page">
                     <div class="column">
                         <div class="form-group small">

@@ -419,10 +419,10 @@ if (isset($_POST['submit'])) {
                                     </div>
 
                                     <div class="form-group small">
-                                        <label for="employee-citizenship">Telephone Number:</label>
+                                        <label for="employee-citizenship">Tel. Number:</label>
                                         <input type="text" id="employee-citizenship" name="telephone_number">
                                     </div>
-                                    <div class="form-group ">
+                                    <div class="form-group  ">
                                         <label for="employee-citizenship">Address:<span class="required">*</span></label>
                                         <input type="text" id="employee-citizenship" name="address">
                                     </div>
@@ -456,7 +456,7 @@ if (isset($_POST['submit'])) {
                     <h2>Education</h2>
                     <div class="column">
                         <div class="form-group small">
-                            <label for="employee-civil-status">Highest Education Attainment:<span class="required">*</span></label>
+                            <label for="employee-civil-status">Education Attainment:<span class="required">*</span></label>
                             <select id="educ_attain" name="educ_attain">
                                 <option value="">Select</option>
                                 <option value="Elementary">Elementary</option>
@@ -524,7 +524,7 @@ if (isset($_POST['submit'])) {
 
                                 <div class="form-group small">
                                     <label for="employee-citizenship">Skills Acquired:</label>
-                                    <input type="text" id="wide" name="skills_aquired">
+                                    <input type="text" name="skills_aquired">
                                 </div>
                             </div>
                         </div>
@@ -546,7 +546,7 @@ if (isset($_POST['submit'])) {
                                         <input type="text" id="company_name" name="company_name">
                                     </div>
                                     <div class="form-group ">
-                                        <label for="responsibilities">Responsibilities and Achievements:</label>
+                                        <label for="responsibilities">Responsibilities:</label>
                                         <input type="text" id="responsi" name="responsi">
                                     </div>
                                     <div class="form-group small">
@@ -569,7 +569,7 @@ if (isset($_POST['submit'])) {
                     <div class="column">
 
                             <div class="form-group small">
-                                <label for="photos">Picture 2x2:</label>
+                                <label for="photos">Picture 2x2:<span class="required">*</span></label>
                                 <input type="file" name="fileToUpload" id="fileToUpload">
                             </div>
 
@@ -595,7 +595,7 @@ if (isset($_POST['submit'])) {
                             </div>
 
                             <div class="form-group" style="width: 900px;">
-                                <label for="position">Employee Type:</label>
+                                <label for="position">Employee Type:<span class="required">*</span></label>
                                 <select id="position" name="employee_type" onchange="handlePositionChange()">
                                     <option value=""></option>
                                     <option value="Teaching">Teaching</option>
@@ -603,7 +603,7 @@ if (isset($_POST['submit'])) {
                                 </select>
                                 
                                 <div id="teachingInputDiv" class="hidden">
-                                    <label for="teachingInput">Teaching Section:</label>
+                                    <label for="teachingInput">Teaching Section:<span class="required">*</span></label>
                                     <select id="teachingInput" name="employee_section">
                                         <option value="">-- Select Subject-Specific Teaching --</option>
                                         <option value="Mandarin">Mandarin</option>
@@ -617,7 +617,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 
                                 <div id="nonTeachingInputDiv" class="hidden">
-                                    <label for="nonTeachingInput">Non-teaching Section:</label>
+                                    <label for="nonTeachingInput">Non-teaching Section:<span class="required">*</span></label>
                                     <select id="nonTeachingInput" name="employee_section">
                                         <option value="">-- Select Non-Teaching Positions --</option>
                                         <option value="Administration">Administration</option>

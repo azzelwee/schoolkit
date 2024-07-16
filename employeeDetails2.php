@@ -188,8 +188,8 @@ $row = $employee->fetch_assoc();
                         <input type="number" id="employee-weight" name="weight" value="<?php echo $row['weight'];?>" class="custom-disabled" disabled>
                     </div>
 
-                    <div class="form-group-below">
-                    <div class="add-employee-form">
+                <div class="form-group-below">
+                <div class="add-employee-form">
                     <h2>Contact Information</h2>
                     <div class="column">
                         <div class="form-group small">
@@ -203,7 +203,7 @@ $row = $employee->fetch_assoc();
                         </div>
 
                         <div class="form-group small">
-                            <label for="employee-citizenship">Telephone Number:</label>
+                            <label for="employee-citizenship">Tel.Number:</label>
                             <input type="text" id="" name="telephone_number" value="<?php echo $row['telephone_number'];?>" class="custom-disabled" disabled>
                         </div>
                         <div class="form-group ">
@@ -229,88 +229,80 @@ $row = $employee->fetch_assoc();
                         <div class="form-group small">
                              &nbsp
                         </div>
-                        </div>
-                        </div>
-                    </div>
 
-                    
-                </div>
-            </div>
 
                 </section>
                 <section id="education">
-                <div class="add-employee-form">
+                <div class="add-employee-form2">
                     <h2>Education Attainment</h2>
-                    <div class="column">
+                    <div class="column2">
 
-                    <div class="form-group">
-                        <label for="employee-civil-status">Highest Education Attainment:</label>
+                    <div class="form-group2">
+                        <label for="employee-civil-status">Education Attainment:</label>
                         <select id="educ_attain" name="educ_attain" class="custom-disabled" disabled>
                             <option value="educ_attain"><?php echo $row['educ_attain']; ?></option>
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group2">
                         <label for="employee-citizenship">School Name:</label>
                         <input type="text" id="school_name" name="school_name" value="<?php echo $row['school_name'];?>" class="custom-disabled" disabled>
                     </div>
-                    <div class="form-group small">
+                    <div class="form-group2 small">
                         <label for="employee-citizenship">Course/Program:</label>
                         <input type="text" id="course" name="course" value="<?php echo $row['course'];?>" class="custom-disabled" disabled>
                     </div>
 
-                    <div class="form-group small">
+                    <div class="form-group2 small">
                         <label for="employee-birthdate">Year Graduated:</label>
                         <input type="date" id="year_grad" name="year_grad" value="<?php echo $row['year_grad'];?>" class="custom-disabled" disabled>
                     </div>
 
-                    <div class="form-group small">
+                    <div class="form-group2 small">
                         <label for="employee-birthdate">Honors/Awards Received:</label>
                         <input type="text" id="honors" name="honors" value="<?php echo $row['honors'];?>" class="custom-disabled" disabled>
                     </div>
-
-                    <div class="form-group-below">
+                
+                    <div class="form-group2-below">
                         <h2>Training</h2>
 
-                    <div class="column">
-                        <div class="form-group small">
+                    <div class="column2">
+                        <div class="form-group2 small">
                             <label for="employee-citizenship">Training Program:</label>
                             <input type="text" id="training_prog" name="training_prog" value="<?php echo $row['training_prog'];?>" class="custom-disabled" disabled>
                         </div>
                         
-                        <div class="form-group small">
+                        <div class="form-group2 small">
                             <label for="employee-citizenship">Institution/Organization:</label>
                             <input type="text" id="institution" name="institution" value="<?php echo $row['institution'];?>" class="custom-disabled" disabled>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group2">
                             <label for="employee-citizenship">Location:</label>
                             <input type="text" id="loc" name="loc" value="<?php echo $row['loc'];?>" class="custom-disabled" disabled>
                         </div>
-                        <div class="form-group small">
+                        <div class="form-group2 small">
                             <label for="employee-citizenship">Date Started:</label>
                             <input type="date" id="data_start" name="data_start" value="<?php echo $row['date_start'];?>" class="custom-disabled" disabled>
                         </div>
 
-                        <div class="form-group small">
+                        <div class="form-group2 small">
                             <label for="employee-citizenship">Date Completed:</label>
                             <input type="date" id="data_complete" name="data_complete" value="<?php echo $row['date_complete'];?>" class="custom-disabled" disabled>
                         </div>
 
-                        <div class="form-group small">
+                        <div class="form-group2 small">
                             <label for="employee-civil-status">Certificate Received:</label>
                             <select id="cert" name="cert" class="custom-disabled" disabled>
                             <option value="<?php echo $row['cert']; ?>"><?php echo $row['cert']; ?></option>
                             </select>
                         </div>
 
-                        <div class="form-group small">
+                        <div class="form-group2 small">
                             <label for="employee-citizenship">Skills Acquired:</label>
-                            <input type="text" id="wide" name="skills_aquired" value="<?php echo $row['skills_aquired'];?>" class="custom-disabled" disabled>
+                            <input type="text" name="skills_aquired" value="<?php echo $row['skills_aquired'];?>" class="custom-disabled" disabled>
                         </div>
-                    </div>
-                    </div>
-                    </div>
+
 
 
                 </section>
@@ -318,91 +310,94 @@ $row = $employee->fetch_assoc();
                 <div class="add-employee-form">
                     <h2>Work Experience</h2>
                         <div class="column">
-                            <div class="form-group small">
-                                <label for="previous-job-title">Previous Job Title:</label>
+                            <div class="form-group ">
+                                <label for="previous-job-title">Previous Job:</label>
                                 <input type="text" id="prev_job" name="prev_job" value="<?php echo $row['prev_job'];?>" class="custom-disabled" disabled>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group ">
                                 <label for="company-name">Company Name:</label>
                                 <input type="text" id="company_name" name="company_name" value="<?php echo $row['company_name'];?>" class="custom-disabled" disabled>
                             </div>
                             <div class="form-group ">
-                                <label for="responsibilities">Responsibilities and Achievements:</label>
+                                <label for="responsibilities">Responsibilities:</label>
                                 <input type="text" id="responsi" name="responsi" value="<?php echo $row['responsi'];?>" class="custom-disabled" disabled>
                             </div>
                             <div class="form-group small">
                                 <label for="employment-date">Date of Employment:</label>
                                 <input type="date" id="date_employment" name="date_employment" value="<?php echo $row['date_employment'];?>" class="custom-disabled" disabled>
                             </div>
-                            <div class="form-group small">
+                            <div class="form-group">
                                 <label for="references">References (optional):</label>
                                 <input type="text" id="refer" name="refer" value="<?php echo $row['refer'];?>" class="custom-disabled" disabled>
                             </div>
-                            </div>
+
                 </section>
 
                 <section id="employee-information">
-                <div class="add-employee-form">
+                <div class="add-employee-form2">
                     <h2>Employee Information</h2>
-                        <div class="column">
+                        <div class="column2">
 
-                        <div class="form-group small">
+                        <div class="form-group2 ">
                             <label for="">Employee ID:</label>
                             <input type="text" name="employee_id" id="employee_id" value="<?php echo $row['employee_id'];?>" class="custom-disabled" disabled>
                         </div>
       
 
-            <div class="form-group small">
-                <label>Employment Status</label>
-                <select name="employee_status" id="employee_status" class="custom-disabled" disabled>
-                    <option value="employee_status"><?php echo $row['employee_status']; ?></option>
-                </select>
-            </div>
+                        <div class="form-group2 small">
+                            <label>Employment Status</label>
+                            <select name="employee_status" id="employee_status" class="custom-disabled" disabled>
+                                <option value="employee_status"><?php echo $row['employee_status']; ?></option>
+                            </select>
+                        </div>
 
-            <div class="form-group small">
-                <label>Date Hired</label>
-                <input type="date" name="date_hired" value="<?php echo $row['date_hired'];?>" class="custom-disabled" disabled>
-            </div>
+                        <div class="form-group2 small">
+                            <label>Date Hired</label>
+                            <input type="date" name="date_hired" value="<?php echo $row['date_hired'];?>" class="custom-disabled" disabled>
+                        </div>
 
-                        <div class="form-group" style="width: 900px;">
+                        <div class="form-group2">
                                 <label for="position">Employee Type:</label>
                                 <select id="position" name="employee_type" class="custom-disabled" onchange="handlePositionChange()" disabled>
                                 <option value="<?php echo $row['employee_type']; ?>"><?php echo $row['employee_type']; ?></option>
                                 </select>
                         </div>
 
-                        <div class="form-group" style="width: 900px;">
+                        <div class="form-group2">
                                 <label for="teachingInput">Employee Section:</label>
                                 <select id="teachingInput" name="employee_section" class="custom-disabled" disabled>
                                 <option value="<?php echo $row['employee_section']; ?>"><?php echo $row['employee_section']; ?></option>
                                 </select>
                         </div>
-                </div>
 
 
-        </div>
+
      </section>
 
                 <section id="credentials">
-                <div class="add-employee-form">
-                    <h2>Credentials</h2>
-                    <div class="column">
-                    <div class="form-group">
+                <h2>Credentials</h2>
+                <div class="add-employee-form2">
+                    
+
+                    <div class="column2">
+                                <div class="form-group2">
                                     <label for="resume">Cover Letter:</label>
                                     <input type="text" id="wide" name="cover" value="" class="custom-disabled" disabled>
                                 </div>
+                </div>
+
                                 
-                                <div class="form-group small">
+                                <div class="form-group2 small" >
                                     <label for="resume">Resume/CV:</label>
-                                    <a href="path/to/your/resume.pdf" download id="resume" name="resume">Download Resume/CV</a>
+                                    <a href="path/to/your/resume.pdf" download id="resume" name="resume" style="font-size: 12px;">Download Resume/CV</a>
                                 </div>
-                                <div class="form-group small">
+                                <div class="form-group2 small">
                                     <label for="work-samples">Work Samples/Portfolio:</label>
-                                    <a href="path/to/your/work-samples.zip" download id="work-samples" name="work-samples">Download Work Samples/Portfolio</a>
+                                    <a href="path/to/your/work-samples.zip" download id="work-samples" name="work-samples" style="font-size: 12px;">Download Work Samples/Portfolio</a>
                                 </div>
-                                <div class="form-group small">
+                                <div class="form-group2 small">
                                     <label for="certificates">Certificates:</label>
-                                    <a href="path/to/your/certificates.zip" download id="certificates" name="certificates">Download Certificates</a>
+                                    <a href="path/to/your/certificates.zip" download id="certificates" name="certificates" style="font-size: 12px;">Download Certificates</a>
                                 </div>
 
                             </div>

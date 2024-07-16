@@ -81,7 +81,7 @@ $row = $applicantList->fetch_assoc();
             unset($_SESSION['status-edit']);
         }?>
 
-        <table id="table2">
+        <table id="table3">
         <thead>
         <tr>
             <th></th>
@@ -100,7 +100,7 @@ if ($applicantList->num_rows > 0) { // Check if there are rows in $applicantList
         $currentDate = date('M d, Y'); // Get the current date in the desired format
 ?>
         <tr>
-            <td style="width: 120px;">
+            <td style="width: 120px; text-align: center;">
                 <a href="view_pdf.php?ID=<?php echo $row['ID']; ?>&action=preview" target="_blank">
                     <button style="font-size: 12px; padding: 5px 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
                         View CV
@@ -109,8 +109,8 @@ if ($applicantList->num_rows > 0) { // Check if there are rows in $applicantList
             </td>
             <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
             <td><?php echo $row['position_type'] . ' - ' . $row['employee_type']; ?></td>
-            <td><?php echo $currentDate; ?></td>
-            <td style="color: <?php
+            <td style="text-align: center;"><?php echo $currentDate; ?></td>
+            <td style="text-align: center; color: <?php
                 $status = $row['status'];
                 if ($status == 'Pending') {
                     echo '';
@@ -122,7 +122,7 @@ if ($applicantList->num_rows > 0) { // Check if there are rows in $applicantList
                     echo '';
                 }
                 ?>;"><?php echo $status; ?></td>
-            <td>
+            <td style="width: 120px; text-align: center;">
                 <!-- Edit Icon -->
                 <a href="editApplicant.php?ID=<?php echo $row['ID']; ?>" class="icon-link">
                     <img src="img/edit.png" alt="Edit">

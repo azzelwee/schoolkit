@@ -28,7 +28,7 @@ $is_admin = (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator
     <div class="box-container">
     <h2>Employee Renewal</h2>
     <div class="gauge-line"></div>
-    <form action="your_action_page.php" method="post" class="employee-Renew">
+    <form action="listEmployee.php" method="post" class="employee-Renew">
         <label for="employee_name" class="info-text">Select an employee:</label>
         <?php
         // Assuming $con is your mysqli connection

@@ -107,7 +107,7 @@ $row = $employee->fetch_assoc();
 
 
     
-        <table>
+        <table id="table4">
     <thead>
         <tr>
         <th></th>

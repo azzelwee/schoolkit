@@ -52,7 +52,7 @@ foreach ($statuses as $status) {
             <?php foreach ($statuses as $status): ?>
                 <div id="<?php echo $status; ?>" class="applicant-table" style="display: <?php echo $status === 'Pending' ? 'block' : 'none'; ?>;">
                     <h3><?php echo $status; ?> Applicants</h3> <!-- Status Header -->
-                    <table id="table2">
+                    <table id="table3">
     <thead>
         <tr>
             <th></th>
@@ -80,7 +80,7 @@ foreach ($statuses as $status) {
         if ($paginatedApplicants->num_rows > 0) {
             while ($applicant = $paginatedApplicants->fetch_assoc()) {
                 echo "<tr>
-                    <td style='width: 180px; text-align: center; vertical-align: middle;'>";
+                    <td style='width: 100px; text-align: center; vertical-align: middle;'>";
                 if ($status === 'Qualified') {
                     echo "<form action='scheduleInterview.php' method='post'>
                             <input type='hidden' name='applicant_id' value='{$applicant['ID']}'>
@@ -91,15 +91,19 @@ foreach ($statuses as $status) {
                             <button class='preview-button'>View CV</button>
                         </a>
                     </td>
-                    <td>{$applicant['first_name']} {$applicant['middle_name']} {$applicant['last_name']}</td>
-                    <td>{$applicant['position_type']}</td>
-                    <td style='color: black;'>{$applicant['status']}</td>
-                    <td>{$currentDate}</td>";
+                    <td style='text-align: center;'>{$applicant['first_name']} {$applicant['middle_name']} {$applicant['last_name']}</td>
+                    <td style='text-align: center;'>{$applicant['position_type']}</td>
+                    <td style='text-align: center; color: black;'>{$applicant['status']}</td>
+                    <td style='text-align: center;'>{$currentDate}</td>";
         
-                if ($status === 'Qualified') {
-                    echo "<td>{$applicant['interview_date']}</td>
-                          <td>{$applicant['interview_time']}</td>";
-                }
+                    if ($status === 'Qualified') {
+                        $interviewDate = new DateTime($applicant['interview_date']);
+                        $interviewTime = new DateTime($applicant['interview_time']);
+                        
+                        echo "<td style='text-align: center;'>" . $interviewDate->format('M d, Y') . "</td>
+                              <td style='text-align: center;'>" . $interviewTime->format('h:i A') . "</td>";
+                    }
+                    
         
                 echo "</tr>";
             }

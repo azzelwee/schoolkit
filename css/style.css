@@ -92,7 +92,7 @@
 }
 
 .required {
-    font-size: 20px;
+
     color: red;
 }
 
@@ -156,33 +156,133 @@ h1 {
 
 table {
     border-radius: 8px;
-    margin-top: 50px;
+    margin-top: 50px; /* Initial value */
     border: 1px solid black;
     border-collapse: collapse;
-    width: 75%;
+    width: 75%; /* Initial value */
 }
 
 #table2 {
     border-radius: 8px;
-    margin-top: 10px;
+    margin-top: 10px; /* Initial value */
     border: 1px solid black;
     border-collapse: collapse;
-    width: 75%;
+    width: 75%; /* Initial value */
 }
 
 #table3 {
     border-radius: 8px;
-    margin-top: 10px;
+    margin-top: 10px; /* Initial value */
     border: 1px solid black;
     border-collapse: collapse;
-    width: 95%;
+    width: 95%; /* Initial value */
 }
+
+#table4 {
+    border-radius: 8px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 95%; /* Initial value */
+}
+
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    table {
+        font-size: 15px;
+        width: 75%; /* Reduced by 5% */
+    }
+
+    #table2 {
+        font-size: 15px;
+        width: 75%; /* Reduced by 5% */
+    }
+
+    #table3 {
+
+        font-size: 15px;
+        width: 95%; /* Reduced by 5% */
+    }
+
+    #table4 {
+
+        font-size: 15px;
+        width: 95%; /* Reduced by 5% */
+    }
+}
+
+/* For screens with a width of 1024px or less */
+@media screen and (max-width: 1024px) {
+    table {
+        margin-top: 40px; /* Reduced by 5px */
+        width: 65%; /* Reduced by 5% */
+    }
+
+    #table2 {
+        margin-top: 0px; /* Reduced by 5px */
+        width: 65%; /* Reduced by 5% */
+    }
+
+    #table3 {
+        margin-top: 0px; /* Reduced by 5px */
+        width: 85%; /* Reduced by 5% */
+    }
+
+    #table4 {
+        width: 85%; /* Reduced by 5% */
+    }
+}
+
+/* For screens with a width of 768px or less */
+@media screen and (max-width: 768px) {
+    table {
+        margin-top: 35px; /* Reduced by 5px */
+        width: 60%; /* Reduced by 5% */
+    }
+
+    #table2 {
+        margin-top: 0px; /* Reduced by 5px */
+        width: 60%; /* Reduced by 5% */
+    }
+
+    #table3 {
+        margin-top: 0px; /* Reduced by 5px */
+        width: 80%; /* Reduced by 5% */
+    }
+
+    #table4 {
+        width: 80%; /* Reduced by 5% */
+    }
+}
+
+/* For screens with a width of 480px or less */
+@media screen and (max-width: 480px) {
+    table {
+        margin-top: 30px; /* Reduced by 5px */
+        width: 55%; /* Reduced by 5% */
+    }
+
+    #table2 {
+        margin-top: 0px; /* Reduced by 5px */
+        width: 55%; /* Reduced by 5% */
+    }
+
+    #table3 {
+        margin-top: 0px; /* Reduced by 5px */
+        width: 75%; /* Reduced by 5% */
+    }
+
+    #table4 {
+        width: 75%; /* Reduced by 5% */
+    }
+}
+
 
 th{
     background-color: #757678;
     text-align: left;
     padding: 14px;
     color: white;
+    text-align: center;
     border: 1px solid #a9a9a9;
 }
 td {
@@ -753,6 +853,43 @@ li.has-submenu {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    .box-container {
+        width: 70%; /* Adjust width as needed */
+        height: 85%; /* Adjust height as needed */
+        padding: 20px; /* Adjust padding as needed */
+    }
+}
+
+/* For screens with a width of 1024px or less */
+@media screen and (max-width: 1024px) {
+    .box-container {
+        width: 90%; /* Adjust width as needed */
+        height: 80%; /* Adjust height as needed */
+        padding: 15px; /* Adjust padding as needed */
+    }
+}
+
+/* For screens with a width of 768px or less */
+@media screen and (max-width: 768px) {
+    .box-container {
+        width: 95%; /* Adjust width as needed */
+        height: 75%; /* Adjust height as needed */
+        padding: 10px; /* Adjust padding as needed */
+    }
+}
+
+/* For screens with a width of 480px or less */
+@media screen and (max-width: 480px) {
+    .box-container {
+        width: 100%; /* Adjust width as needed */
+        height: auto; /* Adjust height as needed */
+        padding: 5px; /* Adjust padding as needed */
+    }
+}
+
+
 .box-container h1{
     text-align: left;
 }
@@ -829,6 +966,199 @@ li.has-submenu {
     cursor: pointer;
 }
 
+
+.employed {
+    top: 135px;
+    left: 70px;
+    position: absolute;
+    color: white;
+    font-size: 90px;
+    z-index: 1;
+}
+
+.users {
+    top: 135px;
+    left: 430px;
+    position: absolute;
+    color: white;
+    font-size: 90px;
+    z-index: 1;
+}
+
+.report1 {
+    top: 175px;
+    left: 60px;
+    letter-spacing: 2px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.report2 {
+    top: 175px;
+    left: 420px;
+    letter-spacing: 2px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.ssp {
+    top: 135px;
+    left: 790px;
+    position: absolute;
+    color: white;
+    font-size: 90px;
+    z-index: 1;
+}
+
+.ssp-text, .employed-text, .user-text {
+    margin-left: 3px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    .employed {
+        top: 115px; /* Reduced by 20px */
+        left: 50px; /* Reduced by 20px */
+        font-size: 70px; /* Reduced by 20px */
+    }
+
+    .users {
+        top: 115px; /* Reduced by 20px */
+        left: 340px; /* Reduced by 20px */
+        font-size: 70px; /* Reduced by 20px */
+    }
+
+    .report1 {
+        top: 155px; /* Reduced by 20px */
+        left: 50px; /* Reduced by 20px */
+        font-size: 16px; /* Reduced by 4px */
+    }
+
+    .report2 {
+        top: 155px; /* Reduced by 20px */
+        left: 340px; /* Reduced by 20px */
+        font-size: 16px; /* Reduced by 4px */
+    }
+
+    .ssp {
+        top: 115px; /* Reduced by 20px */
+        left: 620px; /* Reduced by 20px */
+        font-size: 70px; /* Reduced by 20px */
+    }
+
+    .ssp-text, .employed-text, .user-text {
+        margin-left: 3px;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+}
+
+/* For screens with a width of 1024px or less */
+@media screen and (max-width: 1024px) {
+    .employed {
+        top: 95px; /* Reduced by 20px */
+        left: 30px; /* Reduced by 20px */
+        font-size: 50px; /* Reduced by 20px */
+    }
+
+    .users {
+        top: 95px; /* Reduced by 20px */
+        left: 390px; /* Reduced by 20px */
+        font-size: 50px; /* Reduced by 20px */
+    }
+
+    .report1 {
+        top: 135px; /* Reduced by 20px */
+        left: 20px; /* Reduced by 20px */
+        font-size: 12px; /* Reduced by 4px */
+    }
+
+    .report2 {
+        top: 135px; /* Reduced by 20px */
+        left: 380px; /* Reduced by 20px */
+        font-size: 12px; /* Reduced by 4px */
+    }
+
+    .ssp {
+        top: 95px; /* Reduced by 20px */
+        left: 750px; /* Reduced by 20px */
+        font-size: 50px; /* Reduced by 20px */
+    }
+}
+
+/* For screens with a width of 768px or less */
+@media screen and (max-width: 768px) {
+    .employed {
+        top: 75px; /* Reduced by 20px */
+        left: 10px; /* Reduced by 20px */
+        font-size: 30px; /* Reduced by 20px */
+    }
+
+    .users {
+        top: 75px; /* Reduced by 20px */
+        left: 370px; /* Reduced by 20px */
+        font-size: 30px; /* Reduced by 20px */
+    }
+
+    .report1 {
+        top: 115px; /* Reduced by 20px */
+        left: 0px; /* Reduced by 20px */
+        font-size: 8px; /* Reduced by 4px */
+    }
+
+    .report2 {
+        top: 115px; /* Reduced by 20px */
+        left: 360px; /* Reduced by 20px */
+        font-size: 8px; /* Reduced by 4px */
+    }
+
+    .ssp {
+        top: 75px; /* Reduced by 20px */
+        left: 730px; /* Reduced by 20px */
+        font-size: 30px; /* Reduced by 20px */
+    }
+}
+
+/* For screens with a width of 480px or less */
+@media screen and (max-width: 480px) {
+    .employed {
+        top: 55px; /* Reduced by 20px */
+        left: -10px; /* Reduced by 20px */
+        font-size: 10px; /* Reduced by 20px */
+    }
+
+    .users {
+        top: 55px; /* Reduced by 20px */
+        left: 350px; /* Reduced by 20px */
+        font-size: 10px; /* Reduced by 20px */
+    }
+
+    .report1 {
+        top: 95px; /* Reduced by 20px */
+        left: -20px; /* Reduced by 20px */
+        font-size: 4px; /* Reduced by 4px */
+    }
+
+    .report2 {
+        top: 95px; /* Reduced by 20px */
+        left: 340px; /* Reduced by 20px */
+        font-size: 4px; /* Reduced by 4px */
+    }
+
+    .ssp {
+        top: 55px; /* Reduced by 20px */
+        left: 710px; /* Reduced by 20px */
+        font-size: 10px; /* Reduced by 20px */
+    }
+}
+
+
 .container-container1 {
     text-decoration: none;
     border-radius: 8px;
@@ -837,96 +1167,73 @@ li.has-submenu {
     margin-right: 10px;
     cursor: pointer;
     display: flex;
-    /* Add flex display */
     justify-content: center;
-    /* Align content horizontally to center */
     align-items: center;
-    /* Align content vertically to center */
 }
-
-.employed {
-    top: 135px;
-        left: 70px;
-        position: absolute;
-        color: white;
-        font-size: 90px;
-        z-index: 1;
-        /* Ensure text is on top of the image */
-
-}
-
-.users{
-        top: 135px;
-            left: 430px;
-            position: absolute;
-            color: white;
-            font-size: 90px;
-            z-index: 1;
-            /* Ensure text is on top of the image */
-    
-    }
-
-    .report1 {
-        top: 175px;
-            left: 60px;
-            letter-spacing: 2px;
-            position: absolute;
-            color: white;
-            font-size: 20px;
-            z-index: 1;
-            /* Ensure text is on top of the image */
-    
-    }
-    
-    .report2{
-            top: 175px;
-            letter-spacing: 2px;
-                left: 420px;
-                position: absolute;
-                color: white;
-                font-size: 20px;
-                z-index: 1;
-                /* Ensure text is on top of the image */
-        
-        }
-
-    .ssp{
-        top: 135px;
-            left: 790px;
-            position: absolute;
-            color: white;
-            font-size: 90px;
-            z-index: 1;
-            /* Ensure text is on top of the image */
-    
-    }
-
-
-    .ssp-text {
-        margin-left: 3px;
-        font-size: 20px;
-        letter-spacing: 2px;
-    }
 
 .container-container1 img {
     display: block;
     border-radius: 8px;
-        height: 220px;
-        width: 350px;
+    height: 220px;
+    width: 350px;
 }
 
-.employed-text {
-    margin-left: 3px;
-    font-size: 20px;
-    letter-spacing: 2px;
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    .container-container1 {
+        height: 160px; /* Adjust height as needed */
+        width: 280px; /* Adjust width as needed */
+        margin-right: 8px; /* Adjust margin as needed */
+    }
+
+    .container-container1 img {
+        height: 160px; /* Adjust height as needed */
+        width: 280px; /* Adjust width as needed */
+    }
 }
 
+/* For screens with a width of 1024px or less */
+@media screen and (max-width: 1024px) {
+    .container-container1 {
+        height: 140px; /* Adjust height as needed */
+        width: 240px; /* Adjust width as needed */
+        margin-right: 6px; /* Adjust margin as needed */
+    }
 
-.user-text {
-    margin-left: 3px;
-    font-size: 20px;
-    letter-spacing: 2px;
+    .container-container1 img {
+        height: 140px; /* Adjust height as needed */
+        width: 240px; /* Adjust width as needed */
+    }
 }
+
+/* For screens with a width of 768px or less */
+@media screen and (max-width: 768px) {
+    .container-container1 {
+        height: 120px; /* Adjust height as needed */
+        width: 200px; /* Adjust width as needed */
+        margin-right: 4px; /* Adjust margin as needed */
+    }
+
+    .container-container1 img {
+        height: 120px; /* Adjust height as needed */
+        width: 200px; /* Adjust width as needed */
+    }
+}
+
+/* For screens with a width of 480px or less */
+@media screen and (max-width: 480px) {
+    .container-container1 {
+        height: 100px; /* Adjust height as needed */
+        width: 160px; /* Adjust width as needed */
+        margin-right: 2px; /* Adjust margin as needed */
+    }
+
+    .container-container1 img {
+        height: 100px; /* Adjust height as needed */
+        width: 160px; /* Adjust width as needed */
+    }
+}
+
 
 
 .container-container1:hover img {
@@ -935,6 +1242,8 @@ li.has-submenu {
 .container:hover {
     background-color: #f0f0f0;
 }
+
+
 .container-container2 {
     text-decoration: none;
     border-radius: 8px;
@@ -943,11 +1252,8 @@ li.has-submenu {
     margin-right: 10px;
     cursor: pointer;
     display: flex;
-    /* Add flex display */
     justify-content: center;
-    /* Align content horizontally to center */
     align-items: center;
-    /* Align content vertically to center */
 }
 
 .container-container2 img {
@@ -957,9 +1263,67 @@ li.has-submenu {
     width: 350px;
 }
 
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    .container-container2 {
+        height: 160px; /* Adjust height as needed */
+        width: 280px; /* Adjust width as needed */
+        margin-right: 8px; /* Adjust margin as needed */
+    }
+
+    .container-container2 img {
+        height: 160px; /* Adjust height as needed */
+        width: 280px; /* Adjust width as needed */
+    }
+}
+
+/* For screens with a width of 1024px or less */
+@media screen and (max-width: 1024px) {
+    .container-container2 {
+        height: 150px; /* Adjust height as needed */
+        width: 250px; /* Adjust width as needed */
+        margin-right: 6px; /* Adjust margin as needed */
+    }
+
+    .container-container2 img {
+        height: 150px; /* Adjust height as needed */
+        width: 250px; /* Adjust width as needed */
+    }
+}
+
+/* For screens with a width of 768px or less */
+@media screen and (max-width: 768px) {
+    .container-container2 {
+        height: 130px; /* Adjust height as needed */
+        width: 210px; /* Adjust width as needed */
+        margin-right: 4px; /* Adjust margin as needed */
+    }
+
+    .container-container2 img {
+        height: 130px; /* Adjust height as needed */
+        width: 210px; /* Adjust width as needed */
+    }
+}
+
+/* For screens with a width of 480px or less */
+@media screen and (max-width: 480px) {
+    .container-container2 {
+        height: 110px; /* Adjust height as needed */
+        width: 170px; /* Adjust width as needed */
+        margin-right: 2px; /* Adjust margin as needed */
+    }
+
+    .container-container2 img {
+        height: 110px; /* Adjust height as needed */
+        width: 170px; /* Adjust width as needed */
+    }
+}
+
+
 .container-container2:hover img {
     opacity: 0.9;
 }
+
 
 .add-navigation{
     display: flex;
@@ -979,39 +1343,6 @@ li.has-submenu {
 
 
 
-.column {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-.column p{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.column label{
-    font-size: 18px;
-}
-
-.column input{
-        margin-bottom: 8px;
-    font-size: 18px;
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    color: rgb(52, 52, 52);
-}
-.column select{
-    margin-bottom: 8px;
-    font-size: 18px;
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    color: rgb(52, 52, 52);
-}
 
 
 #photos {
@@ -1031,8 +1362,21 @@ li.has-submenu {
 }
 
 #wide{
-    height: 120px;
-    width: 800px;
+    height: 80px;
+    width: 850px;
+}
+
+#semi-wide{
+    height: 30px;
+    width: 250px;
+}
+
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    #wide {
+        height: 80px; /* Reduced by 5px */
+        width: 500px; /* Reduced by 20px */
+    }
 }
 
 .thebutton {
@@ -1180,6 +1524,7 @@ li.has-submenu {
 
 }
 
+
 .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1205,22 +1550,18 @@ li.has-submenu {
     text-align: left;
 }
 
-
-
-.add-employee-form{
+.add-employee-form {
     display: flex;
     flex-wrap: wrap;
 }
 
-
 .add-employee-form .form-group {
-    flex: 1 1 calc(50% - 10px);
+    flex: 1 1 calc(45% - 10px);
     margin-right: 10px;
-
 }
 
 .add-employee-form .form-group.small {
-    flex: 1 1 calc(25% - 10px);
+    flex: 1 1 calc(20% - 10px);
 }
 
 .add-employee-form .form-group-below {
@@ -1230,10 +1571,18 @@ li.has-submenu {
 
 .add-employee-form label {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
     display: block;
     margin-bottom: 5px;
     color: #000000;
+}
+
+.form-group2-below{
+    margin-top: 20px;
+}
+
+.form-group3-below{
+    margin-top: 20px;
 }
 
 .add-employee-form input[type="text"],
@@ -1242,7 +1591,7 @@ li.has-submenu {
 .add-employee-form select,
 .add-employee-form input[type="date"] {
     width: 100%;
-    height: 40px;
+    height: 35px;
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border-color 0.3s ease;
@@ -1256,24 +1605,420 @@ li.has-submenu {
     border-color: #4CAF50;
 }
 
-/* .add-employee-form button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.column {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.add-employee-form button:hover {
-    background-color: #45a049;
+.column p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.column label {
+    font-size: 16px;
+}
+
+.column input {
+    margin-bottom: 8px;
+    font-size: 16px;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+}
+
+.column select {
+    margin-bottom: 8px;
+    font-size: 16px;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+}
+
+/* part2 */
+.add-employee-form2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.add-employee-form2 .form-group2 {
+    flex: 1 1 calc(45% - 10px);
+    margin-right: 10px;
+}
+
+.add-employee-form2 .form-group2.small {
+    flex: 1 1 calc(20% - 10px);
+}
+
+.add-employee-form2 .form-group-below2 {
+    flex: 1 1 100%; /* Take the full width */
+    margin-top: 20px; /* Add some space above */
+}
+
+.add-employee-form2 label {
+    margin-top: 10px;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.add-employee-form2 input[type="text"],
+.add-employee-form2 input[type="email"],
+.add-employee-form2 input[type="number"],
+.add-employee-form2 select,
+.add-employee-form2 input[type="date"] {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.add-employee-form2 input[type="text"]:focus,
+.add-employee-form2 input[type="email"]:focus,
+.add-employee-form2 input[type="number"]:focus,
+.add-employee-form2 select:focus,
+.add-employee-form2 input[type="date"]:focus {
+    border-color: #4CAF50;
+}
+
+.column2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column2 p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.column2 label {
+    font-size: 16px;
+}
+
+.column2 input {
+    margin-bottom: 8px;
+    font-size: 16px;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+}
+
+.column2 select {
+    margin-bottom: 8px;
+    font-size: 16px;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+}
+
+/* part3 */
+.add-employee-form3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.add-employee-form3 .form-group2 {
+    flex: 1 1 calc(45% - 10px);
+    margin-right: 10px;
+}
+
+.add-employee-form3 .form-group2.small {
+    flex: 1 1 calc(20% - 10px);
+}
+
+.add-employee-form3 .form-group-below2 {
+    flex: 1 1 100%; /* Take the full width */
+    margin-top: 20px; /* Add some space above */
+}
+
+.add-employee-form3 label {
+    margin-top: 10px;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.add-employee-form3 input[type="text"],
+.add-employee-form3 input[type="email"],
+.add-employee-form3 input[type="number"],
+.add-employee-form3 select,
+.add-employee-form3 input[type="date"] {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.add-employee-form3 input[type="text"]:focus,
+.add-employee-form3 input[type="email"]:focus,
+.add-employee-form3 input[type="number"]:focus,
+.add-employee-form3 select:focus,
+.add-employee-form3 input[type="date"]:focus {
+    border-color: #4CAF50;
+}
+
+.column3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column3 p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.column3 label {
+    font-size: 16px;
+}
+
+.column3 input {
+    margin-bottom: 8px;
+    font-size: 16px;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+}
+
+.column3 select {
+    margin-bottom: 8px;
+    font-size: 16px;
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: rgb(52, 52, 52);
+}
+
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    .add-employee-form .form-group {
+        flex: 1 1 calc(40% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form .form-group.small {
+        flex: 1 1 calc(18% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form label {
+        font-size: 14px; /* Reduced size */
+    }
+
+    .add-employee-form h2{
+        font-size: 18px;
+    }
+    
+
+    .add-employee-form input[type="text"],
+    .add-employee-form input[type="email"],
+    .add-employee-form input[type="number"],
+    .add-employee-form select,
+    .add-employee-form input[type="date"] {
+        height: 30px; /* Reduced size */
+    }
+
+    .column label {
+        font-size: 14px; /* Reduced size */
+    }
+
+    .column input,
+    .column select {
+        font-size: 12px; /* Reduced size */
+        padding: 4px; /* Reduced size */
+    }
+
+    /* part 2 */
+    .add-employee-form2 .form-group2 {
+        flex: 1 1 calc(40% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form2 .form-group2.small {
+        flex: 1 1 calc(18% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form2 label {
+        font-size: 14px; /* Reduced size */
+    }
+
+    .add-employee-form2 h2{
+        font-size: 18px;
+    }
+    
+
+    .add-employee-form2 input[type="text"],
+    .add-employee-form2 input[type="email"],
+    .add-employee-form2 input[type="number"],
+    .add-employee-form2 select,
+    .add-employee-form2 input[type="date"] {
+        height: 30px; /* Reduced size */
+    }
+
+    .column2 label {
+        font-size: 14px; /* Reduced size */
+    }
+
+    .column2 input,
+    .column2 select {
+        font-size: 12px; /* Reduced size */
+        padding: 4px; /* Reduced size */
+    }
+
+        /* part 2 */
+        .add-employee-form3 .form-group3 {
+            flex: 1 1 calc(40% - 10px); /* Reduced size */
+        }
+    
+        .add-employee-form3 .form-group3.small {
+            flex: 1 1 calc(18% - 10px); /* Reduced size */
+        }
+    
+        .add-employee-form3 label {
+            font-size: 14px; /* Reduced size */
+        }
+    
+        .add-employee-form3 h2{
+            font-size: 18px;
+        }
+        
+    
+        .add-employee-form3 input[type="text"],
+        .add-employee-form3 input[type="email"],
+        .add-employee-form3 input[type="number"],
+        .add-employee-form3 select,
+        .add-employee-form3 input[type="date"] {
+            height: 30px; /* Reduced size */
+        }
+    
+        .column3 label {
+            font-size: 14px; /* Reduced size */
+        }
+    
+        .column3 input,
+        .column3 select {
+            font-size: 12px; /* Reduced size */
+            padding: 4px; /* Reduced size */
+        }
 
     
-} 
-*/
 
+    
 
+    
+
+    
+}
+
+/* For screens with a width of 1024px or less */
+@media screen and (max-width: 1024px) {
+    .add-employee-form .form-group {
+        flex: 1 1 calc(35% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form .form-group.small {
+        flex: 1 1 calc(15% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form label {
+        font-size: 12px; /* Reduced size */
+    }
+
+    .add-employee-form input[type="text"],
+    .add-employee-form input[type="email"],
+    .add-employee-form input[type="number"],
+    .add-employee-form select,
+    .add-employee-form input[type="date"] {
+        height: 25px; /* Reduced size */
+    }
+
+    .column label {
+        font-size: 12px; /* Reduced size */
+    }
+
+    .column input,
+    .column select {
+        font-size: 12px; /* Reduced size */
+        padding: 3px; /* Reduced size */
+    }
+}
+
+/* For screens with a width of 768px or less */
+@media screen and (max-width: 768px) {
+    .add-employee-form .form-group {
+        flex: 1 1 calc(30% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form .form-group.small {
+        flex: 1 1 calc(12% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form label {
+        font-size: 10px; /* Reduced size */
+    }
+
+    .add-employee-form input[type="text"],
+    .add-employee-form input[type="email"],
+    .add-employee-form input[type="number"],
+    .add-employee-form select,
+    .add-employee-form input[type="date"] {
+        height: 20px; /* Reduced size */
+    }
+
+    .column label {
+        font-size: 10px; /* Reduced size */
+    }
+
+    .column input,
+    .column select {
+        font-size: 10px; /* Reduced size */
+        padding: 2px; /* Reduced size */
+    }
+}
+
+/* For screens with a width of 480px or less */
+@media screen and (max-width: 480px) {
+    .add-employee-form .form-group {
+        flex: 1 1 calc(25% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form .form-group.small {
+        flex: 1 1 calc(10% - 10px); /* Reduced size */
+    }
+
+    .add-employee-form label {
+        font-size: 8px; /* Reduced size */
+    }
+
+    .add-employee-form input[type="text"],
+    .add-employee-form input[type="email"],
+    .add-employee-form input[type="number"],
+    .add-employee-form select,
+    .add-employee-form input[type="date"] {
+        height: 15px; /* Reduced size */
+    }
+
+    .column label {
+        font-size: 8px; /* Reduced size */
+    }
+
+    .column input,
+    .column select {
+        font-size: 8px; /* Reduced size */
+        padding: 1px; /* Reduced size */
+    }
+}
 
 
 
@@ -1281,6 +2026,9 @@ li.has-submenu {
 .form-group-below{
 
 }
+
+
+
 
 .hidden {
     display: none;
@@ -1463,17 +2211,18 @@ li.has-submenu {
     display: flex;
     justify-content: space-evenly;
     border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    padding-bottom: 10px; /* No change needed */
+    margin-bottom: 20px; /* Reduced by 20px */
 }
 
 .nav a {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 5px 10px; /* No change needed */
     border-radius: 5px;
     transition: background-color 0.1s, color 0.1s;
+    font-size: 18px; /* Initial font size */
 }
 
 .nav a:hover {
@@ -1486,6 +2235,48 @@ li.has-submenu {
     color: gray; /* Change the color to indicate it's disabled */
     text-decoration: none; /* Remove underline */
 }
+
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    .nav {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px; /* No change needed */
+        margin-bottom: 20px; /* Reduced by 20px */
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+}
+
+/* For screens with a width of 1024px or less */
+@media screen and (max-width: 1024px) {
+    .nav {
+        margin-bottom: 0px; /* Reduced by 10px */
+    }
+
+    .nav a {
+        font-size: 14px; /* Reduced by 2px */
+    }
+}
+
+/* For screens with a width of 768px or less */
+@media screen and (max-width: 768px) {
+    .nav a {
+        font-size: 12px; /* Reduced by 2px */
+    }
+}
+
+/* For screens with a width of 480px or less */
+@media screen and (max-width: 480px) {
+    .nav a {
+        font-size: 10px; /* Reduced by 2px */
+    }
+}
+
 
 .contente section {
     display: none;
@@ -1556,16 +2347,49 @@ button[type="button"] {
     display: inline-block;
 }
 
-.joined{
+.joined {
     text-align: left;
-    margin-top: 25px;
-    font-size: 15px;
+    margin-top: 25px; /* Reduced by 5px */
+    font-size: 15px; /* Reduced by 5px */
     color: #626262;
 }
 
-.joined p{
+.joined p {
     font-weight: bold;
 }
+
+/* For screens with a width of 1366px or less */
+@media screen and (max-width: 1366px) {
+    .joined {
+        margin-top: 20px; /* Reduced by 5px */
+        font-size: 12px; /* Reduced by 1px */
+    }
+}
+
+/* For screens with a width of 1024px or less */
+@media screen and (max-width: 1024px) {
+    .joined {
+        margin-top: 15px; /* Reduced by 5px */
+        font-size: 13px; /* Reduced by 1px */
+    }
+}
+
+/* For screens with a width of 768px or less */
+@media screen and (max-width: 768px) {
+    .joined {
+        margin-top: 10px; /* Reduced by 5px */
+        font-size: 12px; /* Reduced by 1px */
+    }
+}
+
+/* For screens with a width of 480px or less */
+@media screen and (max-width: 480px) {
+    .joined {
+        margin-top: 5px; /* Reduced by 5px */
+        font-size: 10px; /* Reduced by 2px */
+    }
+}
+
 
 .applicant-profile {
 
@@ -1783,3 +2607,39 @@ input[type="password"] {
     cursor: pointer;
 }
 
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Max width */
+    border-radius: 5px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

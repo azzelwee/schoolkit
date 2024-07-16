@@ -360,7 +360,7 @@ if (isset($_POST['submit'])) {
                                     </div>
 
                                     <div class="form-group small">
-                                        <label for="employee-citizenship">Telephone Number:</label>
+                                        <label for="employee-citizenship">Tel. Number:</label>
                                         <input type="text" id="" name="telephone_number" value="<?php echo $row['telephone_number'];?>">
                                     </div>
                                     <div class="form-group ">
@@ -467,7 +467,7 @@ if (isset($_POST['submit'])) {
 
                                     <div class="form-group small">
                                         <label for="employee-citizenship">Skills Acquired:</label>
-                                        <input type="text" id="wide" name="skills_aquired" value="<?php echo $row['skills_aquired'];?>">
+                                        <input type="text"  name="skills_aquired" value="<?php echo $row['skills_aquired'];?>">
                                     </div>
                                             </div>
                                         </div>
@@ -481,8 +481,8 @@ if (isset($_POST['submit'])) {
                             <div class="add-employee-form">
                                 <h2>Work Experience</h2>
                                 <div class="column">
-                            <div class="form-group small">
-                                <label for="previous-job-title">Previous Job Title:</label>
+                            <div class="form-group ">
+                                <label for="previous-job-title">Previous Job:</label>
                                 <input type="text" id="prev_job" name="prev_job" value="<?php echo $row['prev_job'];?>">
                             </div>
                             <div class="form-group">
@@ -497,7 +497,7 @@ if (isset($_POST['submit'])) {
                                 <label for="employment-date">Date of Employment:</label>
                                 <input type="date" id="date_employment" name="date_employment" value="<?php echo $row['date_employment'];?>">
                             </div>
-                            <div class="form-group small">
+                            <div class="form-group ">
                                 <label for="references">References (optional):</label>
                                 <input type="text" id="refer" name="refer" value="<?php echo $row['refer'];?>">
                             </div>
@@ -511,7 +511,7 @@ if (isset($_POST['submit'])) {
                     <h2>Employee Information</h2>
                         <div class="column">
 
-                        <div class="form-group small">
+                        <div class="form-group">
                             <label for="photos">Picture 2x2:</label>
                             <input type="file" name="fileToUpload" id="fileToUpload">
                         </div>
@@ -542,7 +542,7 @@ if (isset($_POST['submit'])) {
                             $employee_section = $row['employee_section'];
                             ?>
 
-                            <div class="form-group" style="width: 900px;">
+                            <div class="form-group">
                                 <label for="position">Employee Type:</label>
                                 <select id="position" name="employee_type" onchange="handlePositionChange()">
                                     <option value="<?php echo $employee_type; ?>"><?php echo $employee_type; ?></option>
@@ -591,11 +591,11 @@ if (isset($_POST['submit'])) {
                                         <input type="file" id="resume" name="resume">
                                     </div>
                                     <div class="form-group small">
-                                        <label for="work-samples">Work Samples/Portfolio (optional):</label>
+                                        <label for="work-samples">Work Samples/Portfolio:</label>
                                         <input type="file" id="work-samples" name="work_samples">
                                     </div>
                                     <div class="form-group small">
-                                        <label for="certificates">Certificates (optional):</label>
+                                        <label for="certificates">Certificates:</label>
                                         <input type="file" id="certificates" name="cert">
                                     </div>
 

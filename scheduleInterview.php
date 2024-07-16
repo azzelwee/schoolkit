@@ -34,11 +34,13 @@ if (isset($_POST['schedule'])) {
     $stmt->bind_param("ssi", $interview_date, $interview_time, $applicant_id);
 
     if ($stmt->execute()) {
-        echo "Interview scheduled successfully.";
+        echo "<script>showPopup('Interview scheduled successfully.');</script>";
     } else {
-        echo "Error scheduling interview: " . $con->error;
+        echo "<script>showPopup('Error scheduling interview: " . addslashes($con->error) . "');</script>";
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +54,14 @@ if (isset($_POST['schedule'])) {
 <body>
 <?php include 'header.php'; ?>
 
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p id="popup-message"></p>
+    </div>
+</div>
+
+
 <div class="right-container">
     <div class="box-container">
         <h2>Set a Schedule for Interview</h2>
@@ -60,24 +70,38 @@ if (isset($_POST['schedule'])) {
         <form method="post" action="scheduleInterview.php">
             <input type="hidden" name="applicant_id" value="<?php echo $applicant['ID']; ?>">
             </br>
-            <div class="column">
-                <div class="form-group small">
-                    <label for="interview_date">Interview Date:</label>
-                    <input type="date" name="interview_date" required><br>
+            <div class="add-employee-form">
+                <div class="column">
+                    <div class="form-group">
+                        <label for="interview_date">Interview Date:</label>
+                        <input type="date" id="semi-wide" name="interview_date" placeholder="asd" required><br>
+                    </div>
                 </div>
-            </div>
-            </br>
-            <div class="column">
-                <div class="form-group small">
-                    <label for="interview_time">Interview Time:</label>
-                    <input type="time" name="interview_time" required><br>
+                </br>
+                <div class="column">
+                    <div class="form-group ">
+                        <label for="interview_time">Interview Time:</label>
+                        <input type="time" id="semi-wide"name="interview_time" required><br>
+                    </div>
                 </div>
-            </div>
+                </div>
             </br>    
-            <button type="submit" name="schedule" class="thebutton">Schedule Interview</button>
+            <button type="submit" name="schedule" class="thebutton">Submit</button>
             </div>
         </form>
     </div>
 </div>
+
+<script>
+    function showPopup(message) {
+    document.getElementById('popup-message').innerText = message;
+    document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+</script>
 </body>
 </html>

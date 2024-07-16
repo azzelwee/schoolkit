@@ -82,12 +82,9 @@ $row = $employee->fetch_assoc();
                 <th></th>
                 <th>Employee ID</th>
                 <th>Full Name</th>
-                <th>Position</th>
-                <th>Department</th>
+                <th>Position - Dept.</th>
                 <th>Today Days</th>
                 <th>Days Present</th>
-                <th>Days Absent</th>
-                <th>Sick Leave</th>
                 <th>Comments/Remarks</th>
             </tr>
         </thead>
@@ -104,12 +101,9 @@ $row = $employee->fetch_assoc();
                 </td>
                 <td><?php echo $row['employee_id'];?></td>
                 <td><?php echo $row['first_name'] . ' ' . $row['middle_name'] . ' ' . $row['last_name']; ?></td>
-                <td><?php echo $row['employee_type'] ?></td>
-                <td><?php echo $row['employee_section'] ?></td>
+                <td><?php echo $row['employee_type'] . ' - ' . $row['employee_section'] ?></td>
                 <td><?php echo date('t'); ?></td>
                 <td><?php echo date('j'); ?></td>
-                <td>0</td>
-                <td>0</td>
                 <td></td>
             </tr>
         <?php 
