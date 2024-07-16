@@ -22,8 +22,7 @@ if(isset($_POST['submit'])){
     VALUES ('$fname', '$mname', '$lname', '$uname','$pword','$access')";
 
     $con->query($sql) or die ($con->error);
-    // $query_run = mysqli_query($con, $query)
-    // echo header("Location: employee.php");
+    
 
     if($con){
         $_SESSION['status-add'] = "Records Successfully Submitted.";

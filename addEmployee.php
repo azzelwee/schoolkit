@@ -10,7 +10,7 @@ include_once("connections/connection.php");
 $con = connection();
 
 if (isset($_POST['submit'])) {
-    // Validate and sanitize inputs
+    
     $employeeID = $con->real_escape_string($_POST['employee_id']);
     $fname = $con->real_escape_string($_POST['first_name']);
     $mname = $con->real_escape_string($_POST['middle_name']);
@@ -53,15 +53,15 @@ if (isset($_POST['submit'])) {
     $dateEmploy = $con->real_escape_string($_POST['date_employment']);
     $refer = $con->real_escape_string($_POST['refer']);
     
-    // Check if file was uploaded
+    
     if(isset($_FILES["fileToUpload"]["tmp_name"]) && !empty($_FILES["fileToUpload"]["tmp_name"])) {
-        // File upload handling
+        
         $target_dir = "img/uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-        // Check if image file is a actual image or fake image
+        
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";
@@ -71,34 +71,34 @@ if (isset($_POST['submit'])) {
             $uploadOk = 0;
         }
 
-        // Check if file already exists
+        
         if (file_exists($target_file)) {
             echo "Sorry, file already exists.";
             $uploadOk = 0;
         }
 
-        // Check file size
+        
         if ($_FILES["fileToUpload"]["size"] > 500000) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
 
-        // Allow certain file formats
+        
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
             echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             $uploadOk = 0;
         }
 
-        // Check if $uploadOk is set to 0 by an error
+        
         if ($uploadOk == 0) {
             echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
+        
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
 
-                // Now, insert into database
+                
                 $sql = "INSERT INTO `employee_list2`
                 (
                     `employee_id`,
@@ -203,8 +203,8 @@ if (isset($_POST['submit'])) {
             }
         }
     } else {
-        // No file uploaded, proceed without uploading
-        // Now, insert into database without file path
+        
+        
         $sql = "INSERT INTO `employee_list2`
         (
         `employee_id`,
