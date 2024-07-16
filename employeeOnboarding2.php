@@ -21,6 +21,22 @@ foreach ($statuses as $status) {
     $applicants[$status] = $con->query("SELECT * FROM applicant_list2 WHERE status = '$status'");
 }
 
+if (isset($_POST['schedule'])) {
+    $interview_date = $_POST['interview_date'];
+    $interview_time = $_POST['interview_time'];
+
+    // Update the interview schedule in the applicant_list2 table
+    $sql = "UPDATE applicant_list2 SET interview_date = ?, interview_time = ? WHERE ID = ?";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("ssi", $interview_date, $interview_time, $applicant_id);
+
+    if ($stmt->execute()) {
+        $message = "Interview scheduled successfully.";
+    } else {
+        $message = "Error scheduling interview: " . $con->error;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +68,11 @@ foreach ($statuses as $status) {
             <?php foreach ($statuses as $status): ?>
                 <div id="<?php echo $status; ?>" class="applicant-table" style="display: <?php echo $status === 'Pending' ? 'block' : 'none'; ?>;">
                     <h3><?php echo $status; ?> Applicants</h3> <!-- Status Header -->
+    
+                    <?php if (isset($message)): ?>
+                <p><?php echo $message; ?></p>
+            <?php endif; ?>
+    
                     <table id="table3">
     <thead>
         <tr>

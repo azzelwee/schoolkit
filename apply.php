@@ -93,7 +93,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
                     <div class="lineup1 form-page">
                         <div class="column">
                         <div class="form-group" style="width: 900px;">
-                                <label for="position">Employee Type:</label>
+                                <label for="position">Employee Type:<span class="required">*</span></label>
                                 <select id="position" name="position_type" onchange="handlePositionChange()">
                                     <option value=""></option>
                                     <option value="Teaching">Teaching</option>
@@ -101,7 +101,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
                                 </select>
                                 
                                 <div id="teachingInputDiv" class="hidden">
-                                    <label for="teachingInput">Teaching Positions:</label>
+                                    <label for="teachingInput">Teaching Positions:<span class="required">*</span></label>
                                     <select id="teachingInput" name="employee_type">
                                         <option value="">-- Select Subject-Specific Teaching --</option>
                                         <option value="Mandarin">Mandarin</option>
@@ -115,7 +115,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
                                 </div>
                                 
                                 <div id="nonTeachingInputDiv" class="hidden">
-                                    <label for="nonTeachingInput">Non-teaching Positions:</label>
+                                    <label for="nonTeachingInput">Non-teaching Positions:<span class="required">*</span></label>
                                     <select id="nonTeachingInput" name="employee_type">
                                         <option value="">-- Select Non-Teaching Positions --</option>
                                         <option value="Administration">Administration</option>
@@ -132,7 +132,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
 
                                 </div>
                                 <div id="statusInputDiv">
-                                    <label for="employementStatus">Employement Status:</label>
+                                    <label for="employementStatus">Employement Status:<span class="required">*</span></label>
                                     <select id="employementStatus" name="employementStatus">
                                         <option value=""></option>
                                         <option value="Full Time">Full Time</option>
@@ -165,15 +165,15 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
                     <div class="lineup1">
                         <div class="column">
                             <div class="form-group small">
-                                <label for="previous-job-title">First Name:</label>
+                                <label for="previous-job-title">First Name:<span class="required">*</span></label>
                                 <input type="text" id="first_name" name="first_name">
                             </div>
                             <div class="form-group small">
-                                <label for="company-name">Middle Name:</label>
+                                <label for="company-name">Middle Name:<span class="required">*</span></label>
                                 <input type="text" id="middle_name" name="middle_name">
                             </div>
                             <div class="form-group small">
-                                <label for="responsibilities">Last Name:</label>
+                                <label for="responsibilities">Last Name:<span class="required">*</span></label>
                                 <input type="text" id="last_name" name="last_name">
                             </div>
                         </div>
@@ -182,7 +182,7 @@ $is_user = (isset($_SESSION['Access']) && $_SESSION['Access'] == "user");
                             <div class="column">
                             <form action="" method="post" enctype="multipart/form-data">
                             <div class="form-group small">
-                                    <label for="resume">Resume/CV:</label>
+                                    <label for="resume">Resume/CV (required):<span class="required">*</span></label>
                                     <input type="file" id="resume" name="fileToUpload">
                                 </div>
                             </form>

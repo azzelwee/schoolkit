@@ -34,13 +34,15 @@ if (isset($_POST['schedule'])) {
     $stmt->bind_param("ssi", $interview_date, $interview_time, $applicant_id);
 
     if ($stmt->execute()) {
-        echo "<script>showPopup('Interview scheduled successfully.');</script>";
+        $message = "Interview scheduled successfully.";
     } else {
-        echo "<script>showPopup('Error scheduling interview: " . addslashes($con->error) . "');</script>";
+        $message = "Error scheduling interview: " . $con->error;
     }
+
+        // Redirect to employeeOnboarding2.php after processing
+        header("Location: employeeOnboarding2.php");
+        exit();
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -54,14 +56,6 @@ if (isset($_POST['schedule'])) {
 <body>
 <?php include 'header.php'; ?>
 
-<div id="popup" class="popup">
-    <div class="popup-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <p id="popup-message"></p>
-    </div>
-</div>
-
-
 <div class="right-container">
     <div class="box-container">
         <h2>Set a Schedule for Interview</h2>
@@ -70,6 +64,11 @@ if (isset($_POST['schedule'])) {
         <form method="post" action="scheduleInterview.php">
             <input type="hidden" name="applicant_id" value="<?php echo $applicant['ID']; ?>">
             </br>
+
+            <?php if (isset($message)): ?>
+                <p><?php echo $message; ?></p>
+            <?php endif; ?>
+
             <div class="add-employee-form">
                 <div class="column">
                     <div class="form-group">
@@ -91,17 +90,5 @@ if (isset($_POST['schedule'])) {
         </form>
     </div>
 </div>
-
-<script>
-    function showPopup(message) {
-    document.getElementById('popup-message').innerText = message;
-    document.getElementById('popup').style.display = 'block';
-}
-
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-}
-
-</script>
 </body>
 </html>

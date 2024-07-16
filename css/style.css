@@ -26,13 +26,13 @@
     margin-top: 1rem;
 }
 
-.info-text{
+.info-text {
     font-size: 18px;
     font-weight: bold;
 }
 
-.form-element input[type=username],
-.form-element input[type=password] {
+.form-element input[type=password],
+.form-element input[type=username] {
     font-size: 20px;
     width: 100%;
     padding: 12px;
@@ -42,14 +42,9 @@
 
 }
 
-/* .login-container h2 {
-    text-align: center;
-    font-size: 40px;
-} */
-
 .login-container button {
     width: 100%;
-        letter-spacing: 6px;
+    letter-spacing: 6px;
     border-radius: 4px;
     margin-top: 2rem;
     font-size: 24px;
@@ -85,7 +80,7 @@
     font-size: 18px;
     font-style: none;
 }
-/* sets background for login page */
+
 #formlogin {
     background-color: #f9f9f9;
 
@@ -96,19 +91,16 @@
     color: red;
 }
 
-/* message when no user found */
-
-.registration{
+.registration {
     margin-top: 15px;
     display: flex;
     justify-content: flex-end;
 }
 
-.registration a{
+.registration a {
     text-decoration: none;
     color: rgb(46, 72, 217);
 }
-
 
 .message.warning {
     background: #e9e77f;
@@ -116,9 +108,6 @@
     color: #817f05;
 }
 
-/* end of message */
-
-/* CSS for styling the popup message */
 .popup-message {
     position: fixed;
     top: 20px;
@@ -130,7 +119,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: none;
-    /* Initially hidden */
+
 }
 
 .success {
@@ -145,10 +134,8 @@
     color: #31708f;
 }
 
-/* CSS for styling the popup message */
-
 .wrapper {
-    padding: 0 2rem 0 2rem;
+    padding: 0 2rem;
 }
 h1 {
     text-align: center;
@@ -156,128 +143,123 @@ h1 {
 
 table {
     border-radius: 8px;
-    margin-top: 50px; /* Initial value */
+    margin-top: 50px;
     border: 1px solid black;
     border-collapse: collapse;
-    width: 75%; /* Initial value */
+    width: 75%;
 }
 
 #table2 {
     border-radius: 8px;
-    margin-top: 10px; /* Initial value */
+    margin-top: 10px;
     border: 1px solid black;
     border-collapse: collapse;
-    width: 75%; /* Initial value */
+    width: 75%;
 }
 
 #table3 {
     border-radius: 8px;
-    margin-top: 10px; /* Initial value */
+    margin-top: 10px;
     border: 1px solid black;
     border-collapse: collapse;
-    width: 95%; /* Initial value */
+    width: 95%;
 }
 
 #table4 {
     border-radius: 8px;
     border: 1px solid black;
     border-collapse: collapse;
-    width: 95%; /* Initial value */
+    width: 95%;
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     table {
         font-size: 15px;
-        width: 75%; /* Reduced by 5% */
+        width: 75%;
     }
 
     #table2 {
         font-size: 15px;
-        width: 75%; /* Reduced by 5% */
+        width: 75%;
     }
 
     #table3 {
 
         font-size: 15px;
-        width: 95%; /* Reduced by 5% */
+        width: 95%;
     }
 
     #table4 {
 
         font-size: 15px;
-        width: 95%; /* Reduced by 5% */
+        width: 95%;
     }
 }
 
-/* For screens with a width of 1024px or less */
 @media screen and (max-width: 1024px) {
     table {
-        margin-top: 40px; /* Reduced by 5px */
-        width: 65%; /* Reduced by 5% */
+        margin-top: 40px;
+        width: 65%;
     }
 
     #table2 {
-        margin-top: 0px; /* Reduced by 5px */
-        width: 65%; /* Reduced by 5% */
+        margin-top: 0;
+        width: 65%;
     }
 
     #table3 {
-        margin-top: 0px; /* Reduced by 5px */
-        width: 85%; /* Reduced by 5% */
+        margin-top: 0;
+        width: 85%;
     }
 
     #table4 {
-        width: 85%; /* Reduced by 5% */
+        width: 85%;
     }
 }
 
-/* For screens with a width of 768px or less */
 @media screen and (max-width: 768px) {
     table {
-        margin-top: 35px; /* Reduced by 5px */
-        width: 60%; /* Reduced by 5% */
+        margin-top: 35px;
+        width: 60%;
     }
 
     #table2 {
-        margin-top: 0px; /* Reduced by 5px */
-        width: 60%; /* Reduced by 5% */
+        margin-top: 0;
+        width: 60%;
     }
 
     #table3 {
-        margin-top: 0px; /* Reduced by 5px */
-        width: 80%; /* Reduced by 5% */
+        margin-top: 0;
+        width: 80%;
     }
 
     #table4 {
-        width: 80%; /* Reduced by 5% */
+        width: 80%;
     }
 }
 
-/* For screens with a width of 480px or less */
 @media screen and (max-width: 480px) {
     table {
-        margin-top: 30px; /* Reduced by 5px */
-        width: 55%; /* Reduced by 5% */
+        margin-top: 30px;
+        width: 55%;
     }
 
     #table2 {
-        margin-top: 0px; /* Reduced by 5px */
-        width: 55%; /* Reduced by 5% */
+        margin-top: 0;
+        width: 55%;
     }
 
     #table3 {
-        margin-top: 0px; /* Reduced by 5px */
-        width: 75%; /* Reduced by 5% */
+        margin-top: 0;
+        width: 75%;
     }
 
     #table4 {
-        width: 75%; /* Reduced by 5% */
+        width: 75%;
     }
 }
 
-
-th{
+th {
     background-color: #757678;
     text-align: left;
     padding: 14px;
@@ -288,16 +270,14 @@ th{
 td {
     text-align: left;
     padding: 14px;
-        border: 1px solid #a9a9a9;
+    border: 1px solid #a9a9a9;
 }
 
 a {
     text-decoration: none;
 }
 
-tr:nth-child(even) {
-    /* background-color: #f2f2f2; */
-}
+tr:nth-child(even) {}
 .aa {
     display: inline-block;
     text-decoration: none;
@@ -346,7 +326,7 @@ tr:nth-child(even) {
     display: inline-block;
 }
 
-.status-add{
+.status-add {
     border-radius: 8px;
     width: 85%;
     background-color: #33d155;
@@ -357,8 +337,7 @@ tr:nth-child(even) {
     position: relative;
 }
 
-
-.status-delete{
+.status-delete {
     background-color: #d52033;
     width: 85%;
     border-radius: 8px;
@@ -429,7 +408,7 @@ tr:nth-child(even) {
 .button-container2 a {
     background: #007bff;
     border-radius: 6px;
-    padding: 8px 10px 8px 10px;
+    padding: 8px 10px;
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
@@ -442,17 +421,16 @@ tr:nth-child(even) {
 .button-container a {
     background: #007bff;
     border-radius: 6px;
-    padding: 8px 10px 8px 10px;
+    padding: 8px 10px;
     color: white;
     text-decoration: none;
-    letter-spacing: 2px;    
+    letter-spacing: 2px;
 }
 
 .button-container a:hover {
     background: #0064ce;
 }
 
-/* asd */
 .button-containers {
 
     margin-top: 15px;
@@ -462,7 +440,7 @@ tr:nth-child(even) {
 .button-containers a {
     background: #d52033;
     border-radius: 6px;
-    padding: 8px 10px 8px 10px;
+    padding: 8px 10px;
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
@@ -477,7 +455,7 @@ tr:nth-child(even) {
     background: #d52033;
     color: white;
     text-decoration: none;
-    padding: 3px 5px 3px 5px;
+    padding: 3px 5px;
     font-size: 12px;
 }
 
@@ -486,7 +464,7 @@ tr:nth-child(even) {
 }
 .button-danger {
     background: #d52033;
-        padding: 8px;
+    padding: 8px;
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
@@ -498,7 +476,6 @@ tr:nth-child(even) {
     background: #8e1622;
 }
 
-/* Container for the buttons */
 .button-container-delete-edit {
     display: flex;
     justify-content: center;
@@ -506,26 +483,24 @@ tr:nth-child(even) {
     margin-bottom: 10px;
 }
 
-/* Styling for the Edit link */
 .button-container-delete-edit a {
     padding: 8px 12px;
     text-decoration: none;
     color: white;
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #007bff;
     border: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 .button-container-delete-edit a:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
+    background-color: #0056b3;
 }
 
-/* Styling for the Delete button */
 .button-danger-delete-edit {
     padding: 8px 12px;
     color: white;
-    background-color: #dc3545; /* Bootstrap danger color */
+    background-color: #dc3545;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -533,10 +508,9 @@ tr:nth-child(even) {
 }
 
 .button-danger-delete-edit:hover {
-    background-color: #c82333; /* Darker shade for hover effect */
+    background-color: #c82333;
 }
 
-/* add form */
 .form-container {
     font-size: 18px;
     display: block;
@@ -562,7 +536,7 @@ tr:nth-child(even) {
 
 .form-container input[type="submit"] {
 
-    width: 0%;
+    width: 0;
     padding: 10px 20px;
     background-color: #d52033;
     color: #fff;
@@ -612,7 +586,6 @@ tr:nth-child(even) {
     transition: background-color 0.3s;
 }
 
-
 .form-employee {
     padding-top: 2rem;
 }
@@ -632,7 +605,7 @@ tr:nth-child(even) {
     border: 1px solid #ccc;
     border-radius: 8px;
     color: #888888;
-    margin: 12px 12px;
+    margin: 12px;
 }
 
 .form-employee input[type="submit"] {
@@ -661,8 +634,6 @@ tr:nth-child(even) {
     cursor: pointer;
 }
 
-
-
 ul.items {
     padding: 2rem;
     font-size: 16px;
@@ -672,7 +643,6 @@ ul.items {
     font-weight: bold;
     color: red;
 }
-/* Dashboard Section Left Side Container */
 
 .left-container {
     float: left;
@@ -711,8 +681,6 @@ ul.items {
     padding: 5px;
 }
 
-
-/* Main dashboard */
 .header {
     width: 100%;
     height: 100vh;
@@ -736,9 +704,9 @@ ul.items {
 
 .logo-img {
     margin-top: 3vh;
-        margin-left: 40px;
-        height: auto;
-        width: auto;
+    margin-left: 40px;
+    height: auto;
+    width: auto;
 }
 
 .nav-links {
@@ -788,7 +756,6 @@ ul.items {
     top: 77.6%;
 }
 
-
 .active {
     background-color: #c71224;
     width: 245px;
@@ -803,17 +770,14 @@ ul.items {
     transition: top 0.3s;
 }
 
-/* Target the submenu ul and remove its bullet points */
 ul.submenu {
-    list-style-type: none; /* Remove bullet points */
-    padding-left: 0;       /* Remove default padding */
+    list-style-type: none;
+    padding-left: 0;
 }
 
-/* Optionally, remove bullet points for the main list as well */
 li.has-submenu {
     list-style-type: none;
 }
-
 
 .active2 {
     background-color: #c71224;
@@ -841,7 +805,6 @@ li.has-submenu {
     top: 55.6%;
 }
 
-
 .box-container {
     position: absolute;
     border: 1px solid #ccc;
@@ -853,55 +816,49 @@ li.has-submenu {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     .box-container {
-        width: 70%; /* Adjust width as needed */
-        height: 85%; /* Adjust height as needed */
-        padding: 20px; /* Adjust padding as needed */
+        width: 70%;
+        height: 85%;
+        padding: 20px;
     }
 }
 
-/* For screens with a width of 1024px or less */
 @media screen and (max-width: 1024px) {
     .box-container {
-        width: 90%; /* Adjust width as needed */
-        height: 80%; /* Adjust height as needed */
-        padding: 15px; /* Adjust padding as needed */
+        width: 90%;
+        height: 80%;
+        padding: 15px;
     }
 }
 
-/* For screens with a width of 768px or less */
 @media screen and (max-width: 768px) {
     .box-container {
-        width: 95%; /* Adjust width as needed */
-        height: 75%; /* Adjust height as needed */
-        padding: 10px; /* Adjust padding as needed */
+        width: 95%;
+        height: 75%;
+        padding: 10px;
     }
 }
 
-/* For screens with a width of 480px or less */
 @media screen and (max-width: 480px) {
     .box-container {
-        width: 100%; /* Adjust width as needed */
-        height: auto; /* Adjust height as needed */
-        padding: 5px; /* Adjust padding as needed */
+        width: 100%;
+        height: auto;
+        padding: 5px;
     }
 }
 
-
-.box-container h1{
+.box-container h1 {
     text-align: left;
 }
 
 .gauge-line {
     width: 95%;
     height: 2px;
-    background-color: #000; /* You can change the color as needed */
+    background-color: #000;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 
 .box-container1 {
     display: flex;
@@ -924,12 +881,10 @@ li.has-submenu {
     display: block;
 }
 
-
 .right-container {
     margin-left: 300px;
     padding: 40px;
 }
-
 
 .right-container-add {
     margin-left: 300px;
@@ -941,7 +896,7 @@ li.has-submenu {
     padding: 30px;
 }
 
-.right-container-pic img{
+.right-container-pic img {
     border-radius: 8px;
 }
 
@@ -949,7 +904,6 @@ li.has-submenu {
     border-radius: 8px;
     width: 80%;
 }
-
 
 .container-list {
     display: flex;
@@ -965,7 +919,6 @@ li.has-submenu {
     margin-right: 10px;
     cursor: pointer;
 }
-
 
 .employed {
     top: 135px;
@@ -1014,150 +967,149 @@ li.has-submenu {
     z-index: 1;
 }
 
-.ssp-text, .employed-text, .user-text {
+.employed-text,
+.ssp-text,
+.user-text {
     margin-left: 3px;
     font-size: 20px;
     letter-spacing: 2px;
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     .employed {
-        top: 115px; /* Reduced by 20px */
-        left: 50px; /* Reduced by 20px */
-        font-size: 70px; /* Reduced by 20px */
+        top: 115px;
+        left: 50px;
+        font-size: 70px;
     }
 
     .users {
-        top: 115px; /* Reduced by 20px */
-        left: 340px; /* Reduced by 20px */
-        font-size: 70px; /* Reduced by 20px */
+        top: 115px;
+        left: 340px;
+        font-size: 70px;
     }
 
     .report1 {
-        top: 155px; /* Reduced by 20px */
-        left: 50px; /* Reduced by 20px */
-        font-size: 16px; /* Reduced by 4px */
+        top: 155px;
+        left: 50px;
+        font-size: 16px;
     }
 
     .report2 {
-        top: 155px; /* Reduced by 20px */
-        left: 340px; /* Reduced by 20px */
-        font-size: 16px; /* Reduced by 4px */
+        top: 155px;
+        left: 340px;
+        font-size: 16px;
     }
 
     .ssp {
-        top: 115px; /* Reduced by 20px */
-        left: 620px; /* Reduced by 20px */
-        font-size: 70px; /* Reduced by 20px */
+        top: 115px;
+        left: 620px;
+        font-size: 70px;
     }
 
-    .ssp-text, .employed-text, .user-text {
+    .employed-text,
+    .ssp-text,
+    .user-text {
         margin-left: 3px;
         font-size: 15px;
         letter-spacing: 1px;
     }
 }
 
-/* For screens with a width of 1024px or less */
 @media screen and (max-width: 1024px) {
     .employed {
-        top: 95px; /* Reduced by 20px */
-        left: 30px; /* Reduced by 20px */
-        font-size: 50px; /* Reduced by 20px */
+        top: 95px;
+        left: 30px;
+        font-size: 50px;
     }
 
     .users {
-        top: 95px; /* Reduced by 20px */
-        left: 390px; /* Reduced by 20px */
-        font-size: 50px; /* Reduced by 20px */
+        top: 95px;
+        left: 390px;
+        font-size: 50px;
     }
 
     .report1 {
-        top: 135px; /* Reduced by 20px */
-        left: 20px; /* Reduced by 20px */
-        font-size: 12px; /* Reduced by 4px */
+        top: 135px;
+        left: 20px;
+        font-size: 12px;
     }
 
     .report2 {
-        top: 135px; /* Reduced by 20px */
-        left: 380px; /* Reduced by 20px */
-        font-size: 12px; /* Reduced by 4px */
+        top: 135px;
+        left: 380px;
+        font-size: 12px;
     }
 
     .ssp {
-        top: 95px; /* Reduced by 20px */
-        left: 750px; /* Reduced by 20px */
-        font-size: 50px; /* Reduced by 20px */
+        top: 95px;
+        left: 750px;
+        font-size: 50px;
     }
 }
 
-/* For screens with a width of 768px or less */
 @media screen and (max-width: 768px) {
     .employed {
-        top: 75px; /* Reduced by 20px */
-        left: 10px; /* Reduced by 20px */
-        font-size: 30px; /* Reduced by 20px */
+        top: 75px;
+        left: 10px;
+        font-size: 30px;
     }
 
     .users {
-        top: 75px; /* Reduced by 20px */
-        left: 370px; /* Reduced by 20px */
-        font-size: 30px; /* Reduced by 20px */
+        top: 75px;
+        left: 370px;
+        font-size: 30px;
     }
 
     .report1 {
-        top: 115px; /* Reduced by 20px */
-        left: 0px; /* Reduced by 20px */
-        font-size: 8px; /* Reduced by 4px */
+        top: 115px;
+        left: 0;
+        font-size: 8px;
     }
 
     .report2 {
-        top: 115px; /* Reduced by 20px */
-        left: 360px; /* Reduced by 20px */
-        font-size: 8px; /* Reduced by 4px */
+        top: 115px;
+        left: 360px;
+        font-size: 8px;
     }
 
     .ssp {
-        top: 75px; /* Reduced by 20px */
-        left: 730px; /* Reduced by 20px */
-        font-size: 30px; /* Reduced by 20px */
+        top: 75px;
+        left: 730px;
+        font-size: 30px;
     }
 }
 
-/* For screens with a width of 480px or less */
 @media screen and (max-width: 480px) {
     .employed {
-        top: 55px; /* Reduced by 20px */
-        left: -10px; /* Reduced by 20px */
-        font-size: 10px; /* Reduced by 20px */
+        top: 55px;
+        left: -10px;
+        font-size: 10px;
     }
 
     .users {
-        top: 55px; /* Reduced by 20px */
-        left: 350px; /* Reduced by 20px */
-        font-size: 10px; /* Reduced by 20px */
+        top: 55px;
+        left: 350px;
+        font-size: 10px;
     }
 
     .report1 {
-        top: 95px; /* Reduced by 20px */
-        left: -20px; /* Reduced by 20px */
-        font-size: 4px; /* Reduced by 4px */
+        top: 95px;
+        left: -20px;
+        font-size: 4px;
     }
 
     .report2 {
-        top: 95px; /* Reduced by 20px */
-        left: 340px; /* Reduced by 20px */
-        font-size: 4px; /* Reduced by 4px */
+        top: 95px;
+        left: 340px;
+        font-size: 4px;
     }
 
     .ssp {
-        top: 55px; /* Reduced by 20px */
-        left: 710px; /* Reduced by 20px */
-        font-size: 10px; /* Reduced by 20px */
+        top: 55px;
+        left: 710px;
+        font-size: 10px;
     }
 }
-
 
 .container-container1 {
     text-decoration: none;
@@ -1178,63 +1130,57 @@ li.has-submenu {
     width: 350px;
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     .container-container1 {
-        height: 160px; /* Adjust height as needed */
-        width: 280px; /* Adjust width as needed */
-        margin-right: 8px; /* Adjust margin as needed */
+        height: 160px;
+        width: 280px;
+        margin-right: 8px;
     }
 
     .container-container1 img {
-        height: 160px; /* Adjust height as needed */
-        width: 280px; /* Adjust width as needed */
+        height: 160px;
+        width: 280px;
     }
 }
 
-/* For screens with a width of 1024px or less */
 @media screen and (max-width: 1024px) {
     .container-container1 {
-        height: 140px; /* Adjust height as needed */
-        width: 240px; /* Adjust width as needed */
-        margin-right: 6px; /* Adjust margin as needed */
+        height: 140px;
+        width: 240px;
+        margin-right: 6px;
     }
 
     .container-container1 img {
-        height: 140px; /* Adjust height as needed */
-        width: 240px; /* Adjust width as needed */
+        height: 140px;
+        width: 240px;
     }
 }
 
-/* For screens with a width of 768px or less */
 @media screen and (max-width: 768px) {
     .container-container1 {
-        height: 120px; /* Adjust height as needed */
-        width: 200px; /* Adjust width as needed */
-        margin-right: 4px; /* Adjust margin as needed */
+        height: 120px;
+        width: 200px;
+        margin-right: 4px;
     }
 
     .container-container1 img {
-        height: 120px; /* Adjust height as needed */
-        width: 200px; /* Adjust width as needed */
+        height: 120px;
+        width: 200px;
     }
 }
 
-/* For screens with a width of 480px or less */
 @media screen and (max-width: 480px) {
     .container-container1 {
-        height: 100px; /* Adjust height as needed */
-        width: 160px; /* Adjust width as needed */
-        margin-right: 2px; /* Adjust margin as needed */
+        height: 100px;
+        width: 160px;
+        margin-right: 2px;
     }
 
     .container-container1 img {
-        height: 100px; /* Adjust height as needed */
-        width: 160px; /* Adjust width as needed */
+        height: 100px;
+        width: 160px;
     }
 }
-
-
 
 .container-container1:hover img {
     opacity: 0.9;
@@ -1242,7 +1188,6 @@ li.has-submenu {
 .container:hover {
     background-color: #f0f0f0;
 }
-
 
 .container-container2 {
     text-decoration: none;
@@ -1263,69 +1208,63 @@ li.has-submenu {
     width: 350px;
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     .container-container2 {
-        height: 160px; /* Adjust height as needed */
-        width: 280px; /* Adjust width as needed */
-        margin-right: 8px; /* Adjust margin as needed */
+        height: 160px;
+        width: 280px;
+        margin-right: 8px;
     }
 
     .container-container2 img {
-        height: 160px; /* Adjust height as needed */
-        width: 280px; /* Adjust width as needed */
+        height: 160px;
+        width: 280px;
     }
 }
 
-/* For screens with a width of 1024px or less */
 @media screen and (max-width: 1024px) {
     .container-container2 {
-        height: 150px; /* Adjust height as needed */
-        width: 250px; /* Adjust width as needed */
-        margin-right: 6px; /* Adjust margin as needed */
+        height: 150px;
+        width: 250px;
+        margin-right: 6px;
     }
 
     .container-container2 img {
-        height: 150px; /* Adjust height as needed */
-        width: 250px; /* Adjust width as needed */
+        height: 150px;
+        width: 250px;
     }
 }
 
-/* For screens with a width of 768px or less */
 @media screen and (max-width: 768px) {
     .container-container2 {
-        height: 130px; /* Adjust height as needed */
-        width: 210px; /* Adjust width as needed */
-        margin-right: 4px; /* Adjust margin as needed */
+        height: 130px;
+        width: 210px;
+        margin-right: 4px;
     }
 
     .container-container2 img {
-        height: 130px; /* Adjust height as needed */
-        width: 210px; /* Adjust width as needed */
+        height: 130px;
+        width: 210px;
     }
 }
 
-/* For screens with a width of 480px or less */
 @media screen and (max-width: 480px) {
     .container-container2 {
-        height: 110px; /* Adjust height as needed */
-        width: 170px; /* Adjust width as needed */
-        margin-right: 2px; /* Adjust margin as needed */
+        height: 110px;
+        width: 170px;
+        margin-right: 2px;
     }
 
     .container-container2 img {
-        height: 110px; /* Adjust height as needed */
-        width: 170px; /* Adjust width as needed */
+        height: 110px;
+        width: 170px;
     }
 }
-
 
 .container-container2:hover img {
     opacity: 0.9;
 }
 
-
-.add-navigation{
+.add-navigation {
     display: flex;
     flex-direction: row;
 }
@@ -1335,47 +1274,38 @@ li.has-submenu {
     margin-right: 20px;
 }
 
-
-.lineup1 {
-
-}
-
-
-
-
-
+.lineup1 {}
 
 #photos {
     width: 30%;
 }
 
-#small{
+#small {
     width: 120px;
 }
 
-#semi-small{
+#semi-small {
     width: 220px;
 }
 
-#smaller{
+#smaller {
     width: 95px;
 }
 
-#wide{
+#wide {
     height: 80px;
     width: 850px;
 }
 
-#semi-wide{
+#semi-wide {
     height: 30px;
     width: 250px;
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     #wide {
-        height: 80px; /* Reduced by 5px */
-        width: 500px; /* Reduced by 20px */
+        height: 80px;
+        width: 500px;
     }
 }
 
@@ -1421,23 +1351,17 @@ li.has-submenu {
     transition: background-color 0.3s;
 }
 
-
-
-/* CSS for the button hover effect */
 .thebutton:hover {
     background-color: #8e1522;
 }
 
-.fullname{
+.fullname {
     display: flex;
     margin-top: 50px;
-   
-}
-
-.right-frame{
 
 }
 
+.right-frame {}
 
 .right-container-main {
     margin-left: 300px;
@@ -1446,18 +1370,22 @@ li.has-submenu {
     justify-content: space-between;
 }
 
-.for-column1, .for-column2 {
+.for-column1,
+.for-column2 {
 
     flex: 1;
     padding: 10px;
 }
 
 .for-column1 {
-    margin-right: 10px; /* Optional: Adds space between the columns */
+    margin-right: 10px;
 }
 
-.right-container-details, .information-employee, .profile-right, .content {
-    background-color: #f9f9f9; /* Example background color */
+.content,
+.information-employee,
+.profile-right,
+.right-container-details {
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -1489,13 +1417,11 @@ li.has-submenu {
     align-items: flex-start;
 }
 
-.employee-details-name{
+.employee-details-name {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
 }
-
-
 
 .navigation-buttons {
     display: flex;
@@ -1516,30 +1442,25 @@ li.has-submenu {
     background-color: #cccccc;
 }
 
-
-.employee-information p{
+.employee-information p {
     margin-top: 10px;
     font-weight: bold;
     margin-bottom: 10px;
 
 }
 
-
 .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px; /* Adjust the gap between columns and rows if needed */
+    gap: 10px;
 }
 
 .cards p {
-    margin: 0; /* Optional: Remove default margin if necessary */
+    margin: 0;
 }
 
-/* Your existing CSS styles */
-
-
 .add-employee-container {
-    width: 100%; /* Fill the entire width */
+    width: 100%;
     padding: 20px;
     border-radius: 8px;
     background-color: #fff;
@@ -1565,8 +1486,8 @@ li.has-submenu {
 }
 
 .add-employee-form .form-group-below {
-    flex: 1 1 100%; /* Take the full width */
-    margin-top: 20px; /* Add some space above */
+    flex: 1 1 100%;
+    margin-top: 20px;
 }
 
 .add-employee-form label {
@@ -1577,11 +1498,11 @@ li.has-submenu {
     color: #000000;
 }
 
-.form-group2-below{
+.form-group2-below {
     margin-top: 20px;
 }
 
-.form-group3-below{
+.form-group3-below {
     margin-top: 20px;
 }
 
@@ -1639,7 +1560,6 @@ li.has-submenu {
     color: rgb(52, 52, 52);
 }
 
-/* part2 */
 .add-employee-form2 {
     display: flex;
     flex-wrap: wrap;
@@ -1655,8 +1575,8 @@ li.has-submenu {
 }
 
 .add-employee-form2 .form-group-below2 {
-    flex: 1 1 100%; /* Take the full width */
-    margin-top: 20px; /* Add some space above */
+    flex: 1 1 100%;
+    margin-top: 20px;
 }
 
 .add-employee-form2 label {
@@ -1721,7 +1641,6 @@ li.has-submenu {
     color: rgb(52, 52, 52);
 }
 
-/* part3 */
 .add-employee-form3 {
     display: flex;
     flex-wrap: wrap;
@@ -1737,8 +1656,8 @@ li.has-submenu {
 }
 
 .add-employee-form3 .form-group-below2 {
-    flex: 1 1 100%; /* Take the full width */
-    margin-top: 20px; /* Add some space above */
+    flex: 1 1 100%;
+    margin-top: 20px;
 }
 
 .add-employee-form3 label {
@@ -1803,136 +1722,122 @@ li.has-submenu {
     color: rgb(52, 52, 52);
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     .add-employee-form .form-group {
-        flex: 1 1 calc(40% - 10px); /* Reduced size */
+        flex: 1 1 calc(40% - 10px);
     }
 
     .add-employee-form .form-group.small {
-        flex: 1 1 calc(18% - 10px); /* Reduced size */
+        flex: 1 1 calc(18% - 10px);
     }
 
     .add-employee-form label {
-        font-size: 14px; /* Reduced size */
+        font-size: 14px;
     }
 
-    .add-employee-form h2{
+    .add-employee-form h2 {
         font-size: 18px;
     }
-    
 
     .add-employee-form input[type="text"],
     .add-employee-form input[type="email"],
     .add-employee-form input[type="number"],
     .add-employee-form select,
     .add-employee-form input[type="date"] {
-        height: 30px; /* Reduced size */
+        height: 30px;
     }
 
     .column label {
-        font-size: 14px; /* Reduced size */
+        font-size: 14px;
     }
 
     .column input,
     .column select {
-        font-size: 12px; /* Reduced size */
-        padding: 4px; /* Reduced size */
+        font-size: 12px;
+        padding: 4px;
     }
 
-    /* part 2 */
     .add-employee-form2 .form-group2 {
-        flex: 1 1 calc(40% - 10px); /* Reduced size */
+        flex: 1 1 calc(40% - 10px);
     }
 
     .add-employee-form2 .form-group2.small {
-        flex: 1 1 calc(18% - 10px); /* Reduced size */
+        flex: 1 1 calc(18% - 10px);
     }
 
     .add-employee-form2 label {
-        font-size: 14px; /* Reduced size */
+        font-size: 14px;
     }
 
-    .add-employee-form2 h2{
+    .add-employee-form2 h2 {
         font-size: 18px;
     }
-    
 
     .add-employee-form2 input[type="text"],
     .add-employee-form2 input[type="email"],
     .add-employee-form2 input[type="number"],
     .add-employee-form2 select,
     .add-employee-form2 input[type="date"] {
-        height: 30px; /* Reduced size */
+        height: 30px;
     }
 
     .column2 label {
-        font-size: 14px; /* Reduced size */
+        font-size: 14px;
     }
 
     .column2 input,
     .column2 select {
-        font-size: 12px; /* Reduced size */
-        padding: 4px; /* Reduced size */
+        font-size: 12px;
+        padding: 4px;
     }
 
-        /* part 2 */
-        .add-employee-form3 .form-group3 {
-            flex: 1 1 calc(40% - 10px); /* Reduced size */
-        }
-    
-        .add-employee-form3 .form-group3.small {
-            flex: 1 1 calc(18% - 10px); /* Reduced size */
-        }
-    
-        .add-employee-form3 label {
-            font-size: 14px; /* Reduced size */
-        }
-    
-        .add-employee-form3 h2{
-            font-size: 18px;
-        }
-        
-    
-        .add-employee-form3 input[type="text"],
-        .add-employee-form3 input[type="email"],
-        .add-employee-form3 input[type="number"],
-        .add-employee-form3 select,
-        .add-employee-form3 input[type="date"] {
-            height: 30px; /* Reduced size */
-        }
-    
-        .column3 label {
-            font-size: 14px; /* Reduced size */
-        }
-    
-        .column3 input,
-        .column3 select {
-            font-size: 12px; /* Reduced size */
-            padding: 4px; /* Reduced size */
-        }
+    .add-employee-form3 .form-group3 {
+        flex: 1 1 calc(40% - 10px);
+    }
 
-    
+    .add-employee-form3 .form-group3.small {
+        flex: 1 1 calc(18% - 10px);
+    }
 
-    
+    .add-employee-form3 label {
+        font-size: 14px;
+    }
 
-    
+    .add-employee-form3 h2 {
+        font-size: 18px;
+    }
 
-    
+    .add-employee-form3 input[type="text"],
+    .add-employee-form3 input[type="email"],
+    .add-employee-form3 input[type="number"],
+    .add-employee-form3 select,
+    .add-employee-form3 input[type="date"] {
+        height: 30px;
+    }
+
+    .column3 label {
+        font-size: 14px;
+    }
+
+    .column3 input,
+    .column3 select {
+        font-size: 12px;
+        padding: 4px;
+    }
+
 }
 
-/* For screens with a width of 1024px or less */
 @media screen and (max-width: 1024px) {
     .add-employee-form .form-group {
-        flex: 1 1 calc(35% - 10px); /* Reduced size */
+        flex: 1 1 calc(35% - 10px);
     }
 
     .add-employee-form .form-group.small {
-        flex: 1 1 calc(15% - 10px); /* Reduced size */
+        flex: 1 1 calc(15% - 10px);
     }
 
     .add-employee-form label {
-        font-size: 12px; /* Reduced size */
+        font-size: 12px;
     }
 
     .add-employee-form input[type="text"],
@@ -1940,32 +1845,31 @@ li.has-submenu {
     .add-employee-form input[type="number"],
     .add-employee-form select,
     .add-employee-form input[type="date"] {
-        height: 25px; /* Reduced size */
+        height: 25px;
     }
 
     .column label {
-        font-size: 12px; /* Reduced size */
+        font-size: 12px;
     }
 
     .column input,
     .column select {
-        font-size: 12px; /* Reduced size */
-        padding: 3px; /* Reduced size */
+        font-size: 12px;
+        padding: 3px;
     }
 }
 
-/* For screens with a width of 768px or less */
 @media screen and (max-width: 768px) {
     .add-employee-form .form-group {
-        flex: 1 1 calc(30% - 10px); /* Reduced size */
+        flex: 1 1 calc(30% - 10px);
     }
 
     .add-employee-form .form-group.small {
-        flex: 1 1 calc(12% - 10px); /* Reduced size */
+        flex: 1 1 calc(12% - 10px);
     }
 
     .add-employee-form label {
-        font-size: 10px; /* Reduced size */
+        font-size: 10px;
     }
 
     .add-employee-form input[type="text"],
@@ -1973,32 +1877,31 @@ li.has-submenu {
     .add-employee-form input[type="number"],
     .add-employee-form select,
     .add-employee-form input[type="date"] {
-        height: 20px; /* Reduced size */
+        height: 20px;
     }
 
     .column label {
-        font-size: 10px; /* Reduced size */
+        font-size: 10px;
     }
 
     .column input,
     .column select {
-        font-size: 10px; /* Reduced size */
-        padding: 2px; /* Reduced size */
+        font-size: 10px;
+        padding: 2px;
     }
 }
 
-/* For screens with a width of 480px or less */
 @media screen and (max-width: 480px) {
     .add-employee-form .form-group {
-        flex: 1 1 calc(25% - 10px); /* Reduced size */
+        flex: 1 1 calc(25% - 10px);
     }
 
     .add-employee-form .form-group.small {
-        flex: 1 1 calc(10% - 10px); /* Reduced size */
+        flex: 1 1 calc(10% - 10px);
     }
 
     .add-employee-form label {
-        font-size: 8px; /* Reduced size */
+        font-size: 8px;
     }
 
     .add-employee-form input[type="text"],
@@ -2006,138 +1909,126 @@ li.has-submenu {
     .add-employee-form input[type="number"],
     .add-employee-form select,
     .add-employee-form input[type="date"] {
-        height: 15px; /* Reduced size */
+        height: 15px;
     }
 
     .column label {
-        font-size: 8px; /* Reduced size */
+        font-size: 8px;
     }
 
     .column input,
     .column select {
-        font-size: 8px; /* Reduced size */
-        padding: 1px; /* Reduced size */
+        font-size: 8px;
+        padding: 1px;
     }
 }
 
-
-
-
-.form-group-below{
-
-}
-
-
-
+.form-group-below {}
 
 .hidden {
     display: none;
 }
 
-.info-notice p{
+.info-notice p {
     margin-top: 20px;
 }
 
-
 .styled-select {
     margin-top: 15px;
-    width: 400px; /* Width of the select box */
-    padding: 10px; /* Padding for some space inside the box */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    background-color: #fff; /* Background color */
-    font-size: 16px; /* Font size */
-    appearance: none; /* Remove default styles in some browsers */
-    cursor: pointer; /* Cursor change on hover */
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    appearance: none;
+    cursor: pointer;
 }
 
-
-/* Style for the options within the select element */
 .styled-select option {
-    padding: 10px; /* Padding inside each option */
+    padding: 10px;
 }
 
 #employee_details {
     font-weight: bold;
     margin-top: 30px;
-    font-size: 18px; /* Font size for the employee details */
+    font-size: 18px;
 }
 
-#employee_full_name{
-}
+#employee_full_name {}
 
-.field{
+.field {
     margin-top: 15px;
-    width: 500px; /* Width of the select box */
+    width: 500px;
     height: 40px;
-    padding: 10px; /* Padding for some space inside the box */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    background-color: #fff; /* Background color */
-    font-size: 16px; /* Font size */
-    appearance: none; /* Remove default styles in some browsers */
-    cursor: pointer; /* Cursor change on hover */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    appearance: none;
+    cursor: pointer;
 }
 
-.contractFrom input{
+.contractFrom input {
     display: block;
     margin-top: 15px;
-    width: 400px; /* Width of the select box */
+    width: 400px;
     height: 40px;
-    padding: 10px; /* Padding for some space inside the box */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    background-color: #fff; /* Background color */
-    font-size: 16px; /* Font size */
-    appearance: none; /* Remove default styles in some browsers */
-    cursor: pointer; /* Cursor change on hover */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    appearance: none;
+    cursor: pointer;
 }
 
-.contractFrom label{
-    display: block;
-
-    margin-top: 30px;
-    font-size: 18px; /* Font size for the employee details */
-}
-
-.contractTo input{
-    margin-top: 15px;
-    width: 400px; /* Width of the select box */
-    height: 40px;
-    padding: 10px; /* Padding for some space inside the box */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    background-color: #fff; /* Background color */
-    font-size: 16px; /* Font size */
-    appearance: none; /* Remove default styles in some browsers */
-    cursor: pointer; /* Cursor change on hover */
-}
-
-.contractTo label{
+.contractFrom label {
     display: block;
 
     margin-top: 30px;
-    font-size: 18px; /* Font size for the employee details */
+    font-size: 18px;
 }
 
-.uploadContract input{
+.contractTo input {
     margin-top: 15px;
-    width: 500px; /* Width of the select box */
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.contractTo label {
+    display: block;
+
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.uploadContract input {
+    margin-top: 15px;
+    width: 500px;
     height: 45px;
-    padding: 10px; /* Padding for some space inside the box */
-    border: 1px solid #ccc; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    background-color: #fff; /* Background color */
-    font-size: 16px; /* Font size */
-    appearance: none; /* Remove default styles in some browsers */
-    cursor: pointer; /* Cursor change on hover */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    appearance: none;
+    cursor: pointer;
 }
 
-.uploadContract label{
+.uploadContract label {
     display: block;
 
     margin-top: 30px;
-    font-size: 18px; /* Font size for the employee details */
+    font-size: 18px;
 }
 
 .employee-Renew input[type="submit"] {
@@ -2155,15 +2046,10 @@ li.has-submenu {
 }
 
 .custom-disabled:disabled {
-    background-color: white; 
+    background-color: white;
     color: black;
-    /* cursor: not-allowed;  */
 
 }
-
-
-
-/* test employeeDetails2 */
 
 .employee-profile {
     border: 1px solid #c6c6c6;
@@ -2172,10 +2058,6 @@ li.has-submenu {
     padding: 20px;
     border-radius: 8px;
     height: 100%;
-    /* background: #fff;
-    
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px; */
 
 }
 
@@ -2186,14 +2068,13 @@ li.has-submenu {
     margin-left: 20px;
 }
 
-.employees-picture img{
+.employees-picture img {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     object-fit: cover;
     border: 1px solid #c8c8c8;
 }
-
 
 .employee-name {
     text-align: left;
@@ -2203,7 +2084,7 @@ li.has-submenu {
 }
 
 .profile-rightz {
-        margin-left: 40px;
+    margin-left: 40px;
     flex: 1;
 }
 
@@ -2211,18 +2092,18 @@ li.has-submenu {
     display: flex;
     justify-content: space-evenly;
     border-bottom: 2px solid #ccc;
-    padding-bottom: 10px; /* No change needed */
-    margin-bottom: 20px; /* Reduced by 20px */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .nav a {
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
-    padding: 5px 10px; /* No change needed */
+    padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.1s, color 0.1s;
-    font-size: 18px; /* Initial font size */
+    font-size: 18px;
 }
 
 .nav a:hover {
@@ -2232,19 +2113,18 @@ li.has-submenu {
 
 .nav a.disabled {
     pointer-events: none;
-    color: gray; /* Change the color to indicate it's disabled */
-    text-decoration: none; /* Remove underline */
+    color: gray;
+    text-decoration: none;
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     .nav {
         display: flex;
         justify-content: space-evenly;
         text-align: center;
         border-bottom: 2px solid #ccc;
-        padding-bottom: 10px; /* No change needed */
-        margin-bottom: 20px; /* Reduced by 20px */
+        padding-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .nav a {
@@ -2252,31 +2132,27 @@ li.has-submenu {
     }
 }
 
-/* For screens with a width of 1024px or less */
 @media screen and (max-width: 1024px) {
     .nav {
-        margin-bottom: 0px; /* Reduced by 10px */
+        margin-bottom: 0;
     }
 
     .nav a {
-        font-size: 14px; /* Reduced by 2px */
+        font-size: 14px;
     }
 }
 
-/* For screens with a width of 768px or less */
 @media screen and (max-width: 768px) {
     .nav a {
-        font-size: 12px; /* Reduced by 2px */
+        font-size: 12px;
     }
 }
 
-/* For screens with a width of 480px or less */
 @media screen and (max-width: 480px) {
     .nav a {
-        font-size: 10px; /* Reduced by 2px */
+        font-size: 10px;
     }
 }
-
 
 .contente section {
     display: none;
@@ -2296,12 +2172,9 @@ li.has-submenu {
 }
 
 .vertical-line {
-    border-left: 1px solid rgb(208, 208, 208); /* Adjust the width and color as needed */
-    height: 100%; /* Full viewport height */
+    border-left: 1px solid rgb(208, 208, 208);
+    height: 100%;
 }
-
-/* next and back button */
-
 
 .existing-next-class {
     background-color: #007bff;
@@ -2333,7 +2206,6 @@ li.has-submenu {
     background-color: #5a6268;
 }
 
-
 .submit-button {
     background-color: #28a745;
     color: white;
@@ -2349,8 +2221,8 @@ button[type="button"] {
 
 .joined {
     text-align: left;
-    margin-top: 25px; /* Reduced by 5px */
-    font-size: 15px; /* Reduced by 5px */
+    margin-top: 25px;
+    font-size: 15px;
     color: #626262;
 }
 
@@ -2358,38 +2230,33 @@ button[type="button"] {
     font-weight: bold;
 }
 
-/* For screens with a width of 1366px or less */
 @media screen and (max-width: 1366px) {
     .joined {
-        margin-top: 20px; /* Reduced by 5px */
-        font-size: 12px; /* Reduced by 1px */
+        margin-top: 20px;
+        font-size: 12px;
     }
 }
 
-/* For screens with a width of 1024px or less */
 @media screen and (max-width: 1024px) {
     .joined {
-        margin-top: 15px; /* Reduced by 5px */
-        font-size: 13px; /* Reduced by 1px */
+        margin-top: 15px;
+        font-size: 13px;
     }
 }
 
-/* For screens with a width of 768px or less */
 @media screen and (max-width: 768px) {
     .joined {
-        margin-top: 10px; /* Reduced by 5px */
-        font-size: 12px; /* Reduced by 1px */
+        margin-top: 10px;
+        font-size: 12px;
     }
 }
 
-/* For screens with a width of 480px or less */
 @media screen and (max-width: 480px) {
     .joined {
-        margin-top: 5px; /* Reduced by 5px */
-        font-size: 10px; /* Reduced by 2px */
+        margin-top: 5px;
+        font-size: 10px;
     }
 }
-
 
 .applicant-profile {
 
@@ -2399,74 +2266,74 @@ button[type="button"] {
     color: white;
     font-size: 90px;
     z-index: 1;
-        /* Ensure text is on top of the image */
+
 }
 
 .applicant-profile-text {
     display: flex;
-    flex-direction: row; /* Column direction to keep img above p */
+    flex-direction: row;
 }
 
-.applicant-profile-text p{
+.applicant-profile-text p {
     margin-top: 5px;
     margin-left: 10px;
     font-size: 20px;
     letter-spacing: 1px;
 }
 
-.applicant-profile-text img{
+.applicant-profile-text img {
     width: 30px;
     height: 30px;
 }
 
-.applicant-user{
+.applicant-user {
     top: 140px;
     left: 415px;
     position: absolute;
     color: white;
     font-size: 90px;
-    z-index: 1; /* Ensure text is on top of the image */
+    z-index: 1;
 }
 
 .applicant-user-text {
     display: flex;
-    flex-direction: row; /* Column direction to keep img above p */
+    flex-direction: row;
 }
 
-.applicant-user-text p{
+.applicant-user-text p {
     margin-top: 5px;
     margin-left: 10px;
     font-size: 20px;
     letter-spacing: 1px;
 }
 
-.applicant-user-text img{
+.applicant-user-text img {
     width: 30px;
     height: 30px;
 }
 
-.applicant-settings{
+.applicant-settings {
     top: 140px;
     left: 775px;
     position: absolute;
     color: white;
     font-size: 90px;
-    z-index: 1; /* Ensure text is on top of the image */
+    z-index: 1;
 }
 
 .applicant-settings-text {
     display: flex;
-    flex-direction: row; /* Column direction to keep img above p */
+    flex-direction: row;
 }
 
-.applicant-settings-text p{
+.applicant-settings-text p {
     margin-top: 5px;
     margin-left: 10px;
     font-size: 20px;
     letter-spacing: 1px;
 }
 
-.applicant-settings-text img{
+.applicant-settings-text img {
     width: 30px;
     height: 30px;
 }
@@ -2481,7 +2348,7 @@ footer {
     height: 45px;
     width: 100%;
 }
-/* General styling for icon links */
+
 .icon-link {
     display: inline-block;
     cursor: pointer;
@@ -2492,7 +2359,6 @@ footer {
     text-decoration: none;
 }
 
-/* Specific styling for buttons within forms to match the link styling */
 .icon-link .icon-button {
     border: none;
     background: none;
@@ -2500,10 +2366,9 @@ footer {
     cursor: pointer;
 }
 
-/* Ensure images are displayed inline */
 .icon-link img {
     display: inline;
-    vertical-align: middle; /* Aligns the image vertically in the middle */
+    vertical-align: middle;
 }
 
 .password-container {
@@ -2513,7 +2378,7 @@ footer {
 }
 
 input[type="password"] {
-    padding-right: 30px; /* Adjust padding to make space for the eye icon */
+    padding-right: 30px;
 }
 
 .eye {
@@ -2532,7 +2397,7 @@ input[type="password"] {
 }
 
 .status-button {
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -2542,18 +2407,17 @@ input[type="password"] {
     font-size: 16px;
 }
 
-/* Remove left margin for the first button */
 .status-button:first-child {
-    margin-left: 0; /* No margin for the first button */
+    margin-left: 0;
 }
 
 .status-button:hover {
-    background-color: #0056b3; /* Darker shade for hover */
+    background-color: #0056b3;
 }
 
-#attendanceReportsBtn{
+#attendanceReportsBtn {
     margin-top: 10px;
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -2563,12 +2427,12 @@ input[type="password"] {
 
 }
 
-#attendanceReportsBtn:hover{
-    background-color: #0063cd; /* Bootstrap primary color */
+#attendanceReportsBtn:hover {
+    background-color: #0063cd;
 }
 
-#leaveReportsBtn{
-    background-color: #007bff; /* Bootstrap primary color */
+#leaveReportsBtn {
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -2578,55 +2442,54 @@ input[type="password"] {
 
 }
 
-#leaveReportsBtn:hover{
-    background-color: #0063cd; /* Bootstrap primary color */
+#leaveReportsBtn:hover {
+    background-color: #0063cd;
 }
 
 #attendanceHeader,
-#leaveHeader{
+#leaveHeader {
     margin-top: 10px;
 }
 
-.schedule-interview-button{
-    font-size: 12px; 
-    padding: 5px 10px; 
-    background-color: #007bff; 
-    color: white; 
-    border: none; 
-    border-radius: 4px; 
+.schedule-interview-button {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-.preview-button{
-    font-size: 12px; 
-    padding: 5px 10px; 
-    background-color: #007bff; 
-    color: white; 
-    border: none; 
-    border-radius: 4px; 
+.preview-button {
+    font-size: 12px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
-
 
 .popup {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popup-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 500px; /* Max width */
+    width: 80%;
+    max-width: 500px;
     border-radius: 5px;
 }
 
@@ -2637,8 +2500,8 @@ input[type="password"] {
     font-weight: bold;
 }
 
-.close-btn:hover,
-.close-btn:focus {
+.close-btn:focus,
+.close-btn:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
