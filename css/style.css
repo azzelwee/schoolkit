@@ -157,6 +157,15 @@ table {
     width: 75%;
 }
 
+#table2-2 {
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 80%;
+    height: 20%;
+}
+
 #table3 {
     border-radius: 8px;
     margin-top: 10px;
@@ -315,6 +324,60 @@ tr:nth-child(even) {}
     margin-top: 10px;
 }
 
+/* Add this to your existing CSS file or inside a <style> tag in the <head> section of your HTML */
+.pagination2 {
+
+    text-align: left;
+    margin-top: 20px;
+}
+
+.pagination2 a, .pagination2 strong {
+    border: 1px solid #ccc;
+    display: inline-block;
+    color: #111111;
+    padding: 10px 20px;
+    border: thin solid #555;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.pagination2 a:hover {
+    background: #d52033;
+    color: #fff;
+}
+
+.pagination2 strong {
+    background-color: #d52033;
+    color: #fff;
+    border: thin solid #555;
+}
+
+@media screen and (max-width: 1366px) {
+    .pagination2 a, .pagination2 strong {
+        border: 1px solid #ccc;
+        display: inline-block;
+        color: #111111;
+        padding: 8px 17px;
+        border: thin solid #555;
+        border-radius: 6px;
+        font-size: 12px;
+    }
+
+    .pagination2 a:hover {
+        background: #d52033;
+        color: #fff;
+    }
+    
+    .pagination2 strong {
+        background-color: #d52033;
+        color: #fff;
+        border: thin solid #555;
+    }
+    
+}
+
+
+
 .content p {
     margin-top: 10px;
     font-weight: bold;
@@ -394,6 +457,7 @@ tr:nth-child(even) {}
     height: 20px;
 }
 
+/* Base styles */
 .button-container {
     float: left;
     margin-top: 15px;
@@ -402,43 +466,38 @@ tr:nth-child(even) {}
     float: left;
     margin-left: 15px;
     margin-top: 15px;
-
 }
-
-.button-container2 a {
-    background: #007bff;
+.button-container2 a,
+.button-container a,
+.button-containers a {
+    background: #007bff; /* Default background for button-container and button-container2 */
     border-radius: 6px;
     padding: 8px 10px;
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
 }
-
-.button-container2 a:hover {
-    background: #0064ce;
-}
-
-.button-container a {
-    background: #007bff;
-    border-radius: 6px;
-    padding: 8px 10px;
-    color: white;
-    text-decoration: none;
-    letter-spacing: 2px;
-}
-
+.button-container2 a:hover,
 .button-container a:hover {
-    background: #0064ce;
+    background: #0064ce; /* Hover effect */
 }
-
 .button-containers {
-
     margin-top: 15px;
     margin-bottom: 30px;
 }
-
 .button-containers a {
-    background: #d52033;
+    background: #d52033; /* Specific background for button-containers */
+}
+.button-containers a:hover {
+    background: #8e1522; /* Hover effect */
+}
+
+.button-container5 {
+    float: left;
+}
+
+.button-container5 a {
+    background: #007bff; /* Default background for button-container5 */
     border-radius: 6px;
     padding: 8px 10px;
     color: white;
@@ -446,9 +505,33 @@ tr:nth-child(even) {}
     letter-spacing: 2px;
 }
 
-.button-containers a:hover {
-    background: #8e1522;
+.button-container5 a:hover {
+    background: #0064ce; /* Hover effect */
 }
+
+
+/* Media query for 1366x768 screen */
+@media (max-width: 1366px) {
+    .button-container,
+    .button-container2,
+    .button-containers {
+        margin-top: 15px; /* Adjust margin */
+    }
+
+    .button-container5{
+        font-size: 14px;
+    }
+    .button-container2 {
+        margin-left: 10px; /* Adjust margin */
+    }
+    .button-container a,
+    .button-container2 a,
+    .button-containers a {
+        padding: 6px 8px; /* Reduce padding */
+        font-size: 14px; /* Adjust font size if necessary */
+    }
+}
+
 
 .button-small {
     border: none;
@@ -822,6 +905,10 @@ li.has-submenu {
         height: 85%;
         padding: 20px;
     }
+
+    .box-container p{
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -846,6 +933,8 @@ li.has-submenu {
         height: auto;
         padding: 5px;
     }
+
+
 }
 
 .box-container h1 {
@@ -958,6 +1047,16 @@ li.has-submenu {
     z-index: 1;
 }
 
+.report3 {
+    top: 175px;
+    left: 780px;
+    letter-spacing: 2px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+}
+
 .ssp {
     top: 135px;
     left: 790px;
@@ -997,6 +1096,12 @@ li.has-submenu {
     .report2 {
         top: 155px;
         left: 340px;
+        font-size: 16px;
+    }
+
+    .report3 {
+        top: 155px;
+        left: 620px;
         font-size: 16px;
     }
 
@@ -1309,6 +1414,30 @@ li.has-submenu {
     }
 }
 
+.thebuttonx {
+    position: absolute;
+    left: 420px;
+    top: 133px;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #d52033;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 1366px) {
+    .thebuttonx {
+        left: 311px;
+        top: 121px;
+        padding: 8px 13px;
+        font-size: 12px;
+    }
+}
+
+
 .thebutton {
     position: absolute;
     bottom: 50px;
@@ -1322,6 +1451,30 @@ li.has-submenu {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+.thebuttonc {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #d52033;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 1366px) {
+    .thebuttonc {
+        bottom: 30px;
+        right: 50px;
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+}
+
 
 .thebutton2 {
     position: absolute;
@@ -1933,6 +2086,14 @@ li.has-submenu {
     margin-top: 20px;
 }
 
+@media screen and (max-width: 1366px) {
+    .info-notice p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
+
+
 .styled-select {
     margin-top: 15px;
     width: 400px;
@@ -2505,4 +2666,197 @@ input[type="password"] {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.calendar {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin: 20px auto;
+    max-width: 900px; /* Restrict maximum width */
+    max-height: 580px;
+    width: 100%; /* Ensure it fits within its parent */
+    overflow: hidden; /* Prevent overflow of content */
+}
+
+.day.interview {
+    background-color: #ffeb3b; /* Yellow background for interview dates */
+}
+.interview-info {
+    font-size: 0.9em; /* Smaller font size */
+    color: #333; /* Text color */
+    margin-top: 5px; /* Space between textarea and interview text */
+}
+
+.month {
+    
+    width: 100%; /* Full width of the calendar */
+    max-height: 580px; /* Set a maximum height for the month view */
+    overflow: auto; /* Allow scrolling if content exceeds max-height */
+    margin: 5px 0;
+}
+
+.month h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: calc(100% / 7); /* 7 days per row */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative; /* To position the note properly */
+}
+
+.note {
+    width: 100%; /* Full width of the day cell */
+    max-width: 100%; /* Ensure it doesn’t exceed the parent */
+    height: 50px; /* Initial height */
+    max-height: 150px; /* Maximum height */
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    overflow-y: auto; /* Scroll if content exceeds max-height */
+    resize: vertical; /* Allow resizing only vertically */
+}
+
+
+.holiday {
+    background-color: #f3162c;
+    color: white;
+}
+
+.nav-buttons {
+    margin-top: 20px;
+}
+
+.nav-buttons a {
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #007BFF;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+.nav-buttons a:hover {
+    background-color: #005fc4;
+    color: white;
+}
+
+.save-button {
+    background-color: #007bff;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #007BFF;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.save-button:hover {
+    background-color: #005fc4;
+    color: white;
+}
+
+.holiday-info{
+    font-size: 12px;
+}
+
+@media (max-width: 1366px) {
+
+    .month {
+        width: 98%; /* Increase width for better visibility */
+    }
+
+    .calendar {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 750px; /* Restrict maximum width */
+        max-height: 450px;
+        width: 100%; /* Ensure it fits within its parent */
+        overflow: auto; /* Prevent overflow of content */
+    }
+    
+    .month {
+
+        max-height: 450px; /* Set a maximum height for the month view */
+        overflow: auto; /* Allow scrolling if content exceeds max-height */
+
+    }
+
+    .day {
+        padding: 4px; /* Further reduce padding */
+    }
+
+    .note {
+        font-size: 12px;
+        width: 100%; /* Full width of the day cell */
+        max-width: 100%; /* Ensure it doesn’t exceed the parent */
+        height: 30px; /* Initial height */
+        max-height: 50px; /* Maximum height */
+        margin-top: 5px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        overflow-y: auto; /* Scroll if content exceeds max-height */
+        resize: both; /* Allow resizing both vertically and horizontally */
+    }
+
+    .nav-buttons a,
+    .save-button {
+        padding: 3px 6px; /* Smaller buttons */
+        font-size: 13px; /* Smaller text */
+    }
+    
+    .holiday-info{
+        font-size: 10px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .day {
+        width: calc(100% / 3); /* 3 days per row */
+    }
+
+    .note {
+        height: 40px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .day {
+        width: 100%; /* Full width for better touch interaction */
+    }
+
+    .note {
+        height: 50px; /* Keep initial height */
+    }
+
+    .nav-buttons a,
+    .save-button {
+        padding: 2px 4px; /* Smaller buttons */
+        font-size: 12px; /* Smaller text */
+    }
+}
+
+.centered-text {
+    text-align: center;
+
 }

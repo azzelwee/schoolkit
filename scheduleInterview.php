@@ -34,15 +34,18 @@ if (isset($_POST['schedule'])) {
     $stmt->bind_param("ssi", $interview_date, $interview_time, $applicant_id);
 
     if ($stmt->execute()) {
-        $message = "Interview scheduled successfully.";
+        $_SESSION['status-add'] = "Interview scheduled successfully.";
     } else {
-        $message = "Error scheduling interview: " . $con->error;
+        $_SESSION['status-delete'] = "Error scheduling interview: " . $stmt->error;
     }
 
-        // Redirect to employeeOnboarding2.php after processing
-        header("Location: employeeOnboarding2.php");
-        exit();
+    $stmt->close(); // Close the statement
+
+    // Redirect to employeeOnboarding2.php after processing
+    header("Location: employeeOnboarding2.php");
+    exit();
 }
+
 ?>
 
 <!DOCTYPE html>

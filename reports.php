@@ -31,13 +31,14 @@ $row = $employee->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reports</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-    <?php
+<?php
         if(isset($_GET['page-nr'])){
             $id = $_GET['page-nr'];
         }else {
@@ -45,34 +46,44 @@ $row = $employee->fetch_assoc();
         }
 
     ?>
+
 <body id="<?php echo $id ?>">
 
-<?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
 
     <div class="right-container">
         <div class="box-container">
-        <h2>Reports</h2>
-        <div class="gauge-line"></div>
-        <div class="container-list">  
-            <a href="listEmployee2.php" class="container-container1">
-                <img src="img/NBSreport1.png">
+            <h2>Reports</h2>
+            <div class="gauge-line"></div>
+            <div class="container-list">
+                <a href="listEmployee2.php" class="container-container1">
+                    <img src="img/NBSreport1.png">
                     <div class="report1">
                         Employee Reports
                     </div>
-            </a>
+                </a>
 
-            <a href="employeeOnboarding2.php" class="container-container2">
-                <img src="img/NBSreport2.png">
-                <div class="report2">
-                    Applicant Reports
-                </div>
-                    
-            </a>
-    </div>
-        
-    </div>
+                <a href="employeeOnboarding2.php" class="container-container2">
+                    <img src="img/NBSreport2.png">
+                    <div class="report2">
+                        Applicant Reports
+                    </div>
+
+                </a>
+
+                <a href="schoolCalendar.php" class="container-container2">
+                    <img src="img/NBSreport3.png">
+                    <div class="report3">
+                        Calendar Note
+                    </div>
+
+                </a>
+            </div>
+
+        </div>
     </div>
 
 </body>
-<script src= js/main.js></script>
+<script src=js/main.js></script>
+
 </html>
